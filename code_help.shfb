@@ -1,0 +1,83 @@
+﻿<project schemaVersion="1.4.0.0">
+    <assemblies>
+        <assembly assemblyPath=".\bin\CAS.RTLib.dll" xmlCommentsPath=".\bin\CAS.RTLib.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\CAS.CommonBus.dll" xmlCommentsPath=".\bin\CAS.CommonBus.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\CAS.CommServer.dll" xmlCommentsPath=".\bin\CAS.CommServer.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\CAS.CommServerConsole.exe" xmlCommentsPath=".\bin\CAS.CommServerConsole.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\CAS.CommServerConsoleInterface.dll" xmlCommentsPath=".\bin\CAS.CommServerConsoleInterface.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\CAS.CommSvrPlugin_EC2-3SYM2.dll" xmlCommentsPath=".\bin\CAS.CommSvrPlugin_EC2-3SYM2.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\CAS.CommSvrPlugin_MODBUS.dll" xmlCommentsPath=".\bin\CAS.CommSvrPlugin_MODBUS.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\CAS.CommSvrPlugin_NULLbus.dll" xmlCommentsPath=".\bin\CAS.CommSvrPlugin_NULLbus.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\CAS.CommSvrPlugin_SBUS.dll" xmlCommentsPath=".\bin\CAS.CommSvrPlugin_SBUS.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\CAS.CommSvrPlugin_SBUSNet.dll" xmlCommentsPath=".\bin\CAS.CommSvrPlugin_SBUSNet.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\CAS.CommSvrPlugin_SymSiec.dll" xmlCommentsPath=".\bin\CAS.CommSvrPlugin_SymSiec.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\CAS.ControlLibrary.dll" xmlCommentsPath=".\bin\CAS.ControlLibrary.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\CAS.DeviceSymulator.dll" xmlCommentsPath=".\bin\CAS.DeviceSymulator.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\CAS.ItemDescriber.exe" xmlCommentsPath=".\bin\CAS.ItemDescriber.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\CAS.NetworkConfig.exe" xmlCommentsPath=".\bin\CAS.NetworkConfig.XML" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\CAS.NetworkConfigLib.dll" xmlCommentsPath=".\bin\CAS.NetworkConfigLib.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\CAS.OpcDaNETServer.dll" xmlCommentsPath=".\bin\CAS.OpcDaNETServer.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\CAS.OpcNetApi.Com.dll" xmlCommentsPath=".\bin\CAS.OpcNetApi.Com.xml" commentsOnly="False" />
+        <assembly assemblyPath=".\bin\CAS.OpcNetApi.dll" xmlCommentsPath=".\bin\CAS.OpcNetApi.xml" commentsOnly="False" />
+    </assemblies>
+    <namespaceSummaries>
+        <namespaceSummaryItem name="" isDocumented="True" />
+        <namespaceSummaryItem name="BaseStation.Management" isDocumented="True">The BaseStation.Management namespace contains common classes for management inside BaseStation.</namespaceSummaryItem>
+        <namespaceSummaryItem name="CAS.Lib.CommonBus" isDocumented="True">The CAS.Lib.CommonBus name spaces contains common class, enumerations and interfaces used in communication. This namespace is main namespace in CAS communication library.</namespaceSummaryItem>
+        <namespaceSummaryItem name="CAS.Lib.CommonBus.ApplicationLayer" isDocumented="True">The CAS.Lib.CommonBus.ApplicationLayer namespace contains common classes, enumerations and interfaces used in communication in Application Layer.</namespaceSummaryItem>
+        <namespaceSummaryItem name="CAS.Lib.CommonBus.CommunicationLayer" isDocumented="True">The CAS.Lib.CommonBus. CommunicationLayer namespace contains common classes, enumerations and interfaces used in communication in Communication Layer.</namespaceSummaryItem>
+        <namespaceSummaryItem name="CAS.Lib.CommonBus.CommunicationLayer.Generic" isDocumented="True">The CAS.Lib.CommonBus. CommunicationLayer.Generic namespace contains common classes, enumerations and interfaces used in communication (This namespace is common for Application Layer and Communication Layer).</namespaceSummaryItem>
+        <namespaceSummaryItem name="CAS.Lib.CommonBus.CommunicationLayer.Net" isDocumented="True">The CAS.Lib.CommonBus. CommunicationLayer.Net namespace contains common classes, enumerations and interfaces used in communication via network.</namespaceSummaryItem>
+        <namespaceSummaryItem name="CAS.Lib.CommonBus.CommunicationLayer.NULL" isDocumented="True">The CAS.Lib.CommonBus. CommunicationLayer.NULL namespace contains common classes, enumerations and interfaces used in communication via null protocol – virtual protocol, which does not do anything.</namespaceSummaryItem>
+        <namespaceSummaryItem name="CAS.Lib.CommonBus.CommunicationLayer.RS" isDocumented="True">The CAS.Lib.CommonBus. CommunicationLayer.RS namespace contains common classes, enumerations and interfaces used in communication via rs-232 (COM ports).</namespaceSummaryItem>
+        <namespaceSummaryItem name="CAS.Lib.CommonBus.Components" isDocumented="True">The CAS.Lib.CommonBus.Components namespace contains common Win Forms components that are used in the CommBus library (E.g.: windows that allows user to select the data provider).</namespaceSummaryItem>
+        <namespaceSummaryItem name="CAS.Lib.CommonBus.Management" isDocumented="True">The CAS.Lib.CommonBus. Management namespace contains classes responsible for management tasks in the CommBus library. (E.g. plugin collection management).</namespaceSummaryItem>
+        <namespaceSummaryItem name="CAS.Lib.CommonBus.Xml" isDocumented="True">The CAS.Lib.CommonBus. XML namespace contains classes responsible for tasks associated with XML (E.g. plugin setting serialization).</namespaceSummaryItem>
+        <namespaceSummaryItem name="CAS.Lib.Controls" isDocumented="True">The CAS.Lib.CommonBus.Components namespace contains common Win Forms components that are used in the CAS projects library (E.g.: about window, etc...).</namespaceSummaryItem>
+        <namespaceSummaryItem name="CAS.Lib.DP_RDK" isDocumented="True">The CAS.Lib.CommonBus.ApplicationLayer namespace contains classes, enumerations and interfaces used in Data Provider Rapid Development . Te Software - Rapid Development Kit allows to create own Data Provider plug-in for CommServer.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Database" isDocumented="True">The DataBase namespace contains code responsible for data base related operation (e.g. reading XML files).</namespaceSummaryItem>
+        <namespaceSummaryItem name="Management" isDocumented="True">The Management namespace contains common classes for management inside BaseStation.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Processes" isDocumented="True">The Processes Name space contains components responsible for process management, synchronization, etc...</namespaceSummaryItem>
+        <namespaceSummaryItem name="RTLib.DataBase.UndoRedo" isDocumented="True">The RTLib.DataBase.UndoRedo namespace contains components responsible for undo and redo functionality.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Utils" isDocumented="True">The Utils namespace contains components responsible for simple and common tasks: arithmetical calculation (max/min/avg) reports generation, etc...</namespaceSummaryItem>
+        <namespaceSummaryItem name="Utils.Collections" isDocumented="True">The Utils.Collections namespace contains components responsible for simple and common tasks refer to collections and lists.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Win32API" isDocumented="True">The Win32API namespace contains components responsible for operation system specific functions.</namespaceSummaryItem>
+        <namespaceSummaryItem name="Win32API.Time" isDocumented="True">The Win32API.Time namespace contains components responsible for operation system and time specific functions.</namespaceSummaryItem>
+    </namespaceSummaries>
+    <dependencies>
+        <dependencyItem depPath="%WINDIR%\Microsoft.NET\Framework\v2.0.50727\System.configuration.dll" />
+        <dependencyItem depPath="%ProgramFiles%\CAS\CAS.CodeProtectSDK\CAS.CodeProtect.dll" />
+    </dependencies>
+    <ProjectSummary>This Software is a Rapid Development Kit which allow to create own Data Provider plug-in for CommServer.</ProjectSummary>
+    <MissingTags>Summary, Parameter, Returns, AutoDocumentCtors</MissingTags>
+    <VisibleItems>InheritedMembers, InheritedFrameworkMembers, Protected, SealedProtected</VisibleItems>
+    <HtmlHelp1xCompilerPath path="" />
+    <HtmlHelp2xCompilerPath path="" />
+    <OutputPath>.\Help\</OutputPath>
+    <SandcastlePath path="" />
+    <WorkingPath path="" />
+    <CleanIntermediates>True</CleanIntermediates>
+    <HelpFileFormat>HtmlHelp1x</HelpFileFormat>
+    <PurgeDuplicateTopics>True</PurgeDuplicateTopics>
+    <CppCommentsFixup>False</CppCommentsFixup>
+    <FrameworkVersion>2.0.50727</FrameworkVersion>
+    <BinaryTOC>True</BinaryTOC>
+    <IncludeFavorites>False</IncludeFavorites>
+    <Preliminary>False</Preliminary>
+    <RootNamespaceContainer>False</RootNamespaceContainer>
+    <RootNamespaceTitle />
+    <HelpTitle>CAS CommServer</HelpTitle>
+    <HtmlHelpName>CommServer_codedoc</HtmlHelpName>
+    <Language>en-US</Language>
+    <CopyrightHref>http://www.cas.eu</CopyrightHref>
+    <CopyrightText>Copyright CAS 2007</CopyrightText>
+    <FeedbackEMailAddress>techsupp@cas.eu</FeedbackEMailAddress>
+    <HeaderText />
+    <FooterText />
+    <ProjectLinkType>Local</ProjectLinkType>
+    <SdkLinkType>Msdn</SdkLinkType>
+    <PresentationStyle>Prototype</PresentationStyle>
+    <NamingMethod>Guid</NamingMethod>
+    <SyntaxFilters>Standard</SyntaxFilters>
+    <ContentPlacement>AboveNamespaces</ContentPlacement>
+</project>

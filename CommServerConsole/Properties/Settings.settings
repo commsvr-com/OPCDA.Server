@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CAS.CommServerConsole.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CommServer_Host_Primary" Type="System.String" Scope="User">
+      <Value Profile="(Default)">localhost</Value>
+    </Setting>
+    <Setting Name="CommServer_ListenPort_Primary" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5757</Value>
+    </Setting>
+    <Setting Name="CommServer_Host_AlternativeConfiguration" Type="System.String" Scope="User">
+      <Value Profile="(Default)">localhost</Value>
+    </Setting>
+    <Setting Name="CommServer_ListenPort_AlternativeConfiguration" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5758</Value>
+    </Setting>
+    <Setting Name="UseAlternativeConfiguration" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="DisplayConfigurationQuestionAtStartup" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="CommServer_Connection_Template" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">tcp://{0}:{1}/CommServerConsole</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

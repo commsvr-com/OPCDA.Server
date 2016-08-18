@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Font Name="Tahoma" Size="8.25" />
+  <Class Name="SchemaGenerator.SimpleBlock" Collapsed="true">
+    <Position X="1.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Block.cs</FileName>
+      <HashCode>AAAAAAAAAgAAAAQAQAIAAAAAAAABAAABAABgAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemaGenerator.Block" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Block.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemaGenerator.Icon" Collapsed="true">
+    <Position X="2.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Block.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAIAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemaGenerator.ComunicationNet" Collapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>ConfigDataSet.cs</FileName>
+      <HashCode>EAAAAkAIbwAAAAvkHAAAYAhCBCgCZPoAAgAJAANQFRE=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemaGenerator.Configuration" Collapsed="true">
+    <Position X="4" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Configuration.cs</FileName>
+      <HashCode>AgIIAAAAAAAQAAAAAAAAAAGGAAAABAAAAAAAQQAABAg=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemaGenerator.Data" Collapsed="true">
+    <Position X="2.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Data.cs</FileName>
+      <HashCode>AAgAAAAAAAAAAAAgAAAIAACAAAAAEAAAAABAEAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemaGenerator.GraphGUIMainForm" Collapsed="true">
+    <Position X="0.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>GraphGUIMainForm.cs</FileName>
+      <HashCode>BQGIKgIICCx4Y3gIGcCCQIkCwzlAQIOJVxIEQCooQgo=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemaGenerator.GraphGUIAbout" Collapsed="true">
+    <Position X="2.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>GraphGUIAbout.cs</FileName>
+      <HashCode>AAAAAAAAACAAABAAAACAAAACAAAIAAAAAEAAAABAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemaGenerator.GraphGUISettings" Collapsed="true">
+    <Position X="4" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>GraphGUISettings.cs</FileName>
+      <HashCode>ACAAAAAAACAAABAAAACAAABCAAAYAAAAEGAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemaGenerator.SimpleLine" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Line.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAwAAAACAAUAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemaGenerator.Line" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Line.cs</FileName>
+      <HashCode>AAAAAAAICABEAgAAAAAAAIEAAAABAAAAAEBAAAAAAgA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemaGenerator.Map" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Map.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAECAAAAACAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemaGenerator.MouseUse" Collapsed="true">
+    <Position X="0.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>MouseUse.cs</FileName>
+      <HashCode>AAQAAAAAAAAAAAEAAAABAgAAABAAAAAAIgAAAAACAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemaGenerator.Program" Collapsed="true">
+    <Position X="8.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Program.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABgAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemaGenerator.SchemaDataSet" Collapsed="true">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABBAAFwgEIIJgJAAAQAAAgAgCQBgUgBBICAEQBBA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemaGenerator.Utils" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Utils.cs</FileName>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemaGenerator.Properties.Resources" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAQIAAAAAABEAAgAQEAAAAAAAAAAAAIAII=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SchemaGenerator.Properties.Settings" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Settings.cs</FileName>
+      <HashCode>AAAAAAAAAAABAAAEAAAAIAAgAAABAAAAIAAAAAAACAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="SchemaGenerator.blockType" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Block.cs</FileName>
+      <HashCode>AAAAIAAAAAAQIQAAAAAAAAAAAAAAQAAAAAAAAAAAAAI=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SchemaGenerator.itemType" Collapsed="true">
+    <Position X="2.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>GraphGUIMainForm_engine.cs</FileName>
+      <HashCode>AQEAAAAgAAAQAQAAAAAAAAAAAAAAQAAAEAEAAAAAAAI=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SchemaGenerator.tip" Collapsed="true">
+    <Position X="4" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Line.cs</FileName>
+      <HashCode>AQAAAAQAAAAAAAAAAAAMAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SchemaGenerator.lineType" Collapsed="true">
+    <Position X="0.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Line.cs</FileName>
+      <HashCode>IAAAAAAAAAAAAAIAAAAAAAAAAAAAAAIAAAAAAAAAIAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="SchemaGenerator.linePart" Collapsed="true">
+    <Position X="2.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <FileName>Line.cs</FileName>
+      <HashCode>AAAAAAIAAAAAAAAAAAABAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Enum>
+</ClassDiagram>

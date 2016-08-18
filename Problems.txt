@@ -1,0 +1,18 @@
+NetworkConfig:
+	HMI:
+		Tool box powinno mieæ ikony podobnie do komend w menu 
+		Mie ma funkcji colapse all
+		Menu Edit - brak funkcjii Add
+		Mwnu kontekstowe - shallow copy.
+		Menu kontekstowe - expand, collapse, node
+	Ikony dla:
+	   Form: AddObject, \PR24-Biblioteka\NetworkConfig\HMI\AddInterfaceAndStation.cs
+	   Menu: Add
+	Undo/Redo
+		Zawieszanie logowania zamian/ wlaczanie i wylaczanie tranzakcji 
+		Pozmieniac w momencie tworzenia nowych elementow np. zawieszanie logowania podczas tworzenia elementow.
+		Sprawdzic czy jest potrzebne deleteRow przy tworzeniu nowych elementow momencie naciskania Cancel
+		poprawic by nazwa pliku z parametrami dla network config odczytywana byla z pliku konfiguracyjnego (poprawka w klasie HMI/DataSetHElper.cs)
+
+
+ 
