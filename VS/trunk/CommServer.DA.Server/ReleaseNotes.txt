@@ -1,0 +1,525 @@
+#####################################################################
+# CommServer release notes
+#
+# $LastChangedDate$
+# $Rev$
+# $LastChangedBy$
+# $URL$
+# $Id$ 
+#
+#####################################################################
+
+#####################################################################
+# CommServer rel_4_00_22 Bravo Oscar
+# 2011.05.18
+#####################################################################
+
+New version of CommServer  4.00.22  software is available now.
+
+This release includes:
+    * 4.00.02-CMCORE Bravo Kilo
+    * 2.0.108-NETAPI - Alpha Echo 
+    * 3.70.08-DPP - Bravo Mike
+    * 4.00.02-CLIB Bravo Lima
+    * 1.00.04-CRSC - Bravo Golf
+    * 3.10.02-OPCV - Bravo November
+    
+New CommServer 4.00.22 is available.
+This is only bugfix release. The main changes are listed below:
+- Resolved issue with license installation ("wrong hardware key");
+- Resolved issue with displaying information about license failure.
+
+
+CommServer wersja 4.00.22 jest ju¿ dostêpna.
+Ten release zawiera tylko drobne poprawki. Do najwa¿niejszych zmian i nowoœci zaliczyæ mo¿na:
+- Rozwi¹zano problem z instalacj¹ licencji (i informacj¹ o z³ym kluczu sprzêtowym);
+- Rozwi¹zano problem z wyœwietlaniem informacji o problemie z licencj¹.
+
+
+#####################################################################
+# CommServer rel_4_00_20 
+# 2011.03.31
+#####################################################################
+
+New version of CommServer  4.00.20  software is available now.
+
+This release includes:
+    * 4.00.00-CMCORE Alpha Victor
+    * 2.0.108 - NETAPI - Alpha Echo 
+    * 3.70.06-DPP - Alpha Yankee
+    * 4.00.00-CLIB Alpha Whiskey
+    * 1.00.00-CRSC Alpha X-Ray    
+    
+New CommServer 4.00.20 is available.
+The main changes are listed below:
+- CommServer report contains more information in a better, user-friendly format.
+- Communication using UDP and TCP is improved.
+- Error in Modbus protocol while channel is suddenly disconnected is resolved.
+- Network Configuration tool user interface is improved (e.g. new navigation tools).
+- Some issues related to "Clean configuration", "Save As" and current configuration file management in Network Configuration tool are fixed.
+- Improved licensing management.
+- Improved support for Windows Vista, 7 and 2008.
+- New location (based on ALLUSERSPROFILE) of configuration and log files (see product manual for details).
+- New version of OPC Viewer 3.10.00 is included.
+- Small bugfixes and improvements. 
+
+CommServer wersja 4.00.20 zawiera nastêpuj¹ce zmiany:
+- Raport z pracy oprogramowania CommServer dostarcza wiêcej informacji w bardziej czytelnej dla u¿ytkownika formie.
+- Usprawniona komunikacja z u¿yciem TCP oraz UDP.
+- Wprowadzono poprawkê do protoko³u Modbus naprawiaj¹c¹ b³¹d wystêpuj¹cy przy nag³ym roz³¹czeniu kana³u.
+- Ulepszenia interfejsu u¿ytkownika w programie Network Configuration (m.in. dodano nowe narzêdzia u³atwiaj¹ce nawigacjê).
+- W programie Network Configuration wprowadzono poprawki zwi¹zane z obs³ug¹ bie¿¹cego pliku konfiguracyjnego i wykonywaniem operacji "Clean configuration" i "Save As".
+- Ulepszono sposób zarz¹dzania licencjami w oprogramowaniu CommServer.
+- Poprawiono wsparcie dla systemów operacyjnych jak Windows Vista, 7 i 2008.
+- Pliki konfiguracyjne i logów umieszczano w nowej lokalizacji (bazuj¹cej na ALLUSERSPROFILE) (szczegó³y opisano w dokumentacji do produktu).
+- Do³¹czono now¹ wersjê oprogramowania OPC Viewer 3.10.00
+- Drobne poprawki i ulepszenia.
+
+Issues in this release:
+COM-2633	Enter unlock code window don't work when Alt+K is pressed.
+COM-2234	COM: Release 4.00.20
+COM-2552	Problem with compiling of the code
+COM-2554	COM: after instalation: wrong license is instaled
+COM-2365	Include changes referenced with Licensing
+COM-2589	COM: CommServer restores prevoius license during launch.
+COM-2573	Save icons in NetworkConfig are not synchronized with events
+COM-312	    NetworkConfig active file after clear
+COM-2342	Include changes referenced with OPC Viewer
+COM-106	    Reinstalation fails because the license is already installed
+COM-2506	Segments first connect should be distributed in time
+COM-2617	Add maintenance warning to the CommServer log
+COM-378	    Console: Aoutoclose window: "are you sure to close the application?"
+COM-2567	Add namespace in the AssemblyVersionInfo
+COM-2439	Implement software unlocking codes
+COM-2445	Implement listener for License warning
+COM-2472	Split AboutForm and LicenseForm
+COM-2568	Add namespace in the AssemblyVersionInfo
+COM-2424	Improve location of the logs for CommServer package software
+COM-2607	COM: check for UAC compatibility
+COM-2614	Open/Save file dialogs should open in ProgramDataLocation
+COM-101	    Default file name while saving as
+COM-2355	Modify setup to install content files as CommonApplicationData
+COM-1912	Add maintanance period support
+COM-2622	Save as function don't change current configuration file to new created.
+COM-2626	COM: NetworkConfig: Improved navigation (search and back/forward)
+COM-2245	COM: Excel DataProvider - allows only very shor excel calls
+COM-2235	COM: Include changes of referenced components e.g.: CLIB: Release 3.70.10  
+
+
+#####################################################################
+# CommServer rel_4_00_13 
+# 2011.03.21
+#####################################################################
+
+This is internal release.
+Issues in this release (only in CMCORE):
+UA-2570	CMCORE: NET_to_serial: Many messages: "We have got unexpected empty frame" in log.
+UA-2546	CMCORE: CommonBus: Net_to_serial: application hangs in DisReq
+
+  This release includes:
+    * 3.70.11- CMCORE - Alpha Tango
+    * 2.0.108 - NETAPI - Alpha Echo 
+    * 3.70.05-DPP - Alpha Romeo
+    * 3.70.07-CLIB - Alpha Quebec      
+
+CommServer wersja 4.00.13 zawiera nastepujace zmiany:
+* Poprawiono zawieszanie aplikacji podczas DisReq
+* Usunieto wielokrotne wystepowanie informacji "We have got unexpected empty frame" 
+
+
+#####################################################################
+# CommServer rel_4_00_11 
+# 2011.03.07
+#####################################################################
+
+This is special release (just for the client: PEC DG).
+Issues in this release:
+COM-2496	COM: Rel 4.00.11-COM
+COM-2510	SegmentState: many PendulumHandler threads can lock
+COM-2383	COM: Strange message: Cannot start a new instance of CAS.OpcSvr.Da.NETServer.Server - would be better to inform about one instance allowed
+COM-2522	COM: There are some mistakes in the report (wrong table headers and some information are updated incorectelly)
+COM-2531	COM: Exception in Metronom (Statistics may cause system to reboot)
+COM-2519	Segment, Channel: Wrong trace messages identification
+COM-2543	COM: Prepare configuration wiht great amout of tags for stress test
+COM-2513	COM: Create project that allows to manual start of commserver (for debugging purposes)
+COM-2511	Prepeare DO Null to utilize the network communication.
+COM-2518	Test with new WaitTimeList implementation.
+COM-2512	Test communication using modified DP NULL
+
+  This release includes:
+    * 3.70.09- CMCORE - Alpha Papa
+    * 2.0.108 - NETAPI - Alpha Echo 
+    * 3.70.05-DPP - Alpha Romeo
+    * 3.70.07-CLIB - Alpha Quebec      
+
+CommServer wersja 4.00.11 zawiera nastepujace zmiany:
+* Zoptymalizowano wykorzystanie zasobów systemowych (watki i pamiec).
+* Poprawiono raporty dot. segmentu.
+* Stworzenie DataProvidera pozwalajacego na sprawdzenie komunikcaji przez siecprzy uzyciu NULL protocol
+* Drobne poprawki GUI m.in. w Commserver Monitor
+* Usprawnienie mechanizmu WaitTimeList
+
+
+#####################################################################
+# CommServer rel_4_00_09 
+# 2011.02.10
+#####################################################################
+
+This is special release (just for the client: PEC DG) based on previous code, but rebuilded against new version of libraries.
+Issues in this release:
+COM-2451	IdleKeepConn must be measured starting from the end of r/w operation
+COM-2400	Problem with closing of the sockets
+COM-2422	COM: Modbus: Exception thrown by a DataProvider has beet catch: Communication layer unexpectedly disconnected.
+COM-2432	COM: Rel 4.00.09-COM Alpha Oscar
+
+  This release includes:
+    * CMCORE: release 3.70.07-CMCORE Alpha Mike
+    * 2.0.108 - NETAPI -Alpha Echo
+    * 3.70.03-DPP Alpha November ( rebuilded against new 3.70.07-CMCORE Alpha Mike)
+    * 3.70.06-CLIB - Alpha Foxtrot (not new release but rebuilded against new 3.70.07-CMCORE)               
+
+CommServer wersja 4.00.09 zawiera nastepujace zmiany:
+* Usprawnienie obliczania czasu IdleKeepConn 
+* Usprawniono zamykanie gniazd
+* Usprawniono przechwytywanie bledu DataProvider Modbus 
+
+
+#####################################################################
+# CommServer rel_4_00_07 
+# 2011.01.10
+#####################################################################
+
+This is special release (just for the client: PEC DG) based on previous code, but rebuilded against new version of libraries.
+COM-2376 	GuardedDataProvider.ReadData refers to null if ReadData returns with exception
+COM-2380 	COM: Sometimes report is not generated
+COM-2381 	COM: Monitor works wery slow - communication should be optimized
+
+
+This is special (bugfix)  release, that fixes problem in UDP Communication:
+  	UA-2310 	CMCORE: Problems with UDP communications
+
+  	This release includes:
+
+    * CMCORE: release 3.70.05
+    * 2.0.108 - NETAPI -Alpha Echo
+    * 3.70.02-DPP - November (not new release but rebuilded against new 3.70.05-CMCORE)
+    * 3.70.06-CLIB - Alpha Foxtrot (not new release but rebuilded against new 3.70.05-CMCORE)
+
+CommServer wersja 4.00.07 zawiera nastêpuj¹ce zmiany:
+* Wprowadzono now¹ obs³ugê b³êdów w komunikacji sieciowej (TCP/UDP)
+* Usprawniono sposób wymiany danych pomiêdzy CommServer'em, a CommServer Monitorem, by komunikacja by³a mniej obci¹¿aj¹ca dla systemu operacyjnego i komputera/
+* Usprawniono obs³ugê b³êdów podczas generowania raportu. 
+
+
+
+#####################################################################
+# CommServer rel_4_00_05 
+# 2011.01.10
+#####################################################################
+
+This is special release (just for the client: PEC DG) based on previous code, but rebuilded against new version of libraries.
+
+This is special (bugfix)  release, that fixes problem in UDP Communication:
+  	UA-2310 	CMCORE: Problems with UDP communications
+
+  	This release includes:
+
+    * CMCORE: release 3.70.03-CMCORE Alpha Hotel
+    * 2.0.108 - NETAPI -Alpha Echo
+    * 3.70.02-DPP - November (not new release but rebuilded against new 3.70.03-CMCORE)
+    * 3.70.06-CLIB - Alpha Foxtrot (not new release but rebuilded against new 3.70.03-CMCORE)
+        
+
+
+#####################################################################
+# CommServer rel_4_00_04 (codename: x64)
+# 2010.10.19
+#####################################################################
+New version of CommServer  4.00.04  software is available now.
+The main changes are listed below:
+* Problem with x64 operating systems is fixed (CommServer works as 32-bit application on x64 OS)
+
+Nowa wersja oprogramowania CommServer 4.00.04 jest ju¿ dostêpna.
+Najwa¿niejsze zmiany s¹ wyszczególnione poni¿ej:
+* Wyeliminowano problem z dzia³aniem oprogramowania w 64-bitowych systemach Windows (CommServer zainstalowany w systemie 64-biotywm dzia³a jako aplikacja 32-bitowa)
+
+
+
+#####################################################################
+# CommServer rel_4_00_02 (codename: IOP)
+# 2009.10.28
+#####################################################################
+New version of CommServer  4.00.02  software is available now.
+The main changes are listed below:
+* Tested for Compliance and Interoperability at OPC Interoperability Workshop (2009) in Nuremberg, Germany
+* Modbus DataProvider: added support for 32-bit integer and unsigned integer and floating-point numbers
+* M-Bus DataProvider: added support of the connection over Ethernet
+* Added OPC Core Components as prerequisites for installation
+* OPC Viewer rel. 3.00.02 is a component of CommServer 4.00.02
+* Small improvements and bug fixes
+
+Do najwa¿niejszych zmian zaliczyæ mo¿na:
+* Zosta³a przetestowana pod k¹tem kompatybilnoœci i wspó³dzia³ania z innymi produktami podczas OPC Interoperability Workshop (2009) w Norymberdze, Niemcy
+* DataProvidera dla Modbus: dodano wsparcie dla 32-bitowych liczb ca³kowitych (ze znakiem i bez) oraz zmiennoprzecinkowych
+* DataProvidera dla M-Bus: dodano mo¿liwoœæ komunikacji z wykorzystaniem Ethernetu
+* Dodano OPC Core Components jako wymagane przed rozpoczêciem instalacji
+* OPC Viewer w wersji. 3.00.02 jest komponentem CommServer'a w wersji 4.00.02
+* Drobne poprawki i ulepszenia
+
+COM-1883  	Fix problems which occurs during building process  
+COM-1933 	Project CR.Opc_Da_NETServer has wrong references to the OpcRcv assemblies 
+COM-1837 	Small fix to one name in the DP demo simulator 
+COM-971 	Problem with license file 
+COM-1216 	CommServer: Channel Licensing: no information when number of channels is greater than constrain 
+COM-1038 	Cleanup versions of assembly (also move NET Server to CommServer project directory) 
+COM-1836 	If there is an error during read from Cache to quality should be BAD 
+COM-168 	Boolean should not be analog 
+COM-943 	Vista - application do not work. 
+COM-177 	Trace in the NetApi 
+COM-1835 	Properties (e.g eu low and high) have to configured from configuration file. 
+COM-1894 	CommServer Monitor Splash Screen - change the SplashScreen to the new one 
+COM-1030 	After expiration of time constrained in the license, tags are stiil "good" 
+COM-41 	Cleanup the NullBus- a lot of commented old class members (also remove randomize items). 
+COM-40 	Cleanup the old helper file - a lot of commens 
+COM-480 	Graphical GUI for Network Config - import - first step - no changes to current GUI 
+COM-96 	New data provider configuration 
+COM-1879 	OPC Core Components should be added to prerequisites 
+COM-1893 	Setup: licence accept should be added at the begginning, splash screen in setup should be fixed (wrong resolution) 
+COM-1896 	Update banner in setup project 
+COM-369 	Add license accept at installation 
+COM-60 	Cleanup icons usage 
+COM-1874 	Move Data Providers to PR31-DataProviders and create new DataProviderPackage 
+COM-1115 	Integrate UA SampleServer with CommServer 
+
+
+#####################################################################
+# CommServer rel_4_00_00 (codename: Internal IOP09)
+#####################################################################
+COM-962  	Synchronize with .NET API 2.0 buils 103  
+COM-1669 	DP.Excel.DDE - Guid and constrain in lic should be added 
+COM-1695 	Problem with license 
+COM-1462 	MBUS over Ethernet 
+COM-175 	Test whether read operation (DS_DEVICE) reads from DeviceSimulator or from the Real Device 
+COM-1673 	DP.Modbus: support for 32 bit int and uint and float 
+COM-1668 	import changes propared by other VS projects (new OPC Viewer, new about window) 
+COM-1729 	Release: IOP09 
+COM-1667 	Prepare release 3.62.00 small improvments
+
+#####################################################################
+CommServer rel_3_61_01
+
+EN:
+New version of CommServer  3.61.01  software is available now.
+This is bug-fix and improvement release (it has no new features). The main changes  are listed below:
+* Improvement and bug fixes to importing tools in NetworkConfig
+* Some stability issues are fixed in NetworkConfig (problem with changing item DataType when DataProvider is not set, problem with adding new tags for some DataProviders and other minor issues are fixed)
+* CommServer using the default demo configuration and Demo Simulator was complaining that too many writes has failed (FIXED)
+* MBUS DataProvider is fixed now (previously it hangs sometimes)
+* SBUS DataProvider informs now that it support real numbers
+* SBUS DataProvider is fixed now (previously it hangs sometimes)
+* CommServer has improved settings that allows to be used with not fully compliant OPC clients (like Wizcon)
+* CommServer logging functionality is improved (some new events can be tracked).
+* Fixed issue with very slow work when many writes occurs.
+
+Download the latest version of CommServer 3.61.01 on www.commsvr.com vortal.
+
+PL:
+* Nowa wersja oprogramowania CommServer 3.61.01 jest ju¿ dostêpna. Ten release zawiera tylko poprawki i usprawnienia (¿adne nowe funkcje nie zosta³y dodane). Najwa¿niejsze zmiany s¹ wyszczególnione poni¿ej:
+* Poprawki i usprawnienia do narz¹dzi importu w aplikacji NetworkConfig
+* Pewne problemy ze stabilnoœci¹ aplikacji NetworkConfig zosta³y usuniête (problem ze zmian¹ typu (DataType) przy nie ustawionym DataProvider'rze, problem z dodawaniem taga dla pewnych DataProvider'ów oraz inne drobne niedogodnoœci zosta³y naprawione)
+* Fakt du¿ej iloœci b³êdów zapisu dla domyœlnej konfiguracji demo i DataProvider'a: Demo Simulator, zosta³ naprawiony
+* MBUS DataProvider zosta³ poprawiony (wczeœniej wystêpowa³o zawieszanie siê tego DataProvider'a)
+* SBUS DataProvider ju¿ informuje, ¿e obs³uguje równie¿ liczy rzeczywiste.
+* SBUS DataProvider zosta³ poprawiony (wczeœniej wystêpowa³o zawieszanie siê tego DataProvider'a)
+* Mo¿liwoœci ustawieñ CommServer'a zosta³y zwiêkszone, tak by mo¿na by³o zapewniæ lepsz¹ obs³ugê niekompatybilnych klientów OPC (np. Wizcon) 
+* Usprawniono mo¿liwoœci logowania zdarzeñ przez CommServer (nowe zdarzenia mog¹ byæ œledzone)
+* Poprawiono problem ze znacznym spowolnieniem dzia³ania CommServer'a dla du¿ej iloœci zapisów
+
+Pobierz najnowsz¹ wersjê CommServer 3.61.01 z wortalu www.commsvr.com. 
+
+ITR:
+changes based on (itr)
+* BaseStation Bug COM-1287 OPC items are not updating when many writes occurs mzbrzezny Resolved 
+* BaseStation Bug COM-1299 Wizcon issue: Wizcon sometimes is not receiving update at startup - special functionality that sends new update should be added to resolve it.... mzbrzezny Resolved
+* DP.MBUS Bug COM-1308 Problem with MBus DataProvider mzbrzezny Resolved
+* DP.SBUS Bug COM-1301 SBUS: assert 106 appears sometimes mzbrzezny Resolved
+* DP.SBUS Bug COM-1183 SBUS does not expose that is support float mzbrzezny Resolved
+* DP.Simulator Bug COM-1224 DemoSimulator - too many write fails in democonfiguration mzbrzezny Resolved
+* NetworkConfig Bug COM-1184 Network Config: crashes sometimes, when DP is not set and someone tries to change item DataType mzbrzezny Resolved
+* NetworkConfig Bug COM-1186 Importing Tools fixes and improvement mzbrzezny Resolved 
+
+
+
+CommServer rel_3_61_00 x86compilation
+target is precisely defined to x86 - this can be run on x64 platform in 32 bit compatibility mode
+this release required OPC Core Components 3.00 Redistributable (x64)  to bin installed in 64 bit system
+it was tested on Windows 2008
+
+CommServer rel_3_61_00:
+News:
+- DataProvider for Excel
+- Demo DataProvider includes demo simulator: Quadruple-Tank Process
+- Improved configurator (Network Config) (minor bug fixes, stability is improved)
+- Protocol statistics are available from OPC.
+- Improved XbusMeasurement (new Debug window)
+
+Nowo?ci:
+- DataProvider dla Excela
+- Demo DataProvider zawiera demo symuluj?ce proces czterech zbiorników
+- Ulepszony konfigurator (poprawione drobne b??dy i stabilno?? dzia?ania)
+- Statystyki dotycz?ce protoko?ów s? dost?pne poprzez OPC
+- Ulepszony XBusMeasurement (nowe okno Debug).
+
+
+CommServer rel_3_60_01
+changes:
+ 	COM-1034  	TotalConnectionTime does not change - fixed
+ 	COM-1065  	Station is not in high priority when CommServer starts and alarm is ON - fixed
+ 	COM-1068  	NetworkConfig: Exception while configuring redundancy, while clearing the configuration - fixed
+
+CommServer rel_3_60_00
+News:
+§	Improved configuration file
+§	Improved configurator (Network Config) (better support for tag data types, easier configuration of "state high" and "state low" triggers)
+§	Improved server monitor application (runtime is displayed in HH:MM:SS format, new information about the address of connected CommServer)
+§	New interface to communication with DataProviders (support for default information like: data type,  access rights, tag name, etc..)
+§	SBUS DataProvider - better support for types conversion.
+§	Minor bug fixes.
+
+
+Nowo?ci:
+§	Ulepszony plik konfiguracyjny
+§	Ulepszony konfigurator (Network Config) - daje lepsze wsparcie dla typów danych poszczególnych tagów, ³atwiejsze ustawianie triggerów: "state high" i "state low".
+§	Ulepszona aplikacja serwer monitor, teraz czas jest wy?wietlany w formacie: GG:MM:SS, dodatkowo dost?pna jest informacja na temat adresu CommServer'a do którego jeste?my pod??czeni
+§	Nowy interfejs komunikacyjny do DataProvider'ów. Teraz DataProvider'y mog¹ zwraca? informacje na temat domy?lnych typów danych, trybu dostêpu, nazwy tagów i inne...
+§	SBUS DataProvider - nowe i ulepszone konwersje
+§	Poprawki drobnych b³êdów
+
+CommServer rel_3_50_00 (for internal usage only - due to known issues)
+Changes:
+New Feature	:	New directory for DataProvider, new DP.DemoSimulator
+New Feature	:	Create ModBUS (TCP/UDP) DataProvider
+New Feature	:	Create MBUS DataProvider
+Improvement	:	There is no information about version of CommServer that is running in the file log
+Improvement	:	Remove Davice symulator from project
+Improvement	:	XBUSmeasurement: improvements to easier MODBUS tests
+Improvement	:	XBus measurement - Support for other datatypes
+Improvement	:	Update to CodeProtect Rel 2.4.1.
+Improvement	:	New Demo Configuration
+Improvement	:	Test trial and Profesional License
+Improvement	:	Modify solution after new loclization of CodeProtect
+Improvement	:	Modbus: Add Support for other types (based on Control)
+Improvement	:	Cleanup solution
+Improvement	:	MBUS: improve of MBUS messages analisis to allow reading of: Actaris CF55 and Siemens 2WR
+Improvement	:	Status message if server is ruining in demo
+Improvement	:	Improvement of assertion: Assertion with message
+Improvement	:	Remove OPCViewer project - the new name: FIX Setup with new OPC Viewer
+Improvement	:	ComplexType support in the OPC Viewer
+Improvement	:	Messages from EventLog should appears in log file also
+Improvement	:	New StopWatch and WaitTimeList implementation
+Bug	:	warning: &amp;amp;quot;WatchdogProperty: I had to reboot the system at: GuardedDataProvider&amp;amp;quot;
+Bug	:	Upgrade license in the instalation
+Bug	:	Unhandled exception while reading item_dsc configuration
+Bug	:	Not clear functionality of ConvertToCanonicalType(object) - test failed for double
+Bug	:	Prepare compilable code due to changes to namespaces in the referenced libraries
+Bug	:	Umessage: WriteByte (and other Write operations) should return a result that informs if this opperation succeded
+Bug	:	CRC errors while transferring data TCP (DIGI) i SBUS
+Bug	:	SBUS: problems with editing time settings
+Bug	:	Umessage: bug in GetManagedBuffer
+Bug	:	Problem in SBUS_NEt when exception occurs
+Bug	:	Problem with serialization and deserialization of big numbers during loading or saving dataprovider setting (microsecond not ticks should be saved)
+Bug	:	Flush function hangs up
+Bug	:	AboutBox: aboutbox with "InstallLicense" button must be reorganized
+Bug	:	Exception when opening About Box
+Bug	:	ComServer Console Exception System.Diagnostics.Stopwatch' is not marked as serializable."
+Bug	:	When new port(interface) is created the InterfaceNum should be 0 or 1, but sometimes it is 2
+Bug	:	NetApi Error when browse the network
+Bug	:	Information about OPC Foundation components in About box
+Bug	:	OPC Viewer - hangs sometimes during browsing the Server
+Bug	:	OPC Viewer - after set login ends with exception
+Bug	:	IOPCServer:GetStatus display &quot;object reference is not set&quot; when server returns null pointer.
+Bug	:	OnDataChange is received to early.
+Bug	:	When client receive the empty list of tag in the AddItem answer those items appear in the list and we are able to read them.
+Bug	:	Properties for array types
+Bug	:	Add Items displays &quot;Object Null Reference&quot;
+Bug	:	When server returns UNSUPPORTED UPDATE RATE at least message should appear
+Bug	:	Object name is not passed to trace message inside GuardedDataProvider
+Bug	:	Output directory should be the same for all project
+Bug	:	Runtime limitation i Demo is not working (CommServer is scanning after demo time expiration)
+Bug	:	Modbus: problems with reading 5,9,13 registers
+Bug	:	Remove CAS as prefix from folders name
+Bug	:	ModBus: CheckChar function waits too long
+Bug	:	XBUSmeasurement: license is missing
+Bug	:	assertion during startup
+Bug	:	strange message in the event log
+Bug	:	Reboot sometimes is not working
+Bug	:	OPCViewer: code must be fixed, after changes to namespaces in the CommServer
+Bug	:	Assertion in Null DataProvider
+
+Known issues:
+- CTT is not working due to changes to cannonical datatype of items in the device (there is any type now)
+- after turning off DIGI CommServer ends in error
+w skrócie:
+News:
+§	Improved debug information in log files
+§	Improved About and License window
+§	Improved NetworkConfig: interface number is set automatically, time settings for DataProviders are improved, configuration file is modified 
+§	Improved reboot in watchdog 
+§	New DataProviders: ModBus TCP/UDP, Mbus, ModBus Extension for Control, Simulator
+§	Improved XBus Measurement
+§	Many bug fixes and improvements to internal algorithms
+Nowoœci:
+§	Lepsze informacje diagnostyczne w logach aplikacji
+§	Ulepszone okno About i instalacji licencji
+§	Lepszy NetworkConfig: numer interfejsu jest nadawany automatycznie, lepsze ustawianie czasów dla DataProviderów, plik konfiguacyjny zosta³ zmodyfikowny 
+§	Lepszy mechanism restartu w Watchdog'u 
+§	Nowe DataProvider'y: ModBus TCP/UDP, Mbus, Rozszerzenia ModBus dla Control, Symulator
+§	Ulepszony XBus Measurement
+§	Wiele poprawek i ulepszeñ do wewnêtrznych algorytmów
+
+
+CommServer rel_3_4_9
+Changes:
+- changes to inside architecture
+- dll's for commserver are now availiable for DP as references
+- DP Diagnostic is added to the installer
+
+
+CommServer rel_3_4_8
+Changes:
+- Some new icons
+- new sort tag module for Network Config 
+- this release is prepared for WNT 2
+
+CommServer rel_3_4_7
+Changes:
+- Fixed problems with licensing
+- Fixed problem with Diskconnecting in the UDP communication layer
+
+CommServer rel_3_4_6
+Changes:
+-Network Config fixes
+
+CommServer rel_3_4_5
+Changes:
+- OPCViewer - has turned off button connect to server
+- default config is changed
+- tools menu in network config is turned off
+- some fixes in the network config
+
+
+CommServer rel_3_4_4
+
+Changes:
+CommServer: new name for OPC Client - > OPC Viewer ; new release number for CommServer 3_4_4_*, changed the name of window in networkconfig
+CommServer: NetworkConfig - fixed problems: refresh.
+CommServer: NetworkConfig - fixed problems: deleting objects in Configuration cause deleting tree nodes, problem with editing type of block while crating a new one; Open problems: refresh, creation stations on the top level, adding new elements do not refresh the whole tree. 
+CommServer: Configuration in new structure.
+CommServer: OPC Sample Client has now CAS About dialog
+
+CommServer rel_3_4_3
+
+Changes:
+- opc sample client is added to installer
+- simulator plugins are fixed 
+- changes to the configuration files (new schema!!)

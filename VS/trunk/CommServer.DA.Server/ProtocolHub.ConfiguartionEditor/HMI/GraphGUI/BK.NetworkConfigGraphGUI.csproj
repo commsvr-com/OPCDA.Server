@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D09CB0E3-C54C-46D4-8DB1-F0C3302A1054}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SchemaGenerator</RootNamespace>
+    <AssemblyName>NetworkConfigGraphGUI</AssemblyName>
+    <ManifestCertificateThumbprint>C1F82431F7E72AE2617752DD064264B894534122</ManifestCertificateThumbprint>
+    <ManifestKeyFile>SchemaGenerator_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <StartupObject>SchemaGenerator.Program</StartupObject>
+    <SignAssembly>false</SignAssembly>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <ProductName>SchemaGenerator 2007</ProductName>
+    <PublisherName>Paweł Grącki</PublisherName>
+    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\..\BaseStation\CommServerAssemblyVersionInfo.cs">
+      <Link>Properties\CommServerAssemblyVersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="Block.cs" />
+    <Compile Include="ConfigDataSet.cs">
+      <DependentUpon>ConfigDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigDataSet.Designer.cs">
+      <DependentUpon>ConfigDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Configuration.cs" />
+    <Compile Include="Data.cs" />
+    <Compile Include="GraphGUIMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphGUIMainForm.Designer.cs">
+      <DependentUpon>GraphGUIMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphGUIMainForm_engine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphGUIAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphGUIAbout.Designer.cs">
+      <DependentUpon>GraphGUIAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GraphGUISettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphGUISettings.Designer.cs">
+      <DependentUpon>GraphGUISettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Line.cs" />
+    <Compile Include="Map.cs" />
+    <Compile Include="MouseUse.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GraphGUIMainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GraphGUIMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GraphGUIAbout.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GraphGUIAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GraphGUISettings.resx">
+      <DependentUpon>GraphGUISettings.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SchemaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SchemaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Utils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\admin.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Resources\server.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="MSHTML">
+      <Guid>{3050F1C5-98B5-11CF-BB82-00AA00BDCE0B}</Guid>
+      <VersionMajor>4</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stationTransparent.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ChannelInfoTable.xsl">
+      <CustomToolNamespace>http://tempuri.org/ComunicationNet.xsd</CustomToolNamespace>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProtocolInfoTable.xsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SegmentInfoTable.xsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\StationInfoTable.xsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FileInfoTable.htm" />
+    <Content Include="SchemaGenerator2007.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ConfigDataSet.xsc">
+      <DependentUpon>ConfigDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ConfigDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConfigDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ConfigDataSet.xss">
+      <DependentUpon>ConfigDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ConfigDataSet.xsx">
+      <DependentUpon>ConfigDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\Blank.htm" />
+    <None Include="Resources\InterfaceInfoTable.xsl" />
+    <None Include="Resources\logo_ftims.gif" />
+    <None Include="Resources\logo_pl.gif" />
+    <None Include="Resources\scada.bmp" />
+    <None Include="SchemaDataSet.xsc">
+      <DependentUpon>SchemaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SchemaDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SchemaDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SchemaDataSet.xss">
+      <DependentUpon>SchemaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SchemaDataSet.xsx">
+      <DependentUpon>SchemaDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
