@@ -303,11 +303,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\PR21-CommServer\CommServerConsoleInterface\CR.CommServerConsoleInterface.csproj">
+    <ProjectReference Include="..\CommServerConsoleInterface\CR.CommServerConsoleInterface.csproj">
       <Project>{CE7BA276-5ACF-44FE-B24A-F91F6A0B0436}</Project>
       <Name>CR.CommServerConsoleInterface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\PR21-CommServer\CommServer\CR.CommServer.csproj">
+    <ProjectReference Include="..\CommServer\CR.CommServer.csproj">
       <Project>{E1351D09-7241-44C3-A292-8D46E322A61D}</Project>
       <Name>CR.CommServer</Name>
     </ProjectReference>
