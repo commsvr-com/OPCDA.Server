@@ -1,7 +1,7 @@
 ﻿using System;
 using CAS.OpcSvr.Da.NETServer;
 
-namespace CommServerEngineManualStart
+namespace CAS.CommServer.ProtocolHub.CommunicationManualStart
 {
   class Program
   {

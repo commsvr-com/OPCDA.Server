@@ -8,8 +8,8 @@
     <ProjectGuid>{2BFCD8E7-8C88-4B0A-8FA3-2ABDC4F044C3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CR.UT.CommServer</RootNamespace>
-    <AssemblyName>UT.CommServer</AssemblyName>
+    <RootNamespace>CAS.CommServer.ProtocolHub.CommunicationUnitTests</RootNamespace>
+    <AssemblyName>CAS.CommServer.ProtocolHub.CommunicationUnitTests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -66,16 +66,20 @@
   <ItemGroup>
     <Compile Include="CommServerComponentTest.cs" />
     <Compile Include="OTALicenseTest.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyInfo.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CommServerConsoleInterface\CR.CommServerConsoleInterface.csproj">
+    <ProjectReference Include="..\CommServerConsoleInterface\ProtocolHub.MonitorInterface.csproj">
       <Project>{CE7BA276-5ACF-44FE-B24A-F91F6A0B0436}</Project>
-      <Name>CR.CommServerConsoleInterface</Name>
+      <Name>ProtocolHub.MonitorInterface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CommServer\CR.CommServer.csproj">
+    <ProjectReference Include="..\CommServer\ProtocolHub.Communication.csproj">
       <Project>{E1351D09-7241-44C3-A292-8D46E322A61D}</Project>
-      <Name>CR.CommServer</Name>
+      <Name>ProtocolHub.Communication</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -87,6 +91,16 @@
     <None Include="DefaultConfig.xml">
     </None>
     <None Include="item_dsc.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Properties\AssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -10,7 +10,7 @@
     <ApplicationIcon>My friends3.ico</ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>CAS.CommServerConsoleInterface</AssemblyName>
+    <AssemblyName>CAS.CommServer.ProtocolHub.MonitorInterface</AssemblyName>
     <AssemblyOriginatorKeyFile>cas.snk</AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
@@ -38,7 +38,7 @@
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DocumentationFile>bin\Debug\CAS.CommServerConsoleInterface.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\CAS.CommServer.ProtocolHub.MonitorInterface.xml</DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
@@ -61,7 +61,7 @@
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
     <DefineConstants>TRACE</DefineConstants>
-    <DocumentationFile>bin\Release\CAS.CommServerConsoleInterface.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\CAS.CommServer.ProtocolHub.MonitorInterface.xml</DocumentationFile>
     <DebugSymbols>false</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
@@ -108,9 +108,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\PR24-Biblioteka\BaseStation\CommServerAssemblyVersionInfo.cs">
-      <Link>CommServerAssemblyVersionInfo.cs</Link>
-    </Compile>
     <Compile Include="..\..\PR24-Biblioteka\BaseStation\Management\Statistics.cs">
       <Link>BaseStation\Management\Statistics.cs</Link>
     </Compile>
@@ -120,11 +117,13 @@
     <Compile Include="..\..\PR24-Biblioteka\BaseStation\Management\Statistics.SegmentStatistics.cs">
       <Link>BaseStation\Management\Statistics.SegmentStatistics.cs</Link>
     </Compile>
-    <Compile Include="AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="IInterface2SegmentLink.cs" />
     <Compile Include="ISegmentStatistics.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyInfo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -146,6 +145,15 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\AssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

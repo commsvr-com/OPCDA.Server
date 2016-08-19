@@ -1,34 +1,32 @@
-﻿using System.Reflection;
-using System.Runtime.CompilerServices;
+﻿//_______________________________________________________________
+//  Title   :  Assembly info for: CAS.CommServer.ProtocolHub.GraphGUI
+//  System  : Microsoft VisualStudio 2015 / C#
+//  $LastChangedDate$
+//  $Rev$
+//  $LastChangedBy$
+//  $URL$
+//  $Id$
+//
+//  Copyright (c) 2000-2016 CAS LODZ POLAND
+//  +48 (42) 686 25 47
+//  techsupp@cas.eu
+//  www.cas.eu
+//_______________________________________________________________
+
+using System.Reflection;
+using System.Resources;
 using System.Runtime.InteropServices;
-using CAS;
 
-// General Information about an assembly is controlled through the following 
-// set of attributes. Change these attribute values to modify the information
-// associated with an assembly.
-[assembly: AssemblyTitle("SchemaGenerator")]
-[assembly: AssemblyDescription( CommServerAssemblyVersionInfo.DescriptionAdd + "Network Config Graph GUI" )]
+[assembly: AssemblyTitle("CAS.CommServer.ProtocolHub.GraphGUI")]
+[assembly: AssemblyDescription("CommServer ProtocolHub Network Config Graph GUI")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SchemaGenerator")]
-[assembly: AssemblyCopyright("Copyright ©  2007")]
-[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCompany("CAS")]
+[assembly: AssemblyProduct("CAS CommServer Family")]
+[assembly: AssemblyCopyright("Copyright (c) 2000-2016 CAS LODZ POLAND")]
+[assembly: AssemblyTrademark("CommServer")]
 [assembly: AssemblyCulture("")]
-
-// Setting ComVisible to false makes the types in this assembly not visible 
-// to COM components.  If you need to access a type in this assembly from 
-// COM, set the ComVisible attribute to true on that type.
-[assembly: ComVisible(false)]
-
-// The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("18d193f3-7b85-4c46-8571-d607882cf969")]
+[assembly: ComVisible(false)]
+[assembly: AssemblyVersion("4.00.22.*")]
+[assembly: AssemblyFileVersion("4.00.22")]
 
-// Version information for an assembly consists of the following four values:
-//
-//      Major Version
-//      Minor Version 
-//      Build Number
-//      Revision
-//
-[assembly: AssemblyVersion( CommServerAssemblyVersionInfo.CurrentVersion )]
-[assembly: AssemblyFileVersionAttribute( CommServerAssemblyVersionInfo.CurrentFileVersion )]
