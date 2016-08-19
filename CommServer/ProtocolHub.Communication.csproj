@@ -99,8 +99,8 @@
       <HintPath>..\packages\CAS.CommServer.CommonBus.5.01.02-Alpha\lib\net451\CAS.CommServer.CommonBus.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.DA.ItemDescriber, Version=1.0.2.21514, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.DA.ItemDescriber.1.00.2-Alpha\lib\net451\CAS.CommServer.DA.ItemDescriber.exe</HintPath>
+    <Reference Include="CAS.CommServer.DA.ItemDescriber, Version=1.0.2.25596, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DA.ItemDescriber.1.00.2-Bravo\lib\net451\CAS.CommServer.DA.ItemDescriber.exe</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.CommServer.DA.Server.Configuration, Version=4.1.2.24782, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
