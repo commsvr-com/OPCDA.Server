@@ -1,7 +1,8 @@
-﻿namespace SchemaGenerator {
+﻿namespace SchemaGenerator
+{
 
 
-    partial class ComunicationNet
-    {
-    }
+  partial class ComunicationNet
+  {
+  }
 }

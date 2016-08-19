@@ -10,7 +10,7 @@
     <ApplicationIcon>CAS_ikona_02.ico</ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>CAS.OpcDaNETServer</AssemblyName>
+    <AssemblyName>CAS.CommServer.DA.Server.NETServer</AssemblyName>
     <AssemblyOriginatorKeyFile>cas.snk</AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
@@ -38,7 +38,7 @@
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
     <DefineConstants>DEBUG;TRACE;COMMSERVER</DefineConstants>
-    <DocumentationFile>bin\Debug\CAS.OpcDaNETServer.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\CAS.CommServer.DA.Server.NETServer.xml</DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
@@ -62,7 +62,7 @@
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
     <DefineConstants>TRACE;COMMSERVER</DefineConstants>
-    <DocumentationFile>bin\Release\CAS.OpcDaNETServer.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\CAS.CommServer.DA.Server.NETServer.xml</DocumentationFile>
     <DebugSymbols>false</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
@@ -123,12 +123,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\PR24-Biblioteka\BaseStation\CommServerAssemblyVersionInfo.cs">
-      <Link>CommServerAssemblyVersionInfo.cs</Link>
-    </Compile>
-    <Compile Include="AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="CAS.OpcSvr.Da.NETServer.BrowsePosition.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -153,6 +147,11 @@
     <Compile Include="Opc.Da.CacheItem.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyInfo.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="cas.snk" />
@@ -162,6 +161,10 @@
   <ItemGroup>
     <Content Include="CASOpcDaWrapper.exe.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Properties\AssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
     </Content>
     <None Include="CAS_ikona_02.ico" />
   </ItemGroup>
@@ -174,10 +177,14 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CommServer\CR.CommServer.csproj">
+    <ProjectReference Include="..\CommServer\ProtocolHub.Communication.csproj">
       <Project>{e1351d09-7241-44c3-a292-8d46e322a61d}</Project>
-      <Name>CR.CommServer</Name>
+      <Name>ProtocolHub.Communication</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

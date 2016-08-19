@@ -12,10 +12,11 @@
 //  mailto://techsupp@cas.eu
 //  http://www.cas.eu
 //</summary>
-      
+
+using CAS.Lib.CommServer;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CAS.Lib.CommServer.UT
+namespace CAS.CommServer.ProtocolHub.CommunicationUnitTests
 {
   /// <summary>
   ///This is a test class for <see cref="CommServerComponent"/>and is intended

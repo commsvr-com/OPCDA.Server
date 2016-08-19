@@ -14,9 +14,11 @@
 //</summary>
 
 using CAS.Lib.CodeProtect;
+using CAS.Lib.CommServer;
+using CAS.Lib.CommServer.LicenseControl;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CAS.Lib.CommServer.LicenseControl.UT
+namespace CAS.CommServer.ProtocolHub.CommunicationUnitTests
 {
   /// <summary>
   ///This is a test class for OTALicenseTest and is intended

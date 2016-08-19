@@ -10,7 +10,7 @@
     <ApplicationIcon>CAS_ikona_02.ico</ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>CAS.CommServer</AssemblyName>
+    <AssemblyName>CAS.CommServer.ProtocolHub.Communication</AssemblyName>
     <AssemblyOriginatorKeyFile>cas.snk</AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
@@ -53,12 +53,11 @@
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
     <DefineConstants>COMMSERVER;DEBUG;TRACE</DefineConstants>
-    <DocumentationFile>bin\Debug\CAS.CommServer.XML</DocumentationFile>
+    <DocumentationFile>bin\Debug\CAS.CommServer.ProtocolHub.Communication.xml</DocumentationFile>
     <DebugSymbols>true</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
-    <NoWarn>
-    </NoWarn>
+    <NoWarn>IDE0001,IDE0002,IDE0003</NoWarn>
     <Optimize>false</Optimize>
     <RegisterForComInterop>false</RegisterForComInterop>
     <RemoveIntegerChecks>false</RemoveIntegerChecks>
@@ -76,7 +75,7 @@
     <ConfigurationOverrideFile>
     </ConfigurationOverrideFile>
     <DefineConstants>COMMSERVER;TRACE</DefineConstants>
-    <DocumentationFile>bin\Release\CAS.CommServer.XML</DocumentationFile>
+    <DocumentationFile>bin\Release\CAS.CommServer.ProtocolHub.Communication.xml</DocumentationFile>
     <DebugSymbols>false</DebugSymbols>
     <FileAlignment>4096</FileAlignment>
     <NoStdLib>false</NoStdLib>
@@ -100,6 +99,10 @@
       <HintPath>..\packages\CAS.CommServer.CommonBus.5.01.02-Alpha\lib\net451\CAS.CommServer.CommonBus.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CAS.CommServer.DA.ItemDescriber, Version=1.0.2.21514, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DA.ItemDescriber.1.00.2-Alpha\lib\net451\CAS.CommServer.DA.ItemDescriber.exe</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="CAS.CommServer.DA.Server.Configuration, Version=4.1.2.24782, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
       <HintPath>..\packages\CAS.CommServer.DA.Server.Configuration.4.1.2-Alpha\lib\net35\CAS.CommServer.DA.Server.Configuration.dll</HintPath>
       <Private>True</Private>
@@ -110,6 +113,10 @@
     </Reference>
     <Reference Include="CAS.CommServer.OPCClassic.SDK.Core, Version=2.1.106.25891, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
       <HintPath>..\packages\CAS.CommServer.OPCClassic.SDK.Core.2.01.106\lib\net451\CAS.CommServer.OPCClassic.SDK.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.ControlLibrary, Version=5.0.2.39089, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.Windows.Forms.5.0.2\lib\net35\CAS.ControlLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.RTLib, Version=5.0.2.39089, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
@@ -134,9 +141,9 @@
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
-    <ProjectReference Include="..\CommServerConsoleInterface\CR.CommServerConsoleInterface.csproj">
+    <ProjectReference Include="..\CommServerConsoleInterface\ProtocolHub.MonitorInterface.csproj">
       <Project>{CE7BA276-5ACF-44FE-B24A-F91F6A0B0436}</Project>
-      <Name>CR.CommServerConsoleInterface</Name>
+      <Name>ProtocolHub.MonitorInterface</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -155,9 +162,6 @@
     <Compile Include="..\..\PR24-Biblioteka\BaseStation\Channel.cs">
       <Link>SRC\BaseStation\Channel.cs</Link>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="..\..\PR24-Biblioteka\BaseStation\CommServerAssemblyVersionInfo.cs">
-      <Link>Properties\CommServerAssemblyVersionInfo.cs</Link>
     </Compile>
     <Compile Include="..\..\PR24-Biblioteka\BaseStation\DataBlock.cs">
       <Link>SRC\BaseStation\DataBlock.cs</Link>
@@ -186,19 +190,6 @@
       <Link>SRC\BaseStation\Station.cs</Link>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="..\..\PR24-Biblioteka\ItemDescriber\ItemDecriberDataSet.cs">
-      <Link>SRC\BaseStation\ItemDescriber\ItemDecriberDataSet.cs</Link>
-    </Compile>
-    <Compile Include="..\..\PR24-Biblioteka\ItemDescriber\ItemDecriberDataSet.designer.cs">
-      <Link>SRC\BaseStation\ItemDescriber\ItemDecriberDataSet.designer.cs</Link>
-      <DependentUpon>ItemDecriberDataSet.cs</DependentUpon>
-    </Compile>
-    <Compile Include="..\..\PR24-Biblioteka\ItemDescriber\ItemDescriber2OpcDA.cs">
-      <Link>SRC\BaseStation\ItemDescriber\ItemDescriber2OpcDA.cs</Link>
-    </Compile>
-    <Compile Include="..\..\PR24-Biblioteka\ItemDescriber\XMLManagement.cs">
-      <Link>SRC\BaseStation\ItemDescriber\XMLManagement.cs</Link>
-    </Compile>
     <Compile Include="CommServerComponent.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -216,7 +207,11 @@
     <Compile Include="LicenseControl\Multichannel.cs" />
     <Compile Include="LicenseControl\OTALicense.cs" />
     <Compile Include="LicenseControl\Redundancy.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyInfo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -289,6 +284,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Tests\GuardedDataProviderTest\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\AssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

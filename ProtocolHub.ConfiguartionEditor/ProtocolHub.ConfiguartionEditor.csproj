@@ -10,7 +10,7 @@
     <ApplicationIcon>Konfig_Full.ico</ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>CAS.NetworkConfig</AssemblyName>
+    <AssemblyName>CAS.CommServer.ProtocolHub.ConfiguartionEditor</AssemblyName>
     <AssemblyOriginatorKeyFile>cas.snk</AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
@@ -101,31 +101,31 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CAS.CodeProtect, Version=5.0.2.39087, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\PR21-CommServer\packages\CAS.CodeProtect.5.0.2\lib\net35\CAS.CodeProtect.dll</HintPath>
+      <HintPath>..\packages\CAS.CodeProtect.5.0.2\lib\net35\CAS.CodeProtect.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.CommServer.CommonBus, Version=5.1.2.23358, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\PR21-CommServer\packages\CAS.CommServer.CommonBus.5.01.02-Alpha\lib\net451\CAS.CommServer.CommonBus.dll</HintPath>
+      <HintPath>..\packages\CAS.CommServer.CommonBus.5.01.02-Alpha\lib\net451\CAS.CommServer.CommonBus.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.CommServer.DA.Server.Configuration, Version=4.1.2.24782, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\PR21-CommServer\packages\CAS.CommServer.DA.Server.Configuration.4.1.2-Alpha\lib\net35\CAS.CommServer.DA.Server.Configuration.dll</HintPath>
+      <HintPath>..\packages\CAS.CommServer.DA.Server.Configuration.4.1.2-Alpha\lib\net35\CAS.CommServer.DA.Server.Configuration.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.CommServer.OPCClassic.SDK.Core, Version=2.1.106.25891, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\PR21-CommServer\packages\CAS.CommServer.OPCClassic.SDK.Core.2.01.106\lib\net451\CAS.CommServer.OPCClassic.SDK.Core.dll</HintPath>
+      <HintPath>..\packages\CAS.CommServer.OPCClassic.SDK.Core.2.01.106\lib\net451\CAS.CommServer.OPCClassic.SDK.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.ControlLibrary, Version=5.0.2.39089, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\PR21-CommServer\packages\CAS.Windows.Forms.5.0.2\lib\net35\CAS.ControlLibrary.dll</HintPath>
+      <HintPath>..\packages\CAS.Windows.Forms.5.0.2\lib\net35\CAS.ControlLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.RTLib, Version=5.0.2.39089, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\PR21-CommServer\packages\CAS.RealTime.5.0.2\lib\net35\CAS.RTLib.dll</HintPath>
+      <HintPath>..\packages\CAS.RealTime.5.0.2\lib\net35\CAS.RTLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.RTLibComm, Version=5.0.2.39088, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\..\PR21-CommServer\packages\CAS.RealTime.5.0.2\lib\net35\CAS.RTLibComm.dll</HintPath>
+      <HintPath>..\packages\CAS.RealTime.5.0.2\lib\net35\CAS.RTLibComm.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System">
@@ -150,15 +150,13 @@
   </ItemGroup>
   <ItemGroup>
     <BaseApplicationManifest Include="Properties\app.manifest" />
+    <Content Include="Properties\AssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+    </Content>
     <None Include="App.config" />
-    <Compile Include="..\BaseStation\CommServerAssemblyVersionInfo.cs">
-      <Link>CommServerAssemblyVersionInfo.cs</Link>
-    </Compile>
-    <Compile Include="..\BaseStation\CSVmanagement.cs">
+    <Compile Include="..\..\PR24-Biblioteka\BaseStation\CSVmanagement.cs">
       <Link>BaseStation\CSVmanagement.cs</Link>
-    </Compile>
-    <Compile Include="AssemblyInfo.cs">
-      <SubType>Code</SubType>
     </Compile>
     <Compile Include="HMI\Action.cs" />
     <Compile Include="HMI\AddInterfaceAndStation.cs">
@@ -239,6 +237,11 @@
     <Compile Include="NetworConfigCommServerInstaller.Designer.cs">
       <DependentUpon>NetworConfigCommServerInstaller.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyInfo.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -303,13 +306,13 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CommServerConsoleInterface\CR.CommServerConsoleInterface.csproj">
+    <ProjectReference Include="..\CommServerConsoleInterface\ProtocolHub.MonitorInterface.csproj">
       <Project>{CE7BA276-5ACF-44FE-B24A-F91F6A0B0436}</Project>
-      <Name>CR.CommServerConsoleInterface</Name>
+      <Name>ProtocolHub.MonitorInterface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CommServer\CR.CommServer.csproj">
+    <ProjectReference Include="..\CommServer\ProtocolHub.Communication.csproj">
       <Project>{E1351D09-7241-44C3-A292-8D46E322A61D}</Project>
-      <Name>CR.CommServer</Name>
+      <Name>ProtocolHub.Communication</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\PR39-CommonResources\LicensesContainer\LicensesContainer.csproj">
       <Project>{234A138E-4E17-4F12-84A3-A920DDAE0D86}</Project>
@@ -337,6 +340,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
