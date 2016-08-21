@@ -44,11 +44,13 @@ namespace CAS.CommServer.ProtocolHub.CommunicationUnitTests
     //
     //Use ClassInitialize to run code before running the first test in the class
     [ClassInitialize()]
+    [DeploymentItem("CAS.License.lic")]
+    [DeploymentItem("DefaultConfig.xml")]
     public static void MyClassInitialize( TestContext testContext )
     {
       cs = new CommServerComponent();
+      LibInstaller.InstalLicense(false);
       cs.Initialize( "DefaultConfig.xml" );
-      LibInstaller.InstalLicense();
     }
     //
     //Use ClassCleanup to run code after all tests in a class have run
@@ -75,9 +77,10 @@ namespace CAS.CommServer.ProtocolHub.CommunicationUnitTests
     ///A test for OTALicense Constructor
     ///</summary>
     [TestMethod()]
-    [DeploymentItem( "CR.UT.CommServer\\CAS.License.lic" )]
     public void OTALicenseConstructorTest()
     {
+      OTALicense _ota = OTALicense.License;
+      Assert.IsNotNull(_ota);
       Assert.IsTrue( OTALicense.License.Licensed, "License error - see log" );
     }
     [TestMethod()]

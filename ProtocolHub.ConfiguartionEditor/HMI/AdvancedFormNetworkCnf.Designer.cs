@@ -1,34 +1,26 @@
-// <summary>
-//  Title   : Advanced form for Network Config
-//  Author  : Mariusz Postol
-//  System  : Microsoft Visual C# .NET
-//  History :
-//    Maciej Zbrzezny - 2006-09-20
-//    zmieniono nazwe klasy na AdvancedFormNetworkConfig, 
-//    zmieniono obsluge obiektu configdatabase - by wykorzystywac 
-//    obsluge z nadrzednego miejsca w konfiguracji
-//    Maciej Zbrzezny - 12-04-2006
-//    drobne zmiany edycyjne 
-//    dodano nowa zakladke - ale jeszcze jej nie uzupelniono
-//    drobne poprawki w import block
-//    drobne poprawki w import Scan Settings
-//    <Author> - <date>:
-//    <description>
+//_______________________________________________________________
+//  Title   : AdvancedFormNetworkConfig
+//  System  : Microsoft VisualStudio 2015 / C#
+//  $LastChangedDate$
+//  $Rev$
+//  $LastChangedBy$
+//  $URL$
+//  $Id$
 //
-//  Copyright (C)2003, CAS LODZ POLAND.
-//  TEL: 42' 686 25 47
-//  mailto:techsupp@cas.com.pl
-//  http://www.cas.com.pl
-// </summary>
-using System;
-using System.Drawing;
-using System.Collections;
-using System.ComponentModel;
-using System.Windows.Forms;
-using System.Data;
-using System.IO;
-using BaseStation;
+//  Copyright (C) 2016, CAS LODZ POLAND.
+//  TEL: +48 (42) 686 25 47
+//  mailto://techsupp@cas.eu
+//  http://www.cas.eu
+//_______________________________________________________________
+
+
 using CAS.NetworkConfigLib;
+using CAS.Windows.Forms;
+using System;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Windows.Forms;
 
 namespace NetworkConfig.HMI
 {
@@ -1870,7 +1862,7 @@ namespace NetworkConfig.HMI
     }
     private void button1_Click( object sender, System.EventArgs e )
     {
-      HMI.Import.ImportFunctionRootClass importer = new NetworkConfig.HMI.Import.ImportTagsForSimulation( configDataBase, this );
+      ImportFunctionRootClass importer = new NetworkConfig.HMI.Import.ImportTagsForSimulation( configDataBase, this );
       importer.Import();
     }
     private void menuFile_Clear_All_Click( object sender, EventArgs e )
