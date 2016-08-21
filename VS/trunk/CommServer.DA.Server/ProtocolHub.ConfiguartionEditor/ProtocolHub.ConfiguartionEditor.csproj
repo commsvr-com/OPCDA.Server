@@ -116,16 +116,16 @@
       <HintPath>..\packages\CAS.CommServer.OPCClassic.SDK.Core.2.01.106\lib\net451\CAS.CommServer.OPCClassic.SDK.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.ControlLibrary, Version=5.0.2.39089, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.Windows.Forms.5.0.2\lib\net35\CAS.ControlLibrary.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="CAS.RTLib, Version=5.0.2.39089, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
       <HintPath>..\packages\CAS.RealTime.5.0.2\lib\net35\CAS.RTLib.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.RTLibComm, Version=5.0.2.39088, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
       <HintPath>..\packages\CAS.RealTime.5.0.2\lib\net35\CAS.RTLibComm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.Windows.Forms, Version=5.0.6.17097, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.Windows.Forms.5.0.6-Bravo\lib\net451\CAS.Windows.Forms.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System">
@@ -186,7 +186,6 @@
     <Compile Include="HMI\IAction.cs" />
     <Compile Include="HMI\Import\ImportBlockCSV.cs" />
     <Compile Include="HMI\Import\ImportBLS.cs" />
-    <Compile Include="HMI\Import\ImportFunctionRootClass.cs" />
     <Compile Include="HMI\Import\ImportScanSettings.cs" />
     <Compile Include="HMI\Import\ImportTagBits.cs" />
     <Compile Include="HMI\Import\ImportTagMappings.cs" />

@@ -99,8 +99,8 @@
       <HintPath>..\packages\CAS.CommServer.CommonBus.5.01.02-Alpha\lib\net451\CAS.CommServer.CommonBus.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.DA.ItemDescriber, Version=1.0.2.25596, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.DA.ItemDescriber.1.00.2-Bravo\lib\net451\CAS.CommServer.DA.ItemDescriber.exe</HintPath>
+    <Reference Include="CAS.CommServer.DA.ItemDescriber, Version=1.0.2.32540, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DA.ItemDescriber.1.00.2-Delta\lib\net451\CAS.CommServer.DA.ItemDescriber.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.CommServer.DA.Server.Configuration, Version=4.1.2.24782, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
@@ -113,10 +113,6 @@
     </Reference>
     <Reference Include="CAS.CommServer.OPCClassic.SDK.Core, Version=2.1.106.25891, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
       <HintPath>..\packages\CAS.CommServer.OPCClassic.SDK.Core.2.01.106\lib\net451\CAS.CommServer.OPCClassic.SDK.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="CAS.ControlLibrary, Version=5.0.2.39089, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.Windows.Forms.5.0.2\lib\net35\CAS.ControlLibrary.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.RTLib, Version=5.0.2.39089, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
@@ -150,7 +146,9 @@
     <None Include="App.config" />
     <None Include="cas.snk" />
     <None Include="ClassDiagram1.cd" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
