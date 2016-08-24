@@ -1,38 +1,31 @@
-//<summary>
-//  Title   : Report Generator for Commserver
-//  System  : Microsoft Visual C# .NET 2005
+//_______________________________________________________________
+//  Title   : Report Generator for CommServer
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//    20071007: mzbrzezny  - DateTimeProvider is use instead of DateTime.Now or UtcNow
-//    MPostol - 28-10-2006
-//      removed Form reference, used reflection instead
-//    Mzbrzezny - 19-05-2005
-//      picture added 
-//    Mzbrzezny - 19-04-2005
-//      created 
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
+//_______________________________________________________________
 
+
+using CAS.Lib.CommServer;
+using CAS.Lib.CommServer.Properties;
+using CAS.Lib.RTLib.Management;
+using CAS.Lib.RTLib.Utils;
 using System;
 using System.IO;
 using System.Text;
-using CAS.Lib.CommServer;
-using CAS.Lib.CommServer.Properties;
-using CAS.Lib.RTLib.Utils;
-using CAS.Lib.RTLib.Management;
 
 namespace BaseStation.Management
 {
   /// <summary>
-  /// Class that generate html report about Commsever state
+  /// Class that generate html report about CommServer state
   /// </summary>
   public class ReportGenerator: CAS.Lib.RTLib.Utils.ReportGenerator
   {

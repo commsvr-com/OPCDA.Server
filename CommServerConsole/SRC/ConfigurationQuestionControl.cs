@@ -1,16 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Windows.Forms;
+﻿//_______________________________________________________________
+//  Title   : ConfigurationQuestionControl
+//  System  : Microsoft VisualStudio 2015 / C#
+//  $LastChangedDate$
+//  $Rev$
+//  $LastChangedBy$
+//  $URL$
+//  $Id$
+//
+//  Copyright (C) 2016, CAS LODZ POLAND.
+//  TEL: +48 (42) 686 25 47
+//  mailto://techsupp@cas.eu
+//  http://www.cas.eu
+//_______________________________________________________________
+
 using CAS.CommServerConsole.Properties;
+using System;
+using System.Windows.Forms;
 
 namespace CAS.CommServerConsole
 {
+  /// <summary>
+  /// Class ConfigurationQuestionControl.
+  /// </summary>
+  /// <seealso cref="System.Windows.Forms.UserControl" />
   public partial class ConfigurationQuestionControl: UserControl
   {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="ConfigurationQuestionControl"/> class.
+    /// </summary>
     public ConfigurationQuestionControl()
     {
       InitializeComponent();
