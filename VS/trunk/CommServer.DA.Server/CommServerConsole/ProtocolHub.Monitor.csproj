@@ -107,8 +107,8 @@
       <HintPath>..\packages\CAS.RealTime.5.0.2\lib\net35\CAS.RTLibComm.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.Windows.Forms, Version=5.0.6.17097, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.Windows.Forms.5.0.6-Bravo\lib\net451\CAS.Windows.Forms.dll</HintPath>
+    <Reference Include="CAS.Windows.Forms, Version=5.0.6.33053, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.Windows.Forms.5.0.6-Charlie\lib\net451\CAS.Windows.Forms.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System">

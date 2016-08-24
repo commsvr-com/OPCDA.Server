@@ -124,8 +124,8 @@
       <HintPath>..\packages\CAS.RealTime.5.0.2\lib\net35\CAS.RTLibComm.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.Windows.Forms, Version=5.0.6.17097, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.Windows.Forms.5.0.6-Bravo\lib\net451\CAS.Windows.Forms.dll</HintPath>
+    <Reference Include="CAS.Windows.Forms, Version=5.0.6.33053, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.Windows.Forms.5.0.6-Charlie\lib\net451\CAS.Windows.Forms.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System">
@@ -155,9 +155,6 @@
       <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
     </Content>
     <None Include="App.config" />
-    <Compile Include="..\..\PR24-Biblioteka\BaseStation\CSVmanagement.cs">
-      <Link>BaseStation\CSVmanagement.cs</Link>
-    </Compile>
     <Compile Include="HMI\Action.cs" />
     <Compile Include="HMI\AddInterfaceAndStation.cs">
       <SubType>Form</SubType>
@@ -342,6 +339,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BaseStation\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

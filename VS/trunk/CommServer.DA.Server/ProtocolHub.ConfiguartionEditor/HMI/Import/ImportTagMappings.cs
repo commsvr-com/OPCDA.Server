@@ -1,30 +1,26 @@
-//<summary>
+//_______________________________________________________________
 //  Title   : ImportTagMappings
-//  System  : Microsoft Visual C# .NET 2005
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//    mzbrzezny - 2007-08-03:
-//    created
-//    <Author> - <date>:
-//    <description>
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
+//_______________________________________________________________
 
-using BaseStation;
 using CAS.NetworkConfigLib;
 using CAS.Windows.Forms;
 using System;
+using System.Windows.Forms;
 
 namespace NetworkConfig.HMI.Import
 {
+  
   /// <summary>
   /// Summary description for ImportTagMappings.
   /// </summary>
@@ -85,30 +81,29 @@ namespace NetworkConfig.HMI.Import
     {
       #region IMPORT
       int changes_number = 0;
-      string file = CSVManagement.ReadFile(m_ImportTagMappingsInfo.Filename);
-      file = CSVManagement.PrepareForCSVProcessing(file);
-      while (file.Length > 0)
+      CSVManagement _csvContainer = CSVManagement.ReadFile(m_ImportTagMappingsInfo.Filename);
+      while (_csvContainer.ToString().Length > 0)
       {
-        string basename = "";
-        string destname = "";
+        string _baseName = "";
+        string _destinationName = "";
         try
         {
-          basename = CSVManagement.GetAndMoveNextElement(ref file);
-          destname = CSVManagement.GetAndMoveNextElement(ref file);
-          bool taghasbeenfound = false;
+          _baseName = _csvContainer.GetAndMove2NextElement();
+          _destinationName = _csvContainer.GetAndMove2NextElement();
+          bool _tagHasBeenFound = false;
           foreach (ComunicationNet.TagsRow trow in m_database.Tags)
           {
 
-            if (trow.Name.Equals(basename))
+            if (trow.Name.Equals(_baseName))
             {
-              trow.Name = destname;
+              trow.Name = _destinationName;
               changes_number++;
-              taghasbeenfound = true;
+              _tagHasBeenFound = true;
               break;
             }
           }
-          if ( !taghasbeenfound )
-            AppendToLog( "Tag " + basename + " -> "+destname+" is not found" );
+          if ( !_tagHasBeenFound )
+            AppendToLog( "Tag " + _baseName + " -> "+_destinationName+" is not found" );
         }
         catch (
 Exception
@@ -117,7 +112,7 @@ Exception
 #endif
 )
         {
-          AppendToLog("problem with: base:" + basename + " dest:" + destname + " :"
+          AppendToLog("problem with: base:" + _baseName + " dest:" + _destinationName + " :"
 #if DEBUG
  + ex.Message.ToString()
 #endif
@@ -127,16 +122,18 @@ Exception
       #endregion IMPORT
       AppendToLog("Number of changed tags: " + changes_number.ToString());
     }
-
     #endregion
+
     #region creator
-    public ImportTagMappings( CAS.NetworkConfigLib.ComunicationNet database, System.Windows.Forms.Form parrent_form )
-      : base( parrent_form )
+    public ImportTagMappings( ComunicationNet database, Form parentForm)
+      : base( parentForm )
     {
       m_database = database;
       m_ImportTagMappingsInfo = new ImportTagMappingsInfo();
       SetImportInfo(m_ImportTagMappingsInfo);
     }
     #endregion
+
   }
+
 }

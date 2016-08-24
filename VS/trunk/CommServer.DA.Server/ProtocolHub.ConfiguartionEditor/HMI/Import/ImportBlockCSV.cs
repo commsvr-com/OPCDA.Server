@@ -1,22 +1,18 @@
-//<summary>
-//  Title   : Importing blocks from CSV files
-//  System  : Microsoft Visual C# .NET 2005
+//_______________________________________________________________
+//  Title   : ImportBlockCSV
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//  20081006 mzbrzezny: implementation of ItemAccessRights and StateTrigger
-//    MZbrzezny - 20070615 - created.
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
+//_______________________________________________________________
 
-using BaseStation;
 using CAS.Lib.RTLib;
 using CAS.NetworkConfigLib;
 using CAS.Windows.Forms;
@@ -26,17 +22,18 @@ using System.Windows.Forms;
 
 namespace NetworkConfig.HMI.Import
 {
-  class ImportBlockCSV: ImportFunctionRootClass
+  class ImportBlockCSV : ImportFunctionRootClass
   {
     #region private fields
-    ImportBlockCSVInfo m_ImportBlockCSVInfo;
-    CAS.NetworkConfigLib.ComunicationNet m_database;
-    string file;
-    int tags_added_number;
-    ProgressBarWindow pbw;
+    private ImportBlockCSVInfo m_ImportBlockCSVInfo;
+    private ComunicationNet m_Database;
+    private CSVManagement m_CSVContainer;
+    private int m_TagsAddedNumber;
+    private ProgressBarWindow m_ProgressBarWindow;
     #endregion
+
     #region ImportBlockCSVInfo
-    internal class ImportBlockCSVInfo: CAS.Lib.ControlLibrary.ImportFileControll.ImportInfo
+    internal class ImportBlockCSVInfo : CAS.Lib.ControlLibrary.ImportFileControll.ImportInfo
     {
       public override string ImportName
       {
@@ -50,7 +47,7 @@ namespace NetworkConfig.HMI.Import
         }
       }
       /// <summary>
-      /// deafult browse filter for the dialog which is used for selecting a file
+      /// default browse filter for the dialog which is used for selecting a file
       /// </summary>
       public override string BrowseFilter
       {
@@ -60,7 +57,7 @@ namespace NetworkConfig.HMI.Import
         }
       }
       /// <summary>
-      /// deafult extension for the dialog which is used for selecting a file
+      /// default extension for the dialog which is used for selecting a file
       /// </summary>
       public override string DefaultExt
       {
@@ -79,107 +76,103 @@ namespace NetworkConfig.HMI.Import
           return "This import tool is adding tags based on block definition i CSV file."
           + "\r\n Each line format:\r\n"
           + " StationID;TimeScan;Timeout;TimeScanFast;TimeoutFast;Address;DataType;BlockLength"
-          + "\r\n It ommits first line";
+          + "\r\n It omits first line";
         }
       }
     }
     #endregion
+
     #region ImportFunctionRootClass
     protected override void DoTheImport()
     {
-      tags_added_number = 0;
-      file = CSVManagement.ReadFile( m_ImportBlockCSVInfo.Filename );
-      file = CSVManagement.PrepareForCSVProcessing( file );
+      m_TagsAddedNumber = 0;
+      m_CSVContainer = CSVManagement.ReadFile(m_ImportBlockCSVInfo.Filename);
 
-      pbw = new ProgressBarWindow( new DoWorkEventHandler( MainImportJob ), 0, file.Length, 1 );
-      if ( pbw.ShowDialog() != DialogResult.OK )
-        AppendToLog( "Cancel was pressed" );
-      AppendToLog( "Number of tags added: " + tags_added_number.ToString() );
+      m_ProgressBarWindow = new ProgressBarWindow(new DoWorkEventHandler(MainImportJob), 0, m_CSVContainer.ToString().Length, 1);
+      if (m_ProgressBarWindow.ShowDialog() != DialogResult.OK)
+        AppendToLog("Cancel was pressed");
+      AppendToLog("Number of tags added: " + m_TagsAddedNumber.ToString());
     }
 
-    private void MainImportJob( object sender, DoWorkEventArgs e )
+    private void MainImportJob(object sender, DoWorkEventArgs e)
     {
-      BackgroundWorker worker = sender as BackgroundWorker;
-      ProgressBarWindow pwb = e.Argument as ProgressBarWindow;
-      long StationID = 0;
-      ulong TimeScan = 0, Timeout = 0, TimeScanFast = 0, TimOutFast = 0;
-      ulong Address = 0;
-      byte DataType = 0;
-      int length = 0;
-      int original_len = file.Length;
-      //przegl¹damy tak d³ugo plik jak jest jeszcze jakaœ zawartoœæ
-      pwb.SetInformation( "ImportingCSV" );
-      while ( file.Length > 0 && !worker.CancellationPending )
+      BackgroundWorker _BackgroundWorker = sender as BackgroundWorker;
+      ProgressBarWindow _ProgressBarWindow = e.Argument as ProgressBarWindow;
+      long _stationID = 0;
+      ulong _timeScan = 0, _timeout = 0, _timeScanFast = 0, _timOutFast = 0;
+      ulong _address = 0;
+      byte _dataType = 0;
+      int _length = 0;
+      int _originalLen = m_CSVContainer.ToString().Length;
+      _ProgressBarWindow.SetInformation("ImportingCSV");
+      while (m_CSVContainer.ToString().Length > 0 && !_BackgroundWorker.CancellationPending)
       {
-        pwb.SetProgressValue( original_len - file.Length );
+        _ProgressBarWindow.SetProgressValue(_originalLen - m_CSVContainer.ToString().Length);
         try
         {
-          StationID = System.Convert.ToUInt32( CSVManagement.GetAndMoveNextElement( ref file ) );
-          TimeScan = System.Convert.ToUInt32( CSVManagement.GetAndMoveNextElement( ref file ) );
-          Timeout = System.Convert.ToUInt32( CSVManagement.GetAndMoveNextElement( ref file ) );
-          TimeScanFast = System.Convert.ToUInt32( CSVManagement.GetAndMoveNextElement( ref file ) );
-          TimOutFast = System.Convert.ToUInt32( CSVManagement.GetAndMoveNextElement( ref file ) );
-          Address = System.Convert.ToUInt32( CSVManagement.GetAndMoveNextElement( ref file ) );
-          DataType = System.Convert.ToByte( CSVManagement.GetAndMoveNextElement( ref file ) );
-          length = System.Convert.ToInt32( CSVManagement.GetAndMoveNextElement( ref file ) );
+          _stationID = Convert.ToUInt32(m_CSVContainer.GetAndMove2NextElement());
+          _timeScan = Convert.ToUInt32(m_CSVContainer.GetAndMove2NextElement());
+          _timeout = Convert.ToUInt32(m_CSVContainer.GetAndMove2NextElement());
+          _timeScanFast = Convert.ToUInt32(m_CSVContainer.GetAndMove2NextElement());
+          _timOutFast = Convert.ToUInt32(m_CSVContainer.GetAndMove2NextElement());
+          _address = Convert.ToUInt32(m_CSVContainer.GetAndMove2NextElement());
+          _dataType = Convert.ToByte(m_CSVContainer.GetAndMove2NextElement());
+          _length = Convert.ToInt32(m_CSVContainer.GetAndMove2NextElement());
           //odczytalismy wszystkie elememty definiuj¹ce dany blok danych
           //znajdujemy odpowiednia stacje
-          ComunicationNet.StationRow stationrow = null;
-          try { stationrow = m_database.Station.FindByStationID( StationID ); }
-          catch { throw new Exception( "station " + StationID.ToString() + "not found" ); }
-          //dodajemy odpowiednia grupe:
-          ComunicationNet.GroupsRow grouprow = m_database.Groups.NewGroupsRow();
-          grouprow.Name = "GR_" + grouprow.GroupID.ToString() + "_st_" + stationrow.Name;
-          grouprow.StationID = StationID;
-          grouprow.TimeOut = Timeout;
-          grouprow.TimeOutFast = TimOutFast;
-          grouprow.TimeScan = TimeScan;
-          grouprow.TimeScanFast = TimeScanFast;
-          m_database.Groups.AddGroupsRow( grouprow );
-          //dodajemy teraz blok
-          ComunicationNet.DataBlocksRow DBrow = m_database.DataBlocks.NewDataBlocksRow();
-          DBrow.Name = "db" + grouprow.GroupID.ToString() + "_st_" + stationrow.Name;
-          DBrow.GroupID = grouprow.GroupID;
-          DBrow.Address = Address;
-          DBrow.DataType = DataType;
-          m_database.DataBlocks.AddDataBlocksRow( DBrow );
-          for ( int idx = 0; idx < length; idx++ )
+          ComunicationNet.StationRow _stationRow = null;
+          try { _stationRow = m_Database.Station.FindByStationID(_stationID); }
+          catch { throw new Exception("station " + _stationID.ToString() + "not found"); }
+          ComunicationNet.GroupsRow _GroupsRow = m_Database.Groups.NewGroupsRow();
+          _GroupsRow.Name = "GR_" + _GroupsRow.GroupID.ToString() + "_st_" + _stationRow.Name;
+          _GroupsRow.StationID = _stationID;
+          _GroupsRow.TimeOut = _timeout;
+          _GroupsRow.TimeOutFast = _timOutFast;
+          _GroupsRow.TimeScan = _timeScan;
+          _GroupsRow.TimeScanFast = _timeScanFast;
+          m_Database.Groups.AddGroupsRow(_GroupsRow);
+          ComunicationNet.DataBlocksRow _dataBlocksRow = m_Database.DataBlocks.NewDataBlocksRow();
+          _dataBlocksRow.Name = "db" + _GroupsRow.GroupID.ToString() + "_st_" + _stationRow.Name;
+          _dataBlocksRow.GroupID = _GroupsRow.GroupID;
+          _dataBlocksRow.Address = _address;
+          _dataBlocksRow.DataType = _dataType;
+          m_Database.DataBlocks.AddDataBlocksRow(_dataBlocksRow);
+          for (int idx = 0; idx < _length; idx++)
           {
-            ComunicationNet.TagsRow TAGrow = m_database.Tags.NewTagsRow();
-            TAGrow.Name = stationrow.Name + "/" + DataType.ToString() + "/" + "add" + ( Address + (ulong)idx ).ToString();
-            TAGrow.AccessRights = (sbyte)ItemAccessRights.ReadWrite;
-            TAGrow.StateTrigger = (sbyte)StateTrigger.None;
-            TAGrow.Alarm = false;
-            TAGrow.AlarmMask = 0;
-            TAGrow.StateMask = 0;
-            TAGrow.DatBlockID = DBrow.DatBlockID;
-            m_database.Tags.AddTagsRow( TAGrow );
-            tags_added_number++;
+            ComunicationNet.TagsRow _tagRow = m_Database.Tags.NewTagsRow();
+            _tagRow.Name = _stationRow.Name + "/" + _dataType.ToString() + "/" + "add" + (_address + (ulong)idx).ToString();
+            _tagRow.AccessRights = (sbyte)ItemAccessRights.ReadWrite;
+            _tagRow.StateTrigger = (sbyte)StateTrigger.None;
+            _tagRow.Alarm = false;
+            _tagRow.AlarmMask = 0;
+            _tagRow.StateMask = 0;
+            _tagRow.DatBlockID = _dataBlocksRow.DatBlockID;
+            m_Database.Tags.AddTagsRow(_tagRow);
+            m_TagsAddedNumber++;
           }
         }
-        catch ( Exception ex )
+        catch (Exception ex)
         {
-          AppendToLog( "Error: " + ex.Message + " at \r\n"
-              + StationID.ToString() + ","
-              + TimeScan.ToString() + ","
-              + Timeout.ToString() + ","
-              + TimeScanFast.ToString() + ","
-              + TimOutFast.ToString() + ","
-              + Address.ToString() + ","
-              + DataType.ToString() + ","
-              + length.ToString() );
+          AppendToLog("Error: " + ex.Message + " at \r\n"
+              + _stationID.ToString() + ","
+              + _timeScan.ToString() + ","
+              + _timeout.ToString() + ","
+              + _timeScanFast.ToString() + ","
+              + _timOutFast.ToString() + ","
+              + _address.ToString() + ","
+              + _dataType.ToString() + ","
+              + _length.ToString());
         }
       }
     }
     #endregion
+
     #region creator
-    public ImportBlockCSV( CAS.NetworkConfigLib.ComunicationNet database, System.Windows.Forms.Form parrent_form )
-      :
-      base( parrent_form )
+    public ImportBlockCSV(ComunicationNet database, Form parentForm) : base(parentForm)
     {
-      m_database = database;
+      m_Database = database;
       m_ImportBlockCSVInfo = new ImportBlockCSVInfo();
-      SetImportInfo( m_ImportBlockCSVInfo );
+      SetImportInfo(m_ImportBlockCSVInfo);
     }
     #endregion
   }

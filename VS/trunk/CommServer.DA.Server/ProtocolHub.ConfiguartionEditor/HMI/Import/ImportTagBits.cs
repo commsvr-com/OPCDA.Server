@@ -1,27 +1,22 @@
-//<summary>
+//_______________________________________________________________
 //  Title   : ImportTagBits
-//  System  : Microsoft Visual C# .NET 2005
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//    mzbrzezny - 2007-08-03:
-//    created
-//    <Author> - <date>:
-//    <description>
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
+//_______________________________________________________________
 
-using BaseStation;
 using CAS.NetworkConfigLib;
 using CAS.Windows.Forms;
 using System;
+using System.Windows.Forms;
 
 namespace NetworkConfig.HMI.Import
 {
@@ -30,6 +25,7 @@ namespace NetworkConfig.HMI.Import
   /// </summary>
   internal class ImportTagBits : ImportFunctionRootClass
   {
+
     #region ImportTagBitsInfo
     internal class ImportTagBitsInfo : CAS.Lib.ControlLibrary.ImportFileControll.ImportInfo
     {
@@ -76,42 +72,42 @@ namespace NetworkConfig.HMI.Import
       }
     }
     #endregion
+
     #region private
-    private CAS.NetworkConfigLib.ComunicationNet m_database;
+    private ComunicationNet m_database;
     private ImportTagBitsInfo m_ImportTagBitsInfo;
     private int m_numberofTagBitsadded = 0;
     #endregion
+
     #region ImportFunctionRootClass
     protected override void DoTheImport()
     {
       m_numberofTagBitsadded = 0;
-      string sourcefile = "";
-      //wlasciwy import 
+      CSVManagement _CSVContainer = null;
       try
       {
-        sourcefile = BaseStation.CSVManagement.ReadFile( this.m_ImportTagBitsInfo.Filename );
-        sourcefile = BaseStation.CSVManagement.PrepareForCSVProcessing( sourcefile );
+        _CSVContainer = CSVManagement.ReadFile(this.m_ImportTagBitsInfo.Filename);
       }
       catch (Exception ex)
       {
-        AppendToLog( "problem with file " + this.m_ImportTagBitsInfo.Filename + " :" + ex.Message );
+        AppendToLog("problem with file " + this.m_ImportTagBitsInfo.Filename + " :" + ex.Message);
         return;
       }
       //przed chwila pozbylismy sie pierwszej lini i wszystkich znakow konca lini teraz:
-      string BaseTagName="";
-      string Bitnumber="";
-      string Name="";
-      while (sourcefile.Length > 0)
+      string BaseTagName = "";
+      string Bitnumber = "";
+      string Name = "";
+      while (_CSVContainer.ToString().Length > 0)
       {
         try
         {
           //format: BaseTagName;Bitnumber;Name
           //odczytujemy BaseTagName:
-          BaseTagName = CSVManagement.GetAndMoveNextElement(ref sourcefile);
+          BaseTagName = _CSVContainer.GetAndMove2NextElement();
           //odczytujemy BaseTagName:
-          Bitnumber = CSVManagement.GetAndMoveNextElement(ref sourcefile);
+          Bitnumber = _CSVContainer.GetAndMove2NextElement();
           //odczytujemy BaseTagName:
-          Name = CSVManagement.GetAndMoveNextElement(ref sourcefile);
+          Name = _CSVContainer.GetAndMove2NextElement();
           //odnajdujemy odpowiendniego taga bazowego w bazie
           foreach (ComunicationNet.TagsRow trow in m_database.Tags)
           {
@@ -144,14 +140,16 @@ Exception
     }
 
     #endregion
+
     #region creator
-    public ImportTagBits( CAS.NetworkConfigLib.ComunicationNet database, System.Windows.Forms.Form parrent_form )
-      : base( parrent_form )
+    public ImportTagBits(ComunicationNet database, Form parentForm)
+      : base(parentForm)
     {
       m_database = database;
       m_ImportTagBitsInfo = new ImportTagBitsInfo();
       SetImportInfo(m_ImportTagBitsInfo);
     }
     #endregion
+
   }
 }
