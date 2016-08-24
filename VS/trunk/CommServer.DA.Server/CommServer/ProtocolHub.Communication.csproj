@@ -153,41 +153,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="..\..\PR24-Biblioteka\BaseStation\AppConfigManagement.cs">
-      <Link>SRC\BaseStation\AppConfigManagement.cs</Link>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="..\..\PR24-Biblioteka\BaseStation\Channel.cs">
-      <Link>SRC\BaseStation\Channel.cs</Link>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="..\..\PR24-Biblioteka\BaseStation\DataBlock.cs">
-      <Link>SRC\BaseStation\DataBlock.cs</Link>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="..\..\PR24-Biblioteka\BaseStation\Initialization.cs">
-      <Link>SRC\BaseStation\Initialization.cs</Link>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="..\..\PR24-Biblioteka\BaseStation\Interface.cs">
-      <Link>SRC\BaseStation\Interface.cs</Link>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="..\..\PR24-Biblioteka\BaseStation\NetworkConfig\XMLManagement.cs">
-      <Link>SRC\BaseStation\NetworkConfig\XMLManagement.cs</Link>
-    </Compile>
-    <Compile Include="..\..\PR24-Biblioteka\BaseStation\Pipe.cs">
-      <Link>SRC\BaseStation\Pipe.cs</Link>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="..\..\PR24-Biblioteka\BaseStation\Segment.cs">
-      <Link>SRC\BaseStation\Segment.cs</Link>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="..\..\PR24-Biblioteka\BaseStation\Station.cs">
-      <Link>SRC\BaseStation\Station.cs</Link>
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="CommServerComponent.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -223,12 +188,17 @@
     <Compile Include="RetryFilter.cs" />
     <Compile Include="SegmentParameters.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="SRC\BaseStation\AppConfigManagement.cs" />
+    <Compile Include="SRC\BaseStation\Channel.cs" />
     <Compile Include="SRC\BaseStation\ConsoleIterface.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="SRC\BaseStation\DataBlock.cs" />
     <Compile Include="SRC\BaseStation\DataQueue.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="SRC\BaseStation\Initialization.cs" />
+    <Compile Include="SRC\BaseStation\Interface.cs" />
     <Compile Include="SRC\BaseStation\Management\CommserverProtocol.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -238,7 +208,11 @@
     <Compile Include="SRC\BaseStation\Management\ReportGenerator.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="SRC\BaseStation\NetworkConfig\XMLManagement.cs" />
+    <Compile Include="SRC\BaseStation\Pipe.cs" />
+    <Compile Include="SRC\BaseStation\Segment.cs" />
     <Compile Include="SRC\BaseStation\SegmentState.cs" />
+    <Compile Include="SRC\BaseStation\Station.cs" />
     <Compile Include="Tests\FacadeBlockDescription.cs" />
     <Compile Include="Tests\FacadeISegmentStatistics.cs" />
     <Compile Include="Tests\FacadePipe.cs" />

@@ -1,19 +1,18 @@
-//<summary>
+//_______________________________________________________________
 //  Title   : Segment State Machine Class
-//  System  : Microsoft Visual C# .NET 2005
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
 //
-//  20090123: mzbrzezny: if exception occurs in DataProvider it can be catched during readvalue
-//
-//  Copyright (C)2006, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
+//_______________________________________________________________
+
 
 using System;
 using CAS.Lib.CommonBus;
@@ -128,7 +127,7 @@ namespace CAS.Lib.CommServer
           case AL_ReadData_Result.ALRes_DatTransferErrr:
             pipeInterface.SwitchIOffAfterFailure();
             CommServerComponent.Tracer.TraceInformation
-              ( 116, myMachine.mySource, String.Format( Resources.TraceALRes_DatTransferEr, pipeInterface.InerfaceNumber, pipeInterface.address ) + GetAt );
+              ( 116, myMachine.mySource, String.Format( Resources.TraceALRes_DatTransferEr, pipeInterface.InterfaceNumber, pipeInterface.address ) + GetAt );
             System.Diagnostics.Debug.Assert( value == null,
               String.Format( Resources.ReadWriteOperationsReadDataAssertion,
               dataAddress.startAddress,

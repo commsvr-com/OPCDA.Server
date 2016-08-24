@@ -27,7 +27,7 @@
     <SignAssembly>true</SignAssembly>
     <TargetZone>LocalIntranet</TargetZone>
     <GenerateManifests>false</GenerateManifests>
-    <ManifestCertificateThumbprint>EB73490988CDF09B813CDC6839DC4E5A3C18A1DA</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>502D68F34386F28801A8BF04EA024544899F9713</ManifestCertificateThumbprint>
     <ManifestKeyFile>
     </ManifestKeyFile>
     <SignManifests>false</SignManifests>
