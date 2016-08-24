@@ -108,15 +108,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="..\..\PR24-Biblioteka\BaseStation\Management\Statistics.cs">
-      <Link>BaseStation\Management\Statistics.cs</Link>
-    </Compile>
-    <Compile Include="..\..\PR24-Biblioteka\BaseStation\Management\Statistics.InterfaceStatistics.cs">
-      <Link>BaseStation\Management\Statistics.InterfaceStatistics.cs</Link>
-    </Compile>
-    <Compile Include="..\..\PR24-Biblioteka\BaseStation\Management\Statistics.SegmentStatistics.cs">
-      <Link>BaseStation\Management\Statistics.SegmentStatistics.cs</Link>
-    </Compile>
+    <Compile Include="BaseStation\Management\Statistics.cs" />
+    <Compile Include="BaseStation\Management\Statistics.InterfaceStatistics.cs" />
+    <Compile Include="BaseStation\Management\Statistics.SegmentStatistics.cs" />
     <Compile Include="IInterface2SegmentLink.cs" />
     <Compile Include="ISegmentStatistics.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
