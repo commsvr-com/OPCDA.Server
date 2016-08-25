@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E1351D09-7241-44C3-A292-8D46E322A61D}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>CAS_ikona_02.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>CAS.CommServer.ProtocolHub.Communication</AssemblyName>
+    <AssemblyOriginatorKeyFile>cas.snk</AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>CAS.Lib.CommServer</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignAssembly>true</SignAssembly>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>http://localhost/CAS.CommServer/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>COMMSERVER;DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\CAS.CommServer.ProtocolHub.Communication.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>IDE0001,IDE0002,IDE0003</NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>COMMSERVER;TRACE</DefineConstants>
+    <DocumentationFile>bin\Release\CAS.CommServer.ProtocolHub.Communication.xml</DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CAS.CodeProtect, Version=5.0.2.39087, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CodeProtect.5.0.2\lib\net35\CAS.CodeProtect.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommServer.CommonBus, Version=5.1.2.23358, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.CommonBus.5.01.02-Alpha\lib\net451\CAS.CommServer.CommonBus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommServer.DA.ItemDescriber, Version=1.0.2.32540, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DA.ItemDescriber.1.00.2-Delta\lib\net451\CAS.CommServer.DA.ItemDescriber.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommServer.DA.Server.Configuration, Version=4.1.2.24782, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DA.Server.Configuration.4.1.2-Alpha\lib\net35\CAS.CommServer.DA.Server.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommServer.DeviceSimulator, Version=5.1.2.23357, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DeviceSimulator.5.01.02-Alpha\lib\net451\CAS.CommServer.DeviceSimulator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommServer.OPCClassic.SDK.Core, Version=2.1.106.25891, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.OPCClassic.SDK.Core.2.01.106\lib\net451\CAS.CommServer.OPCClassic.SDK.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.RTLib, Version=5.0.2.39089, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.RealTime.5.0.2\lib\net35\CAS.RTLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.RTLibComm, Version=5.0.2.39088, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.RealTime.5.0.2\lib\net35\CAS.RTLibComm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Management">
+      <Name>System.Management</Name>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\ProtocolHub.MonitorInterface\ProtocolHub.MonitorInterface.csproj">
+      <Project>{CE7BA276-5ACF-44FE-B24A-F91F6A0B0436}</Project>
+      <Name>ProtocolHub.MonitorInterface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="cas.snk" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="CommServerComponent.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CommServerComponent.Designer.cs">
+      <DependentUpon>CommServerComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CommServerInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CommServerInstaller.Designer.cs">
+      <DependentUpon>CommServerInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GuardedDataProvider.cs" />
+    <Compile Include="LicenseControl\ASALicense.cs" />
+    <Compile Include="LicenseControl\Multichannel.cs" />
+    <Compile Include="LicenseControl\OTALicense.cs" />
+    <Compile Include="LicenseControl\Redundancy.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyInfo.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RetryFilter.cs" />
+    <Compile Include="SegmentParameters.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="SRC\BaseStation\AppConfigManagement.cs" />
+    <Compile Include="SRC\BaseStation\Channel.cs" />
+    <Compile Include="SRC\BaseStation\ConsoleIterface.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SRC\BaseStation\DataBlock.cs" />
+    <Compile Include="SRC\BaseStation\DataQueue.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SRC\BaseStation\Initialization.cs" />
+    <Compile Include="SRC\BaseStation\Interface.cs" />
+    <Compile Include="SRC\BaseStation\Management\CommserverProtocol.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SRC\BaseStation\Management\OPCServer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SRC\BaseStation\Management\ReportGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SRC\BaseStation\NetworkConfig\XMLManagement.cs" />
+    <Compile Include="SRC\BaseStation\Pipe.cs" />
+    <Compile Include="SRC\BaseStation\Segment.cs" />
+    <Compile Include="SRC\BaseStation\SegmentState.cs" />
+    <Compile Include="SRC\BaseStation\Station.cs" />
+    <Compile Include="Tests\FacadeBlockDescription.cs" />
+    <Compile Include="Tests\FacadeISegmentStatistics.cs" />
+    <Compile Include="Tests\FacadePipe.cs" />
+    <Compile Include="Tests\FacadeSegment.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="CommServerComponent.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CommServerComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CommServerInstaller.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CommServerInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <SubType>Designer</SubType>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CAS_ikona_02.ico" />
+    <None Include="ClassDiagram2.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Tests\GuardedDataProviderTest\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Properties\AssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,61 @@
+//<summary>
+//  Title   : Unit tests for retry filters
+//  System  : Microsoft Visual C# .NET 2008
+//  $LastChangedDate$
+//  $Rev$
+//  $LastChangedBy$
+//  $URL$
+//  $Id$
+//
+//  Copyright (C)2008, CAS LODZ POLAND.
+//  TEL: +48 (42) 686 25 47
+//  mailto://techsupp@cas.eu
+//  http://www.cas.eu
+//</summary>
+      
+
+#pragma warning disable 1591
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+using NUnit.Framework;
+
+namespace CAS.Lib.CommServer.Tests
+{
+  [NUnit.Framework.TestFixture()]
+  public class TestRetryFilter
+  {
+    private RetryFilter retryFilter = new RetryFilter( 5 );
+    [Test()]
+    public void GoTest()
+    {
+      Assert.AreEqual( retryFilter.Retry, 5, "Starting value check" );
+      Assert.AreEqual( retryFilter.Quality, 100.0 );
+      for ( int i = 0; i < 10; i++ )
+        retryFilter.MarkSuccess();
+      Assert.AreEqual( retryFilter.Retry, 5, "Starting value check" );
+      Assert.AreEqual( retryFilter.Quality, 100.0 );
+      for ( int i = 0; i < 10; i++ )
+      {
+        //Console.WriteLine( "Retry = {0}", retryFilter.Retry );
+        retryFilter.MarkFail();
+      }
+      Assert.AreEqual( 1, retryFilter.Retry, "Fail value check" );
+      Assert.LessOrEqual( retryFilter.Quality, 10.0 );
+      Assert.GreaterOrEqual( retryFilter.Quality, 0.0 );
+      Console.WriteLine( "Quality fail = {0}", retryFilter.Quality );
+      for ( int i = 0; i < 10; i++ )
+      {
+        retryFilter.MarkFail();
+        //Console.WriteLine( "Quality = {0}", retryFilter.Quality );
+        retryFilter.MarkSuccess();
+     }
+      Assert.AreEqual( 5, retryFilter.Retry, "Success value check" );
+      Assert.LessOrEqual( retryFilter.Quality, 60.0 );
+      Assert.GreaterOrEqual( retryFilter.Quality, 40.0 );
+      Console.WriteLine( "Quality poor = {0}", retryFilter.Quality );
+
+    }
+  }
+}

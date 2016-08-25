@@ -13,21 +13,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		ReleaseNotes.txt = ReleaseNotes.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolHub.Communication", "CommServer\ProtocolHub.Communication.csproj", "{E1351D09-7241-44C3-A292-8D46E322A61D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolHub.Communication", "ProtocolHub.Communication\ProtocolHub.Communication.csproj", "{E1351D09-7241-44C3-A292-8D46E322A61D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.NETServer", "NETServer.Da\Server.NETServer.csproj", "{D8A99DED-6ED6-45FE-B245-7CC5050DA1FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.NETServer", "Server.NETServer\Server.NETServer.csproj", "{D8A99DED-6ED6-45FE-B245-7CC5050DA1FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolHub.MonitorInterface", "CommServerConsoleInterface\ProtocolHub.MonitorInterface.csproj", "{CE7BA276-5ACF-44FE-B24A-F91F6A0B0436}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolHub.MonitorInterface", "ProtocolHub.MonitorInterface\ProtocolHub.MonitorInterface.csproj", "{CE7BA276-5ACF-44FE-B24A-F91F6A0B0436}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolHub.Monitor", "CommServerConsole\ProtocolHub.Monitor.csproj", "{A6E398E2-7D4F-4C59-A8C7-2453281CC79C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolHub.Monitor", "ProtocolHub.Monitor\ProtocolHub.Monitor.csproj", "{A6E398E2-7D4F-4C59-A8C7-2453281CC79C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CR.Scripts", "Scripts\CR.Scripts.csproj", "{E1FC0810-38EB-4EFF-A015-BEAF031DD987}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CommServerSetup", "CommServerSetup\CommServerSetup.vdproj", "{2757B4E5-F34F-44A1-ACA1-84AB8E03A68C}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CommServerSetup", "Server.Setup\CommServerSetup.vdproj", "{2757B4E5-F34F-44A1-ACA1-84AB8E03A68C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolHub.CommunicationUnitTests", "CommServer.UT\ProtocolHub.CommunicationUnitTests.csproj", "{2BFCD8E7-8C88-4B0A-8FA3-2ABDC4F044C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolHub.CommunicationUnitTests", "ProtocolHub.CommunicationUnitTests\ProtocolHub.CommunicationUnitTests.csproj", "{2BFCD8E7-8C88-4B0A-8FA3-2ABDC4F044C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolHub.CommunicationManualStart", "CommServerEngineManualStart\ProtocolHub.CommunicationManualStart.csproj", "{C4D03AE0-9C4B-4CC7-94C5-658328F3496C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolHub.CommunicationManualStart", "ProtocolHub.CommunicationManualStart\ProtocolHub.CommunicationManualStart.csproj", "{C4D03AE0-9C4B-4CC7-94C5-658328F3496C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LicensesContainer", "..\PR39-CommonResources\LicensesContainer\LicensesContainer.csproj", "{234A138E-4E17-4F12-84A3-A920DDAE0D86}"
 EndProject

@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Server xmlns="http://schemas.opcfoundation.org/OPCSample/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"> 
+  <BrowseElement ElementName="Static">
+    <Children>
+      <BrowseElement ElementName="Analog Types">
+        <Children>
+          <BrowseElement ElementName="Int">
+            <Item>
+              <Value xsi:type="xsd:int">0</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+              <Property PropertyID="7" xsi:type="xsd:int">1</Property>
+              <Property PropertyID="102" xsi:type="xsd:double">1000</Property>
+              <Property PropertyID="103" xsi:type="xsd:double">0</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Double">
+            <Item>
+              <Value xsi:type="xsd:double">0</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">0</Property>
+              <Property PropertyID="7" xsi:type="xsd:int">1</Property>
+              <Property PropertyID="102" xsi:type="xsd:double">100</Property>
+              <Property PropertyID="103" xsi:type="xsd:double">0</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Int[]">
+            <Item>
+              <Value xsi:type="ArrayOfInt">
+                <Element>-4096</Element>
+                <Element>0</Element>
+                <Element>+4096</Element>
+              </Value>
+              <Property PropertyID="6" xsi:type="xsd:float">0</Property>
+              <Property PropertyID="7" xsi:type="xsd:int">1</Property>
+              <Property PropertyID="102" xsi:type="xsd:double">4096</Property>
+              <Property PropertyID="103" xsi:type="xsd:double">-4096</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Double[]">
+            <Item>
+              <Value xsi:type="ArrayOfDouble">
+                <Element>-1000</Element>
+                <Element>0</Element>
+                <Element>+1000</Element>
+              </Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+              <Property PropertyID="7" xsi:type="xsd:int">1</Property>
+              <Property PropertyID="102" xsi:type="xsd:double">1000</Property>
+              <Property PropertyID="103" xsi:type="xsd:double">-1000</Property>
+            </Item>
+          </BrowseElement>
+        </Children>
+      </BrowseElement>
+      <BrowseElement ElementName="Limited Access">
+        <Children>
+          <BrowseElement ElementName="Read Only 1">
+            <Item>
+              <Value xsi:type="xsd:int">50000</Value>
+              <Property PropertyID="5" xsi:type="xsd:int">1</Property>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Read Only 2">
+            <Item>
+              <Value xsi:type="xsd:double">50000</Value>
+              <Property PropertyID="5" xsi:type="xsd:int">1</Property>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Write Only 1">
+            <Item>
+              <Value xsi:type="xsd:int">50000</Value>
+              <Property PropertyID="5" xsi:type="xsd:int">2</Property>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Write Only 2">
+            <Item>
+              <Value xsi:type="xsd:double">50000</Value>
+              <Property PropertyID="5" xsi:type="xsd:int">2</Property>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+        </Children>
+      </BrowseElement>
+      <BrowseElement ElementName="Simple Types">
+        <Children>
+          <BrowseElement ElementName="SByte">
+            <Item>
+              <Value xsi:type="xsd:byte">127</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Byte">
+            <Item>
+              <Value xsi:type="xsd:unsignedByte">255</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Short">
+            <Item>
+              <Value xsi:type="xsd:short">32767</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="UShort">
+            <Item>
+              <Value xsi:type="xsd:unsignedShort">65535</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Int">
+            <Item>
+              <Value xsi:type="xsd:int">2147483647</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="UInt">
+            <Item>
+              <Value xsi:type="xsd:unsignedInt">4294967295</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Long">
+            <Item>
+              <Value xsi:type="xsd:long">9223372036854775807</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="ULong">
+            <Item>
+              <Value xsi:type="xsd:unsignedLong">18446744073709551615</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Float">
+            <Item>
+              <Value xsi:type="xsd:float">+3.402823e38</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Double">
+            <Item>
+              <Value xsi:type="xsd:double">1.7976931348623158e+308</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Decimal">
+            <Item>
+              <Value xsi:type="xsd:decimal">922337203685477.5807</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="DateTime">
+            <Item>
+              <Value xsi:type="xsd:dateTime">2002-04-29T06:42:49.0712500Z</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Boolean">
+            <Item>
+              <Value xsi:type="xsd:boolean">true</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="String">
+            <Item>
+              <Value xsi:type="xsd:string">Hello&lt;&gt;World</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+        </Children>
+      </BrowseElement>
+      <BrowseElement ElementName="ArrayTypes">
+        <Children>
+          <BrowseElement ElementName="SByte[]">
+            <Item>
+              <Value xsi:type="ArrayOfByte">
+                <Element>-128</Element>
+                <Element>0</Element>
+                <Element>127</Element>
+              </Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Byte[]">
+            <Item>
+              <Value xsi:type="ArrayOfUnsignedByte">
+                <Element>0</Element>
+                <Element>127</Element>
+                <Element>255</Element>
+              </Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Short[]">
+            <Item>
+              <Value xsi:type="ArrayOfShort">
+                <Element>-32768</Element>
+                <Element>0</Element>
+                <Element>+32767</Element>
+              </Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="UShort[]">
+            <Item>
+              <Value xsi:type="ArrayOfUnsignedShort">
+                <Element>0</Element>
+                <Element>32768</Element>
+                <Element>65535</Element>
+              </Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Int[]">
+            <Item>
+              <Value xsi:type="ArrayOfInt">
+                <Element>-2147483648</Element>
+                <Element>0</Element>
+                <Element>+2147483647</Element>
+              </Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="UInt[]">
+            <Item>
+              <Value xsi:type="ArrayOfUnsignedInt">
+                <Element>0</Element>
+                <Element>2147483648</Element>
+                <Element>4294967295</Element>
+              </Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Long[]">
+            <Item>
+              <Value xsi:type="ArrayOfLong">
+                <Element>-9223372036854775807</Element>
+                <Element>0</Element>
+                <Element>+9223372036854775807</Element>
+              </Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="ULong[]">
+            <Item>
+              <Value xsi:type="ArrayOfUnsignedLong">
+                <Element>0</Element>
+                <Element>9223372036854775808</Element>
+                <Element>18446744073709551615</Element>
+              </Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Float[]">
+            <Item>
+              <Value xsi:type="ArrayOfFloat">
+                <Element>-1.175494351e-38</Element>
+                <Element>-1.192092896e-07</Element>
+                <Element>+1.192092896e-07</Element>
+                <Element>+3.402823466e+38</Element>
+              </Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Double[]">
+            <Item>
+              <Value xsi:type="ArrayOfDouble">
+                <Element>-2.2250738585072014e-308</Element>
+                <Element>-2.2204460492503131e-016</Element>
+                <Element>+2.2204460492503131e-016</Element>
+                <Element>+1.7976931348623158e+308</Element>
+              </Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Decimal[]">
+            <Item>
+              <Value xsi:type="ArrayOfDecimal">
+                <Element>+922337203685477.5807</Element>
+                <Element>+1.0001</Element>
+                <Element>+1.0001</Element>
+                <Element>+922337203685477.5807</Element>
+              </Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Boolean[]">
+            <Item>
+              <Value xsi:type="ArrayOfBoolean">
+                <Element>false</Element>
+                <Element>true</Element>
+                <Element>1</Element>
+                <Element>0</Element>
+              </Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="String[]">
+            <Item>
+              <Value xsi:type="ArrayOfString">
+                <Element>To be, or not to be: that is the question:</Element>
+                <Element>Whether 'tis nobler in the mind to suffer</Element>
+                <Element>The slings and arrows of outrageous fortune,</Element>
+                <Element>Or to take arms against a sea of troubles,</Element>
+                <Element>And by opposing end them? To die: to sleep;</Element>
+                <Element>No more; and by a sleep to say we end</Element>
+                <Element>The heart-ache and the thousand natural shocks</Element>
+                <Element>That flesh is heir to, 'tis a consummation</Element>
+                <Element>Devoutly to be wish'd. To die, to sleep;</Element>
+                <Element>To sleep: perchance to dream: ay, there's the rub;</Element>
+                <Element>For in that sleep of death what dreams may come?</Element>
+              </Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="DateTime[]">
+            <Item>
+              <Value xsi:type="ArrayOfDateTime">
+                <Element>1601-01-01T00:00:00Z</Element>
+                <Element>2000-01-01T12:00:00+01:00</Element>
+                <Element>2000-01-01T12:00:00-01:00</Element>
+                <Element>2100-12-31T23:59:59.999999Z</Element>
+              </Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Object[]">
+            <Item>
+              <Value xsi:type="ArrayOfAnyType">
+                <Element xsi:type="xsd:byte">127</Element>
+                <Element xsi:type="xsd:unsignedByte">255</Element>
+                <Element xsi:type="xsd:string">Hello&lt;&gt;World</Element>
+                <Element xsi:type="ArrayOfInt">
+                  <Element>-2147483648</Element>
+                  <Element>0</Element>
+                  <Element>+2147483647</Element>
+                </Element>
+                <Element xsi:type="ArrayOfAnyType">
+                  <Element xsi:type="xsd:byte">127</Element>
+                  <Element xsi:type="xsd:unsignedByte">255</Element>
+                  <Element xsi:type="xsd:string">Hello&lt;&gt;World</Element>
+                  <Element xsi:type="ArrayOfInt">
+                    <Element>-2147483648</Element>
+                    <Element>0</Element>
+                    <Element>+2147483647</Element>
+                  </Element>
+                </Element>
+              </Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+            </Item>
+          </BrowseElement>
+        </Children>
+      </BrowseElement>
+      <BrowseElement ElementName="Enumerated Types">
+        <Children>
+          <BrowseElement ElementName="Gems">
+            <Item>
+              <Value xsi:type="xsd:int">0</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+              <Property PropertyID="7" xsi:type="xsd:int">2</Property>
+              <Property PropertyID="8" xsi:type="ArrayOfString">
+                <Element>Ruby</Element>
+                <Element>Diamond</Element>
+                <Element>Emerald</Element>
+                <Element>Opal</Element>
+                <Element>Garnet</Element>
+                <Element>Topaz</Element>
+                <Element>Aquamarine</Element>
+                <Element>Jade</Element>
+              </Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Fellowship">
+            <Item>
+              <Value xsi:type="xsd:int">0</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">0</Property>
+              <Property PropertyID="7" xsi:type="xsd:int">2</Property>
+              <Property PropertyID="8" xsi:type="ArrayOfString">
+                <Element>Frodo</Element>
+                <Element>Gandalf</Element>
+                <Element>Samwise</Element>
+                <Element>Merry</Element>
+                <Element>Pippin</Element>
+                <Element>Aragon</Element>
+                <Element>Faramir</Element>
+                <Element>Legolas</Element>
+                <Element>Gimli</Element>
+              </Property>
+            </Item>
+          </BrowseElement>
+        </Children>
+      </BrowseElement>
+    </Children>
+  </BrowseElement>
+  <BrowseElement ElementName="Dynamic">
+    <Children>
+      <BrowseElement ElementName="Analog Types">
+        <Children>
+          <BrowseElement ElementName="Fools">
+            <Item>
+              <Value xsi:type="xsd:short" Period="10000" SamplingRate="1000">0</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+              <Property PropertyID="7" xsi:type="xsd:int">1</Property>
+              <Property PropertyID="102" xsi:type="xsd:double">+500</Property>
+              <Property PropertyID="103" xsi:type="xsd:double">-500</Property>
+            </Item>
+            <Children>
+              <BrowseElement ElementName="Rosencrantz">
+                <Item>
+                  <Value xsi:type="xsd:int" Period="10000" SamplingRate="1000">0</Value>
+                  <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+                  <Property PropertyID="7" xsi:type="xsd:int">1</Property>
+                  <Property PropertyID="102" xsi:type="xsd:double">1000</Property>
+                  <Property PropertyID="103" xsi:type="xsd:double">0</Property>
+                </Item>
+              </BrowseElement>
+              <BrowseElement ElementName="Guildenstern">
+                <Item>
+                  <Value xsi:type="xsd:int" Period="10000" SamplingRate="1000">0</Value>
+                  <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+                  <Property PropertyID="7" xsi:type="xsd:int">1</Property>
+                  <Property PropertyID="102" xsi:type="xsd:double">1000</Property>
+                  <Property PropertyID="103" xsi:type="xsd:double">0</Property>
+                </Item>
+              </BrowseElement>
+            </Children>
+          </BrowseElement>
+          <BrowseElement ElementName="Int">
+            <Item>
+              <Value xsi:type="xsd:int" Period="10000" SamplingRate="1000">0</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+              <Property PropertyID="7" xsi:type="xsd:int">1</Property>
+              <Property PropertyID="102" xsi:type="xsd:double">1000</Property>
+              <Property PropertyID="103" xsi:type="xsd:double">0</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Double">
+            <Item>
+              <Value xsi:type="xsd:double" Period="16000" SamplingRate="1000" Waveform="2">0</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">0</Property>
+              <Property PropertyID="7" xsi:type="xsd:int">1</Property>
+              <Property PropertyID="102" xsi:type="xsd:double">100</Property>
+              <Property PropertyID="103" xsi:type="xsd:double">0</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Int[]">
+            <Item>
+              <Value xsi:type="ArrayOfInt" Period="16000" SamplingRate="1000">
+                <Element>-4096</Element>
+                <Element>0</Element>
+                <Element>+4096</Element>
+              </Value>
+              <Property PropertyID="6" xsi:type="xsd:float">0</Property>
+              <Property PropertyID="7" xsi:type="xsd:int">1</Property>
+              <Property PropertyID="102" xsi:type="xsd:double">4096</Property>
+              <Property PropertyID="103" xsi:type="xsd:double">-4096</Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Double[]">
+            <Item>
+              <Value xsi:type="ArrayOfDouble" Period="16000" SamplingRate="1000" Waveform="2">
+                <Element>-1000</Element>
+                <Element>0</Element>
+                <Element>+1000</Element>
+              </Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+              <Property PropertyID="7" xsi:type="xsd:int">1</Property>
+              <Property PropertyID="102" xsi:type="xsd:double">1000</Property>
+              <Property PropertyID="103" xsi:type="xsd:double">-1000</Property>
+            </Item>
+          </BrowseElement>
+        </Children>
+      </BrowseElement>
+      <BrowseElement ElementName="Enumerated Types">
+        <Children>
+          <BrowseElement ElementName="Gems">
+            <Item>
+              <Value xsi:type="xsd:int" Period="16000" SamplingRate="4000" Waveform="3">0</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">100</Property>
+              <Property PropertyID="7" xsi:type="xsd:int">2</Property>
+              <Property PropertyID="8" xsi:type="ArrayOfString">
+                <Element>Ruby</Element>
+                <Element>Diamond</Element>
+                <Element>Emerald</Element>
+                <Element>Opal</Element>
+                <Element>Garnet</Element>
+                <Element>Topaz</Element>
+                <Element>Aquamarine</Element>
+                <Element>Jade</Element>
+              </Property>
+            </Item>
+          </BrowseElement>
+          <BrowseElement ElementName="Fellowship">
+            <Item>
+              <Value xsi:type="xsd:int" Period="16000" SamplingRate="4000" Waveform="3">0</Value>
+              <Property PropertyID="6" xsi:type="xsd:float">0</Property>
+              <Property PropertyID="7" xsi:type="xsd:int">2</Property>
+              <Property PropertyID="8" xsi:type="ArrayOfString">
+                <Element>Frodo</Element>
+                <Element>Gandalf</Element>
+                <Element>Samwise</Element>
+                <Element>Merry</Element>
+                <Element>Pippin</Element>
+                <Element>Aragon</Element>
+                <Element>Faramir</Element>
+                <Element>Legolas</Element>
+                <Element>Gimli</Element>
+              </Property>
+            </Item>
+          </BrowseElement>
+        </Children>
+      </BrowseElement>
+    </Children>
+  </BrowseElement>
+</Server>
