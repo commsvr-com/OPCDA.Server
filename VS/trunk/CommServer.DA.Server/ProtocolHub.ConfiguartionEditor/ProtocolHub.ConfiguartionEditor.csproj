@@ -302,11 +302,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CommServerConsoleInterface\ProtocolHub.MonitorInterface.csproj">
+    <ProjectReference Include="..\ProtocolHub.MonitorInterface\ProtocolHub.MonitorInterface.csproj">
       <Project>{CE7BA276-5ACF-44FE-B24A-F91F6A0B0436}</Project>
       <Name>ProtocolHub.MonitorInterface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CommServer\ProtocolHub.Communication.csproj">
+    <ProjectReference Include="..\ProtocolHub.Communication\ProtocolHub.Communication.csproj">
       <Project>{E1351D09-7241-44C3-A292-8D46E322A61D}</Project>
       <Name>ProtocolHub.Communication</Name>
     </ProjectReference>
