@@ -30,6 +30,7 @@ using CAS.Lib.CommonBus;
 using CAS.NetworkConfigLib;
 using NetworkConfig.HMI.Editors;
 using NetworkConfig.Properties;
+using CAS.CommServer.CommonBus;
 
 namespace NetworkConfig.HMI
 {
