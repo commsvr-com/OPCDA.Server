@@ -6,7 +6,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		code_help.shfb = code_help.shfb
 		CommServer.vsmdi = CommServer.vsmdi
-		AdditionalResources\DP_RDK.uml = AdditionalResources\DP_RDK.uml
 		AdditionalResources\Komentarze.doc = AdditionalResources\Komentarze.doc
 		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
 		Problems.txt = Problems.txt
@@ -23,7 +22,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolHub.Monitor", "Prot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CR.Scripts", "Scripts\CR.Scripts.csproj", "{E1FC0810-38EB-4EFF-A015-BEAF031DD987}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CommServerSetup", "Server.Setup\CommServerSetup.vdproj", "{2757B4E5-F34F-44A1-ACA1-84AB8E03A68C}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Server.Setup", "Server.Setup\CommServerSetup.vdproj", "{2757B4E5-F34F-44A1-ACA1-84AB8E03A68C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtocolHub.CommunicationUnitTests", "ProtocolHub.CommunicationUnitTests\ProtocolHub.CommunicationUnitTests.csproj", "{2BFCD8E7-8C88-4B0A-8FA3-2ABDC4F044C3}"
 EndProject

@@ -16,10 +16,6 @@
 //  mailto:techsupp@cas.com.pl
 //  http://www.cas.eu
 //</summary>
-using System;
-using System.Collections.Generic;
-using System.Text;
-using BaseStation;
 using System.Collections;
 
 namespace CAS.Lib.CommServer.Tests

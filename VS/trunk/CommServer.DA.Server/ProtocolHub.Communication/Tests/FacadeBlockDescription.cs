@@ -16,13 +16,10 @@
 //  mailto:techsupp@cas.com.pl
 //  http:\\www.cas.eu
 //</summary>
-using System;
-using System.Collections.Generic;
-using System.Text;
 namespace CAS.Lib.CommServer.Tests
 {
   /// <summary>
-  /// Facade impmlementation of CAS.Lib.CommonBus.ApplicationLayer.IBlockDescription
+  /// Facade implementation of CAS.Lib.CommonBus.ApplicationLayer.IBlockDescription
   /// </summary>
   class FacadeBlockDescription: CAS.Lib.CommonBus.ApplicationLayer.IBlockDescription
   {

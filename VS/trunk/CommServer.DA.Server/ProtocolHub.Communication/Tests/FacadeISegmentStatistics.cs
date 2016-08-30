@@ -18,19 +18,19 @@
 //  http:\\www.cas.eu
 //</summary>
 using System;
-using System.Collections.Generic;
-using System.Text;
 using CAS.Lib.CommServerConsoleInterface;
 using BaseStation.Management;
 namespace CAS.Lib.CommServer.Tests
 {
-  class FacadeISegmentStatistics: ISegmentStatistics
+  class FacadeISegmentStatistics : ISegmentStatistics
   {
+
     internal int NumberOfMarkConnFail;
     internal Statistics.SegmentStatistics.States State;
     internal long Min;
     internal long Max;
     internal long Avarage;
+
     #region ISegmentStatistics Members
     public void MarkConnFail()
     {
@@ -40,7 +40,7 @@ namespace CAS.Lib.CommServer.Tests
     {
       set { State = value; }
     }
-    public void SetOvertimeCoefficient( long min, long max, long avr )
+    public void SetOvertimeCoefficient(long min, long max, long avr)
     {
       Min = min;
       Max = max;
@@ -48,13 +48,13 @@ namespace CAS.Lib.CommServer.Tests
     }
     #endregion
     #region IInterfaceLink Members
-    void IInterface2SegmentLink.AddInterface( Statistics.InterfaceStatistics iNtrerface )
+    void IInterface2SegmentLink.AddInterface(Statistics.InterfaceStatistics iNtrerface)
     {
-      throw new Exception( "The method or operation is not implemented." );
+      throw new Exception("The method or operation is not implemented.");
     }
-    void IInterface2SegmentLink.GetProtocolStatistics( ref uint[] counters, out bool isAnySuccess )
+    void IInterface2SegmentLink.GetProtocolStatistics(ref uint[] counters, out bool isAnySuccess)
     {
-      throw new Exception( "The method or operation is not implemented." );
+      throw new Exception("The method or operation is not implemented.");
     }
     public string GetOPCPrefix
     {

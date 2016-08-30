@@ -1,15 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Font Name="Tahoma" Size="8.25" />
   <Class Name="BaseStation.ConsoleIterface">
     <Position X="3" Y="3.25" Width="2.75" />
+    <NestedTypes>
+      <Class Name="BaseStation.ConsoleIterface.StatisticAndIUpdatePair&lt;StatT&gt;" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>SRC\BaseStation\ConsoleIterface.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
     <TypeIdentifier>
+      <HashCode>AAQAAChAgiACAGYJEAAIAgAACAAACAAIAABAQAAIAAg=</HashCode>
       <FileName>SRC\BaseStation\ConsoleIterface.cs</FileName>
-      <HashCode>AAAAACBAAiACAEIBEAAIIgAACAAACAAIAABAQAAIAAg=</HashCode>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="stationlist" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="BaseStation.ConsoleIterfaceAbstract" Collapsed="true">
     <Position X="3.5" Y="1.75" Width="1.5" />
@@ -19,14 +22,13 @@
     <Position X="3.5" Y="0.5" Width="1.5" />
     <TypeIdentifier />
   </Class>
-  <Class Name="System.Collections.SortedList" Collapsed="true">
+  <Class Name="System.Collections.SortedList">
     <Position X="0.5" Y="5.25" Width="1.5" />
     <TypeIdentifier />
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="BaseStation.Management.Statistics">
     <Position X="7.25" Y="1" Width="4" />
-    <TypeIdentifier />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
@@ -38,8 +40,10 @@
         <TypeIdentifier />
         <Lollipop Position="0.2" />
       </Class>
-      <Class Name="BaseStation.Management.Statistics.ChannelStatistics">
+      <Class Name="BaseStation.Management.Statistics.ProtocolStatisticsUpdater" Collapsed="true">
         <TypeIdentifier />
+      </Class>
+      <Class Name="BaseStation.Management.Statistics.ChannelStatistics">
         <Compartments>
           <Compartment Name="Nested Types" Collapsed="false" />
         </Compartments>
@@ -48,13 +52,9 @@
             <TypeIdentifier />
           </Class>
         </NestedTypes>
-      </Class>
-      <Class Name="BaseStation.Management.Statistics.SegmentStatistics" Collapsed="true">
         <TypeIdentifier />
-        <Lollipop Position="0.2" />
       </Class>
       <Class Name="BaseStation.Management.Statistics.InterfaceStatistics">
-        <TypeIdentifier />
         <NestedTypes>
           <Class Name="BaseStation.Management.Statistics.InterfaceStatistics.InterfaceStatisticsInternal" Collapsed="true">
             <TypeIdentifier />
@@ -66,12 +66,19 @@
             <TypeIdentifier />
           </Delegate>
         </NestedTypes>
+        <TypeIdentifier />
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="BaseStation.Management.Statistics.SegmentStatistics" Collapsed="true">
+        <TypeIdentifier />
         <Lollipop Position="0.2" />
       </Class>
     </NestedTypes>
+    <TypeIdentifier />
   </Class>
   <Interface Name="BaseStation.Management.IHtmlOutput">
     <Position X="11.5" Y="2" Width="1.5" />
     <TypeIdentifier />
   </Interface>
+  <Font Name="Tahoma" Size="8.25" />
 </ClassDiagram>

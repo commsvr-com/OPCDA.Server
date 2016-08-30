@@ -143,6 +143,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Tests\GuardedDataProviderTest\MasterTest.cs" />
+    <Compile Include="Tests\TestRetryFilter.cs" />
+    <Compile Include="Tests\TestSegmentStateMachine.cs" />
     <None Include="App.config" />
     <None Include="cas.snk" />
     <None Include="ClassDiagram1.cd" />
@@ -213,6 +216,7 @@
     <Compile Include="SRC\BaseStation\Segment.cs" />
     <Compile Include="SRC\BaseStation\SegmentState.cs" />
     <Compile Include="SRC\BaseStation\Station.cs" />
+    <Compile Include="Tests\FacadeApplicationLayerMaster.cs" />
     <Compile Include="Tests\FacadeBlockDescription.cs" />
     <Compile Include="Tests\FacadeISegmentStatistics.cs" />
     <Compile Include="Tests\FacadePipe.cs" />
@@ -254,9 +258,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Tests\GuardedDataProviderTest\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
