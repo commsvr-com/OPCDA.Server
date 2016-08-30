@@ -95,7 +95,9 @@
     </None>
     <None Include="item_dsc.xml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Instrumentation\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\AssemblyInfo.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
