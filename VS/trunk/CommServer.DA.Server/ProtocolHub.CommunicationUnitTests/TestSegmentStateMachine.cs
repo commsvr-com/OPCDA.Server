@@ -157,66 +157,74 @@ namespace CAS.Lib.CommServer.Tests
       parameters = new SegmentParameters(segmentRow);
     }
     #endregion
+
     #region Test TestSuccess
     [TestMethod]
     public void TestSuccess()
     {
-      string KeepConnectExpectedTimeTemplate = "Expected KeepConnect time      ={0}";
-      string KeepConnectAcctualTimeTemplate = "KeepConnect time               ={0}";
-      string ConnectExpectedTimeTemplate = "Expected connect time          ={0}";
-      string CoccectAcctualTimeTemplate = "Connect time                   ={0}";
-      string IdleKeepConnectExpectedTimeTemplate = "Expected IdleKeepConnect time  ={0}";
-      string IdleKeepConnectAcctualTimeTemplate = "IdleKeepConnect time           ={0}";
-
-      MakeConnection();
-      AssertKeepConnection();
-
-      System.Diagnostics.Stopwatch myStopwatch = new System.Diagnostics.Stopwatch();
-      myStopwatch.Start();
-      TimeSpan maxValue = parameters.TimeKeepConnrction + new TimeSpan(0, 0, 0, 0, 100);
-      Console.WriteLine(KeepConnectExpectedTimeTemplate, parameters.TimeKeepConnrction.ToString());
-      while (myMachine.CurrentState == SegmentStateMachine.State.KeepConnection)
+      try
       {
-        Assert.IsTrue(myStopwatch.Elapsed < maxValue, "Timing error - too log keep connect state");
-        Assert.IsFalse(myMachine.NeedsChannelAccess, "inconsistency of the myMachine.NeedsChannelAccess");
-        TestRead();
-        TestWriteData();
-        Thread.Sleep(1);
-      }
-      AssertConnected();
-      Assert.IsTrue(myStopwatch.Elapsed >= parameters.TimeKeepConnrction, "Timing error - too short keep connect state");
-      Console.WriteLine(KeepConnectAcctualTimeTemplate, myStopwatch.Elapsed.ToString());
+        string KeepConnectExpectedTimeTemplate = "Expected KeepConnect time      ={0}";
+        string KeepConnectAcctualTimeTemplate = "KeepConnect time               ={0}";
+        string ConnectExpectedTimeTemplate = "Expected connect time          ={0}";
+        string CoccectAcctualTimeTemplate = "Connect time                   ={0}";
+        string IdleKeepConnectExpectedTimeTemplate = "Expected IdleKeepConnect time  ={0}";
+        string IdleKeepConnectAcctualTimeTemplate = "IdleKeepConnect time           ={0}";
 
-      myStopwatch.Reset();
-      myStopwatch.Start();
+        MakeConnection();
+        AssertKeepConnection();
 
-      Console.WriteLine(ConnectExpectedTimeTemplate, FiveSeconds.ToString());
-      while (myStopwatch.Elapsed < FiveSeconds)
-      {
-        TestRead();
-        TestWriteData();
-        Thread.Sleep(1);
+        System.Diagnostics.Stopwatch myStopwatch = new System.Diagnostics.Stopwatch();
+        myStopwatch.Start();
+        TimeSpan maxValue = parameters.TimeKeepConnrction + new TimeSpan(0, 0, 0, 0, 100);
+        Console.WriteLine(KeepConnectExpectedTimeTemplate, parameters.TimeKeepConnrction.ToString());
+        while (myMachine.CurrentState == SegmentStateMachine.State.KeepConnection)
+        {
+          Assert.IsTrue(myStopwatch.Elapsed < maxValue, "Timing error - too log keep connect state");
+          Assert.IsFalse(myMachine.NeedsChannelAccess, "inconsistency of the myMachine.NeedsChannelAccess");
+          TestRead();
+          TestWriteData();
+          Thread.Sleep(1);
+        }
         AssertConnected();
-      }
-      Console.WriteLine(CoccectAcctualTimeTemplate, myStopwatch.Elapsed.ToString());
+        Assert.IsTrue(myStopwatch.Elapsed >= parameters.TimeKeepConnrction, $"Timing error - too short keep connect state time {myStopwatch.Elapsed } expected {parameters.TimeKeepConnrction}");
+        Console.WriteLine(KeepConnectAcctualTimeTemplate, myStopwatch.Elapsed.ToString());
 
-      myStopwatch.Reset();
-      myStopwatch.Start();
-      Console.WriteLine(IdleKeepConnectExpectedTimeTemplate, parameters.TimeIdleKeepConnection.ToString());
-      maxValue = parameters.TimeIdleKeepConnection + new TimeSpan(0, 0, 0, 0, 100);
-      while (myMachine.CurrentState == SegmentStateMachine.State.Connected)
+        myStopwatch.Reset();
+        myStopwatch.Start();
+
+        Console.WriteLine(ConnectExpectedTimeTemplate, FiveSeconds.ToString());
+        while (myStopwatch.Elapsed < FiveSeconds)
+        {
+          TestRead();
+          TestWriteData();
+          Thread.Sleep(1);
+          AssertConnected();
+        }
+        Console.WriteLine(CoccectAcctualTimeTemplate, myStopwatch.Elapsed.ToString());
+
+        myStopwatch.Reset();
+        myStopwatch.Start();
+        Console.WriteLine(IdleKeepConnectExpectedTimeTemplate, parameters.TimeIdleKeepConnection.ToString());
+        maxValue = parameters.TimeIdleKeepConnection + new TimeSpan(0, 0, 0, 0, 100);
+        while (myMachine.CurrentState == SegmentStateMachine.State.Connected)
+        {
+          Assert.IsTrue(myStopwatch.Elapsed < maxValue, "Timing error - to log idle keep connect state");
+          Thread.Sleep(1);
+        }
+        Assert.IsTrue(myStopwatch.Elapsed >= parameters.TimeIdleKeepConnection, "Timing error - to short idle keep connect state");
+        AssertDisconnected();
+        Console.WriteLine(IdleKeepConnectAcctualTimeTemplate, myStopwatch.Elapsed.ToString());
+
+        MakeConnection();
+        myMachine.NotifyKeepConnectTimeElapsed();
+      }
+      finally
       {
-        Assert.IsTrue(myStopwatch.Elapsed < maxValue, "Timing error - to log idle keep connect state");
-        Thread.Sleep(1);
+        myMachine.DisconnectRequest();
+        AssertDisconnected();
+        Debug.WriteLine("Test failed - machine has been disconnected.");
       }
-      Assert.IsTrue(myStopwatch.Elapsed >= parameters.TimeIdleKeepConnection, "Timing error - to short idle keep connect state");
-      AssertDisconnected();
-      Console.WriteLine(IdleKeepConnectAcctualTimeTemplate, myStopwatch.Elapsed.ToString());
-
-      MakeConnection();
-      myMachine.NotifyKeepConnectTimeElapsed();
-      myMachine.DisconnectRequest();
-      AssertDisconnected();
     }
     #endregion
 

@@ -145,12 +145,13 @@
   <ItemGroup>
     <Compile Include="CommServerComponentTest.cs" />
     <Compile Include="Instrumentation\FacadeApplicationLayerMaster.cs" />
+    <Compile Include="Instrumentation\FacadeASALicense.cs" />
     <Compile Include="Instrumentation\FacadeBlockDescription.cs" />
     <Compile Include="Instrumentation\FacadeISegmentStatistics.cs" />
     <Compile Include="Instrumentation\FacadePipe.cs" />
     <Compile Include="Instrumentation\FacadeSegment.cs" />
     <Compile Include="MasterTest.cs" />
-    <Compile Include="OTALicenseTest.cs" />
+    <Compile Include="LicensesTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
