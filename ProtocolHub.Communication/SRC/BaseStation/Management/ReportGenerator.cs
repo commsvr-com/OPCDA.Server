@@ -14,8 +14,8 @@
 //_______________________________________________________________
 
 
+using CAS.CommServer.ProtocolHub.Communication.Properties;
 using CAS.Lib.CommServer;
-using CAS.Lib.CommServer.Properties;
 using CAS.Lib.RTLib.Management;
 using CAS.Lib.RTLib.Utils;
 using System;

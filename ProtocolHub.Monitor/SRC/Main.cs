@@ -617,7 +617,7 @@ namespace CAS.CommServerConsole
 
     private ResourceManager Getter()
     {
-      return CAS.Lib.CommServer.Properties.Resources.ResourceManager;
+      return Resources.ResourceManager;
     }
      #endregion
  }//MainForm

@@ -22,9 +22,9 @@ using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
 using BaseStation.Management;
 using CAS.Lib.CommServer;
-using CAS.Lib.CommServer.Properties;
 using CAS.Lib.RTLib.Processes;
 using CAS.Lib.RTLib.Management;
+using CAS.CommServer.ProtocolHub.Communication.Properties;
 
 namespace BaseStation
 {
@@ -36,11 +36,11 @@ namespace BaseStation
     private class StatisticAndIUpdatePair<StatT>
     {
       private StatT statT;
-      private IUpdateInternalStatistics iupdateobject;
+      private IUpdateInternalStatistics m_UpdateObject;
       internal StatisticAndIUpdatePair( StatT StatisticsObject, IUpdateInternalStatistics IUpdateInternalStatisticsObject )
       {
         statT = StatisticsObject;
-        iupdateobject = IUpdateInternalStatisticsObject;
+        m_UpdateObject = IUpdateInternalStatisticsObject;
       }
       internal StatT StatisticsObject
       {
@@ -53,12 +53,12 @@ namespace BaseStation
       {
         get
         {
-          return iupdateobject;
+          return m_UpdateObject;
         }
       }
       internal StatT GetStatisticsObjectUpdated()
       {
-        iupdateobject.UpdateInternal();
+        m_UpdateObject.UpdateInternal();
         return statT;
       }
     }

@@ -18,11 +18,10 @@
 using System;
 using CAS.Lib.CommonBus;
 using CAS.NetworkConfigLib;
-using CAS.Lib.CommServer.Properties;
 namespace CAS.Lib.CommServer
 {
   /// <summary>
-  /// Structeure converting configuration descriptor to a structure of parameters.
+  /// Structure converting configuration descriptor to a structure of parameters.
   /// </summary>
   public class SegmentParameters
   {

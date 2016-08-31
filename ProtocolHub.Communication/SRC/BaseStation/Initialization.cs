@@ -14,6 +14,7 @@
 //_______________________________________________________________
 
 using BaseStation.ItemDescriber;
+using CAS.CommServer.ProtocolHub.Communication.SRC.BaseStation.NetworkConfig;
 using CAS.Lib.CommServer;
 using System;
 
@@ -30,7 +31,7 @@ namespace BaseStation
     {
       XMLManagement xml_desc = new XMLManagement();
       m_ds_dsc = new ItemDecriberDataSet();
-      xml_desc.readXMLFile( m_ds_dsc, AppConfigManagement.ItemDsc_configfile );
+      xml_desc.readXMLFile(m_ds_dsc, AppConfigManagement.ItemDsc_configfile);
     }
 #endif
     /// <summary>
@@ -40,23 +41,22 @@ namespace BaseStation
     /// <param name="cDemoVer">true if there is no valid license, false otherwise</param>
     /// <param name="cVConstrain">Number of item I can instantiate according of the license. �1 if unlimited. Valid if cDemoVer is false.</param>
     /// <param name="ConfigurationFileName">Name of the configuration file.</param>
-    internal static void InitServer( CommServerComponent parent, bool cDemoVer,
-      ref int cVConstrain, string ConfigurationFileName )
+    internal static void InitServer(CommServerComponent parent, bool cDemoVer, ref int cVConstrain, string ConfigurationFileName)
     {
-      NetworkConfig.XMLManagement xml = new NetworkConfig.XMLManagement( ConfigurationFileName, true );
+      ProtocolHubConfiguration xml = new ProtocolHubConfiguration(ConfigurationFileName, true);
 #if COMMSERVER
       try
       {
         InitItemDescriber();
       }
-      catch ( Exception ex )
+      catch (Exception ex)
       {
-        CommServerComponent.Tracer.TraceWarning( 98, typeof( Initialization ).FullName + ".Initialization", ex.Message );
+        CommServerComponent.Tracer.TraceWarning(98, typeof(Initialization).FullName + ".Initialization", ex.Message);
       }
 #endif
       //CAS.OpcSvr.Da.NETServer.Initialization.InitComponent();
-      Station.InitStations( xml.configuration.Station, ref cVConstrain );
-      Channel.InitializeChannels( xml.configuration.Channels, parent, cDemoVer );
+      Station.InitStations(xml.configuration.Station, ref cVConstrain);
+      Channel.InitializeChannels(xml.configuration.Channels, parent, cDemoVer);
 #if COMMSERVER
       Station.SwitchOnDataScanning();
 #endif

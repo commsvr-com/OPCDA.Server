@@ -19,12 +19,12 @@ using CAS.Lib.RTLib.Processes;
 using CAS.NetworkConfigLib;
 using System;
 
-namespace NetworkConfig
+namespace CAS.CommServer.ProtocolHub.Communication.SRC.BaseStation.NetworkConfig
 {
   /// <summary>
   /// Opens and reads OPC server configuration from XML file.
   /// </summary>
-  internal class XMLManagement
+  internal class ProtocolHubConfiguration
   {
 
     #region PRIVATE
@@ -37,19 +37,19 @@ namespace NetworkConfig
     /// </summary>
     public readonly ComunicationNet configuration;
     /// <summary>
-    /// Initializes a new instance of the <see cref="XMLManagement"/> class.
+    /// Initializes a new instance of the <see cref="ProtocolHubConfiguration"/> class.
     /// </summary>
     /// <param name="ConfigurationFilename">The configuration filename.</param>
-    public XMLManagement(string ConfigurationFilename)
+    public ProtocolHubConfiguration(string ConfigurationFilename)
       : this(ConfigurationFilename, false)
     {
     }
     /// <summary>
-    /// Initializes a new instance of the <see cref="XMLManagement"/> class.
+    /// Initializes a new instance of the <see cref="ProtocolHubConfiguration"/> class.
     /// </summary>
     /// <param name="ConfigurationFilename">The configuration filename.</param>
-    /// <param name="open_readonly">if set to <c>true</c> file is opened as readonly.</param>
-    public XMLManagement(string ConfigurationFilename, bool open_readonly)
+    /// <param name="open_readonly">if set to <c>true</c> file is opened as read only.</param>
+    public ProtocolHubConfiguration(string ConfigurationFilename, bool open_readonly)
     {
       filename = ConfigurationFilename;
       try
