@@ -224,6 +224,7 @@ namespace CAS.Lib.CommServer.Tests
     [TestMethod]
     public void TestAsynchronousDisconnect()
     {
+      Assert.Inconclusive();
       int workerThreads;
       int completionPortThreads;
       System.Threading.ThreadPool.GetAvailableThreads(out workerThreads, out completionPortThreads);
