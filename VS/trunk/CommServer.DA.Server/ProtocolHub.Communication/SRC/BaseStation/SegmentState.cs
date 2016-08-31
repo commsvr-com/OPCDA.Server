@@ -14,12 +14,12 @@
 //_______________________________________________________________
 
 
-using System;
+using CAS.CommServer.ProtocolHub.Communication.Properties;
 using CAS.Lib.CommonBus;
 using CAS.Lib.CommonBus.ApplicationLayer;
 using CAS.Lib.CommServerConsoleInterface;
 using CAS.Lib.RTLib.Processes;
-using CAS.CommServer.ProtocolHub.Communication.Properties;
+using System;
 
 namespace CAS.Lib.CommServer
 {
@@ -564,14 +564,14 @@ namespace CAS.Lib.CommServer
       myPendulum = new System.Threading.Timer( new System.Threading.TimerCallback( PendulumHandler ) );
     }
     #endregion
+
     #region DEBUG
-#if DEBUG
-    public virtual void NotifyKeepConnectTimeElapsed()
+    [System.Diagnostics.Conditional("DEBUG")]
+    internal virtual void NotifyKeepConnectTimeElapsed()
     {
       lock ( this )
         CurrentSegmentState.NotifyKeepConnectTimeElapsed();
     }
-#endif
     #endregion
   }
 }
