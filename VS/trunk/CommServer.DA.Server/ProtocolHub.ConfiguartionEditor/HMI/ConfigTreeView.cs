@@ -894,11 +894,6 @@ namespace NetworkConfig.HMI
       }
     }
 
-    private ResourceManager Getter()
-    {
-      return CAS.Lib.CommServer.Properties.Resources.ResourceManager;
-    }
-
     #region Thinks i dont use (commented)
     //TS: Do czego to niby mialo sluzyc ????????????????
     // Updates all child tree nodes recursively.

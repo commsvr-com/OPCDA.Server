@@ -1,25 +1,22 @@
-//<summary>
-//  Title   : Facade Segment for Unit tests
-//  System  : Microsoft Visual C# .NET 2005
+//_______________________________________________________________
+//  Title   : FacadeSegment
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//    200709 mpostol - created
-//    <Author> - <date>:
-//    <description>
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
+//_______________________________________________________________
 
-using System;
+using CAS.Lib.CommonBus.ApplicationLayer;
 using CAS.Lib.RTLib.Processes;
 using CAS.NetworkConfigLib;
+using System;
 
 namespace CAS.Lib.CommServer.Tests
 {
@@ -42,7 +39,7 @@ namespace CAS.Lib.CommServer.Tests
     internal class FacadePipeInterface: Pipe.PipeInterface
     {
       /// <summary>
-      /// Facade immplementation of BaseStation.Pipe.PipeInterface.PipeDataBlock
+      /// Facade implementation of BaseStation.Pipe.PipeInterface.PipeDataBlock
       /// </summary>
       internal class FacadePipeDataBlock: Pipe.PipeInterface.PipeDataBlock
       {
@@ -50,11 +47,11 @@ namespace CAS.Lib.CommServer.Tests
           : base( waitTimeList, dataDescription, pipeInterface )
         { }
       }
-      internal protected override bool WriteData( object data, CAS.Lib.CommonBus.ApplicationLayer.IBlockDescription dataAdres )
+      internal protected override bool WriteData( object data, IBlockDescription dataAddress )
       {
         throw new Exception( "The method or operation is not implemented." );
       }
-      internal protected override bool ReadData( out object data, CAS.Lib.CommonBus.ApplicationLayer.IBlockDescription dataAdres )
+      internal protected override bool ReadData( out object data, IBlockDescription dataAddress)
       {
         throw new Exception( "The method or operation is not implemented." );
       }

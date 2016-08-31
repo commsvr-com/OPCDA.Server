@@ -16,6 +16,8 @@
 //  mailto:techsupp@cas.com.pl
 //  http://www.cas.eu
 //</summary>
+
+using CAS.NetworkConfigLib;
 using System.Collections;
 
 namespace CAS.Lib.CommServer.Tests
@@ -27,11 +29,11 @@ namespace CAS.Lib.CommServer.Tests
   class FacadePipe: Pipe
   {
     private ArrayList myDataDescriptionsList = new ArrayList();
-    protected override System.Collections.IEnumerable GetDataDescriptionList
+    protected override IEnumerable GetDataDescriptionList
     {
       get { return myDataDescriptionsList; }
     }
-    internal FacadePipe( CAS.NetworkConfigLib.ComunicationNet.StationRow currSDsc ) 
+    internal FacadePipe( ComunicationNet.StationRow currSDsc ) 
     {
       myStatistics = new BaseStation.Management.Station( currSDsc );
     }

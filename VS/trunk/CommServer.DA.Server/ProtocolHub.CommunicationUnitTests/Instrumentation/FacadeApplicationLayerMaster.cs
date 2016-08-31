@@ -17,12 +17,10 @@
 //  http:\\www.cas.eu
 //</summary>
 using System;
-using System.Collections.Generic;
-using System.Text;
 using CAS.Lib.CommonBus.ApplicationLayer;
-using System.Diagnostics;
 using CAS.Lib.CommonBus;
-using NUnit.Framework;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 namespace CAS.Lib.CommServer.Tests
 {
   /// <summary>

@@ -17,9 +17,9 @@
 using System;
 using CAS.Lib.CommonBus;
 using CAS.Lib.CommonBus.ApplicationLayer;
-using CAS.Lib.CommServer.Properties;
 using CAS.Lib.CommServerConsoleInterface;
 using CAS.Lib.RTLib.Processes;
+using CAS.CommServer.ProtocolHub.Communication.Properties;
 
 namespace CAS.Lib.CommServer
 {

@@ -16,20 +16,22 @@
 //  mailto:techsupp@cas.com.pl
 //  http://www.cas.eu
 //</summary>
-using NUnit.Framework;
+using CAS.Lib.CommonBus;
 using CAS.Lib.CommonBus.ApplicationLayer;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 namespace CAS.Lib.CommServer.Tests.GuardedDataProviderTest
 {
   /// <summary>
   /// Master Test
   /// </summary>
-  [TestFixture()]
+  [TestClass()]
   public class MasterTest
   {
     /// <summary>
     /// Goes the test.
     /// </summary>
-    [Test]
+    [TestMethod]
     public void GoTest()
     {
       FacadeApplicationLayerMaster m_Master = new FacadeApplicationLayerMaster();
@@ -37,7 +39,7 @@ namespace CAS.Lib.CommServer.Tests.GuardedDataProviderTest
       GuardedDataProvider m_gp = new GuardedDataProvider( "GoTest", m_Master );
       string m_gpToString = m_gp.ToString();
       Assert.AreEqual( m_gpToString, m_MasterToString, "ToString error" );
-      CAS.Lib.CommonBus.StringAddress m_address = new CAS.Lib.CommonBus.StringAddress("DummyAddress");
+      StringAddress m_address = new CAS.Lib.CommonBus.StringAddress("DummyAddress");
       Assert.IsFalse( m_gp.Connected, "State error" );
       m_gp.ConnectReq( m_address );
       Assert.IsTrue( m_gp.Connected, "State error" );
@@ -47,7 +49,7 @@ namespace CAS.Lib.CommServer.Tests.GuardedDataProviderTest
       {
         case AL_ReadData_Result.ALRes_DatTransferErrr:
         case AL_ReadData_Result.ALRes_DisInd:
-          Assert.Fail( "incorectr return value from ReadData" );
+          Assert.Fail( "incorrect return value from ReadData" );
           break;
         case AL_ReadData_Result.ALRes_Success:
           Assert.IsNotNull( m_readVal, "ReadData returned null" );
@@ -61,7 +63,7 @@ namespace CAS.Lib.CommServer.Tests.GuardedDataProviderTest
       {
         case AL_ReadData_Result.ALRes_DatTransferErrr:
         case AL_ReadData_Result.ALRes_DisInd:
-          Assert.Fail( "incorectr return value from ReadData" );
+          Assert.Fail("incorrect return value from ReadData");
           break;
         case AL_ReadData_Result.ALRes_Success:
           Assert.IsNull( m_writeVal, "WriteData has not returned the envelope to a pool" );
