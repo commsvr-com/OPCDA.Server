@@ -23,28 +23,10 @@ namespace CAS.Lib.CommServer.LicenseControl
   /// <summary>
   /// Adaptive Scanning Algorithm license access helper
   /// </summary>
-  [LicenseProvider( typeof( CodeProtectLP ) )]
-  [GuidAttribute( "F3C086DE-30EC-426d-B507-8114074A9840" )]
-  public sealed class ASALicense: IsLicensed<ASALicense>
+  [LicenseProvider(typeof(CodeProtectLP))]
+  [GuidAttribute("F3C086DE-30EC-426d-B507-8114074A9840")]
+  public class ASALicense : IsLicensed<ASALicense>
   {
-    #region private
-    private const string m_Src = "CAS.Lib.CommServer.LicenseControl.ASALicense";
-    private ASALicense()
-      : base( 0, TimeSpan.Zero )
-    {
-      if ( Licensed )
-      {
-        string fmt = "Adaptive Scanning Algorithm has been activated";
-        CommServerComponent.Tracer.TraceVerbose( 132, m_Src, fmt );
-      }
-    }
-    #endregion
-    #region public
-    /// <summary>
-    /// Get access to the <see cref="ASALicense"/> instance.
-    /// </summary>
-    public static ASALicense License = new ASALicense();
-    #endregion
-
+    internal ASALicense() : base(0, TimeSpan.Zero) { }
   }
 }
