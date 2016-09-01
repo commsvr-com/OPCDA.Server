@@ -16,6 +16,7 @@
 //  mailto:techsupp@cas.com.pl
 //  http://www.cas.eu
 //</summary>
+using CAS.CommServer.ProtocolHub.Communication;
 using CAS.Lib.CommonBus;
 using CAS.Lib.CommonBus.ApplicationLayer;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

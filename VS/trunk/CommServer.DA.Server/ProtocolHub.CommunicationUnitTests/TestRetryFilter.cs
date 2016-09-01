@@ -16,6 +16,7 @@
 
 #pragma warning disable 1591
 
+using CAS.CommServer.ProtocolHub.Communication;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 

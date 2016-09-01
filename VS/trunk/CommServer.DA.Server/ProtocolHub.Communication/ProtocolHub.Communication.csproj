@@ -207,9 +207,9 @@
     <Compile Include="LicenseControl\Multichannel.cs" />
     <Compile Include="LicenseControl\OTALicense.cs" />
     <Compile Include="LicenseControl\Redundancy.cs" />
-    <Compile Include="Management\CommserverProtocol.cs" />
-    <Compile Include="Management\OPCServer.cs" />
-    <Compile Include="Management\ReportGenerator.cs" />
+    <Compile Include="Diagnostic\CommserverProtocol.cs" />
+    <Compile Include="Diagnostic\OPCServer.cs" />
+    <Compile Include="Diagnostic\ReportGenerator.cs" />
     <Compile Include="NetworkConfig\XMLManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <AutoGen>True</AutoGen>
@@ -228,7 +228,6 @@
     </Compile>
     <Compile Include="RetryFilter.cs" />
     <Compile Include="SegmentParameters.cs" />
-    <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CommServerComponent.resx">

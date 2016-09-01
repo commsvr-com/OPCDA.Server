@@ -17,6 +17,7 @@
 //  http://www.cas.eu
 //</summary>
 
+using CAS.CommServer.ProtocolHub.Communication.BaseStation;
 using CAS.NetworkConfigLib;
 using System.Collections;
 
@@ -35,7 +36,7 @@ namespace CAS.Lib.CommServer.Tests
     }
     internal FacadePipe( ComunicationNet.StationRow currSDsc ) 
     {
-      myStatistics = new BaseStation.Management.Station( currSDsc );
+      myStatistics = new CAS.CommServer.ProtocolHub.Communication.Diagnostic.Station( currSDsc );
     }
   }
 }

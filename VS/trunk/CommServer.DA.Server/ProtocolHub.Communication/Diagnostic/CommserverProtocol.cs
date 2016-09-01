@@ -18,7 +18,7 @@
 using CAS.Lib.RTLib.Management;
 using System;
 
-namespace BaseStation.Management
+namespace CAS.CommServer.ProtocolHub.Communication.Diagnostic
 {
   /// <summary>
   /// Summary description for Protocol.

@@ -13,11 +13,10 @@
 //  http://www.cas.eu
 //_______________________________________________________________
 
-using BaseStation.Management;
+using CAS.CommServer.ProtocolHub.Communication.LicenseControl;
 using CAS.Lib.CommonBus;
 using CAS.Lib.CommonBus.ApplicationLayer;
 using CAS.Lib.CommonBus.Management;
-using CAS.Lib.CommServer.LicenseControl;
 using CAS.Lib.RTLib.Management;
 using CAS.Lib.RTLib.Processes;
 using CAS.NetworkConfigLib;
@@ -25,8 +24,9 @@ using System;
 using System.Collections;
 using System.ComponentModel;
 using System.Xml;
+using Statistics = global::BaseStation.Management.Statistics;
 
-namespace CAS.Lib.CommServer
+namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
 {
   /// <summary>
   /// Channel implementation
@@ -74,7 +74,7 @@ namespace CAS.Lib.CommServer
             _format = "Problem with: {0} because of general failure: {1}.";
             CommServerComponent.Tracer.TraceWarning(90, m_src, String.Format(_format, protocol.DPConfig, e.ToString()));
           }
-          IProtocolParent cStatistic = CommServerProtocol.CreateNewProtocol(protocol.DPConfig, protocol.Name, protocol.ProtocolID, _DataProviderID.GetSettingsHumanReadableFormat(), myStatistics);
+          IProtocolParent cStatistic = Diagnostic.CommServerProtocol.CreateNewProtocol(protocol.DPConfig, protocol.Name, protocol.ProtocolID, _DataProviderID.GetSettingsHumanReadableFormat(), myStatistics);
           IApplicationLayerMaster chnProtocol = _DataProviderID.GetApplicationLayerMaster(cStatistic, parent.m_CommonBusControl);
           CommServerComponent.Tracer.TraceVerbose(95, m_src, "I have created the DataProvider helper object.");
           return chnProtocol;
@@ -131,7 +131,7 @@ namespace CAS.Lib.CommServer
     {
       CommServerComponent.Tracer.TraceVerbose(150, m_src, "Creating channel: " + myCDsc.Name);
       Multichannel.NextChannnel();
-      myStatistics = new BaseStation.Management.Statistics.ChannelStatistics(myCDsc);
+      myStatistics = new Statistics.ChannelStatistics(myCDsc);
 #endif
       #region Sniffer
 #if SNIFFER
@@ -168,7 +168,7 @@ namespace CAS.Lib.CommServer
           foreach (ComunicationNet.SegmentsRow currDSC in proto.GetSegmentsRows())
           {
             SegmentParameters parameters = new SegmentParameters(currDSC);
-            BaseStation.Management.Segment segmentStatistic = new BaseStation.Management.Segment(currDSC, myStatistics);
+            Diagnostic.Segment segmentStatistic = new Diagnostic.Segment(currDSC, myStatistics);
             Segment segment = new Segment
               (currDSC, (byte)proto.MaxNumberOfRetries, chnProtocol, parameters, demoVersion, segmentStatistic, this);
             segment.Cycle = parameters.TimeReconnect;

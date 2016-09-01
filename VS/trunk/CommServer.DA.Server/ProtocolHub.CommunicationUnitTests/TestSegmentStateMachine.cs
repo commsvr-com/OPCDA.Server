@@ -15,6 +15,8 @@
 
 #pragma warning disable 1591
 
+using CAS.CommServer.ProtocolHub.Communication;
+using CAS.CommServer.ProtocolHub.Communication.BaseStation;
 using CAS.Lib.CommonBus.ApplicationLayer;
 using CAS.Lib.RTLib.Processes;
 using CAS.NetworkConfigLib;
@@ -23,6 +25,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Threading;
+using DiagnosticSegment = CAS.CommServer.ProtocolHub.Communication.Diagnostic.Segment;
 
 namespace CAS.Lib.CommServer.Tests
 {
@@ -66,7 +69,7 @@ namespace CAS.Lib.CommServer.Tests
       FacadeSegment myFacadeSegment = new FacadeSegment();
       int myMaxNumberOfTags = int.MaxValue;
       BaseStation.Management.Statistics.ChannelStatistics myChanel = new BaseStation.Management.Statistics.ChannelStatistics(myConfig.Channels[0]);
-      BaseStation.Management.Segment mySegment = new BaseStation.Management.Segment(myConfig.Segments[0], myChanel);
+      DiagnosticSegment mySegment = new DiagnosticSegment(myConfig.Segments[0], myChanel);
       myInterface = (new FacadeSegment.FacadePipeInterface(new Interface.Parameters(myConfig.Interfaces[0]), myPipe, mySegment));
       myInterface.ResetCounter();
       FacadeSegment.FacadeDataDescription myDataDescription = new FacadeSegment.FacadeDataDescription(myConfig.DataBlocks[0], ref myMaxNumberOfTags);

@@ -13,6 +13,7 @@
 //  http://www.cas.eu
 //_______________________________________________________________
 
+using CAS.CommServer.ProtocolHub.Communication.BaseStation;
 using CAS.Lib.CommonBus.ApplicationLayer;
 using CAS.Lib.RTLib.Processes;
 using CAS.NetworkConfigLib;
@@ -55,8 +56,7 @@ namespace CAS.Lib.CommServer.Tests
       {
         throw new Exception( "The method or operation is not implemented." );
       }
-      internal FacadePipeInterface
-        ( Interface.Parameters interfaceDSC, FacadePipe pipe, BaseStation.Management.Segment segment )
+      internal FacadePipeInterface( Interface.Parameters interfaceDSC, FacadePipe pipe, CAS.CommServer.ProtocolHub.Communication.Diagnostic.Segment segment )
         :
         base( interfaceDSC, pipe, null, segment, 10 ) { }
     }//FacadePipeInterface

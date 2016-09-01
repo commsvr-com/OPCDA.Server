@@ -13,8 +13,8 @@
 //  http://www.cas.eu
 //</summary>
 
+using CAS.CommServer.ProtocolHub.Communication.LicenseControl;
 using CAS.CommServer.ProtocolHub.CommunicationUnitTests.Instrumentation;
-using CAS.Lib.CommServer.LicenseControl;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 

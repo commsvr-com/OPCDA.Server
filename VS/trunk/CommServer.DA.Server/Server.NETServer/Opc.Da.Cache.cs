@@ -49,11 +49,11 @@ using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
-using CAS.Lib.CommServer;
 using CAS.Lib.DeviceSimulator;
 using CAS.Lib.RTLib.Utils;
 using Opc;
 using Opc.Da;
+using CAS.CommServer.ProtocolHub.Communication;
 
 namespace CAS.OpcSvr.Da.NETServer
 {

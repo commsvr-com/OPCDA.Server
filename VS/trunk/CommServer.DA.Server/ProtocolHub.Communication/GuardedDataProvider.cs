@@ -22,7 +22,7 @@ using CAS.Lib.CommonBus.ApplicationLayer;
 using CAS.Lib.RTLib.Processes;
 using CAS.CommServer.ProtocolHub.Communication.Properties;
 
-namespace CAS.Lib.CommServer
+namespace CAS.CommServer.ProtocolHub.Communication
 {
   /// <summary>
   /// Guarded Data Provider

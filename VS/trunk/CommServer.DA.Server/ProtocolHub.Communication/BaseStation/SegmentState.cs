@@ -20,8 +20,9 @@ using CAS.Lib.CommonBus.ApplicationLayer;
 using CAS.Lib.CommServerConsoleInterface;
 using CAS.Lib.RTLib.Processes;
 using System;
+using Statistics = BaseStation.Management.Statistics;
 
-namespace CAS.Lib.CommServer
+namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
 {
   /// <summary>
   /// Segment State Machine Class
@@ -59,11 +60,11 @@ namespace CAS.Lib.CommServer
           case State.Connected:
             break;
           case State.KeepConnection:
-            myMachine.myStatistics.NewState = BaseStation.Management.Statistics.SegmentStatistics.States.Connected;
+            myMachine.myStatistics.NewState = Statistics.SegmentStatistics.States.Connected;
             break;
           case State.Disconnected:
           case State.DisconnectedAfterFailure:
-            myMachine.myStatistics.NewState = BaseStation.Management.Statistics.SegmentStatistics.States.Disconnected;
+            myMachine.myStatistics.NewState = Statistics.SegmentStatistics.States.Disconnected;
             break;
         }
       }
@@ -95,14 +96,14 @@ namespace CAS.Lib.CommServer
       public virtual bool ReadData( out object data, IBlockDescription dataAddress, Interface pipeInterface )
       {
         this.myMachine.ClearCounter();
-        myMachine.myStatistics.NewState = BaseStation.Management.Statistics.SegmentStatistics.States.ReadWaitingToBeConn;
+        myMachine.myStatistics.NewState = Statistics.SegmentStatistics.States.ReadWaitingToBeConn;
         myOnExitCondition.Wait( myMachine );
         return myMachine.CurrentSegmentState.ReadData( out data, dataAddress, pipeInterface );
       }
       public virtual bool WriteData( object data, IBlockDescription dataAddress, Interface pipeInterface )
       {
         this.myMachine.ClearCounter();
-        myMachine.myStatistics.NewState = BaseStation.Management.Statistics.SegmentStatistics.States.WriteWaitingToBeConn;
+        myMachine.myStatistics.NewState = Statistics.SegmentStatistics.States.WriteWaitingToBeConn;
         myOnExitCondition.Wait( myMachine );
         return myMachine.CurrentSegmentState.WriteData( data, dataAddress, pipeInterface );
       }

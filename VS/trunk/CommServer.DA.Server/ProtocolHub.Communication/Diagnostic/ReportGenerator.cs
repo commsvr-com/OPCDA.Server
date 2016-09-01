@@ -15,14 +15,14 @@
 
 
 using CAS.CommServer.ProtocolHub.Communication.Properties;
-using CAS.Lib.CommServer;
 using CAS.Lib.RTLib.Management;
 using CAS.Lib.RTLib.Utils;
 using System;
 using System.IO;
 using System.Text;
+using Statistics = global::BaseStation.Management.Statistics;
 
-namespace BaseStation.Management
+namespace CAS.CommServer.ProtocolHub.Communication.Diagnostic
 {
   /// <summary>
   /// Class that generate html report about CommServer state
@@ -71,7 +71,7 @@ namespace BaseStation.Management
       sb.Append( @"<table border='1' class='t2'>" );
       try
       {
-        foreach ( IHtmlOutput obj in Statistics.stationList )
+        foreach ( IHtmlOutput obj in global::BaseStation.Management.Statistics.stationList )
         {
           if ( first )
           {
@@ -91,7 +91,7 @@ namespace BaseStation.Management
       first = true;
       try
       {
-        if ( Statistics.segmentList.Count > 0 )
+        if (Statistics.segmentList.Count > 0 )
         {
           foreach ( IHtmlOutput obj in Statistics.segmentList )
           {
@@ -149,7 +149,7 @@ namespace BaseStation.Management
       {
         foreach ( ProtocolDsc curr in Protocol.GetProtDescriptions )
         {
-          IHtmlOutput obj = new Management.CommseverProtocol( curr );
+          IHtmlOutput obj = new Diagnostic.CommseverProtocol( curr );
           if ( first )
           {
             sb.Append( obj.GetHtmlTableRowDescription() );
@@ -190,7 +190,7 @@ namespace BaseStation.Management
     /// <summary>
     /// Initializes a new instance of the <see cref="ReportGenerator"/> class.
     /// </summary>
-    /// <param name="title">The title of the repoert.</param>
+    /// <param name="title">The title of the report.</param>
     public ReportGenerator( string title )
       : base( title )
     {

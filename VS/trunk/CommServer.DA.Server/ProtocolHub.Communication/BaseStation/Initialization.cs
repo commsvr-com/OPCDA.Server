@@ -15,10 +15,9 @@
 
 using BaseStation.ItemDescriber;
 using CAS.CommServer.ProtocolHub.Communication.SRC.BaseStation.NetworkConfig;
-using CAS.Lib.CommServer;
 using System;
 
-namespace BaseStation
+namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
 {
   /// <summary>
   /// COMMUNICATION LIBRARY - Data Base of Process Values
@@ -31,7 +30,7 @@ namespace BaseStation
     {
       XMLManagement xml_desc = new XMLManagement();
       m_ds_dsc = new ItemDecriberDataSet();
-      xml_desc.readXMLFile(m_ds_dsc, AppConfigManagement.ItemDsc_configfile);
+      xml_desc.readXMLFile(m_ds_dsc, CAS.CommServer.ProtocolHub.Communication.AppConfigManagement.ItemDsc_configfile);
     }
 #endif
     /// <summary>

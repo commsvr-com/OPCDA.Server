@@ -17,7 +17,7 @@ using CAS.Lib.RTLib.Management;
 using CAS.Lib.RTLib.Utils;
 using System.IO;
 
-namespace BaseStation
+namespace CAS.CommServer.ProtocolHub.Communication
 {
   /// <summary>
   /// Reads application configuration file

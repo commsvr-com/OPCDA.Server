@@ -1,4 +1,7 @@
-﻿namespace NetworkConfig
+﻿using CAS.CommServer.ProtocolHub.Communication;
+using CAS.Lib.CodeProtect;
+
+namespace NetworkConfig
 {
   partial class NetworConfigCommServerInstaller
   {
@@ -28,8 +31,8 @@
     /// </summary>
     private void InitializeComponent()
     {
-      this.CodeProtect_LibInstaller = new CAS.Lib.CodeProtect.LibInstaller();
-      this.CommmServerMainInstaller = new CAS.Lib.CommServer.CommServerInstaller();
+      this.CodeProtect_LibInstaller = new LibInstaller();
+      this.CommmServerMainInstaller = new CommServerInstaller();
       // 
       // NetworConfigCommServerInstaller
       // 
@@ -40,7 +43,7 @@
 
     #endregion
 
-    private CAS.Lib.CodeProtect.LibInstaller CodeProtect_LibInstaller;
-    private CAS.Lib.CommServer.CommServerInstaller CommmServerMainInstaller;
+    private LibInstaller CodeProtect_LibInstaller;
+    private CommServerInstaller CommmServerMainInstaller;
   }
 }

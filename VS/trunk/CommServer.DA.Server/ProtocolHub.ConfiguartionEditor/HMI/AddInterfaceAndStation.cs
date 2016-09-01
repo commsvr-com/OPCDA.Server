@@ -19,9 +19,9 @@
 using System;
 using System.Data;
 using System.Windows.Forms;
-using CAS.Lib.CommServer;
 using CAS.Lib.ControlLibrary;
 using CAS.NetworkConfigLib;
+using CAS.CommServer.ProtocolHub.Communication.BaseStation;
 
 namespace NetworkConfig.HMI
 {

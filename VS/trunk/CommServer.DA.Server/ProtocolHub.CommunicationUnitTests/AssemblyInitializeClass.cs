@@ -1,4 +1,5 @@
-﻿using CAS.Lib.CodeProtect;
+﻿using CAS.CommServer.ProtocolHub.Communication;
+using CAS.Lib.CodeProtect;
 using CAS.Lib.CommServer;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics;

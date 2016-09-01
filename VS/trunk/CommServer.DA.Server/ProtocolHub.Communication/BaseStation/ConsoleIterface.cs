@@ -21,23 +21,23 @@ using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
 using BaseStation.Management;
-using CAS.Lib.CommServer;
 using CAS.Lib.RTLib.Processes;
 using CAS.Lib.RTLib.Management;
 using CAS.CommServer.ProtocolHub.Communication.Properties;
+using Statistics = BaseStation.Management.Statistics;
 
-namespace BaseStation
+namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
 {
   /// <summary>
   /// Summary description for ConsoleIterface.
   /// </summary>
-  public class ConsoleIterface: ConsoleIterfaceAbstract
+  public class ConsoleIterface : global::BaseStation.ConsoleIterfaceAbstract
   {
     private class StatisticAndIUpdatePair<StatT>
     {
       private StatT statT;
       private IUpdateInternalStatistics m_UpdateObject;
-      internal StatisticAndIUpdatePair( StatT StatisticsObject, IUpdateInternalStatistics IUpdateInternalStatisticsObject )
+      internal StatisticAndIUpdatePair(StatT StatisticsObject, IUpdateInternalStatistics IUpdateInternalStatisticsObject)
       {
         statT = StatisticsObject;
         m_UpdateObject = IUpdateInternalStatisticsObject;
@@ -80,10 +80,10 @@ namespace BaseStation
     {
       try
       {
-        ReportGenerator rep = new ReportGenerator( "CAS-Commserver_state" );
+        Diagnostic.ReportGenerator rep = new Diagnostic.ReportGenerator("CAS-Commserver_state");
         return rep.GetReportString();
       }
-      catch ( Exception ex )
+      catch (Exception ex)
       {
         return Resources.ExceptionDuringReportCreation + ex.ToString();
       }
@@ -93,9 +93,9 @@ namespace BaseStation
     /// </summary>
     /// <param name="index">The index.</param>
     /// <returns>selected (by index) protocol</returns>
-    public override IProtocol GetProtocol( long index )
+    public override IProtocol GetProtocol(long index)
     {
-      return Protocol.GetProtocolStatistics( index );
+      return Protocol.GetProtocolStatistics(index);
     }
     /// <summary>
     /// Gets the protocol list.
@@ -110,9 +110,9 @@ namespace BaseStation
     /// </summary>
     /// <param name="index">The index.</param>
     /// <returns>selected (by index) station</returns>
-    public override Statistics.StationStatistics.StationStatisticsInternal GetStation( long index )
+    public override Statistics.StationStatistics.StationStatisticsInternal GetStation(long index)
     {
-      return stationlist[ index ];
+      return stationlist[index];
     }
     /// <summary>
     /// Gets the state of the station.
@@ -120,13 +120,13 @@ namespace BaseStation
     /// <returns>SortedList&lt;System.Int64, System.Int32&gt;.</returns>
     public override SortedList<long, int> GetStationStates()
     {
-      foreach ( var element in stationlist )
+      foreach (var element in stationlist)
       {
         int myValue = element.Value.StationState;
-        if ( !listStationStates.ContainsKey( element.Key ) )
-          listStationStates.Add( element.Key, myValue );
+        if (!listStationStates.ContainsKey(element.Key))
+          listStationStates.Add(element.Key, myValue);
         else
-          listStationStates[ element.Key ] = myValue;
+          listStationStates[element.Key] = myValue;
       }
       return listStationStates;
 
@@ -145,10 +145,10 @@ namespace BaseStation
     /// </summary>
     /// <param name="index">The index.</param>
     /// <returns>selected (by index) interface</returns>
-    public override Statistics.InterfaceStatistics.InterfaceStatisticsInternal GetInterface( ulong index )
+    public override Statistics.InterfaceStatistics.InterfaceStatisticsInternal GetInterface(ulong index)
     {
       Statistics.InterfaceStatistics.InterfaceStatisticsInternal Interface =
-       interfacelistpairs[ index ].GetStatisticsObjectUpdated();
+       interfacelistpairs[index].GetStatisticsObjectUpdated();
       return Interface;
     }
     /// <summary>
@@ -157,13 +157,13 @@ namespace BaseStation
     /// <returns>SortedList&lt;System.UInt64, Statistics.InterfaceStatistics.InterfaceState&gt;.</returns>
     public override SortedList<ulong, Statistics.InterfaceStatistics.InterfaceState> GetInterfaceStates()
     {
-      foreach ( var element in interfacelistpairs )
+      foreach (var element in interfacelistpairs)
       {
         Statistics.InterfaceStatistics.InterfaceState myValue = element.Value.GetStatisticsObjectUpdated().State;
-        if ( !listInterfaceStates.ContainsKey( element.Key ) )
-          listInterfaceStates.Add( element.Key, myValue );
+        if (!listInterfaceStates.ContainsKey(element.Key))
+          listInterfaceStates.Add(element.Key, myValue);
         else
-          listInterfaceStates[ element.Key ] = myValue;
+          listInterfaceStates[element.Key] = myValue;
       }
       return listInterfaceStates;
     }
@@ -180,9 +180,9 @@ namespace BaseStation
     /// </summary>
     /// <param name="index">The index.</param>
     /// <returns>selected (by index) segment</returns>
-    public override Statistics.SegmentStatistics.SegmentStatisticsInternal GetSegment( long index )
+    public override Statistics.SegmentStatistics.SegmentStatisticsInternal GetSegment(long index)
     {
-      return segmentlistpairs[ index ].GetStatisticsObjectUpdated();
+      return segmentlistpairs[index].GetStatisticsObjectUpdated();
     }
     /// <summary>
     /// Gets the state of the segment.
@@ -190,13 +190,13 @@ namespace BaseStation
     /// <returns>SortedList&lt;System.Int64, Statistics.SegmentStatistics.States&gt;.</returns>
     public override SortedList<long, Statistics.SegmentStatistics.States> GetSegmentStates()
     {
-      foreach ( var element in segmentlistpairs )
+      foreach (var element in segmentlistpairs)
       {
         Statistics.SegmentStatistics.States myValue = element.Value.GetStatisticsObjectUpdated().CurrentState;
-        if ( !listSegmentStates.ContainsKey( element.Key ) )
-          listSegmentStates.Add( element.Key, myValue );
+        if (!listSegmentStates.ContainsKey(element.Key))
+          listSegmentStates.Add(element.Key, myValue);
         else
-          listSegmentStates[ element.Key ] = myValue;
+          listSegmentStates[element.Key] = myValue;
       }
       return listSegmentStates;
     }
@@ -238,9 +238,9 @@ namespace BaseStation
     /// </summary>
     /// <param name="cProductName">Name of the c product.</param>
     /// <param name="cProductVersion">The c product version.</param>
-    public static void Start( string cProductName, string cProductVersion )
+    public static void Start(string cProductName, string cProductVersion)
     {
-      if ( !started )
+      if (!started)
       {
         ProductName = cProductName;
         ProductVersion = cProductVersion;
@@ -254,56 +254,56 @@ namespace BaseStation
           //        ftProvider.Next=new  System.Runtime.Remoting.MetadataServices.SdlChannelSinkProvider();
           BinaryServerFormatterSinkProvider ftProvider = new BinaryServerFormatterSinkProvider();
           ftProvider.TypeFilterLevel = System.Runtime.Serialization.Formatters.TypeFilterLevel.Full;
-          channel = new TcpServerChannel( null, AppConfigManagement.ConsoleRemotingHTTPport, ftProvider );
+          channel = new TcpServerChannel(null, AppConfigManagement.ConsoleRemotingHTTPport, ftProvider);
           //rejestracja kana³u
-          ChannelServices.RegisterChannel( channel, false );
+          ChannelServices.RegisterChannel(channel, false);
         }
-        catch ( Exception ex )
+        catch (Exception ex)
         {
           EventLogMonitor.WriteToEventLog
             (
-              String.Format( Resources.ConsoleInterface_ChannelRegistrationError, ex.Message ),
+              String.Format(Resources.ConsoleInterface_ChannelRegistrationError, ex.Message),
               System.Diagnostics.EventLogEntryType.Error, (int)CAS.Lib.RTLib.Processes.Error.CommServer_CommServerComponent, 267
             );
         }
         //rejestracja OPCRealtimeDataAccess
         WellKnownServiceTypeEntry remObj = new WellKnownServiceTypeEntry
           (
-          typeof( BaseStation.ConsoleIterface ),
+          typeof(BaseStation.ConsoleIterface),
           "CommServerConsole",
           WellKnownObjectMode.Singleton
           );
-        RemotingConfiguration.RegisterWellKnownServiceType( remObj );
+        RemotingConfiguration.RegisterWellKnownServiceType(remObj);
         //inicjalizacja listy protokolow :
         //inicjalizacja listy stacji :
-        stationlist = new SortedList<long, Statistics.StationStatistics.StationStatisticsInternal>( BaseStation.Management.Statistics.stationList.Count );
-        foreach ( Statistics.StationStatistics obj in Statistics.stationList )
+        stationlist = new SortedList<long, Statistics.StationStatistics.StationStatisticsInternal>(Statistics.stationList.Count);
+        foreach (Statistics.StationStatistics obj in Statistics.stationList)
         {
-          stationlist.Add( ( (BaseStation.Management.Statistics.StationStatistics)obj ).myStat.myID, ( (BaseStation.Management.Statistics.StationStatistics)obj ).myStat );
+          stationlist.Add(((Statistics.StationStatistics)obj).myStat.myID, ((Statistics.StationStatistics)obj).myStat);
         }
         //inicjalizacja listy segmentow :
-        segmentlistpairs = new SortedList<long, StatisticAndIUpdatePair<Statistics.SegmentStatistics.SegmentStatisticsInternal>>( Statistics.segmentList.Count );
-        segmentlist = new SortedList<long, Statistics.SegmentStatistics.SegmentStatisticsInternal>( Statistics.segmentList.Count );
-        foreach ( Statistics.SegmentStatistics obj in Statistics.segmentList )
+        segmentlistpairs = new SortedList<long, StatisticAndIUpdatePair<Statistics.SegmentStatistics.SegmentStatisticsInternal>>(Statistics.segmentList.Count);
+        segmentlist = new SortedList<long, Statistics.SegmentStatistics.SegmentStatisticsInternal>(Statistics.segmentList.Count);
+        foreach (Statistics.SegmentStatistics obj in Statistics.segmentList)
         {
-          segmentlist.Add( obj.myStat.MyID, obj.myStat );
+          segmentlist.Add(obj.myStat.MyID, obj.myStat);
           segmentlistpairs.Add(
             obj.myStat.MyID, new StatisticAndIUpdatePair<Statistics.SegmentStatistics.SegmentStatisticsInternal>
-              ( obj.myStat, obj ) );
+              (obj.myStat, obj));
         }
         //inicjalizacja listy interfejsow :
-        interfacelistpairs = new SortedList<ulong, StatisticAndIUpdatePair<Statistics.InterfaceStatistics.InterfaceStatisticsInternal>>( Statistics.interfaceList.Count );
-        interfacelist = new SortedList<ulong, Statistics.InterfaceStatistics.InterfaceStatisticsInternal>( Statistics.interfaceList.Count );
-        foreach ( Statistics.InterfaceStatistics obj in Statistics.interfaceList )
+        interfacelistpairs = new SortedList<ulong, StatisticAndIUpdatePair<Statistics.InterfaceStatistics.InterfaceStatisticsInternal>>(Statistics.interfaceList.Count);
+        interfacelist = new SortedList<ulong, Statistics.InterfaceStatistics.InterfaceStatisticsInternal>(Statistics.interfaceList.Count);
+        foreach (Statistics.InterfaceStatistics obj in Statistics.interfaceList)
         {
-          interfacelist.Add( obj.myStat.myID_Internal, obj.myStat );
+          interfacelist.Add(obj.myStat.myID_Internal, obj.myStat);
           interfacelistpairs.Add(
             obj.myStat.myID_Internal, new StatisticAndIUpdatePair<Statistics.InterfaceStatistics.InterfaceStatisticsInternal>
-              ( obj.myStat, obj ) );
+              (obj.myStat, obj));
         }
-        listSegmentStates = new SortedList<long, Statistics.SegmentStatistics.States>( segmentlistpairs.Count );
-        listStationStates = new SortedList<long, int>( stationlist.Count );
-        listInterfaceStates = new SortedList<ulong, Statistics.InterfaceStatistics.InterfaceState>( interfacelistpairs.Count );
+        listSegmentStates = new SortedList<long, Statistics.SegmentStatistics.States>(segmentlistpairs.Count);
+        listStationStates = new SortedList<long, int>(stationlist.Count);
+        listInterfaceStates = new SortedList<ulong, Statistics.InterfaceStatistics.InterfaceState>(interfacelistpairs.Count);
       }
     }
   }

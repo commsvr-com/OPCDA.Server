@@ -13,7 +13,7 @@
 //  http://www.cas.eu
 //</summary>
 
-using CAS.Lib.CommServer;
+using CAS.CommServer.ProtocolHub.Communication;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 

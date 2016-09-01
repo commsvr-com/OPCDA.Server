@@ -19,12 +19,12 @@
 //  http:\\www.cas.eu
 //</summary>
 
+using CAS.CommServer.ProtocolHub.Communication.LicenseControl;
 using System;
 using System.Collections;
 using CommunicationDSC = CAS.NetworkConfigLib.ComunicationNet;
-using CAS.Lib.CommServer.LicenseControl;
 
-namespace CAS.Lib.CommServer
+namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
 {
   internal sealed class Station : Pipe, IStationState
   {
@@ -100,7 +100,7 @@ namespace CAS.Lib.CommServer
       foreach (CommunicationDSC.GroupsRow currGDsc in currSDsc.GetGroupsRows())
         myGgroupsList.Add(new Group(currGDsc, this, myDataDescriptionsList, ref cVConstrain));
       //Statistics
-      myStatistics = new BaseStation.Management.Station(currSDsc);
+      myStatistics = new Diagnostic.Station(currSDsc);
       myStatistics.priority = highPriority;
     }
     #endregion
@@ -133,7 +133,7 @@ namespace CAS.Lib.CommServer
     }
     internal delegate void NotifyProcedure(bool stateOfStation);
     internal event NotifyProcedure NotifyNewTimeScan;
-    internal BaseStation.Management.Statistics.StationStatistics getStatistics
+    internal global::BaseStation.Management.Statistics.StationStatistics getStatistics
     {
       get { return myStatistics; }
     }

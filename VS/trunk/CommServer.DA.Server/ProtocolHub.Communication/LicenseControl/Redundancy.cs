@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 using CAS.Lib.CodeProtect;
 using CAS.Lib.CodeProtect.Properties;
 
-namespace CAS.Lib.CommServer.LicenseControl
+namespace CAS.CommServer.ProtocolHub.Communication.LicenseControl
 {
   /// <summary>
   /// Redundancy license access helper class.
