@@ -179,6 +179,17 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="BaseStation\AppConfigManagement.cs" />
+    <Compile Include="BaseStation\Channel.cs" />
+    <Compile Include="BaseStation\ConsoleIterface.cs" />
+    <Compile Include="BaseStation\DataBlock.cs" />
+    <Compile Include="BaseStation\DataQueue.cs" />
+    <Compile Include="BaseStation\Initialization.cs" />
+    <Compile Include="BaseStation\Interface.cs" />
+    <Compile Include="BaseStation\Pipe.cs" />
+    <Compile Include="BaseStation\Segment.cs" />
+    <Compile Include="BaseStation\SegmentState.cs" />
+    <Compile Include="BaseStation\Station.cs" />
     <Compile Include="CommServerComponent.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -196,6 +207,10 @@
     <Compile Include="LicenseControl\Multichannel.cs" />
     <Compile Include="LicenseControl\OTALicense.cs" />
     <Compile Include="LicenseControl\Redundancy.cs" />
+    <Compile Include="Management\CommserverProtocol.cs" />
+    <Compile Include="Management\OPCServer.cs" />
+    <Compile Include="Management\ReportGenerator.cs" />
+    <Compile Include="NetworkConfig\XMLManagement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -214,31 +229,6 @@
     <Compile Include="RetryFilter.cs" />
     <Compile Include="SegmentParameters.cs" />
     <Compile Include="Settings.cs" />
-    <Compile Include="SRC\BaseStation\AppConfigManagement.cs" />
-    <Compile Include="SRC\BaseStation\Channel.cs" />
-    <Compile Include="SRC\BaseStation\ConsoleIterface.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="SRC\BaseStation\DataBlock.cs" />
-    <Compile Include="SRC\BaseStation\DataQueue.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="SRC\BaseStation\Initialization.cs" />
-    <Compile Include="SRC\BaseStation\Interface.cs" />
-    <Compile Include="SRC\BaseStation\Management\CommserverProtocol.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="SRC\BaseStation\Management\OPCServer.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="SRC\BaseStation\Management\ReportGenerator.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="SRC\BaseStation\NetworkConfig\XMLManagement.cs" />
-    <Compile Include="SRC\BaseStation\Pipe.cs" />
-    <Compile Include="SRC\BaseStation\Segment.cs" />
-    <Compile Include="SRC\BaseStation\SegmentState.cs" />
-    <Compile Include="SRC\BaseStation\Station.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CommServerComponent.resx">
