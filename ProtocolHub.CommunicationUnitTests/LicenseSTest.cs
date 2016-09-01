@@ -14,71 +14,16 @@
 //</summary>
 
 using CAS.CommServer.ProtocolHub.CommunicationUnitTests.Instrumentation;
-using CAS.Lib.CodeProtect;
-using CAS.Lib.CommServer;
 using CAS.Lib.CommServer.LicenseControl;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.IO;
+using System;
 
 namespace CAS.CommServer.ProtocolHub.CommunicationUnitTests
 {
-  /// <summary>
-  ///This is a test class for OTALicenseTest and is intended
-  ///to contain all OTALicenseTest Unit Tests
-  ///</summary>
   [TestClass()]
-  [DeploymentItem("CAS.License.lic")]
-  [DeploymentItem("DefaultConfig.xml")]
   public class LicensesTest
   {
-    private TestContext testContextInstance;
-    private static CommServerComponent cs;
-    private static string m_InstallLicenseError = string.Empty;
-    /// <summary>
-    ///Gets or sets the test context which provides
-    ///information about and functionality for the current test run.
-    ///</summary>
-    public TestContext TestContext
-    {
-      get { return testContextInstance; }
-      set { testContextInstance = value; }
-    }
-    [AssemblyInitialize()]
-    public static void InstallLicense(TestContext testContext)
-    {
-      try
-      {
-        LibInstaller.InstalLicense(false);
-      }
-      catch (System.Exception _ex)
-      {
-        m_InstallLicenseError = _ex.ToString();
-        throw;
-      }
-    }
-    [ClassInitialize()]
-    public static void MyClassInitialize(TestContext testContext)
-    {
-      cs = new CommServerComponent();
-      cs.Initialize("DefaultConfig.xml");
-    }
-    [ClassCleanup()]
-    public static void MyClassTestCleanup()
-    {
-      cs.Dispose();
-    }
 
-    [TestMethod]
-    public void LicenseExist()
-    {
-      FileInfo _licenseFile = new FileInfo("DefaultConfig.xml");
-      Assert.IsTrue(_licenseFile.Exists, "DefaultConfig.xml doesn't exist in the working directory");
-    }
-    [TestMethod]
-    public void AssemblyInitializeTestMethod()
-    {
-      Assert.IsTrue(string.IsNullOrEmpty(m_InstallLicenseError), m_InstallLicenseError);
-    }
     /// <summary>
     ///A test for OTALicense Constructor
     ///</summary>
@@ -93,8 +38,8 @@ namespace CAS.CommServer.ProtocolHub.CommunicationUnitTests
     [ExpectedException(typeof(System.ComponentModel.LicenseException))]
     public void MultichannelTest()
     {
-      Assert.AreEqual(Multichannel.License.Volumen, 5);
-      Assert.AreEqual(Multichannel.License.RunTime.Value.TotalHours, 0);
+      Assert.AreEqual<int?>(5, Multichannel.License.Volumen);
+      Assert.AreEqual<double>(TimeSpan.MaxValue.TotalHours, Multichannel.License.RunTime.Value.TotalHours);
       for (int i = 0; i < 5; i++)
         Multichannel.NextChannnel();
       Multichannel.NextChannnel();
@@ -114,8 +59,12 @@ namespace CAS.CommServer.ProtocolHub.CommunicationUnitTests
       FacadeASALicense.m_Logger = (x) => _message = x;
       ASALicense _ASALicense = new FacadeASALicense();
       Assert.IsTrue(_ASALicense.Licensed, _message);
-      Assert.IsTrue(_message.Contains("ASALicense"), _message);
-      Assert.IsNull(_ASALicense.Warning, string.Join(", ", _ASALicense.Warning));
+      Assert.IsTrue(_message.Contains("CAS.CodeProtect"), _message);
+      Assert.IsNotNull(_ASALicense.Warning);
+      Assert.AreEqual<int>(1, _ASALicense.Warning.Count);
+      Assert.IsTrue(_ASALicense.Warning[0].Contains("It allows only to be used for non commercial purpose"));
     }
   }
 }
+
+

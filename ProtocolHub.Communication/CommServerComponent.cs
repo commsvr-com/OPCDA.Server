@@ -56,7 +56,7 @@ namespace CAS.Lib.CommServer
        );
       CAS.Lib.CommServer.Segment.DemoMode = true;
     }
-    private static TraceEvent m_traceevent_internal = new TraceEvent( "CAS.Lib.CommServer" );
+    private static TraceEvent m_traceEvent_internal = new TraceEvent( "CAS.Lib.CommServer" );
     #region IDisposable
     /// <summary> 
     /// Clean up any resources being used.
@@ -68,11 +68,12 @@ namespace CAS.Lib.CommServer
       {
         components.Dispose();
       }
-      m_traceevent_internal.TraceEventClose();
+      m_traceEvent_internal.TraceEventClose();
       base.Dispose( disposing );
     }
     #endregion
     #endregion
+
     #region public
     /// <summary>
     /// Gets the tracer.
@@ -82,7 +83,7 @@ namespace CAS.Lib.CommServer
     {
       get
       {
-        return m_traceevent_internal;
+        return m_traceEvent_internal;
       }
     }
     /// <summary>
@@ -96,17 +97,17 @@ namespace CAS.Lib.CommServer
       }
     }
     /// <summary>
-    /// Provides name of the source to be used while instaling to register it the EventLog engine.
+    /// Provides name of the source to be used while instating to register it the EventLog engine.
     /// </summary>
     internal static string Source
     {
       get { return Assembly.GetExecutingAssembly().GetName().Name; }
     }
     /// <summary>
-    /// Adds components to components containter.
+    /// Adds components to components container.
     /// </summary>
-    /// <param name="cCmpnt">Components to be added.</param>
-    internal void AddComponent( Component cCmpnt ) { components.Add( cCmpnt ); }
+    /// <param name="component">Components to be added.</param>
+    internal void AddComponent( Component component) { components.Add(component); }
     /// <summary>
     /// CommServer main component creator
     /// </summary>
@@ -120,13 +121,13 @@ namespace CAS.Lib.CommServer
     /// <summary>
     /// Initializes the Main CommServer Component using specified configuration file name.
     /// </summary>
-    /// <param name="ConfigurationFileName">The configuration file name.</param>
-    public void Initialize( string ConfigurationFileName )
+    /// <param name="configurationFileName">The configuration file name.</param>
+    public void Initialize( string configurationFileName )
     {
       if ( m_isInitialized )
-        throw new Exception( "Only one initialisation of CommServerComponent is allowed." );
+        throw new Exception( "Only one initialization of CommServerComponent is allowed." );
       m_isInitialized = true;
-      int cEventID = (int)CAS.Lib.RTLib.Processes.Error.CommServer_CommServerComponent;
+      int cEventID = (int)Error.CommServer_CommServerComponent;
       bool m_DemoVer = true;
       int cRTConstrain = 2;
       int cVConstrain = 15;
@@ -167,8 +168,8 @@ namespace CAS.Lib.CommServer
       int cVcounter = cVConstrain;
       EventLogMonitor.WriteToEventLog
         ( "Communication server started - product name:" + cFullName,
-        System.Diagnostics.EventLogEntryType.Information, (int)CAS.Lib.RTLib.Processes.Error.CommServer_CommServerComponent, 130 );
-      BaseStation.Initialization.InitServer( this, m_DemoVer, ref cVcounter, ConfigurationFileName );
+        System.Diagnostics.EventLogEntryType.Information, (int)Error.CommServer_CommServerComponent, 130 );
+      BaseStation.Initialization.InitServer( this, m_DemoVer, ref cVcounter, configurationFileName );
       BaseStation.ConsoleIterface.Start( cProductName, cProductVersion );
       if ( cVcounter <= 0 )
         EventLogMonitor.WriteToEventLog

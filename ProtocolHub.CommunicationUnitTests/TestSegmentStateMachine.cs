@@ -1,30 +1,28 @@
-//<summary>
-//  Title   : Unit Tests for Segment State Machine
-//  System  : Microsoft Visual C# .NET 2005
+//_______________________________________________________________
+//  Title   : Name of Application
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//    200709 mpostol - created
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
+//_______________________________________________________________
 
 #pragma warning disable 1591
 
-using System;
-using System.Threading;
 using CAS.Lib.CommonBus.ApplicationLayer;
 using CAS.Lib.RTLib.Processes;
 using CAS.NetworkConfigLib;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.IO;
+using System;
 using System.Diagnostics;
+using System.IO;
+using System.Threading;
 
 namespace CAS.Lib.CommServer.Tests
 {
@@ -133,7 +131,7 @@ namespace CAS.Lib.CommServer.Tests
     {
       Assert.AreEqual(SegmentStateMachine.State.KeepConnection, myMachine.CurrentState);
     }
-    private void WaitCallbackHndle(object state)
+    private void WaitCallbackHandle(object state)
     {
       System.Diagnostics.Stopwatch myStopwatch = new System.Diagnostics.Stopwatch();
       TestSegmentStateMachine myParent = (TestSegmentStateMachine)state;
@@ -158,18 +156,17 @@ namespace CAS.Lib.CommServer.Tests
     }
     #endregion
 
-    #region Test TestSuccess
     [TestMethod]
     public void TestSuccess()
     {
       try
       {
         string KeepConnectExpectedTimeTemplate = "Expected KeepConnect time      ={0}";
-        string KeepConnectAcctualTimeTemplate = "KeepConnect time               ={0}";
+        string KeepConnectActualTimeTemplate = "KeepConnect time               ={0}";
         string ConnectExpectedTimeTemplate = "Expected connect time          ={0}";
         string CoccectAcctualTimeTemplate = "Connect time                   ={0}";
         string IdleKeepConnectExpectedTimeTemplate = "Expected IdleKeepConnect time  ={0}";
-        string IdleKeepConnectAcctualTimeTemplate = "IdleKeepConnect time           ={0}";
+        string IdleKeepConnectActualTimeTemplate = "IdleKeepConnect time           ={0}";
 
         MakeConnection();
         AssertKeepConnection();
@@ -188,7 +185,7 @@ namespace CAS.Lib.CommServer.Tests
         }
         AssertConnected();
         Assert.IsTrue(myStopwatch.Elapsed >= parameters.TimeKeepConnrction, $"Timing error - too short keep connect state time {myStopwatch.Elapsed } expected {parameters.TimeKeepConnrction}");
-        Console.WriteLine(KeepConnectAcctualTimeTemplate, myStopwatch.Elapsed.ToString());
+        Console.WriteLine(KeepConnectActualTimeTemplate, myStopwatch.Elapsed.ToString());
 
         myStopwatch.Reset();
         myStopwatch.Start();
@@ -214,7 +211,7 @@ namespace CAS.Lib.CommServer.Tests
         }
         Assert.IsTrue(myStopwatch.Elapsed >= parameters.TimeIdleKeepConnection, "Timing error - to short idle keep connect state");
         AssertDisconnected();
-        Console.WriteLine(IdleKeepConnectAcctualTimeTemplate, myStopwatch.Elapsed.ToString());
+        Console.WriteLine(IdleKeepConnectActualTimeTemplate, myStopwatch.Elapsed.ToString());
 
         MakeConnection();
         myMachine.NotifyKeepConnectTimeElapsed();
@@ -226,9 +223,7 @@ namespace CAS.Lib.CommServer.Tests
         Debug.WriteLine("Test failed - machine has been disconnected.");
       }
     }
-    #endregion
 
-    #region TestAsynchronousDisconnect
     [TestMethod]
     public void TestAsynchronousDisconnect()
     {
@@ -240,7 +235,7 @@ namespace CAS.Lib.CommServer.Tests
       Assert.IsFalse(myMachine.NeedsChannelAccess, "inconsistency of the myMachine.NeedsChannelAccess");
       myNumberOfThreads = workerThreads;
       for (int index = 0; index < myNumberOfThreads; index++)
-        System.Threading.ThreadPool.QueueUserWorkItem(new System.Threading.WaitCallback(WaitCallbackHndle), this);
+        System.Threading.ThreadPool.QueueUserWorkItem(new System.Threading.WaitCallback(WaitCallbackHandle), this);
       //
       System.Threading.ThreadPool.GetAvailableThreads(out workerThreads, out completionPortThreads);
       Console.WriteLine("number of available threads worker= {0}; CompletionPort= {1}", workerThreads, completionPortThreads);
@@ -261,9 +256,7 @@ namespace CAS.Lib.CommServer.Tests
       System.Threading.ThreadPool.GetAvailableThreads(out workerThreads, out completionPortThreads);
       Console.WriteLine("number of available threads worker= {0}; CompletionPort= {1}", workerThreads, completionPortThreads);
     }
-    #endregion
 
-    #region Test TestRWFailure
     [TestMethod]
     public void TestRWFailure()
     {
@@ -289,9 +282,7 @@ namespace CAS.Lib.CommServer.Tests
       myMachine.DisconnectRequest();
       Assert.AreEqual(SegmentStateMachine.State.Disconnected, myMachine.CurrentState);
     }
-    #endregion
 
-    #region Test TestConnectionAbort
     [TestMethod]
     public void TestConnectionAbort()
     {
@@ -316,7 +307,6 @@ namespace CAS.Lib.CommServer.Tests
       myMachine_DisconnectedAfterFailureEnteredExecuted = false;
       Assert.IsFalse(myMachine.NeedsChannelAccess, "inconsistency of the myMachine.NeedsChannelAccess");
     }
-    #endregion
 
   }
 }

@@ -31,6 +31,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <NoWarn>IDE0001,IDE0002,IDE0003</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -143,6 +144,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssemblyInitializeClass.cs" />
     <Compile Include="CommServerComponentTest.cs" />
     <Compile Include="Instrumentation\FacadeApplicationLayerMaster.cs" />
     <Compile Include="Instrumentation\FacadeASALicense.cs" />
@@ -173,7 +175,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="CAS.License.lic">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
