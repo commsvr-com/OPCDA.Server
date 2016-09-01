@@ -15,13 +15,15 @@
 //  mailto:techsupp@cas.com.pl
 //  http:\\www.cas.eu
 //</summary>
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration.Install;
 using System.Diagnostics;
 using System.Reflection;
-namespace CAS.Lib.CommServer
+
+namespace CAS.CommServer.ProtocolHub.Communication
 {
   /// <summary>
   /// Custom installer for CommServer product.

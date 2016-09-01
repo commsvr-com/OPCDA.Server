@@ -25,7 +25,7 @@
 //  http://www.cas.eu
 //</summary>
 
-namespace CAS.Lib.CommServer
+namespace CAS.CommServer.ProtocolHub.Communication
 {
   partial class CommServerComponent
   {

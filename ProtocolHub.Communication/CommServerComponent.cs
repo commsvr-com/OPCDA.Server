@@ -33,8 +33,9 @@ using CAS.Lib.CodeProtect;
 using CAS.Lib.CodeProtect.LicenseDsc;
 using CAS.Lib.RTLib.Processes;
 using CAS.Lib.CodeProtect.Properties;
+using CAS.CommServer.ProtocolHub.Communication.BaseStation;
 
-namespace CAS.Lib.CommServer
+namespace CAS.CommServer.ProtocolHub.Communication
 {
   /// <summary>
   /// CommServer main component - must be used as singleton
@@ -54,7 +55,7 @@ namespace CAS.Lib.CommServer
        ( "Runtime expired – server entered demo mode – no data will be read. ",
        System.Diagnostics.EventLogEntryType.Warning, (int)CAS.Lib.RTLib.Processes.Error.CommServer_CommServerComponent, 72
        );
-      CAS.Lib.CommServer.Segment.DemoMode = true;
+      Segment.DemoMode = true;
     }
     private static TraceEvent m_traceEvent_internal = new TraceEvent( "CAS.Lib.CommServer" );
     #region IDisposable
@@ -169,8 +170,8 @@ namespace CAS.Lib.CommServer
       EventLogMonitor.WriteToEventLog
         ( "Communication server started - product name:" + cFullName,
         System.Diagnostics.EventLogEntryType.Information, (int)Error.CommServer_CommServerComponent, 130 );
-      BaseStation.Initialization.InitServer( this, m_DemoVer, ref cVcounter, configurationFileName );
-      BaseStation.ConsoleIterface.Start( cProductName, cProductVersion );
+      Initialization.InitServer( this, m_DemoVer, ref cVcounter, configurationFileName );
+      ConsoleIterface.Start( cProductName, cProductVersion );
       if ( cVcounter <= 0 )
         EventLogMonitor.WriteToEventLog
         ( "Some tags have not been added due to license limitation – the volume constrain have been reached",

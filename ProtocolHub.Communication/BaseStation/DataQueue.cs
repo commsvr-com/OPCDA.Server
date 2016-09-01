@@ -28,7 +28,7 @@ using CAS.Lib.RTLib.Processes;
 using CAS.NetworkConfigLib;
 using NetConfig = CAS.NetworkConfigLib.ComunicationNet;
 
-namespace CAS.Lib.CommServer
+namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
 {
   /// <summary>
   /// OPC tags data queue handling class.
@@ -219,7 +219,7 @@ namespace CAS.Lib.CommServer
         short myDataType, IDataWrite myWriteInt )
       {
 #if COMMSERVER
-        Opc.Da.ItemPropertyCollection prop_coll = BaseStation.ItemDescriber.ItemDescriber2OpcDA.GetItemPropertiesCollection( currRow.Name, BaseStation.Initialization.m_ds_dsc );
+        Opc.Da.ItemPropertyCollection prop_coll = global::BaseStation.ItemDescriber.ItemDescriber2OpcDA.GetItemPropertiesCollection( currRow.Name, Initialization.m_ds_dsc );
 #else
         Opc.Da.ItemPropertyCollection prop_coll=null;
 #endif

@@ -18,7 +18,7 @@ using System.ComponentModel;
 using System.Runtime.InteropServices;
 using CAS.Lib.CodeProtect;
 
-namespace CAS.Lib.CommServer.LicenseControl
+namespace CAS.CommServer.ProtocolHub.Communication.LicenseControl
 {
   /// <summary>
   /// Adaptive Scanning Algorithm license access helper

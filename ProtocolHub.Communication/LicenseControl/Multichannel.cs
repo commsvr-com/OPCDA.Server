@@ -12,14 +12,15 @@
 //  mailto://techsupp@cas.eu
 //  http://www.cas.eu
 //</summary>
-      
+
 using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using CAS.Lib.CodeProtect;
 using CAS.Lib.CodeProtect.Properties;
+using CAS.CommServer.ProtocolHub.Communication;
 
-namespace CAS.Lib.CommServer.LicenseControl
+namespace CAS.CommServer.ProtocolHub.Communication.LicenseControl
 {
   /// <summary>
   /// Multichannel License unit tests

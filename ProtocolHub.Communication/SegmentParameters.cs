@@ -18,7 +18,8 @@
 using System;
 using CAS.Lib.CommonBus;
 using CAS.NetworkConfigLib;
-namespace CAS.Lib.CommServer
+
+namespace CAS.CommServer.ProtocolHub.Communication
 {
   /// <summary>
   /// Structure converting configuration descriptor to a structure of parameters.

@@ -29,7 +29,7 @@ using CAS.Lib.RTLib.Management;
 using CAS.NetworkConfigLib;
 using Cnf = CAS.Lib.RTLib.Management.AppConfigManagement;
 
-namespace BaseStation.Management
+namespace CAS.CommServer.ProtocolHub.Communication.Diagnostic
 {
   /// <summary>
   /// Summary description for Interface.
@@ -63,7 +63,7 @@ namespace BaseStation.Management
   /// Interface
   /// </summary>
   [Serializable]
-  public class Interface: Statistics.InterfaceStatistics
+  public class Interface: global::BaseStation.Management.Statistics.InterfaceStatistics
   {
     #region private
     private OPCValTag ActiveTimeTag;
@@ -105,7 +105,7 @@ namespace BaseStation.Management
   /// Publishes statistics as OPC tags.
   /// </summary>
   [Serializable]
-  public class Segment: Statistics.SegmentStatistics
+  public class Segment: global::BaseStation.Management.Statistics.SegmentStatistics
   {
     #region private
     private OPCValTag Tag_WriteDelayMin;
@@ -154,7 +154,7 @@ namespace BaseStation.Management
     /// </summary>
     /// <value>The get OPC prefix.</value>
     public override string GetOPCPrefix { get { return prefix; } }
-    internal Segment( ComunicationNet.SegmentsRow currDsc, Statistics.ChannelStatistics chn )
+    internal Segment( ComunicationNet.SegmentsRow currDsc, global::BaseStation.Management.Statistics.ChannelStatistics chn )
       : base( currDsc, chn )
     {
       prefix = Cnf.OPCPathChannels + chn.ToString() + "/" + ToString();
@@ -181,7 +181,7 @@ namespace BaseStation.Management
   /// Station
   /// </summary>
   [Serializable]
-  public class Station: Statistics.StationStatistics
+  public class Station: global::BaseStation.Management.Statistics.StationStatistics
   {
     private OPCValTag StateTag;
     /// <summary>
@@ -202,7 +202,7 @@ namespace BaseStation.Management
   /// Protocol
   /// </summary>
   [Serializable]
-  public class CommServerProtocol: Statistics.ProtocolStatisticsUpdater
+  public class CommServerProtocol: global::BaseStation.Management.Statistics.ProtocolStatisticsUpdater
   {
     #region private
     private string prefix;
@@ -222,7 +222,7 @@ namespace BaseStation.Management
     private OPCValTag Tag_TimeCharGap;
     private OPCValTag Tag_RxBytesTransferred;
     private OPCValTag Tag_TxBytesTransferred;
-    private CommServerProtocol( string protocolPar, string Name, long ID, string protocolPar_humanreadable, Statistics.ChannelStatistics MyChannelStatistics )
+    private CommServerProtocol( string protocolPar, string Name, long ID, string protocolPar_humanreadable, global::BaseStation.Management.Statistics.ChannelStatistics MyChannelStatistics )
       : base( protocolPar, Name, ID, protocolPar_humanreadable )
     {
       prefix = Cnf.OPCPathChannels + MyChannelStatistics.ToString() + "/" + Name;
@@ -253,9 +253,9 @@ namespace BaseStation.Management
     /// <param name="protocolPar_HumanReadable">The protocol parameters as human readable string.</param>
     /// <param name="MyChannelStatistics">My channel statistics.</param>
     /// <returns>Returns <see cref="IProtocolParent"/></returns>
-    public static IProtocolParent CreateNewProtocol( string protocolPar, string Name, long ID, string protocolPar_HumanReadable, Statistics.ChannelStatistics MyChannelStatistics )
+    public static IProtocolParent CreateNewProtocol( string protocolPar, string Name, long ID, string protocolPar_HumanReadable, global::BaseStation.Management.Statistics.ChannelStatistics MyChannelStatistics )
     {
-      return new BaseStation.Management.CommServerProtocol( protocolPar, Name, ID, protocolPar_HumanReadable, MyChannelStatistics );
+      return new Diagnostic.CommServerProtocol( protocolPar, Name, ID, protocolPar_HumanReadable, MyChannelStatistics );
     }
     /// <summary>
     /// Refreshes this instance.

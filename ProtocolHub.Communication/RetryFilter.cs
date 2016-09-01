@@ -18,7 +18,7 @@
 
 using System;
 
-namespace CAS.Lib.CommServer
+namespace CAS.CommServer.ProtocolHub.Communication
 {
   /// <summary>
   /// Retry management and quality assesment

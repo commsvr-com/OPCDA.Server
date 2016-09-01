@@ -16,7 +16,7 @@
 //  mailto:techsupp@cas.com.pl
 //  http:\\www.cas.eu
 //</summary>
-namespace CAS.Lib.CommServer
+namespace CAS.CommServer.ProtocolHub.Communication
 {
   /// <summary>
   /// Custom installer for CommServer product.

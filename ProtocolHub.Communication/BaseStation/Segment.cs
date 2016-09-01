@@ -154,15 +154,15 @@ namespace BaseStation
 //  http://www.cas.eu
 //_______________________________________________________________
 
+using CAS.CommServer.ProtocolHub.Communication.LicenseControl;
 using CAS.Lib.CommonBus.ApplicationLayer;
-using CAS.Lib.CommServer.LicenseControl;
 using CAS.Lib.CommServerConsoleInterface;
 using CAS.Lib.RTLib.Processes;
 using System;
 using InterfacesRowDSC = CAS.NetworkConfigLib.ComunicationNet.InterfacesRow;
 using SegmentsRowDSC = CAS.NetworkConfigLib.ComunicationNet.SegmentsRow;
 
-namespace CAS.Lib.CommServer
+namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
 {
   /// <summary>
   /// Segment implementation.

@@ -15,14 +15,14 @@
 //  http://www.cas.eu
 //</summary>
 
+using CAS.CommServer.ProtocolHub.Communication.LicenseControl;
 using CAS.Lib.CommonBus.ApplicationLayer;
-using CAS.Lib.CommServer.LicenseControl;
 using CAS.Lib.CommServerConsoleInterface;
 using CAS.Lib.RTLib.Processes;
 using System;
 using System.Collections;
 
-namespace CAS.Lib.CommServer
+namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
 {
   /// <summary>
   /// Pipe description class.
@@ -67,7 +67,7 @@ namespace CAS.Lib.CommServer
     /// <summary>
     /// Statistics
     /// </summary>
-    protected BaseStation.Management.Station myStatistics;
+    protected Diagnostic.Station myStatistics;
     #endregion
 
     #region IDataWrite
@@ -234,7 +234,7 @@ namespace CAS.Lib.CommServer
         Redundancy.CheckIfAllowed(myPipe.myInterfaceCount, interfaceParameters.Name);
         myPipe.myInterfaceCount++;
         this.myPipe = myPipe;
-        this.myRetries = new CAS.Lib.CommServer.RetryFilter(defRetries);
+        this.myRetries = new RetryFilter(defRetries);
         myPipe.interfaces[InterfaceNumber] = this;
         foreach (DataQueue.DataDescription currDD in myPipe.GetDataDescriptionList)
           // jesli blok nie ma zdefiniowanych tag'ow nie ma sensu go skanowaæ

@@ -23,7 +23,7 @@ using System;
 using System.Collections;
 using System.Xml;
 
-namespace CAS.Lib.CommServer
+namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
 {
   internal interface IDataWrite
   {

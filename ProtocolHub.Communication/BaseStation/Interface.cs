@@ -13,12 +13,14 @@
 //  http://www.cas.eu
 //_______________________________________________________________
 
+using CAS.Lib.CommonBus.ApplicationLayer;
 using CAS.Lib.CommServerConsoleInterface;
 using CAS.Lib.RTLib.Processes;
 using System;
 using InterfacesRow = CAS.NetworkConfigLib.ComunicationNet.InterfacesRow;
+using Statistics = global::BaseStation.Management.Statistics;
 
-namespace CAS.Lib.CommServer
+namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
 {
   /// <summary>
   /// Abstract class describing interface functionality of the station pipe
@@ -26,7 +28,7 @@ namespace CAS.Lib.CommServer
   public abstract class Interface : WaitTimeList<Interface>.TODescriptor
   {
     #region private
-    private readonly BaseStation.Management.Interface myStatistics;
+    private readonly CAS.CommServer.ProtocolHub.Communication.Diagnostic.Interface myStatistics;
     private readonly Parameters myParameters;
     #endregion
 
@@ -75,7 +77,7 @@ namespace CAS.Lib.CommServer
     /// </summary>
     internal virtual void SwitchIOffAfterFailure()
     {
-      myStatistics.CurrentInterfaceState = BaseStation.Management.Statistics.InterfaceStatistics.InterfaceState.Fail;
+      myStatistics.CurrentInterfaceState = Statistics.InterfaceStatistics.InterfaceState.Fail;
       Cycle = myParameters.InactivityAfterFailureTime;
       ResetCounter();
     }
@@ -84,7 +86,7 @@ namespace CAS.Lib.CommServer
     /// </summary>
     internal virtual void SwitchIOff()
     {
-      myStatistics.CurrentInterfaceState = BaseStation.Management.Statistics.InterfaceStatistics.InterfaceState.Standby;
+      myStatistics.CurrentInterfaceState = Statistics.InterfaceStatistics.InterfaceState.Standby;
       Cycle = myParameters.InactivityTime;
       ResetCounter();
     }
@@ -93,7 +95,7 @@ namespace CAS.Lib.CommServer
     /// </summary>
     internal virtual void SwitchIOn()
     {
-      myStatistics.CurrentInterfaceState = BaseStation.Management.Statistics.InterfaceStatistics.InterfaceState.Active;
+      myStatistics.CurrentInterfaceState = Statistics.InterfaceStatistics.InterfaceState.Active;
       Remove();
     }
     /// <summary>
@@ -114,14 +116,14 @@ namespace CAS.Lib.CommServer
     /// <param name="data">The data.</param>
     /// <param name="dataAddress">The data address.</param>
     /// <returns></returns>
-    internal protected abstract bool WriteData(object data, CAS.Lib.CommonBus.ApplicationLayer.IBlockDescription dataAddress);
+    internal protected abstract bool WriteData(object data, IBlockDescription dataAddress);
     /// <summary>
     /// Reads the data.
     /// </summary>
     /// <param name="data">The data.</param>
     /// <param name="dataAddress">The data address.</param>
     /// <returns></returns>
-    internal protected abstract bool ReadData(out object data, CAS.Lib.CommonBus.ApplicationLayer.IBlockDescription dataAddress);
+    internal protected abstract bool ReadData(out object data, IBlockDescription dataAddress);
 #if COMMSERVER
     /// <summary>
     /// Initializes a new instance of the <see cref="Interface"/> class.
@@ -133,7 +135,7 @@ namespace CAS.Lib.CommServer
     internal Interface
       (
       Parameters parameters, WaitTimeList<Interface> myWTimeList, IInterface2SegmentLink segmentStatistic,
-      BaseStation.Management.Station stationStatistic
+      Diagnostic.Station stationStatistic
       )
 #endif
 #if SNIFFER
@@ -146,7 +148,7 @@ namespace CAS.Lib.CommServer
       : base(myWTimeList, parameters.InactivityTime)
     {
       myParameters = parameters;
-      myStatistics = new BaseStation.Management.Interface(parameters.Name, parameters.InterfaceNumber, segmentStatistic, stationStatistic);
+      myStatistics = new Diagnostic.Interface(parameters.Name, parameters.InterfaceNumber, segmentStatistic, stationStatistic);
     }//Interface
     #endregion
   }

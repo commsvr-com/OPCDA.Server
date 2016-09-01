@@ -1,6 +1,6 @@
 ﻿
+using CAS.CommServer.ProtocolHub.Communication.LicenseControl;
 using CAS.Lib.CodeProtect.LicenseDsc;
-using CAS.Lib.CommServer.LicenseControl;
 using System;
 
 namespace CAS.CommServer.ProtocolHub.CommunicationUnitTests.Instrumentation
