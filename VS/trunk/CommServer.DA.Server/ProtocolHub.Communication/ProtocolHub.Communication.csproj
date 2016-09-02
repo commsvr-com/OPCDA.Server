@@ -187,6 +187,7 @@
     <Compile Include="BaseStation\Initialization.cs" />
     <Compile Include="BaseStation\Interface.cs" />
     <Compile Include="BaseStation\Pipe.cs" />
+    <Compile Include="BaseStation\RetryFilter.cs" />
     <Compile Include="BaseStation\Segment.cs" />
     <Compile Include="BaseStation\SegmentState.cs" />
     <Compile Include="BaseStation\Station.cs" />
@@ -226,7 +227,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="RetryFilter.cs" />
     <Compile Include="SegmentParameters.cs" />
   </ItemGroup>
   <ItemGroup>
