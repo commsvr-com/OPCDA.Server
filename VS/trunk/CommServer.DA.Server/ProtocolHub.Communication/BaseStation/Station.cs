@@ -1,23 +1,17 @@
-//<summary>
+//_______________________________________________________________
 //  Title   : Description of distributed stations
-//  System  : Microsoft Visual C# .NET 2005
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//    12-04-2006: MZbrzezny:
-//    drobna zmiana zwiazana z nowa klasa statystyk 
-//    MPostol 05-10-2003: created
-//    <Author> - <date>:
-//    <description>
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
-//  http:\\www.cas.eu
-//</summary>
+//  mailto://techsupp@cas.eu
+//  http://www.cas.eu
+//_______________________________________________________________
 
 using CAS.CommServer.ProtocolHub.Communication.LicenseControl;
 using System;

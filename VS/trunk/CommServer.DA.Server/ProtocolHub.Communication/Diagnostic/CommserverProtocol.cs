@@ -1,5 +1,5 @@
 //<summary>
-//  Title   : class that provides communication statistics  for protocol
+//  Title   : class that provides communication statistics for protocol
 //  System  : Microsoft Visual C# .NET 2005
 //  $LastChangedDate$
 //  $Rev$

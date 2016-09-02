@@ -1,27 +1,24 @@
-//<summary>
-//  Title   : Retry management and quality assesment
-//  System  : Microsoft Visual C# .NET 
+//_______________________________________________________________
+//  Title   : Retry management and quality assessment
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//    20080905: mzbrzezny: class is marked as public (this was done due to changing interface to pulic (Interface class must be visible in NetworkConfig))
-//    MPostol 07-10-2007: created 
 //
-//  Copyright (C)2008, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
+//_______________________________________________________________
 
 using System;
 
 namespace CAS.CommServer.ProtocolHub.Communication
 {
   /// <summary>
-  /// Retry management and quality assesment
+  /// Retry management and quality assessment
   /// </summary>
   public struct RetryFilter
   {

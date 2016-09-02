@@ -1,21 +1,19 @@
 
-//<summary>
+//_______________________________________________________________
 //  Title   : CommServer installer
-//  System  : Microsoft Visual C# .NET 2005
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//    <Author> - <date>:
-//    <description>
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
-//  http:\\www.cas.eu
-//</summary>
+//  mailto://techsupp@cas.eu
+//  http://www.cas.eu
+//_______________________________________________________________
+
 namespace CAS.CommServer.ProtocolHub.Communication
 {
   /// <summary>
@@ -23,6 +21,7 @@ namespace CAS.CommServer.ProtocolHub.Communication
   /// </summary>
   partial class CommServerInstaller
   {
+
     /// <summary>
     /// Required designer variable.
     /// </summary>
@@ -32,13 +31,13 @@ namespace CAS.CommServer.ProtocolHub.Communication
     /// Clean up any resources being used.
     /// </summary>
     /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-    protected override void Dispose( bool disposing )
+    protected override void Dispose(bool disposing)
     {
-      if ( disposing && ( components != null ) )
+      if (disposing && (components != null))
       {
         components.Dispose();
       }
-      base.Dispose( disposing );
+      base.Dispose(disposing);
     }
 
     #region Component Designer generated code
@@ -47,7 +46,7 @@ namespace CAS.CommServer.ProtocolHub.Communication
     /// Required method for Designer support - do not modify
     /// the contents of this method with the code editor.
     /// </summary>
-    private void InitializeComponent(){}
+    private void InitializeComponent() { }
 
     #endregion
 

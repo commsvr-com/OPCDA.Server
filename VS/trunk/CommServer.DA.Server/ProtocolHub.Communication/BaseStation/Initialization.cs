@@ -14,7 +14,7 @@
 //_______________________________________________________________
 
 using BaseStation.ItemDescriber;
-using CAS.CommServer.ProtocolHub.Communication.SRC.BaseStation.NetworkConfig;
+using CAS.CommServer.ProtocolHub.Communication.NetworkConfig;
 using System;
 
 namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
@@ -26,7 +26,7 @@ namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
   {
 #if COMMSERVER
     internal static ItemDecriberDataSet m_ds_dsc;
-    private static void InitItemDescriber()
+    private static void InitializeItemDescriber()
     {
       XMLManagement xml_desc = new XMLManagement();
       m_ds_dsc = new ItemDecriberDataSet();
@@ -37,16 +37,16 @@ namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
     /// Initialize the communication server
     /// </summary>
     /// <param name="parent">Parent control hosting some common resources</param>
-    /// <param name="cDemoVer">true if there is no valid license, false otherwise</param>
-    /// <param name="cVConstrain">Number of item I can instantiate according of the license. �1 if unlimited. Valid if cDemoVer is false.</param>
-    /// <param name="ConfigurationFileName">Name of the configuration file.</param>
-    internal static void InitServer(CommServerComponent parent, bool cDemoVer, ref int cVConstrain, string ConfigurationFileName)
+    /// <param name="demoVer">true if there is no valid license, false otherwise</param>
+    /// <param name="valueConstrain">Number of item I can instantiate according of the license. �1 if unlimited. Valid if cDemoVer is false.</param>
+    /// <param name="configurationFileName">Name of the configuration file.</param>
+    internal static void InitializeServer(CommServerComponent parent, bool demoVer, ref int valueConstrain, string configurationFileName)
     {
-      ProtocolHubConfiguration xml = new ProtocolHubConfiguration(ConfigurationFileName, true);
+      ProtocolHubConfiguration xml = new ProtocolHubConfiguration(configurationFileName, true);
 #if COMMSERVER
       try
       {
-        InitItemDescriber();
+        InitializeItemDescriber();
       }
       catch (Exception ex)
       {
@@ -54,8 +54,8 @@ namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
       }
 #endif
       //CAS.OpcSvr.Da.NETServer.Initialization.InitComponent();
-      Station.InitStations(xml.configuration.Station, ref cVConstrain);
-      Channel.InitializeChannels(xml.configuration.Channels, parent, cDemoVer);
+      Station.InitStations(xml.configuration.Station, ref valueConstrain);
+      Channel.InitializeChannels(xml.configuration.Channels, parent, demoVer);
 #if COMMSERVER
       Station.SwitchOnDataScanning();
 #endif

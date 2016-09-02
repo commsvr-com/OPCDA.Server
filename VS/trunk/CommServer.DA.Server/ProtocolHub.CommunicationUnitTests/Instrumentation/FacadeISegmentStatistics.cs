@@ -1,35 +1,32 @@
-//<summary>
+//_______________________________________________________________
 //  Title   : Facade implementation of ISegmentStatistics
-//  System  : Microsoft Visual C# .NET 2005
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
 //
-//  History :
-//    200709 mpostol - created
-//    <Author> - <date>:
-//    <description>
-//
-//  Copyright (C)2006, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
-//  http:\\www.cas.eu
-//</summary>
-using System;
-using CAS.Lib.CommServerConsoleInterface;
+//  mailto://techsupp@cas.eu
+//  http://www.cas.eu
+//_______________________________________________________________
+
 using BaseStation.Management;
-namespace CAS.Lib.CommServer.Tests
+using CAS.Lib.CommServerConsoleInterface;
+using System;
+
+namespace CAS.CommServer.ProtocolHub.CommunicationUnitTests.Instrumentation
 {
-  class FacadeISegmentStatistics : ISegmentStatistics
+  internal class FacadeISegmentStatistics : ISegmentStatistics
   {
 
     internal int NumberOfMarkConnFail;
     internal Statistics.SegmentStatistics.States State;
     internal long Min;
     internal long Max;
-    internal long Avarage;
+    internal long Average;
 
     #region ISegmentStatistics Members
     public void MarkConnFail()
@@ -44,11 +41,12 @@ namespace CAS.Lib.CommServer.Tests
     {
       Min = min;
       Max = max;
-      Avarage = avr;
+      Average = avr;
     }
     #endregion
+
     #region IInterfaceLink Members
-    void IInterface2SegmentLink.AddInterface(Statistics.InterfaceStatistics iNtrerface)
+    void IInterface2SegmentLink.AddInterface(Statistics.InterfaceStatistics interfaceStatistics)
     {
       throw new Exception("The method or operation is not implemented.");
     }

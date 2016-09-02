@@ -1,31 +1,24 @@
-//<summary>
+//_______________________________________________________________
 //  Title   : OPC server handling class
-//  System  : Microsoft Visual C# .NET 2005
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//  20081006 mzbrzezny: implementation of ItemAccessRights
-//    MZbrzezny - 08-07-04
-//      Dodano funkcjonalnosc rozbijania na bity - BitTags
-//    MPostol - 09-03-04:
-//      Do ochrony procesu obs³ugi danych wprowadzono watchdoga
-//    MPostol - 29-08-03: created
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
+//_______________________________________________________________
 
-using System;
-using System.Collections;
 using CAS.Lib.CommonBus.ApplicationLayer;
 using CAS.Lib.RTLib;
 using CAS.Lib.RTLib.Processes;
 using CAS.NetworkConfigLib;
+using System;
+using System.Collections;
 using NetConfig = CAS.NetworkConfigLib.ComunicationNet;
 
 namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
@@ -33,23 +26,24 @@ namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
   /// <summary>
   /// OPC tags data queue handling class.
   /// </summary>
-  internal sealed class DataQueue: HandlerWaitTimeList<DataBlock>
+  internal sealed class DataQueue : HandlerWaitTimeList<DataBlock>
   {
     #region PRIVATE
     private static DataQueue myDataQueue;
-    protected override void Handler( DataBlock currDatBlock ) { ( (DataDescription)currDatBlock ).InvalidateTag(); }
+    protected override void Handler(DataBlock currDatBlock) { ((DataDescription)currDatBlock).InvalidateTag(); }
     #endregion PRIVATE
+
     #region PUBLIC
-    internal abstract class DataDescription: DataBlock
+    internal abstract class DataDescription : DataBlock
     {
       #region PRIVATE
-      protected class TagDataDescription: DataBlock.Tag
+      protected class TagDataDescription : DataBlock.Tag
       {
         #region PRIVATE
         /// <summary>
         ///  Title   : class that describe Bit Tags
         /// </summary>
-        private class TagBit: CAS.Lib.DeviceSimulator.Device.TagInDevice
+        private class TagBit : CAS.Lib.DeviceSimulator.Device.TagInDevice
         {
           #region PRIVATE
           private int BitNumber;
@@ -60,11 +54,11 @@ namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
           //            bool res = base.UpdateTag(val);
           //            return res;
           //          }
-          protected override bool UpdateRemote( object data )
+          protected override bool UpdateRemote(object data)
           {
             return false;
           }
-          protected override bool ReadRemote( out object data )
+          protected override bool ReadRemote(out object data)
           {
             data = null;
             return false;
@@ -73,9 +67,9 @@ namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
           {
             get { return this.BitNumber; }
           }
-          internal TagBit( string myName, int myBitNumber )
+          internal TagBit(string myName, int myBitNumber)
             :
-            base( myName, null, Opc.Da.qualityBits.bad, ItemAccessRights.ReadOnly, typeof( bool ) )
+            base(myName, null, Opc.Da.qualityBits.bad, ItemAccessRights.ReadOnly, typeof(bool))
           {
             this.BitNumber = myBitNumber;
           }
@@ -84,7 +78,7 @@ namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
         /// <summary>
         ///  Title   : Class that allow to write to station
         /// </summary>
-        private class DataWriteDescription: IBlockDescription
+        private class DataWriteDescription : IBlockDescription
         {
           #region PRIVATE
           private int myAddress;
@@ -97,16 +91,16 @@ namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
           short IBlockDescription.dataType { get { return myDataType; } }
           #endregion
           #region PUBLIC
-          internal bool WriteData( object data )
+          internal bool WriteData(object data)
           {
-            return writeToStation.WriteData( data, this );
+            return writeToStation.WriteData(data, this);
           }
-          internal bool ReadData( out object data )
+          internal bool ReadData(out object data)
           {
-            return writeToStation.ReadData( out data, this );
+            return writeToStation.ReadData(out data, this);
           }
           internal DataWriteDescription
-            ( int myAddress, short myDataType, IDataWrite writeToStation )
+            (int myAddress, short myDataType, IDataWrite writeToStation)
           {
             this.myAddress = myAddress;
             this.myDataType = myDataType;
@@ -121,48 +115,48 @@ namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
         private System.Collections.ArrayList TagBitList;
         #endregion PRIVATE
         #region PUBLIC
-        public override void UpdateTag( object val )
+        public override void UpdateTag(object val)
         {
-          base.UpdateTag( val );
+          base.UpdateTag(val);
           //MZ: UpdateAllBitTags
-          if ( this.TagBitList != null )
+          if (this.TagBitList != null)
           {
             int val_int = (int)val;
-            foreach ( TagBit t in this.TagBitList )
+            foreach (TagBit t in this.TagBitList)
             {
               int mask = 1;
               mask = mask << (int)t.getBitNumber;
               //MP wywalilem if i przerywam po bledzie
-              t.UpdateTag( ( mask & val_int ) > 0 );
+              t.UpdateTag((mask & val_int) > 0);
               //              if ( ! res ) return false;
             }
           }
           //          return res;
         } //UpdateTag
-        protected override bool UpdateRemote( object data )
+        protected override bool UpdateRemote(object data)
         {
-          if ( myDWD.WriteData( data ) )
+          if (myDWD.WriteData(data))
           {
-            UpdateTag( data );
+            UpdateTag(data);
             return true;
           }
           else
           {
-            MarkTagQuality( Opc.Da.qualityBits.bad );
+            MarkTagQuality(Opc.Da.qualityBits.bad);
             return false;
           }
         }
-        protected override bool ReadRemote( out object data )
+        protected override bool ReadRemote(out object data)
         {
           //MPTD brak konwersji na postac kanoniczna
-          if ( myDWD.ReadData( out data ) )
+          if (myDWD.ReadData(out data))
           {
-            UpdateTag( data );
+            UpdateTag(data);
             return true;
           }
           else
           {
-            MarkTagQuality( Opc.Da.qualityBits.bad );
+            MarkTagQuality(Opc.Da.qualityBits.bad);
             return false;
           }
         }
@@ -180,20 +174,20 @@ namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
           NetConfig.TagsRow myDSC, IStationState myStation, int myAddress,
           short myDataType, IDataWrite writeToStation, Opc.Da.ItemPropertyCollection property_colllection
           )
-          : base( myDSC, myStation )
+          : base(myDSC, myStation)
         {
-          if ( property_colllection != null )
-            this.AddProperties( property_colllection );
-          writableTag = ( myDSC.AccessRights == (sbyte)ItemAccessRights.ReadWrite || myDSC.AccessRights == (sbyte)ItemAccessRights.WriteOnly );
-          myDWD = new DataWriteDescription( myAddress, myDataType, writeToStation );
+          if (property_colllection != null)
+            this.AddProperties(property_colllection);
+          writableTag = (myDSC.AccessRights == (sbyte)ItemAccessRights.ReadWrite || myDSC.AccessRights == (sbyte)ItemAccessRights.WriteOnly);
+          myDWD = new DataWriteDescription(myAddress, myDataType, writeToStation);
           ComunicationNet.TagBitRow[] tagbitsDsc = myDSC.GetTagBitRows();
-          if ( tagbitsDsc.Length != 0 )
+          if (tagbitsDsc.Length != 0)
           {
             this.TagBitList = new ArrayList();
-            foreach ( ComunicationNet.TagBitRow curr in tagbitsDsc )
+            foreach (ComunicationNet.TagBitRow curr in tagbitsDsc)
             {
-              TagBit newTagBit = new TagBit( myDSC.Name + "_" + curr.Name, (int)curr.BitNumber );
-              this.TagBitList.Add( newTagBit );
+              TagBit newTagBit = new TagBit(myDSC.Name + "_" + curr.Name, (int)curr.BitNumber);
+              this.TagBitList.Add(newTagBit);
             }
           }
           else
@@ -201,9 +195,9 @@ namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
         }
         #endregion
       }// Tag
-      internal override void UpdateAllTags( IReadValue val )
+      internal override void UpdateAllTags(IReadValue val)
       {
-        base.UpdateAllTags( val );
+        base.UpdateAllTags(val);
         ResetCounter();
       }
       protected abstract TimeSpan TimeOut { get; }
@@ -211,22 +205,19 @@ namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
       {
         Cycle = TimeOut;
         ResetCounter();
-        if ( NotifyNewTimeScan != null )
-          NotifyNewTimeScan( this, EventArgs.Empty );
+        NotifyNewTimeScan?.Invoke(this, EventArgs.Empty);
       }
-      protected override DataBlock.Tag newTag
-        ( ComunicationNet.TagsRow currRow, IStationState myStationState, int myAddress,
-        short myDataType, IDataWrite myWriteInt )
+      protected override DataBlock.Tag newTag(ComunicationNet.TagsRow currRow, IStationState myStationState, int myAddress, short myDataType, IDataWrite myWriteInt)
       {
 #if COMMSERVER
-        Opc.Da.ItemPropertyCollection prop_coll = global::BaseStation.ItemDescriber.ItemDescriber2OpcDA.GetItemPropertiesCollection( currRow.Name, Initialization.m_ds_dsc );
+        Opc.Da.ItemPropertyCollection prop_coll = global::BaseStation.ItemDescriber.ItemDescriber2OpcDA.GetItemPropertiesCollection(currRow.Name, Initialization.m_ds_dsc);
 #else
         Opc.Da.ItemPropertyCollection prop_coll=null;
 #endif
-        return (DataBlock.Tag)
-          new TagDataDescription( currRow, myStationState, myAddress, myDataType, myWriteInt, prop_coll );
+        return new TagDataDescription(currRow, myStationState, myAddress, myDataType, myWriteInt, prop_coll);
       }
       #endregion PRIVATE
+
       #region PUBLIC
       internal event EventHandler NotifyNewTimeScan;
       internal abstract TimeSpan TimeScann { get; }
@@ -234,19 +225,20 @@ namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
       {
         //MPTD brak invalidacji tagow bitowych - trzeba to zrobiæ
         DataBlock.Tag[] tagHendlers = createdTags;
-        System.Diagnostics.Debug.Assert( createdTags != null, "DataQueue.InvalidateTag: createdTags!= null" );
-        System.Diagnostics.Debug.Assert( tagHendlers != null, "DataQueue.InvalidateTag: tagHendlers != null" );
-        for ( ushort idx = 0; ( idx < tagHendlers.Length ); idx++ )
-          tagHendlers[ idx ].MarkTagQuality( Opc.Da.qualityBits.bad );
+        System.Diagnostics.Debug.Assert(createdTags != null, "DataQueue.InvalidateTag: createdTags!= null");
+        System.Diagnostics.Debug.Assert(tagHendlers != null, "DataQueue.InvalidateTag: tagHendlers != null");
+        for (ushort idx = 0; (idx < tagHendlers.Length); idx++)
+          tagHendlers[idx].MarkTagQuality(Opc.Da.qualityBits.bad);
       }
       internal DataDescription
         (
         ComunicationNet.DataBlocksRow myRow, TimeSpan timeOut, IDataWrite myWriteInt,
         IStationState myStationState, ref int cVConstrain
         )
-        : base( myRow, myWriteInt, myStationState, myDataQueue, timeOut, ref cVConstrain )
+        : base(myRow, myWriteInt, myStationState, myDataQueue, timeOut, ref cVConstrain)
       { }
       #endregion PUBLIC
+
     }// class DataDescription
     #endregion
     #region INIT
@@ -255,7 +247,7 @@ namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
       //MPTD wywo³ac ShutdownRequest z OpcCom.Server
     }
     private DataQueue()
-      : base( false, "DataQueueHandler" )
+      : base(false, "DataQueueHandler")
     { }//DataQueue
     ~DataQueue()
     { }

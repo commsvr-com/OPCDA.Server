@@ -1,17 +1,17 @@
-﻿//<summary>
+﻿//_______________________________________________________________
 //  Title   : This is a test class for OTALicenseTest and is intended to contain all OTALicenseTest Unit Tests
-//  System  : Microsoft Visual C# .NET 2008
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
 //
-//  Copyright (C)2008, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
 //  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
+//_______________________________________________________________
 
 using CAS.CommServer.ProtocolHub.Communication.LicenseControl;
 using CAS.CommServer.ProtocolHub.CommunicationUnitTests.Instrumentation;

@@ -1,33 +1,34 @@
-//<summary>
-//  Title   : Facade impmlementation of CAS.Lib.CommonBus.ApplicationLayer.IBlockDescription
-//  System  : Microsoft Visual C# .NET 2005
+//_______________________________________________________________
+//  Title   : FacadeBlockDescription
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//    200709 mpostol - created
-//    <Author> - <date>:
-//    <description>
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
-//  http:\\www.cas.eu
-//</summary>
-namespace CAS.Lib.CommServer.Tests
+//  mailto://techsupp@cas.eu
+//  http://www.cas.eu
+//_______________________________________________________________
+
+using CAS.Lib.CommonBus.ApplicationLayer;
+
+namespace CAS.CommServer.ProtocolHub.CommunicationUnitTests.Instrumentation
 {
   /// <summary>
   /// Facade implementation of CAS.Lib.CommonBus.ApplicationLayer.IBlockDescription
   /// </summary>
-  class FacadeBlockDescription: CAS.Lib.CommonBus.ApplicationLayer.IBlockDescription
+  internal class FacadeBlockDescription: IBlockDescription
   {
+
     #region private
     private int myStartAddress;
     private int myLength;
     private short myDataType;
     #endregion
+
     #region IBlockDescription Members
     public int startAddress
     {
@@ -42,6 +43,7 @@ namespace CAS.Lib.CommServer.Tests
       get { return myDataType; }
     }
     #endregion
+
     #region constructor
     public FacadeBlockDescription( int startAddress, int length, short dataType )
     {
@@ -50,5 +52,6 @@ namespace CAS.Lib.CommServer.Tests
       myDataType = dataType;
     }
     #endregion
+
   }
 }

@@ -1,32 +1,23 @@
-// <summary>
+//_______________________________________________________________
 //  Title   : Base station Management
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  System  : Microsoft Visual C# .NET
-//  History :
-//    20081105 mzbrzezny: Base station Management,OPCServer : protocol statistics in OPC
-//    20081006 mzbrzezny: implementation of ItemAccessRights
-//    Maciej Zbrzezny - 12-04-2006
-//    Zmieniono z powodu zmian w funkcjach statystycznych, usunieto dziedziczenie po html output
-//    MPostol   - 12-12-2005
-//      class Segment added - 
-//    Mzbrzezny - 19-04-2005
-//      description added
 //
-//  Copyright (C)2008, CAS LODZ POLAND.
-//  TEL: +48 42 686 25 47
-//  mailto:techsupp@cas.eu
+//  Copyright (C) 2016, CAS LODZ POLAND.
+//  TEL: +48 (42) 686 25 47
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-// </summary>
+//_______________________________________________________________
 
-using System;
 using CAS.Lib.CommServerConsoleInterface;
 using CAS.Lib.RTLib;
 using CAS.Lib.RTLib.Management;
 using CAS.NetworkConfigLib;
+using System;
 using Cnf = CAS.Lib.RTLib.Management.AppConfigManagement;
 
 namespace CAS.CommServer.ProtocolHub.Communication.Diagnostic

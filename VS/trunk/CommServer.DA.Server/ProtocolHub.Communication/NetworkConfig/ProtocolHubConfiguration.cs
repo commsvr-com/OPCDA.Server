@@ -19,8 +19,9 @@ using CAS.Lib.RTLib.Processes;
 using CAS.NetworkConfigLib;
 using System;
 
-namespace CAS.CommServer.ProtocolHub.Communication.SRC.BaseStation.NetworkConfig
+namespace CAS.CommServer.ProtocolHub.Communication.NetworkConfig
 {
+
   /// <summary>
   /// Opens and reads OPC server configuration from XML file.
   /// </summary>

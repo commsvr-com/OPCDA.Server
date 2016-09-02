@@ -19,7 +19,7 @@ using CAS.Lib.RTLib.Processes;
 using CAS.NetworkConfigLib;
 using System;
 
-namespace CAS.Lib.CommServer.Tests
+namespace CAS.CommServer.ProtocolHub.CommunicationUnitTests.Instrumentation
 {
   internal class FacadeSegment: WaitTimeList<Pipe.PipeInterface.PipeDataBlock>
   {

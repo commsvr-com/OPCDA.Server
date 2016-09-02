@@ -1,39 +1,28 @@
 //<summary>
+//_______________________________________________________________
 //  Title   : CommServer main component
-//  System  : Microsoft Visual C# .NET 2005
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//    20080625: mzbrzezny: EventLogMonitor is used instead of System.Diagnostics.EventLog.
-//                         The advantage is that EventLogMonitor can save messages through .NET trace
-//                         so events can be stored in the log file automatically (depends on the app.config)
-//    MPostol - 11-02-2007:
-//      Utworzy³em Component z klasy MainForm w pliku Main.cs
-//    MPostol - 28-10-2006
-//      removed Form reference, used reflection instead
-//    Maciej Zbrzezny - 12-04-2006
-//      usunieto okno aplickacji !!
-//    Mariusz Postol - 11-03-04
-//      zsnchronizowalem dostêp do obiektu przez threds'y wywoluj¹ce events do zmiany stanu.
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
+//_______________________________________________________________
 
+using CAS.CommServer.ProtocolHub.Communication.BaseStation;
+using CAS.Lib.CodeProtect;
+using CAS.Lib.CodeProtect.LicenseDsc;
+using CAS.Lib.CodeProtect.Properties;
+using CAS.Lib.RTLib.Processes;
 using System;
 using System.ComponentModel;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using CAS.Lib.CodeProtect;
-using CAS.Lib.CodeProtect.LicenseDsc;
-using CAS.Lib.RTLib.Processes;
-using CAS.Lib.CodeProtect.Properties;
-using CAS.CommServer.ProtocolHub.Communication.BaseStation;
 
 namespace CAS.CommServer.ProtocolHub.Communication
 {
@@ -47,17 +36,19 @@ namespace CAS.CommServer.ProtocolHub.Communication
     #region private
     private static bool m_isCreated = false;
     private static bool m_isInitialized = false;
-    private static CAS.Lib.RTLib.Processes.Stopwatch m_RuntimeStopWatch = new CAS.Lib.RTLib.Processes.Stopwatch();
+    private static Stopwatch m_RuntimeStopWatch = new Stopwatch();
     private static System.Timers.Timer m_RunTimeout;
     private void m_RunTimeout_Elapsed( object sender, System.Timers.ElapsedEventArgs e )
     {
       EventLogMonitor.WriteToEventLog
        ( "Runtime expired – server entered demo mode – no data will be read. ",
-       System.Diagnostics.EventLogEntryType.Warning, (int)CAS.Lib.RTLib.Processes.Error.CommServer_CommServerComponent, 72
+       System.Diagnostics.EventLogEntryType.Warning, (int)Error.CommServer_CommServerComponent, 72
        );
       Segment.DemoMode = true;
     }
     private static TraceEvent m_traceEvent_internal = new TraceEvent( "CAS.Lib.CommServer" );
+    #endregion
+
     #region IDisposable
     /// <summary> 
     /// Clean up any resources being used.
@@ -72,7 +63,6 @@ namespace CAS.CommServer.ProtocolHub.Communication
       m_traceEvent_internal.TraceEventClose();
       base.Dispose( disposing );
     }
-    #endregion
     #endregion
 
     #region public
@@ -94,7 +84,7 @@ namespace CAS.CommServer.ProtocolHub.Communication
     {
       get
       {
-        return CAS.Lib.RTLib.Processes.Stopwatch.ConvertTo_s( m_RuntimeStopWatch.Read );
+        return Stopwatch.ConvertTo_s( m_RuntimeStopWatch.Read );
       }
     }
     /// <summary>
@@ -170,24 +160,24 @@ namespace CAS.CommServer.ProtocolHub.Communication
       EventLogMonitor.WriteToEventLog
         ( "Communication server started - product name:" + cFullName,
         System.Diagnostics.EventLogEntryType.Information, (int)Error.CommServer_CommServerComponent, 130 );
-      Initialization.InitServer( this, m_DemoVer, ref cVcounter, configurationFileName );
+      Initialization.InitializeServer( this, m_DemoVer, ref cVcounter, configurationFileName );
       ConsoleIterface.Start( cProductName, cProductVersion );
       if ( cVcounter <= 0 )
         EventLogMonitor.WriteToEventLog
         ( "Some tags have not been added due to license limitation – the volume constrain have been reached",
-           System.Diagnostics.EventLogEntryType.Warning, (int)CAS.Lib.RTLib.Processes.Error.CommServer_CommServerComponent, 134 );
+           System.Diagnostics.EventLogEntryType.Warning, (int)Error.CommServer_CommServerComponent, 134 );
       else
       {
         string msg = string.Format
           ( "Initiated {0} tags, The license allows you to add {1} more tags. ", cVConstrain - cVcounter, cVcounter );
         EventLogMonitor.WriteToEventLog
-         ( msg, System.Diagnostics.EventLogEntryType.Information, (int)CAS.Lib.RTLib.Processes.Error.CommServer_CommServerComponent, 139 );
+         ( msg, System.Diagnostics.EventLogEntryType.Information, (int)Error.CommServer_CommServerComponent, 139 );
       }
       if ( cRTConstrain > 0 )
       {
         string msg = string.Format( "Runtime of the product is constrained up to {0} hours.", cRTConstrain );
         EventLogMonitor.WriteToEventLog
-         ( msg, System.Diagnostics.EventLogEntryType.Warning, (int)CAS.Lib.RTLib.Processes.Error.CommServer_CommServerComponent, 145 );
+         ( msg, System.Diagnostics.EventLogEntryType.Warning, (int)Error.CommServer_CommServerComponent, 145 );
         m_RunTimeout = new System.Timers.Timer( cRTConstrain * 60 * 60 * 1000 );
         m_RunTimeout.Start();
         m_RunTimeout.Elapsed += new System.Timers.ElapsedEventHandler( m_RunTimeout_Elapsed );
@@ -203,5 +193,7 @@ namespace CAS.CommServer.ProtocolHub.Communication
       container.Add( this );
     }
     #endregion
+
   }
+
 }

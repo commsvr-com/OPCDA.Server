@@ -17,6 +17,7 @@
 
 using CAS.CommServer.ProtocolHub.Communication;
 using CAS.CommServer.ProtocolHub.Communication.BaseStation;
+using CAS.CommServer.ProtocolHub.CommunicationUnitTests.Instrumentation;
 using CAS.Lib.CommonBus.ApplicationLayer;
 using CAS.Lib.RTLib.Processes;
 using CAS.NetworkConfigLib;
@@ -27,7 +28,7 @@ using System.IO;
 using System.Threading;
 using DiagnosticSegment = CAS.CommServer.ProtocolHub.Communication.Diagnostic.Segment;
 
-namespace CAS.Lib.CommServer.Tests
+namespace CAS.CommServer.ProtocolHub.CommunicationUnitTests
 {
   [TestClass]
   [DeploymentItem("DefaultConfig.xml")]

@@ -210,7 +210,7 @@
     <Compile Include="Diagnostic\CommserverProtocol.cs" />
     <Compile Include="Diagnostic\OPCServer.cs" />
     <Compile Include="Diagnostic\ReportGenerator.cs" />
-    <Compile Include="NetworkConfig\XMLManagement.cs" />
+    <Compile Include="NetworkConfig\ProtocolHubConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
