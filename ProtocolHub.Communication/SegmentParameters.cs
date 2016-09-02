@@ -26,6 +26,7 @@ namespace CAS.CommServer.ProtocolHub.Communication
   /// </summary>
   public class SegmentParameters
   {
+
     #region private
     private TimeSpan CheckedValue( long value )
     {
@@ -81,5 +82,6 @@ namespace CAS.CommServer.ProtocolHub.Communication
       TimeReconnectAfterFailure = CheckedValue( segmentRow.TimeReconnect );
     }
     #endregion
+
   }
 }
