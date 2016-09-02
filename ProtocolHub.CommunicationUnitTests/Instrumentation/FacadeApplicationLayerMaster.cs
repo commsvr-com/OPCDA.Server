@@ -1,30 +1,28 @@
-//<summary>
-//  Title   : Façade of  IApplicationLayerMaster
-//  System  : Microsoft Visual C# .NET 2005
+//_______________________________________________________________
+//  Title   : Name of Application
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//    200709 mpostol - created
-//    <Author> - <date>:
-//    <description>
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
-//  http:\\www.cas.eu
-//</summary>
-using System;
-using CAS.Lib.CommonBus.ApplicationLayer;
-using CAS.Lib.CommonBus;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+//  mailto://techsupp@cas.eu
+//  http://www.cas.eu
+//_______________________________________________________________
 
-namespace CAS.Lib.CommServer.Tests
+
+using CAS.Lib.CommonBus;
+using CAS.Lib.CommonBus.ApplicationLayer;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+
+namespace CAS.CommServer.ProtocolHub.CommunicationUnitTests.Instrumentation
 {
   /// <summary>
-  /// Façade of  IApplicationLayerMaster
+  /// Facade of  IApplicationLayerMaster
   /// </summary>
   internal class FacadeApplicationLayerMaster: IApplicationLayerMaster
   {

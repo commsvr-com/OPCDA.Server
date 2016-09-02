@@ -16,12 +16,14 @@
 //  mailto:techsupp@cas.com.pl
 //  http://www.cas.eu
 //</summary>
+
 using CAS.CommServer.ProtocolHub.Communication;
+using CAS.CommServer.ProtocolHub.CommunicationUnitTests.Instrumentation;
 using CAS.Lib.CommonBus;
 using CAS.Lib.CommonBus.ApplicationLayer;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CAS.Lib.CommServer.Tests.GuardedDataProviderTest
+namespace CAS.CommServer.ProtocolHub.CommunicationUnitTests
 {
   /// <summary>
   /// Master Test
@@ -40,7 +42,7 @@ namespace CAS.Lib.CommServer.Tests.GuardedDataProviderTest
       GuardedDataProvider m_gp = new GuardedDataProvider( "GoTest", m_Master );
       string m_gpToString = m_gp.ToString();
       Assert.AreEqual( m_gpToString, m_MasterToString, "ToString error" );
-      StringAddress m_address = new CAS.Lib.CommonBus.StringAddress("DummyAddress");
+      StringAddress m_address = new StringAddress("DummyAddress");
       Assert.IsFalse( m_gp.Connected, "State error" );
       m_gp.ConnectReq( m_address );
       Assert.IsTrue( m_gp.Connected, "State error" );

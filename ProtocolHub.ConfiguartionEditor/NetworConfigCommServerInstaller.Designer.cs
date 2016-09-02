@@ -1,4 +1,5 @@
-﻿using CAS.CommServer.ProtocolHub.Communication;
+﻿
+using CAS.CommServer.ProtocolHub.Communication;
 using CAS.Lib.CodeProtect;
 
 namespace NetworkConfig
@@ -14,13 +15,13 @@ namespace NetworkConfig
     /// Clean up any resources being used.
     /// </summary>
     /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-    protected override void Dispose( bool disposing )
+    protected override void Dispose(bool disposing)
     {
-      if ( disposing && ( components != null ) )
+      if (disposing && (components != null))
       {
         components.Dispose();
       }
-      base.Dispose( disposing );
+      base.Dispose(disposing);
     }
 
     #region Component Designer generated code
@@ -32,18 +33,13 @@ namespace NetworkConfig
     private void InitializeComponent()
     {
       this.CodeProtect_LibInstaller = new LibInstaller();
-      this.CommmServerMainInstaller = new CommServerInstaller();
-      // 
-      // NetworConfigCommServerInstaller
-      // 
-      this.Installers.AddRange( new System.Configuration.Install.Installer[] {
-            this.CodeProtect_LibInstaller} );
-
+      this.CommServerMainInstaller = new CommServerInstaller();
+      this.Installers.AddRange(new System.Configuration.Install.Installer[] { this.CodeProtect_LibInstaller });
     }
 
     #endregion
 
     private LibInstaller CodeProtect_LibInstaller;
-    private CommServerInstaller CommmServerMainInstaller;
+    private CommServerInstaller CommServerMainInstaller;
   }
 }

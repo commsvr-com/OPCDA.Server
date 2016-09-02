@@ -27,6 +27,7 @@ namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
   /// </summary>
   public abstract class Interface : WaitTimeList<Interface>.TODescriptor
   {
+
     #region private
     private readonly CAS.CommServer.ProtocolHub.Communication.Diagnostic.Interface myStatistics;
     private readonly Parameters myParameters;
@@ -132,11 +133,7 @@ namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
     /// <param name="myWTimeList">wait time list</param>
     /// <param name="segmentStatistic">The segment statistic.</param>
     /// <param name="stationStatistic">The station statistic.</param>
-    internal Interface
-      (
-      Parameters parameters, WaitTimeList<Interface> myWTimeList, IInterface2SegmentLink segmentStatistic,
-      Diagnostic.Station stationStatistic
-      )
+    internal Interface(Parameters parameters, WaitTimeList<Interface> myWTimeList, IInterface2SegmentLink segmentStatistic, Diagnostic.Station stationStatistic)
 #endif
 #if SNIFFER
     internal Interface
@@ -151,5 +148,6 @@ namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
       myStatistics = new Diagnostic.Interface(parameters.Name, parameters.InterfaceNumber, segmentStatistic, stationStatistic);
     }//Interface
     #endregion
+
   }
 }

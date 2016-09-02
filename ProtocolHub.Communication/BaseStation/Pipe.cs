@@ -1,19 +1,17 @@
-//<summary>
+//_______________________________________________________________
 //  Title   : Pipe description class
-//  System  : Microsoft Visual C# .NET 2005
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//    MPostol - 28-09-2003: created
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
+//_______________________________________________________________
 
 using CAS.CommServer.ProtocolHub.Communication.LicenseControl;
 using CAS.Lib.CommonBus.ApplicationLayer;

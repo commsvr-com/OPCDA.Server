@@ -16,12 +16,12 @@
 //  http://www.cas.eu
 //</summary>
 
+using CAS.CommServer.ProtocolHub.Communication.BaseStation;
+using CAS.Lib.ControlLibrary;
+using CAS.NetworkConfigLib;
 using System;
 using System.Data;
 using System.Windows.Forms;
-using CAS.Lib.ControlLibrary;
-using CAS.NetworkConfigLib;
-using CAS.CommServer.ProtocolHub.Communication.BaseStation;
 
 namespace NetworkConfig.HMI
 {
@@ -30,6 +30,7 @@ namespace NetworkConfig.HMI
   /// </summary>
   internal partial class AddInterfaceAndStation: Form
   {
+    
     #region private
     private ComunicationNet.InterfacesDataTable m_InterfacesDataTable;
     private ComunicationNet.StationDataTable StationTab
@@ -46,6 +47,7 @@ namespace NetworkConfig.HMI
       }
     }
     #endregion
+
     #region Constructor
     public AddInterfaceAndStation
       ( ComunicationNet pDB, IAction pNewInteface )
@@ -56,6 +58,7 @@ namespace NetworkConfig.HMI
       pgInterface.SelectedObject = pNewInteface;
     }
     #endregion
+
     #region Event handlers
     private void btnAdd_Click( object sender, EventArgs e )
     {
@@ -156,5 +159,6 @@ namespace NetworkConfig.HMI
       ( (InterfacesRowWrapper)pgInterface.SelectedObject ).StationId = ( (StationRowWrapper)( (ComboBox)sender ).SelectedItem ).StationID;
     }
     #endregion
+
   }
 }

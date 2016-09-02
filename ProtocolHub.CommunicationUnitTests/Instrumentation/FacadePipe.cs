@@ -1,27 +1,24 @@
-//<summary>
+//_______________________________________________________________
 //  Title   : Facade implementation of Pipe
-//  System  : Microsoft Visual C# .NET 2005
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//    200709 mpostol - created
-//    <Author> - <date>:
-//    <description>
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.com.pl
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
+//_______________________________________________________________
+
 
 using CAS.CommServer.ProtocolHub.Communication.BaseStation;
 using CAS.NetworkConfigLib;
 using System.Collections;
 
-namespace CAS.Lib.CommServer.Tests
+namespace CAS.CommServer.ProtocolHub.CommunicationUnitTests.Instrumentation
 {
 
   /// <summary>

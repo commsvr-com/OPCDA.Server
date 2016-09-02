@@ -1,47 +1,23 @@
-//<summary>
-//  Title   : C# Net Server Subscription
-//  System  : Microsoft Visual C# .NET 2005
+//_______________________________________________________________
+//  Title   :  C# Net Server Subscription
+//  System  : Microsoft VisualStudio 2015 / C#
 //  $LastChangedDate$
 //  $Rev$
 //  $LastChangedBy$
 //  $URL$
 //  $Id$
-//  History :
-//    20071007: mzbrzezny  - DateTimeProvider is use instead of DateTime.Now or UtcNow
-//    Maciej Zbrzezny - 12-04-2006
-//    zmieniono by czas by³ Now a nie Utc Now,  dodano inicjalizacje commservera - a dokladniej modulu odpowiedzialnego ze poprzednio za obsluge okna
-//    M.Postol - 2005
-//    created
 //
-//  Copyright (C)2006, CAS LODZ POLAND.
+//  Copyright (C) 2016, CAS LODZ POLAND.
 //  TEL: +48 (42) 686 25 47
-//  mailto:techsupp@cas.eu
+//  mailto://techsupp@cas.eu
 //  http://www.cas.eu
-//</summary>
-//============================================================================
-// TITLE: Cache.cs
-//
-// CONTENTS:
-// 
-// A shared cache of item values stored in a data access server. 
-//
-// (c) Copyright 2003 The OPC Foundation
-// ALL RIGHTS RESERVED.
-//
-// DISCLAIMER:
-//  This code is provided by the OPC Foundation solely to assist in 
-//  understanding and use of the appropriate OPC Specification(s) and may be 
-//  used as set forth in the License Grant section of the OPC Specification.
-//  This code is provided as-is and without warranty or support of any sort
-//  and is subject to the Warranty and Liability Disclaimers which appear
-//  in the printed OPC Specification.
-//
-// MODIFICATION LOG:
-//
-// Date       By    Notes
-// ---------- ---   -----
-// 2003/03/26 RSA   Initial implementation.
+//_______________________________________________________________
 
+using CAS.CommServer.ProtocolHub.Communication;
+using CAS.Lib.DeviceSimulator;
+using CAS.Lib.RTLib.Utils;
+using Opc;
+using Opc.Da;
 using System;
 using System.Collections;
 using System.Globalization;
@@ -49,11 +25,6 @@ using System.Reflection;
 using System.Resources;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
-using CAS.Lib.DeviceSimulator;
-using CAS.Lib.RTLib.Utils;
-using Opc;
-using Opc.Da;
-using CAS.CommServer.ProtocolHub.Communication;
 
 namespace CAS.OpcSvr.Da.NETServer
 {

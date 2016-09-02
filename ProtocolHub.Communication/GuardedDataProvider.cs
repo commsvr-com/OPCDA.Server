@@ -16,11 +16,11 @@
 //  http://www.cas.eu
 //</summary>
 
-using System;
+using CAS.CommServer.ProtocolHub.Communication.Properties;
 using CAS.Lib.CommonBus;
 using CAS.Lib.CommonBus.ApplicationLayer;
 using CAS.Lib.RTLib.Processes;
-using CAS.CommServer.ProtocolHub.Communication.Properties;
+using System;
 
 namespace CAS.CommServer.ProtocolHub.Communication
 {
@@ -30,6 +30,7 @@ namespace CAS.CommServer.ProtocolHub.Communication
   [Watchdog( "GuardedDataProvider", 120 )]
   internal class GuardedDataProvider: ContextBoundObject, IApplicationLayerMaster
   {
+
     #region private
     private string m_Source = "CAS.Lib.CommServer.GuardedDataProvider";
     private IApplicationLayerMaster mDataProvider;
@@ -195,5 +196,6 @@ namespace CAS.CommServer.ProtocolHub.Communication
       mDataProvider = parent;
     }
     #endregion
+
   }
 }
