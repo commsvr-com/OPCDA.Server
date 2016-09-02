@@ -109,12 +109,11 @@ namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
       }
       #endregion
       #region debug
-#if DEBUG
+      [System.Diagnostics.Conditional("DEBUG")]
       public virtual void NotifyKeepConnectTimeElapsed()
       {
         throw new Exception( "The method or operation is not implemented." );
       }
-#endif
       #endregion
     }
     private abstract class ReadWriteOperations: SegmentState
