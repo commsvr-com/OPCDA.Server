@@ -30,7 +30,7 @@ namespace CAS.CommServer.ProtocolHub.Communication.BaseStation
     {
       XMLManagement xml_desc = new XMLManagement();
       m_ds_dsc = new ItemDecriberDataSet();
-      xml_desc.readXMLFile(m_ds_dsc, CAS.CommServer.ProtocolHub.Communication.AppConfigManagement.ItemDsc_configfile);
+      xml_desc.readXMLFile(m_ds_dsc, AppConfigManagement.ItemDsc_configfile);
     }
 #endif
     /// <summary>
