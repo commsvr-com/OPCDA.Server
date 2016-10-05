@@ -17,7 +17,6 @@
 //_______________________________________________________________
 
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("<#=m_AssemblyTitle#>")]
@@ -32,16 +31,6 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(true)]
 [assembly: AssemblyVersion("<#= CASCommServerDAServerNETServerVersion #>.*")]
 [assembly: AssemblyFileVersion("<#= CASCommServerDAServerNETServerVersion #>")]
-[assembly: CAS.Lib.CodeProtect.AssemblyHelper
-  (
-    Product = "Configuration tool for CommServer.",
-    Company = "CAS",
-    Url = "www.cas.eu",
-    Email = "techsupp@cas.eu",
-    Phone = "+48 42 686 25 47"
-  )
-]
-[assembly: InternalsVisibleToAttribute("CAS.CommServer.DA.Server.NETServerUnitTest", AllInternalsVisible = true)]
 
 <#@ include file = "..\..\..\PR39-CommonResources\T4Definitions\CAS.OPC.t4" #>
 <#+
