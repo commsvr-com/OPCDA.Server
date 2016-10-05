@@ -26,11 +26,11 @@
     <dependencies>
       <dependency id="CAS.CodeProtect" version="5.0.2" />
       <dependency id="CAS.CommServer.CommonBus" version="5.01.02-Charlie" />
-      <dependency id="CAS.CommServer.ProtocolHub.ItemDescriber" version="1.00.2-Delta" />
       <dependency id="CAS.CommServer.DAServerConfiguration" version="4.1.2-Alpha" />
       <dependency id="CAS.CommServer.DeviceSimulator" version="5.01.02-Alpha" />
       <dependency id="CAS.CommServer.OPCClassic.SDK.Core" version="2.01.106" />
       <dependency id="CAS.RealTime" version="5.0.2" />
+      <dependency id="CAS.CommServer.ProtocolHub.ItemDescriber" version="1.00.2-Golf" />
     </dependencies>
   </metadata>
   <files>
