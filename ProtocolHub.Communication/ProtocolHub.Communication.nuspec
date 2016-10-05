@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>CAS.CommServer.ProtocolHub.Communication</id>
-    <version>4.00.22-Bravo</version>
+    <version>4.00.22-Charlie</version>
     <title>Redundant, multi-protocol, multi-channel communication hub for large scale distributed systems.</title>
     <authors>CAS</authors>
     <owners>commsvr.com</owners>
@@ -24,11 +24,11 @@
     <dependencies>
       <dependency id="CAS.CodeProtect" version="5.0.2" />
       <dependency id="CAS.CommServer.CommonBus" version="5.01.02-Charlie" />
-      <dependency id="CAS.CommServer.DA.ItemDescriber" version="1.00.2-Delta" />
       <dependency id="CAS.CommServer.DAServerConfiguration" version="4.1.2-Alpha" />
       <dependency id="CAS.CommServer.DeviceSimulator" version="5.01.02-Alpha" />
       <dependency id="CAS.CommServer.OPCClassic.SDK.Core" version="2.01.106" />
       <dependency id="CAS.RealTime" version="5.0.2" />
+      <dependency id="CAS.CommServer.ProtocolHub.ItemDescriber" version="1.00.2-Golf" />
     </dependencies>
   </metadata>
   <files>

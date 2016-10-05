@@ -106,6 +106,14 @@
       <HintPath>..\packages\CAS.CodeProtect.5.0.2\lib\net35\CAS.CodeProtect.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CAS.CommServer.CommonBus, Version=5.1.2.24438, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.CommonBus.5.01.02-Charlie\lib\net451\CAS.CommServer.CommonBus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommServer.DAServerConfiguration, Version=4.1.2.27322, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DAServerConfiguration.4.1.2-Delta\lib\net451\CAS.CommServer.DAServerConfiguration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="CAS.CommServer.DeviceSimulator, Version=5.1.2.14790, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
       <HintPath>..\packages\CAS.CommServer.DeviceSimulator.5.01.02-Delta\lib\net451\CAS.CommServer.DeviceSimulator.dll</HintPath>
       <Private>True</Private>
@@ -120,6 +128,18 @@
     </Reference>
     <Reference Include="CAS.CommServer.OPCClassicSDK.OpcComRcw, Version=2.1.1061.39881, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
       <HintPath>..\packages\CAS.CommServer.OPCClassic.SDK.COMWrapper.2.01.1061-Bravo\lib\net451\CAS.CommServer.OPCClassicSDK.OpcComRcw.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommServer.ProtocolHub.Communication, Version=4.0.22.14427, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.ProtocolHub.Communication.4.00.22-Charlie\lib\net451\CAS.CommServer.ProtocolHub.Communication.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommServer.ProtocolHub.ItemDescriber, Version=1.0.2.37417, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.ProtocolHub.ItemDescriber.1.00.2-Golf\lib\net451\CAS.CommServer.ProtocolHub.ItemDescriber.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommServer.ProtocolHub.MonitorInterface, Version=4.0.22.14427, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.ProtocolHub.Communication.4.00.22-Charlie\lib\net451\CAS.CommServer.ProtocolHub.MonitorInterface.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.RTLib, Version=5.0.2.39089, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
@@ -199,12 +219,6 @@
     <Content Include="CASOpcDaWrapper.device.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ProtocolHub.Communication\ProtocolHub.Communication.csproj">
-      <Project>{e1351d09-7241-44c3-a292-8d46e322a61d}</Project>
-      <Name>ProtocolHub.Communication</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
