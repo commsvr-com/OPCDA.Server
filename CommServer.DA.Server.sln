@@ -17,7 +17,7 @@ Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Server.Setup", "Server.Setu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "T4Definitions", "..\PR39-CommonResources\T4Definitions\T4Definitions.csproj", "{D506423B-BA21-49E6-8C3B-88A771CA444E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.NETServerUnitTest", "Server.Server.NETServerUnitTest\Server.NETServerUnitTest.csproj", "{A82C8C02-685E-41AA-A0BD-B06D794E608D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.NETServerUnitTest", "Server.NETServerUnitTest\Server.NETServerUnitTest.csproj", "{A82C8C02-685E-41AA-A0BD-B06D794E608D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
