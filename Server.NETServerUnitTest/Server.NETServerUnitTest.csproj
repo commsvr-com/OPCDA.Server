@@ -42,8 +42,8 @@
     <AssemblyOriginatorKeyFile>cas.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CAS.CommServer.DeviceSimulator, Version=5.1.2.14790, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.DeviceSimulator.5.01.02-Delta\lib\net451\CAS.CommServer.DeviceSimulator.dll</HintPath>
+    <Reference Include="CAS.CommServer.DeviceSimulator, Version=5.1.2.20295, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DeviceSimulator.5.01.02-Echo\lib\net451\CAS.CommServer.DeviceSimulator.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -69,6 +69,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="cas.snk" />
     <None Include="packages.config" />
   </ItemGroup>
