@@ -1,6 +1,6 @@
 ﻿
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CAS.OpcSvr.Da.NETServer;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
 namespace Server.Server.NETServerUnitTest
