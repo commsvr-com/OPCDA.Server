@@ -106,12 +106,12 @@
       <HintPath>..\packages\CAS.CodeProtect.6.1.3\lib\net451\CAS.CodeProtect.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.CommonBus, Version=5.1.6.25005, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.CommonBus.5.01.06\lib\net451\CAS.CommServer.CommonBus.dll</HintPath>
+    <Reference Include="CAS.CommServer.CommonBus, Version=5.1.6.38674, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.CommonBus.5.01.07\lib\net451\CAS.CommServer.CommonBus.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.DAServerConfiguration, Version=5.1.6.25005, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.DAServerConfiguration.5.01.06\lib\net451\CAS.CommServer.DAServerConfiguration.dll</HintPath>
+    <Reference Include="CAS.CommServer.DAServerConfiguration, Version=5.2.2.26942, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DAServerConfiguration.5.02.02\lib\net451\CAS.CommServer.DAServerConfiguration.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.CommServer.DeviceSimulator, Version=5.1.6.25004, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
