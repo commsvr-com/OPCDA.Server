@@ -45,8 +45,9 @@
 // Date       By    Notes
 // ---------- ---   -----
 // 2003/03/26 RSA   Initial implementation.
-using System;
 
+using System;
+using System.Runtime.InteropServices;
 
 namespace CAS.OpcSvr.Da.NETServer
 {
@@ -55,7 +56,7 @@ namespace CAS.OpcSvr.Da.NETServer
   /// </summary>
   //[CLSCompliant(false)]
 #if COMMSERVER
-  [System.Runtime.InteropServices.Guid("8CA689CF-E5A2-3A80-BA00-6F08269C4644")]
+  [Guid("8CA689CF-E5A2-3A80-BA00-6F08269C4644")]
   public class DaServer : OpcCom.Da.Wrapper.Server
 #elif SNIFFER
   public class DaServerBUSSniffer : OpcCom.Da.Wrapper.Server

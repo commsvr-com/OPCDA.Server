@@ -58,16 +58,16 @@
       <HintPath>..\packages\CAS.CommServer.OPCClassic.SDK.Core.2.01.1062\lib\net451\CAS.CommServer.OPCClassicSDK.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.ProtocolHub.Communication, Version=4.0.23.36663, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.ProtocolHub.Communication.4.00.23\lib\net451\CAS.CommServer.ProtocolHub.Communication.dll</HintPath>
+    <Reference Include="CAS.CommServer.ProtocolHub.Communication, Version=4.0.24.32029, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.ProtocolHub.Communication.4.00.24\lib\net451\CAS.CommServer.ProtocolHub.Communication.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.CommServer.ProtocolHub.ItemDescriber, Version=5.1.6.25004, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
       <HintPath>..\packages\CAS.CommServer.ProtocolHub.ItemDescriber.5.01.06\lib\net451\CAS.CommServer.ProtocolHub.ItemDescriber.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.ProtocolHub.MonitorInterface, Version=4.0.23.36661, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.ProtocolHub.Communication.4.00.23\lib\net451\CAS.CommServer.ProtocolHub.MonitorInterface.dll</HintPath>
+    <Reference Include="CAS.CommServer.ProtocolHub.MonitorInterface, Version=4.0.24.32025, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.ProtocolHub.Communication.4.00.24\lib\net451\CAS.CommServer.ProtocolHub.MonitorInterface.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.RealTime, Version=5.0.6.23644, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
