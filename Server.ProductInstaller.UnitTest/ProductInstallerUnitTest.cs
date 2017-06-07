@@ -10,7 +10,7 @@ namespace CAS.CommServer.DA.Server.ProductInstaller.UnitTest
   public class ProductInstallerUnitTest
   {
     [TestMethod]
-    public void TestMethod1()
+    public void InstallerCustomActionsTest()
     {
       using (InstallerCustomActions _customActions = new InstallerCustomActions())
       {
