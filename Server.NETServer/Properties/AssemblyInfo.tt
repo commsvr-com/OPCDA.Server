@@ -19,6 +19,7 @@
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Security.Permissions;
 
 [assembly: AssemblyTitle("<#=m_AssemblyTitle#>")]
 [assembly: AssemblyDescription("OPC DA Server Component")]
@@ -41,7 +42,8 @@ using System.Runtime.InteropServices;
     Phone = "+48 42 686 25 47"
   )
 ]
-[assembly: InternalsVisibleToAttribute("CAS.CommServer.DA.Server.NETServerUnitTest", AllInternalsVisible = true)]
+[assembly: SecurityPermissionAttribute(SecurityAction.RequestMinimum, SerializationFormatter = true)]
+[assembly: InternalsVisibleToAttribute("CAS.CommServer.DA.Server.NETServer", AllInternalsVisible = true)]
 
 <#@ include file = "..\..\..\PR39-CommonResources\T4Definitions\CAS.OPC.t4" #>
 <#+
