@@ -41,5 +41,5 @@ using System.Security.Permissions;
   )
 ]
 [assembly: SecurityPermissionAttribute(SecurityAction.RequestMinimum, SerializationFormatter = true)]
-[assembly: InternalsVisibleToAttribute("CAS.CommServer.DA.Server.NETServer", AllInternalsVisible = true)]
+[assembly: InternalsVisibleToAttribute("CAS.CommServer.DA.Server.NETServerUnitTest", AllInternalsVisible = true)]
 
