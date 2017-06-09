@@ -1,5 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CAS.OpcSvr.Da.NETServer;
+using System.IO;
+using System;
 
 namespace CAS.CommServer.DA.Server.NETServer.UnitTest
 {
@@ -12,7 +14,7 @@ namespace CAS.CommServer.DA.Server.NETServer.UnitTest
     {
       DaServer _daserver = new DaServer();
       Assert.IsNotNull(_daserver);
-
+      Assert.IsTrue(File.Exists("CommServer_Main.log"), $"Cannot find the file in {Environment.CurrentDirectory}" );
     }
   }
 }
