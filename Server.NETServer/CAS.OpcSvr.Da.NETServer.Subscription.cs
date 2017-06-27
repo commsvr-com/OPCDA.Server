@@ -44,19 +44,12 @@
 // ---------- ---   -----
 // 2004/04/02 RSA   Initial implementation.
 
-using System;
-using System.Xml;
-using System.Net;
-using System.Threading;
-using System.Collections;
-using System.Globalization;
-using System.Xml.Serialization;
-using System.Diagnostics;
-using System.Reflection;
-using System.IO;
+using CAS.Lib.RTLib.Utils;
 using Opc;
 using Opc.Da;
-using CAS.Lib.RTLib.Utils;
+using System;
+using System.Collections;
+using System.Threading;
 
 namespace CAS.OpcSvr.Da.NETServer
 {
