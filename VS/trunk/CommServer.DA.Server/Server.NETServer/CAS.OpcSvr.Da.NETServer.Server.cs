@@ -52,7 +52,6 @@ using System.Collections;
 using System.Globalization;
 using System.Runtime.InteropServices;
 
-
 //using System.Security.Permissions;
 
 namespace CAS.OpcSvr.Da.NETServer
@@ -74,6 +73,7 @@ namespace CAS.OpcSvr.Da.NETServer
     public Server(bool supportsCOM)
     {
       Initialize(supportsCOM);
+      m_ThisInstanceCount++;
     }
     /// <summary>
     /// Initializes a server instance after it is created.
@@ -83,38 +83,19 @@ namespace CAS.OpcSvr.Da.NETServer
       lock (this)
       {
         // initialize the cache.
-        if (TheCache == null)
+        if (TheCacheSingleton == null)
         {
-          TheCache = new Cache(supportsCOM);
-          TheCache.Initialize();
+          TheCacheSingleton = new Cache(supportsCOM);
+          TheCacheSingleton.Initialize();
         }
-        m_cache = TheCache;
+        m_cache = TheCacheSingleton;
         m_cache.AddRef();
-
 
         // get the default locale.
         SetLocale(m_cache.SupportedLocales[0]);
 
-        // initialize all devices (sub-classes may define custom devices).
-        //MP inicjacja zosta³a przeniesiona do cache
-        //InitializesDevices( TheCache );
       }
     }
-
-    //		/// <summary>
-    //		/// Initializes the devices accessed by the server. Creates the device simulator by default.
-    //		/// </summary>
-    //		protected virtual void InitializesDevices(Cache cache)
-    //		{
-    //			lock (typeof(Server))
-    //			{
-    //				if (TheDevice == null)
-    //				{
-    //					TheDevice = new Device();
-    //					TheDevice.Initialize(cache);
-    //				}
-    //			}
-    //		}
     #endregion
 
     #region IDisposable Members
@@ -123,6 +104,10 @@ namespace CAS.OpcSvr.Da.NETServer
     /// </summary>
     public void Dispose()
     {
+      m_ThisInstanceCount--;
+      if (m_ThisInstanceCount != 0)
+        return;
+      TheCacheSingleton.Dispose();
     }
     #endregion
 
@@ -133,11 +118,7 @@ namespace CAS.OpcSvr.Da.NETServer
     /// <summary>
     /// An event to receive server shutdown notifications.
     /// </summary>
-    public virtual event ServerShutdownEventHandler ServerShutdown
-    {
-      add { }
-      remove { }
-    }
+    public virtual event ServerShutdownEventHandler ServerShutdown;
 
     //======================================================================
     // Localization
@@ -488,8 +469,9 @@ namespace CAS.OpcSvr.Da.NETServer
     private int m_filters = -1;
     private Hashtable m_subscriptions = new Hashtable();
 
-    private static ICacheServer TheCache = null;
-    //		private static IDevice TheDevice = null;
+    private static Cache TheCacheSingleton = null;
+    private static int m_ThisInstanceCount = 0;
+
     #endregion
   }
 }

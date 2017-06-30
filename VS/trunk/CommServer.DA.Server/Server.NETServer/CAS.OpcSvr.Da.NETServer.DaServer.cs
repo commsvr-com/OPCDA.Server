@@ -59,7 +59,15 @@ Note: Before reconnection to OPC server make sure that CASOpcDaWrapper.exe is no
         throw;
       }
     }
-
+    /// <summary>
+    /// Called when the object is unloaded by the COM wrapper process.
+    /// </summary>
+    public override void Unload()
+    {
+      base.Unload();
+      m_server.Dispose();
+    }
+    
     #region Private Members
     private Server m_server = null;
     #endregion

@@ -194,6 +194,7 @@
     <Compile Include="CAS.OpcSvr.Da.NETServer.SubscriptionItem.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ICacheServer.cs" />
     <Compile Include="Opc.Da.BrowseElement.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -208,6 +209,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>AssemblyInfo.tt</DependentUpon>
     </Compile>
+    <Compile Include="ToBeDisposedAfterShutdown.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
