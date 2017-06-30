@@ -1,19 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="CAS.OpcSvr.Da.NETServer.Cache">
-    <Position X="0.5" Y="0.5" Width="2.5" />
+    <Position X="7.5" Y="5.5" Width="2.5" />
     <Compartments>
-      <Compartment Name="Fields" Collapsed="true" />
       <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Events" Collapsed="true" />
     </Compartments>
     <TypeIdentifier>
-      <HashCode>FEAgCABASiEAAAAEAAcGAQAAIAAQAhAcABAACDgAADI=</HashCode>
+      <HashCode>FEAgCABASiEABQAEAAYGAQAAIAAQAhAcABAAADgAADI=</HashCode>
       <FileName>Opc.Da.Cache.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="CAS.OpcSvr.Da.NETServer.CacheItem">
-    <Position X="2.25" Y="2.25" Width="1.5" />
+    <Position X="10.5" Y="5.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
       <Compartment Name="Methods" Collapsed="true" />
@@ -31,7 +32,7 @@
     </TypeIdentifier>
   </Class>
   <Class Name="CAS.OpcSvr.Da.NETServer.BrowseElement">
-    <Position X="4" Y="2" Width="1.5" />
+    <Position X="3.25" Y="2.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Fields" Collapsed="true" />
       <Compartment Name="Methods" Collapsed="true" />
@@ -41,11 +42,48 @@
       <FileName>Opc.Da.BrowseElement.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Interface Name="CAS.OpcSvr.Da.NETServer.ICacheServer">
-    <Position X="0.5" Y="2" Width="1.5" />
+  <Class Name="CAS.OpcSvr.Da.NETServer.DaServer">
+    <Position X="0.5" Y="5.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>CAS.OpcSvr.Da.NETServer.DaServer.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_server" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CAS.OpcSvr.Da.NETServer.Server">
+    <Position X="3.25" Y="5.5" Width="1.75" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>ACJACAQCAiAAAQCAGIAAAAA0AAAAABAAAAKACAEBABI=</HashCode>
+      <FileName>CAS.OpcSvr.Da.NETServer.Server.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="m_cache" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OpcCom.Da.Wrapper.Server" Collapsed="true">
+    <Position X="0.5" Y="4.25" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="OpcCom.Da.Wrapper.ConnectionPointContainer" Collapsed="true">
+    <Position X="0.5" Y="2.25" Width="1.75" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="CAS.OpcSvr.Da.NETServer.ICacheServer" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AEAACAAAAAAABQAAAAAABAQkAAAAAgAAAAAAAAEAABA=</HashCode>
-      <FileName>Opc.Da.Cache.cs</FileName>
+      <FileName>ICacheServer.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Tahoma" Size="8.25" />
