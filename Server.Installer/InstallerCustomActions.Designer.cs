@@ -1,6 +1,4 @@
-﻿
-using CAS.CommServer.ProtocolHub.Communication;
-using CAS.Lib.CodeProtect;
+﻿using CAS.Lib.CodeProtect;
 
 namespace CAS.CommServer.DA.Server.ProductInstaller
 {
@@ -33,13 +31,27 @@ namespace CAS.CommServer.DA.Server.ProductInstaller
     /// </summary>
     private void InitializeComponent()
     {
-      this.m_CodeProtectInstaller = new LibInstaller();
-      this.m_ProtocolHubCommunicationInstaller = new CommServerInstaller();
-      this.Installers.AddRange(new System.Configuration.Install.Installer[] { this.m_CodeProtectInstaller, m_ProtocolHubCommunicationInstaller });
+      this.m_CodeProtectInstaller = new CAS.Lib.CodeProtect.LibInstaller();
+      this.m_EventLogInstaller = new System.Diagnostics.EventLogInstaller();
+      // 
+      // m_EventLogInstaller
+      // 
+      this.m_EventLogInstaller.CategoryCount = 0;
+      this.m_EventLogInstaller.CategoryResourceFile = null;
+      this.m_EventLogInstaller.MessageResourceFile = null;
+      this.m_EventLogInstaller.ParameterResourceFile = null;
+      this.m_EventLogInstaller.Source = "CAS.RealTime.Core";
+      // 
+      // InstallerCustomActions
+      // 
+      this.Installers.AddRange(new System.Configuration.Install.Installer[] {
+            this.m_CodeProtectInstaller,
+            this.m_EventLogInstaller});
+
     }
     #endregion
 
     private LibInstaller m_CodeProtectInstaller;
-    private CommServerInstaller m_ProtocolHubCommunicationInstaller;
+    private System.Diagnostics.EventLogInstaller m_EventLogInstaller;
   }
 }
