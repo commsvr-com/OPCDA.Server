@@ -6,8 +6,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solutio
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\svn.CommServer\CommServer.DataProvider\DataProvider.DiagnosticTool\App.config = ..\..\..\svn.CommServer\CommServer.DataProvider\DataProvider.DiagnosticTool\App.config
 		..\PR39-CommonResources\cas.publickey.txt = ..\PR39-CommonResources\cas.publickey.txt
+		..\..\..\svn.CommServer\CommServer.ProtocolHub\CommServer.ProtocolHub\ProtocolHub.Communication\CommServerInstaller.cs = ..\..\..\svn.CommServer\CommServer.ProtocolHub\CommServer.ProtocolHub\ProtocolHub.Communication\CommServerInstaller.cs
 		Problems.txt = Problems.txt
 		ReleaseNotes.txt = ReleaseNotes.txt
+		..\take_recent_binaries.cmd = ..\take_recent_binaries.cmd
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.NETServer", "Server.NETServer\Server.NETServer.csproj", "{D8A99DED-6ED6-45FE-B245-7CC5050DA1FE}"

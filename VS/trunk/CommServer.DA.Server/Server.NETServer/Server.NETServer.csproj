@@ -215,25 +215,16 @@
     <None Include="app.config" />
     <None Include="cas.snk" />
     <None Include="ClassView\Cache.cd" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CASOpcDaWrapper.exe.config">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="Properties\AssemblyInfo.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
     </Content>
     <None Include="CAS_ikona_02.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="CASOpcDaWrapper.config.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="CASOpcDaWrapper.device.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
