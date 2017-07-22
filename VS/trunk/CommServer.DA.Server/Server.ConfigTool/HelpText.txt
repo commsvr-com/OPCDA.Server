@@ -1,0 +1,7 @@
+Opc.ConfigTool [-?] [-s] [(-ra | -ua | -rx | -ux) <filepath>]
+-? display help text
+-s supresses any errors
+-ra registers the COM servers in a .NET assembly.
+-ua unregisters the COM servers in a .NET assembly.
+-rx registers the .NET OPC servers described in an XML file.
+-ux unregisters the .NET OPC servers described in an XML file.
