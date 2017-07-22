@@ -19,15 +19,15 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 
-namespace CAS.OpcSvr.Da.NETServer
+namespace CAS.CommServer.DA.Server.NETServer
 {
 
   /// <summary>
   /// A XML-DA server implementation that wraps a COM-DA server.
   /// </summary>
   //[CLSCompliant(false)]
-  [Guid("8CA689CF-E5A2-3A80-BA00-6F08269C4644")]
-  [ProgId("CAS.CommServer.DaServer")]
+  [Guid("BE77A3C7-D2B7-44E7-B943-B978C1C87E5A")]
+  [ProgId("CAS.CommServer.DA.Server.NETServer.ProgId")]
   public class DaServer : OpcCom.Da.Wrapper.Server
   {
     /// <summary>
@@ -68,7 +68,7 @@ Note: Before reconnection to OPC server make sure that CASOpcDaWrapper.exe is no
       base.Unload();
       m_server.Dispose();
     }
-    
+
     #region Private Members
     private Server m_server = null;
     #endregion

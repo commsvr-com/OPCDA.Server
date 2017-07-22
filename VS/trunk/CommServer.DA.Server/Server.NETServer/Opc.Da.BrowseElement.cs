@@ -51,7 +51,7 @@ using System.Text;
 using Opc;
 using Opc.Da;
 
-namespace CAS.OpcSvr.Da.NETServer
+namespace CAS.CommServer.DA.Server.NETServer
 {	
 	/// <summary>
 	/// A class which represents a node in the server address space.

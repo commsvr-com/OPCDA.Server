@@ -40,10 +40,10 @@
 // ---------- ---   -----
 // 2003/03/26 RSA   Initial implementation.
 
-using System;
 using Opc.Da;
+using System;
 
-namespace CAS.OpcSvr.Da.NETServer
+namespace CAS.CommServer.DA.Server.NETServer
 {
   /// <summary>
   /// Implements an object that handles multi-step browse operations.

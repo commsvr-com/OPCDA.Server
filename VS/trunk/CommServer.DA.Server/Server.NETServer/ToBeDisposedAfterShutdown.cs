@@ -16,7 +16,7 @@
 using Opc;
 using System;
 
-namespace CAS.OpcSvr.Da.NETServer
+namespace CAS.CommServer.DA.Server.NETServer
 {
   /// <summary>
   /// Class ToBeDisposedAfterShutdown - provides <see cref="ServerShutdownEventHandler"/> to be used to dispose the object

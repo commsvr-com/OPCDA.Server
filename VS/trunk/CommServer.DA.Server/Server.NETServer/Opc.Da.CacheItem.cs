@@ -56,7 +56,7 @@ using CAS.Lib.RTLib.Utils;
 using Opc;
 using Opc.Da;
 
-namespace CAS.OpcSvr.Da.NETServer
+namespace CAS.CommServer.DA.Server.NETServer
 {
   /// <summary>
   /// A class which maintains a cache for a single item.
