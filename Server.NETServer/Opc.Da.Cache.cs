@@ -26,7 +26,7 @@ using System.Resources;
 using System.Runtime.InteropServices;
 using System.Security.Permissions;
 
-namespace CAS.OpcSvr.Da.NETServer
+namespace CAS.CommServer.DA.Server.NETServer
 {
   /// <summary>
   /// An implementation of a Data Access server.

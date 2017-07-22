@@ -51,7 +51,7 @@ using System;
 using System.Collections;
 using System.Threading;
 
-namespace CAS.OpcSvr.Da.NETServer
+namespace CAS.CommServer.DA.Server.NETServer
 {
   /// <summary>
   /// A class that manages a subscription for a set of items.

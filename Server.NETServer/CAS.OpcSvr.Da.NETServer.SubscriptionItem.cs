@@ -47,7 +47,7 @@ using System.Collections;
 using Opc;
 using Opc.Da;
 
-namespace CAS.OpcSvr.Da.NETServer
+namespace CAS.CommServer.DA.Server.NETServer
 {
   /// <summary>
   /// A single item within a subscription.

@@ -4,12 +4,12 @@
   <SelfRegInfo xmlns="http://schemas.opcfoundation.org/OPC/">
     <VendorName>CAS</VendorName>
     <ApplicationName>CASOpcDaWrapper</ApplicationName>
-    <ApplicationDescription>CAS CommServer OPC DA Server</ApplicationDescription>
-    <AppID>{B41C9D1F-28AC-41cb-9DCD-CEBE1FC86210}</AppID>
+    <ApplicationDescription>CAS CommServer OPC DA Server</ApplicationDescription> <!--Used to name DCOM component-->
+    <AppID>{B41C9D1F-28AC-41cb-9DCD-CEBE1FC86210}</AppID> <!--Used to register DCOM component-->
     <ClassName>CommServer.OPC.Da.Server</ClassName>
     <ClassDescription>CAS Commserver OPC DA In-Proc Server Wrapper</ClassDescription>
     <ClassVersion>1</ClassVersion>
-    <CLSID>{2032FE45-C774-46d7-9AA3-B844E8658919}</CLSID>
-    <WrappedServerID>CAS.OpcSvr.Da.NETServer.DaServer</WrappedServerID>
+    <CLSID>{2032FE45-C774-46d7-9AA3-B844E8658919}</CLSID> <!--Used to call the server-->
+    <WrappedServerID>CAS.CommServer.DA.Server.NETServer.ProgId</WrappedServerID>
   </SelfRegInfo>
 </Server>

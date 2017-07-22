@@ -11,7 +11,7 @@
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
     <AssemblyName>Opc.ConfigTool</AssemblyName>
-    <AssemblyOriginatorKeyFile>OPC Key Pair.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>cas.snk</AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
@@ -97,12 +97,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Schema\ConfigTool.cs">
+      <DependentUpon>ConfigTool.xsd</DependentUpon>
+    </Compile>
     <Content Include="App.ico" />
     <EmbeddedResource Include="HelpText.txt" />
-    <Content Include="Schema\ConfigTool.xsd">
-      <SubType>
-      </SubType>
-    </Content>
     <Compile Include="Classes\DotNetOpcServerWrapper.cs" />
     <Compile Include="Classes\IOPCWrappedServer.cs" />
     <Compile Include="Controls\BaseListCtrl.cs">
@@ -166,13 +165,10 @@
     <Compile Include="Classes\DotNetOpcServer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Schema\ConfigTool.cs">
-      <DependentUpon>ConfigTool.xsd</DependentUpon>
-    </Compile>
     <None Include="app.config" />
-    <None Include="OPC Key Pair.snk" />
-    <None Include="Schema\ConfigTool.xsx">
-      <DependentUpon>ConfigTool.xsd</DependentUpon>
+    <None Include="cas.snk" />
+    <None Include="Schema\ConfigTool.xsd">
+      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -210,14 +206,16 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Common\NetRcw\OPC COM RCW.csproj">
+    <ProjectReference Include="..\Server.NetRcw\Server.NetRcw.csproj">
       <Project>{75a956d6-285b-46c9-b713-1500582f8c62}</Project>
-      <Name>OPC COM RCW</Name>
+      <Name>Server.NetRcw</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent>cscript ..\..\..\..\..\Scripts\CopyKeyFile.vbs "$(ProjectDir)" ..\..\..\..\..\..\</PreBuildEvent>
-    <PostBuildEvent>cscript ..\..\..\..\..\Scripts\CopyOutput.vbs "$(ProjectDir)" ..\..\..\..\..\..\ "$(TargetPath)"</PostBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

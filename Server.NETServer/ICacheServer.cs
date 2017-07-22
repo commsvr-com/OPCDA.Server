@@ -16,7 +16,7 @@
 using Opc;
 using Opc.Da;
 
-namespace CAS.OpcSvr.Da.NETServer
+namespace CAS.CommServer.DA.Server.NETServer
 {
   /// <summary>
   /// Interface between Cache and Server
