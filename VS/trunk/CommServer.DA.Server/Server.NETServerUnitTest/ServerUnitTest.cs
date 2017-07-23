@@ -11,7 +11,7 @@ namespace CAS.CommServer.DA.Server.NETServer.UnitTest
     public void ConstructorTestMethod()
     {
      int _serverShutdownCount = 0;
-      using (CAS.OpcSvr.Da.NETServer.Server _serverInstance = new OpcSvr.Da.NETServer.Server(true))
+      using (Server _serverInstance = new Server(true))
       {
         _serverInstance.ServerShutdown += x => _serverShutdownCount++;
       };

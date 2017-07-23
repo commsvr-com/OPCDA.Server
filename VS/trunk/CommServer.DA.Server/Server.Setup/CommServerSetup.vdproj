@@ -527,20 +527,15 @@
             "ComponentsUrl" = "8:"
                 "Items"
                 {
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.2.0"
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5.1"
                     {
-                    "Name" = "8:.NET Framework 2.0 (x86)"
-                    "ProductCode" = "8:Microsoft.Net.Framework.2.0"
+                    "Name" = "8:Microsoft .NET Framework 4.5.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5.1"
                     }
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.4.5"
                     {
-                    "Name" = "8:Windows Installer 3.1"
-                    "ProductCode" = "8:Microsoft.Windows.Installer.3.1"
-                    }
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:OpcEnum"
-                    {
-                    "Name" = "8:OpcCoreSetup"
-                    "ProductCode" = "8:OpcEnum"
+                    "Name" = "8:Windows Installer 4.5"
+                    "ProductCode" = "8:Microsoft.Windows.Installer.4.5"
                     }
                 }
             }
@@ -1435,15 +1430,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:CAS.CommServer"
-        "ProductCode" = "8:{FFEFEEB4-F9A1-44DF-8A18-E37FB9BC9176}"
-        "PackageCode" = "8:{8A39B0CD-14E0-47C9-8A80-2BDA0231EFCB}"
+        "ProductCode" = "8:{0C2B4C04-3FBA-4B70-8E59-E74433C20630}"
+        "PackageCode" = "8:{B1367512-4FC0-4D40-8C88-83E56A3073D3}"
         "UpgradeCode" = "8:{0F451747-C7AE-4E72-825D-5E83E36C332A}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
-        "ProductVersion" = "8:4.1.2"
+        "ProductVersion" = "8:4.2.0"
         "Manufacturer" = "8:CAS"
         "ARPHELPTELEPHONE" = "8:+48(42)686 25 47"
         "ARPHELPLINK" = "8:http://www.commsvr.com/"
@@ -2411,7 +2406,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_7489283F2B2449A0843E4DAED1916FD4"
             {
-            "SourcePath" = "8:..\\Server.Installer\\obj\\Debug\\CAS.CommServer.DA.Server.ProductInstaller.dll"
+            "SourcePath" = "8:..\\Server.Installer\\obj\\Release\\CAS.CommServer.DA.Server.ProductInstaller.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_9F74DBDB9C7B4B64BDAD62EB5630B670"
@@ -2439,7 +2434,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A870581DF97244BAAD3CA8DEB0AA0B0B"
             {
-            "SourcePath" = "8:..\\Server.NETServer\\obj\\Debug\\CAS.CommServer.DA.Server.NETServer.dll"
+            "SourcePath" = "8:..\\Server.NETServer\\obj\\Release\\CAS.CommServer.DA.Server.NETServer.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_9F74DBDB9C7B4B64BDAD62EB5630B670"

@@ -10,6 +10,6 @@
     <ClassDescription>CAS Commserver OPC DA In-Proc Server Wrapper</ClassDescription>
     <ClassVersion>1</ClassVersion>
     <CLSID>{2032FE45-C774-46d7-9AA3-B844E8658919}</CLSID> <!--Used to call the server-->
-    <WrappedServerID>CAS.CommServer.DA.Server.NETServer.ProgId</WrappedServerID>
+    <WrappedServerID>CAS.CommServer.DA.Server.NETServer.DaServer</WrappedServerID>
   </SelfRegInfo>
 </Server>
