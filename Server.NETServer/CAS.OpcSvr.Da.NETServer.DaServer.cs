@@ -27,7 +27,7 @@ namespace CAS.CommServer.DA.Server.NETServer
   /// </summary>
   //[CLSCompliant(false)]
   [Guid("BE77A3C7-D2B7-44E7-B943-B978C1C87E5A")]
-  [ProgId("CAS.CommServer.DA.Server.NETServer.ProgId")]
+  //[ProgId("CAS.CommServer.DA.Server.NETServer.ProgId")]
   public class DaServer : OpcCom.Da.Wrapper.Server
   {
     /// <summary>
