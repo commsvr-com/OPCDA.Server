@@ -9,7 +9,7 @@ using System.Reflection;
 
 namespace Opc.ConfigTool
 {
-    public partial class ParameterListCtrl : Opc.ConfigTool.BaseListCtrl
+    public partial class ParameterListCtrl : Opc.ConfigTool.BaseListUserControl
     {
         public ParameterListCtrl()
         {
@@ -77,7 +77,7 @@ namespace Opc.ConfigTool
 		#endregion
                 
         #region Overridden Methods
-        /// <see cref="BaseListCtrl.EnableMenuItems" />
+        /// <see cref="BaseListUserControl.EnableMenuItems" />
 		protected override void EnableMenuItems(ListViewItem clickedItem)
 		{
             NewMI.Enabled    = true;
@@ -85,7 +85,7 @@ namespace Opc.ConfigTool
             DeleteMI.Enabled = ItemsLV.SelectedItems.Count > 0;
 		}
         
-        /// <see cref="BaseListCtrl.PickItems" />
+        /// <see cref="BaseListUserControl.PickItems" />
         protected override void PickItems()
         {
             base.PickItems();
@@ -103,7 +103,7 @@ namespace Opc.ConfigTool
             }
         }
 
-        /// <see cref="BaseListCtrl.UpdateItem" />
+        /// <see cref="BaseListUserControl.UpdateItem" />
         protected override void UpdateItem(ListViewItem listItem, object item)
         {
 			if (!(item is KeyValuePair<string,string>))

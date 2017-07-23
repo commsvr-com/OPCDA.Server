@@ -38,7 +38,7 @@ namespace Opc.ConfigTool
             this.RegisterServerMI = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.ExitMI = new System.Windows.Forms.ToolStripMenuItem();
-            this.ServersCTRL = new Opc.ConfigTool.ComServerListCtrl();
+            this.ServersCTRL = new Opc.ConfigTool.ComServerListUserControl();
             this.ExportMI = new System.Windows.Forms.ToolStripMenuItem();
             this.MainPN.SuspendLayout();
             this.SelectorPN.SuspendLayout();
@@ -189,7 +189,7 @@ namespace Opc.ConfigTool
         private System.Windows.Forms.RadioButton DotNetServersRB;
         private System.Windows.Forms.RadioButton WrappersRB;
         private System.Windows.Forms.RadioButton RegisteredServersRB;
-        private ComServerListCtrl ServersCTRL;
+        private ComServerListUserControl ServersCTRL;
         private System.Windows.Forms.Panel SelectorPN;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem TasksMI;

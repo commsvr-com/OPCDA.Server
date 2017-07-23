@@ -1,6 +1,6 @@
 namespace Opc.ConfigTool
 {
-    partial class BaseListCtrl
+    partial class BaseListUserControl
     {
         /// <summary> 
         /// Required designer variable.

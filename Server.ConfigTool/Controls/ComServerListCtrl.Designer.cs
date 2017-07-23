@@ -1,6 +1,6 @@
 namespace Opc.ConfigTool
 {
-    partial class ComServerListCtrl
+    partial class ComServerListUserControl
     {
         /// <summary>
         /// Required designer variable.
@@ -28,46 +28,46 @@ namespace Opc.ConfigTool
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.PopupMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.EditMI = new System.Windows.Forms.ToolStripMenuItem();
-            this.DeleteMI = new System.Windows.Forms.ToolStripMenuItem();
-            this.PopupMenu.SuspendLayout();
-            this.SuspendLayout();
-            // 
-            // ItemsLV
-            // 
-            this.ItemsLV.ContextMenuStrip = this.PopupMenu;
-            // 
-            // PopupMenu
-            // 
-            this.PopupMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+      this.components = new System.ComponentModel.Container();
+      this.PopupMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
+      this.EditMI = new System.Windows.Forms.ToolStripMenuItem();
+      this.DeleteMI = new System.Windows.Forms.ToolStripMenuItem();
+      this.PopupMenu.SuspendLayout();
+      this.SuspendLayout();
+      // 
+      // ItemsLV
+      // 
+      this.ItemsLV.ContextMenuStrip = this.PopupMenu;
+      // 
+      // PopupMenu
+      // 
+      this.PopupMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.EditMI,
             this.DeleteMI});
-            this.PopupMenu.Name = "PopupMenu";
-            this.PopupMenu.Size = new System.Drawing.Size(153, 70);
-            // 
-            // EditMI
-            // 
-            this.EditMI.Name = "EditMI";
-            this.EditMI.Size = new System.Drawing.Size(152, 22);
-            this.EditMI.Text = "Edit...";
-            this.EditMI.Click += new System.EventHandler(this.EditMI_Click);
-            // 
-            // DeleteMI
-            // 
-            this.DeleteMI.Name = "DeleteMI";
-            this.DeleteMI.Size = new System.Drawing.Size(152, 22);
-            this.DeleteMI.Text = "Delete";
-            this.DeleteMI.Click += new System.EventHandler(this.DeleteMI_Click);
-            // 
-            // ComServerListCtrl
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.Name = "ComServerListCtrl";
-            this.Controls.SetChildIndex(this.ItemsLV, 0);
-            this.PopupMenu.ResumeLayout(false);
-            this.ResumeLayout(false);
+      this.PopupMenu.Name = "PopupMenu";
+      this.PopupMenu.Size = new System.Drawing.Size(108, 48);
+      // 
+      // EditMI
+      // 
+      this.EditMI.Name = "EditMI";
+      this.EditMI.Size = new System.Drawing.Size(107, 22);
+      this.EditMI.Text = "Edit...";
+      this.EditMI.Click += new System.EventHandler(this.EditMI_Click);
+      // 
+      // DeleteMI
+      // 
+      this.DeleteMI.Name = "DeleteMI";
+      this.DeleteMI.Size = new System.Drawing.Size(107, 22);
+      this.DeleteMI.Text = "Delete";
+      this.DeleteMI.Click += new System.EventHandler(this.DeleteMI_Click);
+      // 
+      // ComServerListCtrl
+      // 
+      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+      this.Name = "ComServerListCtrl";
+      this.Controls.SetChildIndex(this.ItemsLV, 0);
+      this.PopupMenu.ResumeLayout(false);
+      this.ResumeLayout(false);
 
         }
 
