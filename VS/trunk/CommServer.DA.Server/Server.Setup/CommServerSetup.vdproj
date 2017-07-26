@@ -51,12 +51,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_1A6CB229F31F4E4894834B9E245C72FE"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_1ABE6BC0917D46D0A36AA418D96DCD2E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -95,6 +89,12 @@
         {
         "MsmKey" = "8:_245B9D3CDC051F30501D4C84784160A5"
         "OwnerKey" = "8:_A870581DF97244BAAD3CA8DEB0AA0B0B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_24D522119EE241EBB73CCF707CA85992"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -160,12 +160,6 @@
         "Entry"
         {
         "MsmKey" = "8:_7489283F2B2449A0843E4DAED1916FD4"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_89C02E4161A04F2B8EC20C187387340D"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -304,6 +298,12 @@
         "Entry"
         {
         "MsmKey" = "8:_DE53C558BDBA40438A3CE428785D277D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E534B685828A4D06AC0A6F7E06BA9154"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -500,6 +500,11 @@
                     "Name" = "8:Windows Installer 4.5"
                     "ProductCode" = "8:Microsoft.Windows.Installer.4.5"
                     }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:OpcEnum"
+                    {
+                    "Name" = "8:OpcCoreSetup"
+                    "ProductCode" = "8:OpcEnum"
+                    }
                 }
             }
         }
@@ -655,26 +660,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1A6CB229F31F4E4894834B9E245C72FE"
-            {
-            "SourcePath" = "8:Resources\\CAS.License.lic"
-            "TargetName" = "8:CAS.License.lic"
-            "Tag" = "8:"
-            "Folder" = "8:_9F74DBDB9C7B4B64BDAD62EB5630B670"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_1ABE6BC0917D46D0A36AA418D96DCD2E"
             {
             "SourcePath" = "8:..\\..\\ImageLibrary\\ico\\commserver.ico"
@@ -755,6 +740,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_24D522119EE241EBB73CCF707CA85992"
+            {
+            "SourcePath" = "8:Resources\\item_dsc.xml"
+            "TargetName" = "8:item_dsc.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_77764E87379E41DE882C126C24C22774"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2A34B92CABF742138F1D89718332371D"
@@ -899,26 +904,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_89C02E4161A04F2B8EC20C187387340D"
-            {
-            "SourcePath" = "8:Resources\\item_dsc.xml"
-            "TargetName" = "8:item_dsc.xml"
-            "Tag" = "8:"
-            "Folder" = "8:_9F74DBDB9C7B4B64BDAD62EB5630B670"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8B75623B044D610FFF14D14D9F239FD9"
@@ -1142,6 +1127,26 @@
             "TargetName" = "8:License.rtf"
             "Tag" = "8:"
             "Folder" = "8:_9F74DBDB9C7B4B64BDAD62EB5630B670"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E534B685828A4D06AC0A6F7E06BA9154"
+            {
+            "SourcePath" = "8:Resources\\DefaultConfig.xml"
+            "TargetName" = "8:DefaultConfig.xml"
+            "Tag" = "8:"
+            "Folder" = "8:_77764E87379E41DE882C126C24C22774"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2406,7 +2411,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_7489283F2B2449A0843E4DAED1916FD4"
             {
-            "SourcePath" = "8:..\\Server.Installer\\obj\\Release\\CAS.CommServer.DA.Server.ProductInstaller.dll"
+            "SourcePath" = "8:..\\Server.Installer\\obj\\Debug\\CAS.CommServer.DA.Server.ProductInstaller.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_9F74DBDB9C7B4B64BDAD62EB5630B670"
@@ -2434,7 +2439,7 @@
             }
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_A870581DF97244BAAD3CA8DEB0AA0B0B"
             {
-            "SourcePath" = "8:..\\Server.NETServer\\obj\\Release\\CAS.CommServer.DA.Server.NETServer.dll"
+            "SourcePath" = "8:..\\Server.NETServer\\obj\\x86\\Debug\\CAS.CommServer.DA.Server.NETServer.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_9F74DBDB9C7B4B64BDAD62EB5630B670"
