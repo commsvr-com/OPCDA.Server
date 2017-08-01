@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Reflection;
+using OpcRcw;
 
 namespace Opc.ConfigTool
 {
@@ -44,7 +45,7 @@ namespace Opc.ConfigTool
     {
       Clear();
       m_catid = categoryId;
-      List<Guid> clsids = ConfigUtils.EnumClassesInCategory(categoryId);
+      List<Guid> clsids = Utils.EnumClassesInCategories(categoryId);
       foreach (Guid clsid in clsids)
         AddItem(clsid);
       AdjustColumns();

@@ -22,8 +22,6 @@ Value 0
 * Instalacja  C:\Users\mpostol.HQ\AppData\Local\OPC Foundation\NET API 2.00\  - Nie ma folderu
 * Inne lokalizacje:
 
-
-
 >  Volume in drive C has no label.
 >  Volume Serial Number is 94CD-12D8
 > 
@@ -329,6 +327,14 @@ Class Name:        <NO CLASS>
 Last Write Time:   2017-07-28 - 22:02
 
 Key Name:          HKEY_CLASSES_ROOT\Wow6432Node\CLSID\{2032FE45-C774-46D7-9AA3-B844E8658919}\Implemented Categories\{132B3E2B-0E92-4816-972B-E42AA9532529}
+
+>>>
+C:\VS\svn\OPCF.SDK.2_01_106_0\Source\Data Access\Server Wrapper\OpcDaWrapper.cpp
+// {132B3E2B-0E92-4816-972B-E42AA9532529}
+static const GUID CATID_DotNetOpcServerWrapper = 
+{ 0x132b3e2b, 0xe92, 0x4816, { 0x97, 0x2b, 0xe4, 0x2a, 0xa9, 0x53, 0x25, 0x29 } };
+>>>
+
 Class Name:        <NO CLASS>
 Last Write Time:   2017-07-28 - 22:02
 
@@ -401,4 +407,16 @@ Value 0
     <CLSID>{2032FE45-C774-46d7-9AA3-B844E8658919}</CLSID> <!--Used to call the server-->
     <WrappedServerID>CAS.CommServer.DA.Server.NETServer.DaServer</WrappedServerID>
     
-*  807573E5-5146-11D5-A672-00B0D022E945 
+*  807573E5-5146-11D5-A672-00B0D022E945
+*  
+# Component Categories
+
+This category is added by the regasm
+
+Key Name:          HKEY_CLASSES_ROOT\Component Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}
+Class Name:        <NO CLASS>
+Last Write Time:   2009-07-14 - 09:47
+Value 0
+  Name:            0
+  Type:            REG_SZ
+  Data:            .NET Category

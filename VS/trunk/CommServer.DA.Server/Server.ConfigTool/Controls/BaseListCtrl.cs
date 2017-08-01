@@ -16,7 +16,6 @@ namespace Opc.ConfigTool
     /// <summary>
     /// Initializes a new instance of the <see cref="BaseListUserControl"/> class.
     /// </summary>
-    /// TODO Edit XML Comment Template for #ctor
     public BaseListUserControl()
     {
       InitializeComponent();
@@ -210,50 +209,50 @@ namespace Opc.ConfigTool
         ItemsLV.View = View.Details;
       }
 
-      ListViewItem listItem = null;
+      ListViewItem _listItem = null;
 
       if (m_updating)
       {
         if (m_updateCount < ItemsLV.Items.Count)
         {
-          listItem = ItemsLV.Items[m_updateCount];
+          _listItem = ItemsLV.Items[m_updateCount];
         }
 
         m_updateCount++;
       }
 
-      if (listItem == null)
+      if (_listItem == null)
       {
-        listItem = new ListViewItem();
+        _listItem = new ListViewItem();
       }
 
-      listItem.Text = String.Format("{0}", item);
-      listItem.ImageKey = icon;
+      _listItem.Text = String.Format("{0}", item);
+      _listItem.ImageKey = icon;
 
       // fill columns with blanks.
-      for (int ii = listItem.SubItems.Count; ii < ItemsLV.Columns.Count - 1; ii++)
+      for (int ii = _listItem.SubItems.Count; ii < ItemsLV.Columns.Count - 1; ii++)
       {
-        listItem.SubItems.Add(String.Empty);
+        _listItem.SubItems.Add(String.Empty);
       }
 
       // update columns.
-      UpdateItem(listItem, item);
+      UpdateItem(_listItem, item);
 
-      if (listItem.ListView == null)
+      if (_listItem.ListView == null)
       {
         // add to control.
         if (index >= 0 && index <= ItemsLV.Items.Count)
         {
-          ItemsLV.Items.Insert(index, listItem);
+          ItemsLV.Items.Insert(index, _listItem);
         }
         else
         {
-          ItemsLV.Items.Add(listItem);
+          ItemsLV.Items.Add(_listItem);
         }
       }
 
       // return new item.
-      return listItem;
+      return _listItem;
     }
 
     /// <summary>

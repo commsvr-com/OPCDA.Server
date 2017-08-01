@@ -17,6 +17,7 @@ using System.Text;
 using System.Reflection;
 
 using Microsoft.Win32;
+using OpcRcw;
 
 namespace Opc.ConfigTool
 {
@@ -118,7 +119,7 @@ namespace Opc.ConfigTool
 		public static List<DotNetOpcServerWrapper> EnumWrappers()
 		{
 			// enumerate clsids.
-			List<Guid> clsids = ConfigUtils.EnumClassesInCategory(ConfigUtils.CATID_DotNetOpcServerWrappers);
+			List<Guid> clsids = Utils.EnumClassesInCategories(ConfigUtils.CATID_DotNetOpcServerWrappers);
 
 			// initialize objects.
 			List<DotNetOpcServerWrapper> servers = new List<DotNetOpcServerWrapper>();

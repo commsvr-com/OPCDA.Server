@@ -342,11 +342,11 @@ namespace Opc.ConfigTool
 
         public const string ConfigToolSchemaUri = "http://opcfoundation.org/ConfigTool";
         
-		public static readonly Guid CATID_DotNetOpcServers = new Guid("E633C3F5-7692-476c-9A35-8BEE25E5BA9D");
+		public static readonly Guid CATID_DotNetOpcServers = new Guid("E633C3F5-7692-476c-9A35-8BEE25E5BA9D");  //it is not used
 		public static readonly Guid CATID_DotNetOpcServerWrappers = new Guid("132B3E2B-0E92-4816-972B-E42AA9532529");
-		public static readonly Guid CATID_RegisteredDotNetOpcServers = new Guid("899A3075-F94E-4695-9DF8-0ED25B02BDBA");
+		public static readonly Guid CATID_RegisteredDotNetOpcServers = new Guid("62C8FE65-4EBB-45e7-B440-6E39B2CDBF29"); //It is added by regasm and registered at HKEY_CLASSES_ROOT\Component Categories\
 
-		public static readonly Guid CLSID_StdComponentCategoriesMgr = new Guid("0002E005-0000-0000-C000-000000000046");
+    public static readonly Guid CLSID_StdComponentCategoriesMgr = new Guid("0002E005-0000-0000-C000-000000000046");
 		#endregion
 
 		#region ServerInfo Class
@@ -658,13 +658,13 @@ namespace Opc.ConfigTool
 			return Guid.Empty;
 		}
 
-		/// <summary>
-		/// Fetches the classes in the specified category.
-		/// </summary>
-		public static List<Guid> EnumClassesInCategory(Guid category)
-		{
-            return OpcRcw.Utils.EnumClassesInCategories(category);
-		}
+		///// <summary>
+		///// Fetches the classes in the specified category.
+		///// </summary>
+		//public static List<Guid> EnumClassesInCategory(Guid category)
+		//{
+  //          return OpcRcw.Utils.EnumClassesInCategories(category);
+		//}
 
 		/// <summary>
 		/// Registers the classes in the specified category.

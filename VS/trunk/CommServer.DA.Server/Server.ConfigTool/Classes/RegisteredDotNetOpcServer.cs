@@ -17,6 +17,7 @@ using System.Xml;
 using System.Xml.Serialization;
 
 using Microsoft.Win32;
+using OpcRcw;
 
 namespace Opc.ConfigTool
 {
@@ -292,7 +293,7 @@ namespace Opc.ConfigTool
 		public static List<RegisteredDotNetOpcServer> EnumRegisteredServers(bool updateWrapperPath)
 		{
 			// enumerate server clsids.
-			List<Guid> clsids = ConfigUtils.EnumClassesInCategory(ConfigUtils.CATID_RegisteredDotNetOpcServers);
+			List<Guid> clsids = Utils.EnumClassesInCategories(ConfigUtils.CATID_RegisteredDotNetOpcServers);
 
 			// initialize server objects.
 			List<RegisteredDotNetOpcServer> servers = new List<RegisteredDotNetOpcServer>();
