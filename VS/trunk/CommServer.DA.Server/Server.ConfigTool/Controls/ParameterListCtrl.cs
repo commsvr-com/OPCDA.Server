@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Reflection;
+using CAS.CommServer.DA.Server.ConfigTool.ServersModel;
 
 namespace CAS.CommServer.DA.Server.ConfigTool
 {

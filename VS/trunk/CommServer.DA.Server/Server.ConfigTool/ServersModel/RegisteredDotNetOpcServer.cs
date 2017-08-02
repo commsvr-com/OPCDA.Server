@@ -20,7 +20,7 @@ using System.Collections.Generic;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace CAS.CommServer.DA.Server.ConfigTool
+namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
 {
 
   /// <summary>

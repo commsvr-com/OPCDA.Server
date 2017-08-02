@@ -18,7 +18,7 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace CAS.CommServer.DA.Server.ConfigTool
+namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
 {
   /// <summary>
   /// A class that describes a wrapped object.
