@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Opc.ConfigTool
+namespace CAS.CommServer.DA.Server.ConfigTool
 {
     /// <summary>
     /// A dialog that displays an exception trace in an HTML page.

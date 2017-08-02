@@ -10,23 +10,23 @@
     <ApplicationIcon>App.ico</ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>Opc.ConfigTool</AssemblyName>
+    <AssemblyName>CAS.CommServer.DA.Server.ConfigTool</AssemblyName>
     <AssemblyOriginatorKeyFile>cas.snk</AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
     <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
     <DelaySign>false</DelaySign>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Opc.ConfigTool</RootNamespace>
+    <RootNamespace>CAS.CommServer.DA.Server.ConfigTool</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <StartupObject>Opc.ConfigTool.Program</StartupObject>
+    <StartupObject>CAS.CommServer.DA.Server.ConfigTool.Program</StartupObject>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <SignAssembly>true</SignAssembly>
     <OldToolsVersion>3.5</OldToolsVersion>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -89,6 +89,7 @@
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <NoWarn>IDE0001,IDE0002,IDE0003</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -118,7 +119,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Schema\ConfigTool.cs">
+    <Compile Include="Export\ConfigTool.cs">
       <DependentUpon>ConfigTool.xsd</DependentUpon>
     </Compile>
     <Content Include="App.ico" />
@@ -188,7 +189,7 @@
     </Compile>
     <None Include="app.config" />
     <None Include="cas.snk" />
-    <None Include="Schema\ConfigTool.xsd">
+    <None Include="Export\ConfigTool.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

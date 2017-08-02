@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using System.Reflection;
 using System.IO;
 
-namespace Opc.ConfigTool
+namespace CAS.CommServer.DA.Server.ConfigTool
 {
     class Program
     {
@@ -28,7 +28,7 @@ namespace Opc.ConfigTool
 			}
 			catch (Exception exception)
 			{
-				ConfigUtils.HandleException(Application.ProductName, MethodBase.GetCurrentMethod(), exception);
+				ConfigUtilities.HandleException(Application.ProductName, MethodBase.GetCurrentMethod(), exception);
 			}		
 		}
 

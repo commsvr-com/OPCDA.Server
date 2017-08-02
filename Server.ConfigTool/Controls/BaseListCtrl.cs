@@ -1,18 +1,34 @@
+//_______________________________________________________________
+//  Title   : Name of Application
+//  System  : Microsoft VisualStudio 2015 / C#
+//  $LastChangedDate:  $
+//  $Rev: $
+//  $LastChangedBy: $
+//  $URL: $
+//  $Id:  $
+//
+//  Copyright (C) 2017, CAS LODZ POLAND.
+//  TEL: +48 608 61 98 99 
+//  mailto://techsupp@cas.eu
+//  http://www.cas.eu
+//_______________________________________________________________
+
 using System;
 using System.Collections;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Reflection;
 
-namespace Opc.ConfigTool
+namespace CAS.CommServer.DA.Server.ConfigTool
 {
   /// <summary>
-  /// Class BaseListUserControl.
+  /// Class BaseListUserControl - general use list handlin user control
   /// </summary>
   /// <seealso cref="System.Windows.Forms.UserControl" />
-  /// TODO Edit XML Comment Template for BaseListUserControl
   public partial class BaseListUserControl : UserControl
   {
+
+    #region constructor
     /// <summary>
     /// Initializes a new instance of the <see cref="BaseListUserControl"/> class.
     /// </summary>
@@ -20,10 +36,11 @@ namespace Opc.ConfigTool
     {
       InitializeComponent();
       ItemsLV.SmallImageList = new GuiUtils().ImageList;
-      ItemsLV.ListViewItemSorter = new BaseListCtrlSorter(this);
+      ItemsLV.ListViewItemSorter = new BaseListControlSorter(this);
     }
+    #endregion
 
-    #region Public Interface
+    #region API
     /// <summary>
     /// Whether the control should allow items to be dragged.
     /// </summary>
@@ -32,7 +49,6 @@ namespace Opc.ConfigTool
       get { return m_enableDragging; }
       set { m_enableDragging = value; }
     }
-
     /// <summary>
     /// The instructions to display when no items are in the list.
     /// </summary>
@@ -41,7 +57,6 @@ namespace Opc.ConfigTool
       get { return m_instructions; }
       set { m_instructions = value; }
     }
-
     /// <summary>
     /// Whether new items should be pre-pended to the list.
     /// </summary>
@@ -50,7 +65,6 @@ namespace Opc.ConfigTool
       get { return m_prependItems; }
       set { m_prependItems = value; }
     }
-
     /// <summary>
     /// Raised whenever items are 'picked' in the control.
     /// </summary>
@@ -59,7 +73,6 @@ namespace Opc.ConfigTool
       add { m_ItemsPicked += value; }
       remove { m_ItemsPicked -= value; }
     }
-
     /// <summary>
     /// Raised whenever items are selected in the control.
     /// </summary>
@@ -68,7 +81,6 @@ namespace Opc.ConfigTool
       add { m_ItemsSelected += value; }
       remove { m_ItemsSelected -= value; }
     }
-
     /// <summary>
     /// Raised whenever items are added to the control.
     /// </summary>
@@ -77,7 +89,6 @@ namespace Opc.ConfigTool
       add { m_ItemsAdded += value; }
       remove { m_ItemsAdded -= value; }
     }
-
     /// <summary>
     /// Raised whenever items are modified in the control.
     /// </summary>
@@ -86,7 +97,6 @@ namespace Opc.ConfigTool
       add { m_ItemsModified += value; }
       remove { m_ItemsModified -= value; }
     }
-
     /// <summary>
     /// Raised whenever items are removed from the control.
     /// </summary>
@@ -95,7 +105,6 @@ namespace Opc.ConfigTool
       add { m_ItemsRemoved += value; }
       remove { m_ItemsRemoved -= value; }
     }
-
     /// <summary>
     /// Returns the number of items in the control.
     /// </summary>
@@ -103,37 +112,25 @@ namespace Opc.ConfigTool
     {
       get { return ItemsLV.Items.Count; }
     }
-
     /// <summary>
     /// Returns the objects associated with the items in the control.
     /// </summary>
     public object[] GetItems()
     {
-      ArrayList items = new ArrayList();
-
+      ArrayList _items = new ArrayList();
       foreach (ListViewItem listItem in ItemsLV.Items)
-      {
-        items.Add(listItem.Tag);
-      }
-
-      return items.ToArray(typeof(object)) as object[];
+        _items.Add(listItem.Tag);
+      return _items.ToArray(typeof(object)) as object[];
     }
-
     /// <summary>
     /// Returns the objects associated with the selected items in the control.
     /// </summary>
     public Array GetSelectedItems(System.Type type)
     {
       ArrayList items = new ArrayList();
-
       if (ItemsLV.View == View.Details)
-      {
         foreach (ListViewItem listItem in ItemsLV.SelectedItems)
-        {
           items.Add(listItem.Tag);
-        }
-      }
-
       return items.ToArray(type);
     }
     #endregion
@@ -160,15 +157,10 @@ namespace Opc.ConfigTool
     protected virtual int CompareItems(object item1, object item2)
     {
       IComparable comparable = item1 as IComparable;
-
       if (comparable != null)
-      {
         return comparable.CompareTo(item2);
-      }
-
-      return 0;
+      return 0; //TODO 
     }
-
     /// <summary>
     /// Returns the data to drag.
     /// </summary>
@@ -176,30 +168,29 @@ namespace Opc.ConfigTool
     {
       if (ItemsLV.SelectedItems.Count > 0)
       {
-        ArrayList data = new ArrayList();
-
+        ArrayList _data = new ArrayList();
         foreach (ListViewItem listItem in ItemsLV.SelectedItems)
-        {
-          data.Add(listItem.Tag);
-        }
-
-        return data.ToArray();
+          _data.Add(listItem.Tag);
+        return _data.ToArray();
       }
-
       return null;
     }
-
     /// <summary>
     /// Adds an item to the list.
     /// </summary>
+    /// <param name="item">The item to be added.</param>
+    /// <returns>ListViewItem.</returns>
     protected virtual ListViewItem AddItem(object item)
     {
       return AddItem(item, "SimpleItem", -1);
     }
-
     /// <summary>
     /// Adds an item to the list.
     /// </summary>
+    /// <param name="item">The item encapsulating information to be displayed.</param>
+    /// <param name="icon">The icon used to decorate item description row.</param>
+    /// <param name="index">The index representing the position of new item insertion.</param>
+    /// <returns>ListViewItem.</returns>
     protected virtual ListViewItem AddItem(object item, string icon, int index)
     {
       // switch to detail view as soon as an item is added.
@@ -208,53 +199,31 @@ namespace Opc.ConfigTool
         ItemsLV.Items.Clear();
         ItemsLV.View = View.Details;
       }
-
       ListViewItem _listItem = null;
-
       if (m_updating)
       {
         if (m_updateCount < ItemsLV.Items.Count)
-        {
           _listItem = ItemsLV.Items[m_updateCount];
-        }
-
         m_updateCount++;
       }
-
       if (_listItem == null)
-      {
         _listItem = new ListViewItem();
-      }
-
       _listItem.Text = String.Format("{0}", item);
       _listItem.ImageKey = icon;
-
       // fill columns with blanks.
       for (int ii = _listItem.SubItems.Count; ii < ItemsLV.Columns.Count - 1; ii++)
-      {
         _listItem.SubItems.Add(String.Empty);
-      }
-
       // update columns.
       UpdateItem(_listItem, item);
-
       if (_listItem.ListView == null)
-      {
         // add to control.
         if (index >= 0 && index <= ItemsLV.Items.Count)
-        {
           ItemsLV.Items.Insert(index, _listItem);
-        }
         else
-        {
           ItemsLV.Items.Add(_listItem);
-        }
-      }
-
       // return new item.
       return _listItem;
     }
-
     /// <summary>
     /// Starts overwriting the contents of the control.
     /// </summary>
@@ -263,105 +232,81 @@ namespace Opc.ConfigTool
       m_updating = true;
       m_updateCount = 0;
     }
-
     /// <summary>
     /// Finishes overwriting the contents of the control.
     /// </summary>
     protected void EndUpdate()
     {
       m_updating = false;
-
       while (ItemsLV.Items.Count > m_updateCount)
-      {
         ItemsLV.Items[ItemsLV.Items.Count - 1].Remove();
-      }
-
       m_updateCount = 0;
       AdjustColumns();
     }
-
     /// <summary>
     /// Updates a list item with the current contents of an object.
     /// </summary>
+    /// <param name="listItem">The list item.</param>
+    /// <param name="item">The item.</param>
     protected virtual void UpdateItem(ListViewItem listItem, object item)
     {
       listItem.Tag = item;
     }
-
     /// <summary>
     /// Sets the columns shown in the list view.
     /// </summary>
     protected virtual void SetColumns(object[][] columns)
     {
       ItemsLV.Clear();
-
       m_columns = columns;
-
       foreach (object[] column in columns)
       {
         ColumnHeader header = new ColumnHeader();
-
         header.Text = column[0] as string;
         header.TextAlign = (HorizontalAlignment)column[1];
-
         ItemsLV.Columns.Add(header);
       }
-
       ColumnHeader blank = new ColumnHeader();
       blank.Text = String.Empty;
       ItemsLV.Columns.Add(blank);
-
       AdjustColumns();
     }
-
     /// <summary>
-    /// Adjusts the columns shown in the list view.
+    /// Adjusts the columns shown in the list view and displays instruction message saying what to do if the list is empty.
     /// </summary>
     protected virtual void AdjustColumns()
     {
       if (ItemsLV.View == View.List || ItemsLV.Items.Count == 0)
       {
         ItemsLV.View = View.List;
-
         if (ItemsLV.Items.Count == 0 && !String.IsNullOrEmpty(m_instructions))
         {
-          ListViewItem item = new ListViewItem(m_instructions);
-
-          item.ImageKey = "Info";
-          item.ForeColor = Color.Gray;
-
-          ItemsLV.Items.Add(item);
+          ListViewItem _listItem = new ListViewItem(m_instructions);
+          _listItem.ImageKey = "Info";
+          _listItem.ForeColor = Color.Gray;
+          ItemsLV.Items.Add(_listItem);
         }
-
         ItemsLV.Columns[0].Width = -2;
         return;
       }
-
       for (int ii = 0; ii < m_columns.Length && ii < ItemsLV.Columns.Count; ii++)
       {
         // check for fixed width columns.
         if (m_columns[ii].Length >= 4 && m_columns[ii][3] != null)
         {
           int width = Convert.ToInt32(m_columns[ii][3]);
-
           if (ItemsLV.Columns[ii].Width < width)
-          {
             ItemsLV.Columns[ii].Width = width;
-          }
-
           continue;
         }
-
         // check mandatory columns.
         if (m_columns[ii].Length < 3 || m_columns[ii][2] == null)
         {
           ItemsLV.Columns[ii].Width = -2;
           continue;
         }
-
         // check if all items have the default value for the column.
         bool display = false;
-
         foreach (ListViewItem listItem in ItemsLV.Items)
         {
           if (!m_columns[ii][2].Equals(listItem.SubItems[ii].Text))
@@ -370,48 +315,34 @@ namespace Opc.ConfigTool
             break;
           }
         }
-
         // only display columns with non-default information.
         if (display)
-        {
           ItemsLV.Columns[ii].Width = -2;
-        }
         else
-        {
           ItemsLV.Columns[ii].Width = 0;
-        }
       }
-
       if (ItemsLV.Columns.Count > 0)
-      {
         ItemsLV.Columns[ItemsLV.Columns.Count - 1].Width = 0;
-      }
     }
-
     /// <summary>
     /// Enables the state of menu items.
     /// </summary>
+    /// <param name="clickedItem">The clicked item.</param>
     protected virtual void EnableMenuItems(ListViewItem clickedItem)
     {
       // do nothing.
     }
-
     /// <summary>
     /// Sends notifications whenever items in the control are 'picked'.
     /// </summary>
     protected virtual void PickItems()
     {
-      if (m_ItemsPicked != null)
-      {
-        ICollection data = GetDataToDrag() as ICollection;
-
-        if (data != null)
-        {
-          m_ItemsPicked(this, new ListItemActionEventArgs(ListItemAction.Picked, data));
-        }
-      }
+      if (m_ItemsPicked == null)
+        return;
+      ICollection data = GetDataToDrag() as ICollection;
+      if (data != null)
+        m_ItemsPicked(this, new ListItemActionEventArgs(ListItemAction.Picked, data));
     }
-
     /// <summary>
     /// Sends notifications whenever items in the control are 'selected'.
     /// </summary>
@@ -420,16 +351,11 @@ namespace Opc.ConfigTool
       if (m_ItemsSelected != null)
       {
         object[] selectedObjects = new object[ItemsLV.SelectedItems.Count];
-
         for (int ii = 0; ii < selectedObjects.Length; ii++)
-        {
           selectedObjects[ii] = ItemsLV.SelectedItems[ii].Tag;
-        }
-
         m_ItemsSelected(this, new ListItemActionEventArgs(ListItemAction.Selected, selectedObjects));
       }
     }
-
     /// <summary>
     /// Sends notifications that an item has been added to the control.
     /// </summary>
@@ -437,18 +363,14 @@ namespace Opc.ConfigTool
     {
       NotifyItemsAdded(new object[] { item });
     }
-
     /// <summary>
     /// Sends notifications that items have been added to the control.
     /// </summary>
     protected virtual void NotifyItemsAdded(object[] items)
     {
       if (m_ItemsAdded != null && items != null && items.Length > 0)
-      {
         m_ItemsAdded(this, new ListItemActionEventArgs(ListItemAction.Added, items));
-      }
     }
-
     /// <summary>
     /// Sends notifications that an item has been modified in the control.
     /// </summary>
@@ -456,18 +378,14 @@ namespace Opc.ConfigTool
     {
       NotifyItemsModified(new object[] { item });
     }
-
     /// <summary>
     /// Sends notifications that items have been modified in the control.
     /// </summary>
     protected virtual void NotifyItemsModified(object[] items)
     {
       if (m_ItemsModified != null && items != null && items.Length > 0)
-      {
         m_ItemsModified(this, new ListItemActionEventArgs(ListItemAction.Modified, items));
-      }
     }
-
     /// <summary>
     /// Sends notifications that and item has been removed from the control.
     /// </summary>
@@ -475,44 +393,31 @@ namespace Opc.ConfigTool
     {
       NotifyItemsRemoved(new object[] { item });
     }
-
     /// <summary>
     /// Sends notifications that items have been removed from the control.
     /// </summary>
     protected virtual void NotifyItemsRemoved(object[] items)
     {
       if (m_ItemsRemoved != null && items != null && items.Length > 0)
-      {
         m_ItemsRemoved(this, new ListItemActionEventArgs(ListItemAction.Removed, items));
-      }
     }
-
     /// <summary>
     /// Finds the list item with specified tag in the control,
     /// </summary>
     protected ListViewItem FindItem(object tag)
     {
       foreach (ListViewItem listItem in ItemsLV.Items)
-      {
         if (Object.ReferenceEquals(tag, listItem.Tag))
-        {
           return listItem;
-        }
-      }
-
       return null;
     }
-
     /// <summary>
     /// Returns the tag associated with a selected item.
     /// </summary>
     protected object GetSelectedTag(int index)
     {
       if (ItemsLV.SelectedItems.Count > index)
-      {
         return ItemsLV.SelectedItems[index].Tag;
-      }
-
       return null;
     }
     #endregion
@@ -521,12 +426,13 @@ namespace Opc.ConfigTool
     /// <summary>
     /// A class that allows the list to be sorted.
     /// </summary>
-    private class BaseListCtrlSorter : IComparer
+    private class BaseListControlSorter : IComparer
     {
+
       /// <summary>
       /// Initializes the sorter.
       /// </summary>
-      public BaseListCtrlSorter(BaseListUserControl control)
+      public BaseListControlSorter(BaseListUserControl control)
       {
         m_control = control;
       }
@@ -537,14 +443,17 @@ namespace Opc.ConfigTool
       {
         ListViewItem itemX = x as ListViewItem;
         ListViewItem itemY = y as ListViewItem;
-
         return m_control.CompareItems(itemX.Tag, itemY.Tag);
       }
+
       private BaseListUserControl m_control;
+
     }
     #endregion
 
     #region Event Handlers
+
+    #region mouse
     private void ItemsLV_MouseDown(object sender, MouseEventArgs e)
     {
       try
@@ -588,7 +497,6 @@ namespace Opc.ConfigTool
         GuiUtils.HandleException(this.Text, MethodBase.GetCurrentMethod(), exception);
       }
     }
-
     private void ItemsLV_MouseUp(object sender, MouseEventArgs e)
     {
       try
@@ -604,7 +512,6 @@ namespace Opc.ConfigTool
         GuiUtils.HandleException(this.Text, MethodBase.GetCurrentMethod(), exception);
       }
     }
-
     private void ItemsLV_DoubleClick(object sender, System.EventArgs e)
     {
       try
@@ -628,36 +535,29 @@ namespace Opc.ConfigTool
         GuiUtils.HandleException(this.Text, MethodBase.GetCurrentMethod(), exception);
       }
     }
-
     private void ItemsLV_MouseMove(object sender, MouseEventArgs e)
     {
       if (m_enableDragging && e.Button == MouseButtons.Left && !m_dragPosition.Equals(e.Location))
       {
         object data = GetDataToDrag();
         if (data != null)
-        {
           ItemsLV.DoDragDrop(data, DragDropEffects.Copy);
-        }
       }
     }
-
+    #endregion
     protected virtual void ItemsLV_DragEnter(object sender, DragEventArgs e)
     {
       if (m_enableDragging)
-      {
         e.Effect = DragDropEffects.Copy;
-      }
       else
-      {
         e.Effect = DragDropEffects.None;
-      }
     }
-
     protected virtual void ItemsLV_DragDrop(object sender, DragEventArgs e)
     {
-      // overriden by sub-class.
+      // overridden by sub-class.
     }
     #endregion
+
   }
 
   #region ListItemAction Enumeration
@@ -680,6 +580,7 @@ namespace Opc.ConfigTool
   /// </summary>
   public class ListItemActionEventArgs : EventArgs
   {
+
     #region Constructors
     public ListItemActionEventArgs(ListItemAction action, ICollection items)
     {
@@ -693,7 +594,6 @@ namespace Opc.ConfigTool
     {
       get { return m_items; }
     }
-
     public ListItemAction Action
     {
       get { return m_action; }
@@ -704,8 +604,8 @@ namespace Opc.ConfigTool
     private ICollection m_items;
     private ListItemAction m_action;
     #endregion
-  }
 
+  }
   /// <summary>
   /// The delegate used to receive item action events.
   /// </summary>

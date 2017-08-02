@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
 
-namespace Opc.ConfigTool
+namespace CAS.CommServer.DA.Server.ConfigTool
 {
     /// <summary>
     /// A class that provide various common utility functions and shared resources.

@@ -1,31 +1,57 @@
+//_______________________________________________________________
+//  Title   : ComServerListDlg
+//  System  : Microsoft VisualStudio 2015 / C#
+//  $LastChangedDate:  $
+//  $Rev: $
+//  $LastChangedBy: $
+//  $URL: $
+//  $Id:  $
+//
+//  Copyright (C) 2017, CAS LODZ POLAND.
+//  TEL: +48 608 61 98 99 
+//  mailto://techsupp@cas.eu
+//  http://www.cas.eu
+//_______________________________________________________________
 
 using System;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 
-namespace Opc.ConfigTool
+namespace CAS.CommServer.DA.Server.ConfigTool
 {
+  /// <summary>
+  /// Class ComServerListDlg = dialog providing basic information about server
+  /// </summary>
+  /// <seealso cref="System.Windows.Forms.Form" />
   public partial class ComServerListDlg : Form
   {
+
+    #region constructor
     public ComServerListDlg()
     {
       InitializeComponent();
       RegisteredServersRB.Checked = true;
-      ServersCTRL.Initialize(ConfigUtils.CATID_RegisteredDotNetOpcServers);
+      ServersCTRL.Initialize(ConfigUtilities.CATID_RegisteredDotNetOpcServers);
       m_currentDirectory = Application.StartupPath;
     }
-    public void ShowDialog(Guid _catid)
+    #endregion
+
+    #region API
+    public void ShowDialog(Guid CATID)
     {
-      if (_catid == ConfigUtils.CATID_DotNetOpcServers)
+      if (CATID == ConfigUtilities.CATID_DotNetOpcServers)
         DotNetServersRB.Checked = true;
-      else if (_catid == ConfigUtils.CATID_DotNetOpcServerWrappers)
+      else if (CATID == ConfigUtilities.CATID_DotNetOpcServerWrappers)
         WrappersRB.Checked = true;
-      else if (_catid == ConfigUtils.CATID_RegisteredDotNetOpcServers)
+      else if (CATID == ConfigUtilities.CATID_RegisteredDotNetOpcServers)
         RegisteredServersRB.Checked = true;
-      ServersCTRL.Initialize(_catid);
+      ServersCTRL.Initialize(CATID);
       base.ShowDialog();
     }
+    #endregion
+
+    #region private
     //var
     private string m_currentDirectory;
     //event handles
@@ -34,7 +60,7 @@ namespace Opc.ConfigTool
       try
       {
         if (DotNetServersRB.Checked)
-          ServersCTRL.Initialize(ConfigUtils.CATID_DotNetOpcServers);
+          ServersCTRL.Initialize(ConfigUtilities.CATID_DotNetOpcServers);
       }
       catch (Exception exception)
       {
@@ -46,9 +72,7 @@ namespace Opc.ConfigTool
       try
       {
         if (WrappersRB.Checked)
-        {
-          ServersCTRL.Initialize(ConfigUtils.CATID_DotNetOpcServerWrappers);
-        }
+          ServersCTRL.Initialize(ConfigUtilities.CATID_DotNetOpcServerWrappers);
       }
       catch (Exception exception)
       {
@@ -60,26 +84,7 @@ namespace Opc.ConfigTool
       try
       {
         if (RegisteredServersRB.Checked)
-        {
-          ServersCTRL.Initialize(ConfigUtils.CATID_RegisteredDotNetOpcServers);
-        }
-      }
-      catch (Exception exception)
-      {
-        GuiUtils.HandleException(this.Text, MethodBase.GetCurrentMethod(), exception);
-      }
-    }
-    private void RegisterServerMI_Click(object sender, EventArgs e)
-    {
-      try
-      {
-        if (new RegisterServerDlg().ShowDialog(null) != null)
-        {
-          if (RegisteredServersRB.Checked)
-          {
-            ServersCTRL.Initialize(ConfigUtils.CATID_RegisteredDotNetOpcServers);
-          }
-        }
+          ServersCTRL.Initialize(ConfigUtilities.CATID_RegisteredDotNetOpcServers);
       }
       catch (Exception exception)
       {
@@ -87,6 +92,19 @@ namespace Opc.ConfigTool
       }
     }
     //menu handles
+    private void RegisterServerMI_Click(object sender, EventArgs e)
+    {
+      try
+      {
+        if (new RegisterServerDlg().ShowDialog(null) != null)
+          if (RegisteredServersRB.Checked)
+            ServersCTRL.Initialize(ConfigUtilities.CATID_RegisteredDotNetOpcServers);
+      }
+      catch (Exception exception)
+      {
+        GuiUtils.HandleException(this.Text, MethodBase.GetCurrentMethod(), exception);
+      }
+    }
     private void ExportMI_Click(object sender, EventArgs e)
     {
       try
@@ -136,5 +154,7 @@ namespace Opc.ConfigTool
         GuiUtils.HandleException(this.Text, MethodBase.GetCurrentMethod(), exception);
       }
     }
+    #endregion
+
   }
 }
