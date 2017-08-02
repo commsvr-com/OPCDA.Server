@@ -1,4 +1,4 @@
-namespace Opc.ConfigTool
+namespace CAS.CommServer.DA.Server.ConfigTool
 {
     partial class RegisterServerDlg
     {
@@ -33,7 +33,7 @@ namespace Opc.ConfigTool
             this.OkBTN = new System.Windows.Forms.Button();
             this.MainPN = new System.Windows.Forms.Panel();
             this.ParamtersGB = new System.Windows.Forms.GroupBox();
-            this.ParametersCTRL = new Opc.ConfigTool.ParameterListCtrl();
+            this.ParametersCTRL = new ParameterListControl();
             this.ProgIdLB = new System.Windows.Forms.Label();
             this.BrowseBTN = new System.Windows.Forms.Button();
             this.ProgIdTB = new System.Windows.Forms.TextBox();
@@ -311,7 +311,7 @@ namespace Opc.ConfigTool
         private System.Windows.Forms.Label WrapperLB;
         private System.Windows.Forms.TextBox ClsidTB;
         private System.Windows.Forms.Button NewClsidBTN;
-        private ParameterListCtrl ParametersCTRL;
+        private ParameterListControl ParametersCTRL;
         private System.Windows.Forms.TextBox SpecificationsTB;
         private System.Windows.Forms.Label SpecificationsLB;
     }

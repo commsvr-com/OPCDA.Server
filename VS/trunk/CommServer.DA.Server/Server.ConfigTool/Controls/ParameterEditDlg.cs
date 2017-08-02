@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Reflection;
 using System.IO;
 
-namespace Opc.ConfigTool
+namespace CAS.CommServer.DA.Server.ConfigTool
 {
     public partial class ParameterEditDlg : Form
     {

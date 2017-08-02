@@ -1,4 +1,4 @@
-namespace Opc.ConfigTool
+namespace CAS.CommServer.DA.Server.ConfigTool
 {
     partial class GuiUtils
     {

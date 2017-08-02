@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Reflection;
 using System.IO;
 
-namespace Opc.ConfigTool
+namespace CAS.CommServer.DA.Server.ConfigTool
 {
     public partial class RegisterServerDlg : Form
     {
@@ -40,7 +40,7 @@ namespace Opc.ConfigTool
                 {
                     DotNetOpcServer server = DotNetServerCB.Items[ii] as DotNetOpcServer;
 
-                    if (server.Clsid == registeredServer.ServerClsid)
+                    if (server.Clsid == registeredServer.ServerCLSID)
                     {
                         DotNetServerCB.SelectedIndex = ii;
                         found = true;
@@ -50,7 +50,7 @@ namespace Opc.ConfigTool
 
                 if (!found)
                 {
-                    DotNetServerCB.SelectedIndex = DotNetServerCB.Items.Add(new DotNetOpcServer(registeredServer.ServerClsid));
+                    DotNetServerCB.SelectedIndex = DotNetServerCB.Items.Add(new DotNetOpcServer(registeredServer.ServerCLSID));
                 }
                 
                 // select the wrapper process.
@@ -60,7 +60,7 @@ namespace Opc.ConfigTool
                 {
                     DotNetOpcServerWrapper wrapper = WrapperCB.Items[ii] as DotNetOpcServerWrapper;
 
-                    if (wrapper.Clsid == registeredServer.WrapperClsid)
+                    if (wrapper.Clsid == registeredServer.WrapperCLSID)
                     {
                         WrapperCB.SelectedIndex = ii;
                         found = true;
@@ -70,11 +70,11 @@ namespace Opc.ConfigTool
 
                 if (!found)
                 {
-                    WrapperCB.SelectedIndex = WrapperCB.Items.Add(new DotNetOpcServerWrapper(registeredServer.WrapperClsid));
+                    WrapperCB.SelectedIndex = WrapperCB.Items.Add(new DotNetOpcServerWrapper(registeredServer.WrapperCLSID));
                 }
                 
                 // set the remaining parameters.
-                ClsidTB.Text       = registeredServer.Clsid.ToString();
+                ClsidTB.Text       = registeredServer.CLSID.ToString();
                 ProgIdTB.Text      = registeredServer.ProgId;
                 DescriptionTB.Text = registeredServer.Description;
 
@@ -141,7 +141,7 @@ namespace Opc.ConfigTool
                     throw new ApplicationException("No .NET OPC server selected.");
                 }
 
-                server.ServerClsid = ((DotNetOpcServer)DotNetServerCB.SelectedItem).Clsid;
+                server.ServerCLSID = ((DotNetOpcServer)DotNetServerCB.SelectedItem).Clsid;
                               
                 // set the wrapper.  
                 if (WrapperCB.SelectedIndex == -1)
@@ -149,16 +149,16 @@ namespace Opc.ConfigTool
                     throw new ApplicationException("No wrapper process selected.");
                 }
 
-                server.WrapperClsid = ((DotNetOpcServerWrapper)WrapperCB.SelectedItem).Clsid;
+                server.WrapperCLSID = ((DotNetOpcServerWrapper)WrapperCB.SelectedItem).Clsid;
                                
                 // set the clsid.     
                 if (String.IsNullOrEmpty(ClsidTB.Text))
                 {
-                    server.Clsid = Guid.NewGuid();
+                    server.CLSID = Guid.NewGuid();
                 }
                 else
                 {
-                    server.Clsid = new Guid(ClsidTB.Text);
+                    server.CLSID = new Guid(ClsidTB.Text);
                 }
 
                 // set the prog id.                        
