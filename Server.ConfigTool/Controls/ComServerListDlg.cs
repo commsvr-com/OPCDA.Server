@@ -13,6 +13,7 @@
 //  http://www.cas.eu
 //_______________________________________________________________
 
+using CAS.CommServer.DA.Server.ConfigTool.ServersModel;
 using System;
 using System.IO;
 using System.Reflection;

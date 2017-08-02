@@ -4,6 +4,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
 using System.IO;
+using CAS.CommServer.DA.Server.ConfigTool.ServersModel;
 
 namespace CAS.CommServer.DA.Server.ConfigTool
 {

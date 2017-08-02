@@ -13,6 +13,7 @@
 //  http://www.cas.eu
 //_______________________________________________________________
 
+using CAS.CommServer.DA.Server.ConfigTool.ServersModel;
 using OpcRcw;
 using System;
 using System.Collections.Generic;

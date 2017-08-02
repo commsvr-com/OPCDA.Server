@@ -16,7 +16,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace CAS.CommServer.DA.Server.ConfigTool
+namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
 {
   /// <summary>
   /// An interface that is invoked when the wrapper loads/unloads the wrapped .net server.

@@ -124,8 +124,8 @@
     </Compile>
     <Content Include="App.ico" />
     <EmbeddedResource Include="HelpText.txt" />
-    <Compile Include="Classes\DotNetOpcServerWrapper.cs" />
-    <Compile Include="Classes\IOPCWrappedServer.cs" />
+    <Compile Include="ServersModel\DotNetOpcServerWrapper.cs" />
+    <Compile Include="ServersModel\IOPCWrappedServer.cs" />
     <Compile Include="Controls\BaseListCtrl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -178,13 +178,13 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Classes\ConfigUtils.cs">
+    <Compile Include="ConfigUtils.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Classes\RegisteredDotNetOpcServer.cs">
+    <Compile Include="ServersModel\RegisteredDotNetOpcServer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Classes\DotNetOpcServer.cs">
+    <Compile Include="ServersModel\DotNetOpcServer.cs">
       <SubType>Code</SubType>
     </Compile>
     <None Include="app.config" />
