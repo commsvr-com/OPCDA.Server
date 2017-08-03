@@ -23,9 +23,9 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
   /// <summary>
   /// A class that describes a wrapped object.
   /// </summary>
-  public class DotNetOpcServer
+  public class DotNetOpcServer : DotNetOpcServerBase
   {
-    
+
     #region Constructors
     /// <summary>
     /// The default constructor.
@@ -37,10 +37,8 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
     /// <summary>
     /// Initializes the object with a <see cref="Guid"/>.
     /// </summary>
-    public DotNetOpcServer(Guid clsid)
+    public DotNetOpcServer(Guid clsid) : base(clsid)
     {
-      m_clsid = clsid;
-      m_progId = Utils.ProgIDFromCLSID(clsid);
       m_codebase = Utils.GetExecutablePath(clsid);
       m_systemType = GetSystemType(clsid, m_codebase);
       m_specifications = GetSpecifications(m_systemType);
@@ -48,31 +46,19 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
     /// <summary>
     /// Sets private members to default values.
     /// </summary>
-    private void Initialize()
+    protected override void Initialize()
     {
-      m_clsid = Guid.Empty;
-      m_progId = null;
+      base.Initialize();
       m_codebase = null;
       m_systemType = null;
       m_specifications = Specifications.None;
     }
+    private void zInitialize()
+    {
+    }
     #endregion
 
     #region Public
-    /// <summary>
-    /// The CLSID for the wrapped object.
-    /// </summary>
-    public Guid Clsid
-    {
-      get { return m_clsid; }
-    }
-    /// <summary>
-    /// The ProgId for the wrapped object.
-    /// </summary>
-    public string ProgId
-    {
-      get { return m_progId; }
-    }
     /// <summary>
     /// The file path for the DLL containing the wrapped object.
     /// </summary>
@@ -159,30 +145,28 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
     /// </summary>
     public override string ToString()
     {
-      if (!String.IsNullOrEmpty(m_progId))
+      if (!String.IsNullOrEmpty(ProgId))
       {
-        return m_progId;
+        return ProgId;
       }
 
-      if (m_clsid == Guid.Empty)
+      if (CLSID == Guid.Empty)
       {
         return "(unknown)";
       }
 
-      return m_clsid.ToString();
+      return CLSID.ToString();
     }
     #endregion
 
     #region Private Members
-    private Guid m_clsid;
-    private string m_progId;
     private string m_codebase;
     private Type m_systemType;
     private Specifications m_specifications;
     /// <summary>
     /// Finds the system type for the .NET implementation of an OPC server.
     /// </summary>
-    private Type GetSystemType(Guid clsid, string codebase)
+    private static Type GetSystemType(Guid clsid, string codebase)
     {
       if (clsid == Guid.Empty || String.IsNullOrEmpty(codebase))
         return null;
@@ -223,35 +207,4 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
     #endregion
   }
 
-  /// <summary>
-  /// The OPC specifications supported by a .NET server.
-  /// </summary>
-  [Flags]
-  public enum Specifications
-  {
-    /// <summary>
-    /// Does not support any OPC specifications.
-    /// </summary>
-    None = 0x00,
-
-    /// <summary>
-    /// Supports Data Access 2.0
-    /// </summary>
-    DA2 = 0x01,
-
-    /// <summary>
-    /// Supports Data Access 3.0
-    /// </summary>
-    DA3 = 0x02,
-
-    /// <summary>
-    /// Supports Alarms and Events 1.1
-    /// </summary>
-    AE = 0x04,
-
-    /// <summary>
-    /// Supports Historial Data Access 1.2
-    /// </summary>
-    HDA = 0x08
-  }
 }
