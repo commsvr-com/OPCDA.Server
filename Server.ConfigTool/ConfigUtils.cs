@@ -24,7 +24,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool
   /// <summary>
   /// Exposes WIN32 and COM API functions.
   /// </summary>
-  public static class ConfigUtilities
+  public static class CommonDefinitions
   {
     #region NetApi Function Declarations
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Auto)]
@@ -60,7 +60,6 @@ namespace CAS.CommServer.DA.Server.ConfigTool
     /// TODO Edit XML Comment Template for NetApiBufferFree
     [DllImport("Netapi32.dll")]
     private static extern int NetApiBufferFree(IntPtr buffer);
-
     /// <summary>
     /// Enumerates computers on the local network.
     /// </summary>
@@ -101,62 +100,48 @@ namespace CAS.CommServer.DA.Server.ConfigTool
     public static readonly Guid CATID_RegisteredDotNetOpcServers = new Guid("62C8FE65-4EBB-45e7-B440-6E39B2CDBF29"); //It is added by regasm and registered at HKEY_CLASSES_ROOT\Component Categories\
     #endregion
 
-    #region COM Functions
+    #region Extension
 
     /// <summary>
     /// Displays the contents of an exception.
     /// </summary>
-    public static void HandleException(string caption, MethodBase method, Exception e)
+    public static void HandleException(this Exception e, string caption, MethodBase method)
     {
       StringBuilder message = new StringBuilder();
-
       BuildMessage(message, e);
-
       MessageBox.Show(message.ToString(), caption);
     }
+    /// <summary>
+    /// Return true if the array contains no elements.
+    /// </summary>
+    public static bool IsEmpty(this Array array)
+    {
+      return (array == null || array.Length == 0);
+    }
+    #endregion
 
+    #region private
     /// <summary>
     /// Builds a message showing the exception trace.
     /// </summary>
     private static void BuildMessage(StringBuilder message, Exception e)
     {
       if (e.InnerException != null)
-      {
         BuildMessage(message, e.InnerException);
-      }
-
       if (message.Length > 0)
-      {
         message.Append("\r\n\r\n");
-      }
-
       message.Append(">>> ");
       message.Append(e.Message);
-
       if (e.StackTrace != null)
       {
         string[] trace = e.StackTrace.Split(new char[] { '\r', '\n' });
-
         for (int ii = 0; ii < trace.Length; ii++)
-        {
           if (trace[ii] != null && trace[ii].Length > 0)
-          {
             message.AppendFormat("\r\n--- {0}", trace[ii]);
-          }
-        }
       }
     }
     #endregion
 
-    #region General Utility Functions
-    /// <summary>
-    /// Return true if the array contains no elements.
-    /// </summary>
-    public static bool IsEmpty(Array array)
-    {
-      return (array == null || array.Length == 0);
-    }
-    #endregion
   }
 }
 

@@ -83,7 +83,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
     public static List<DotNetOpcServerWrapper> EnumWrappers()
     {
       // enumerate clsids.
-      List<Guid> _CLSIDs = Utils.EnumClassesInCategories(ConfigUtilities.CATID_DotNetOpcServerWrappers);
+      List<Guid> _CLSIDs = Utils.EnumClassesInCategories(CommonDefinitions.CATID_DotNetOpcServerWrappers);
       // initialize objects.
       List<DotNetOpcServerWrapper> _servers = new List<DotNetOpcServerWrapper>();
       for (int ii = 0; ii < _CLSIDs.Count; ii++)

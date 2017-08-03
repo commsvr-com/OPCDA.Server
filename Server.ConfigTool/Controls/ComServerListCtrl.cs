@@ -52,7 +52,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool
     /// <summary>
     /// Enumerates classes in category and populates this control.
     /// </summary>
-    /// <param name="categoryId">The category identifier used byt the <see cref="ConfigUtilities.EnumClassesInCategory"/> to enumerate the servers.</param>
+    /// <param name="categoryId">The category identifier used byt the <see cref="CommonDefinitions.EnumClassesInCategory"/> to enumerate the servers.</param>
     public void Initialize(Guid categoryId)
     {
       Clear();
@@ -68,7 +68,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool
     /// <see cref="BaseListUserControl.EnableMenuItems" />
     protected override void EnableMenuItems(ListViewItem clickedItem)
     {
-      EditMI.Visible = m_CATID == ConfigUtilities.CATID_RegisteredDotNetOpcServers;
+      EditMI.Visible = m_CATID == CommonDefinitions.CATID_RegisteredDotNetOpcServers;
       EditMI.Enabled = ItemsLV.SelectedItems.Count == 1;
       DeleteMI.Enabled = ItemsLV.SelectedItems.Count > 0;
     }
@@ -99,9 +99,9 @@ namespace CAS.CommServer.DA.Server.ConfigTool
       listItem.SubItems[0].Text = Utils.ProgIDFromCLSID(_clsid);
       listItem.SubItems[1].Text = Utils.GetExecutablePath(_clsid);
       listItem.Tag = item;
-      if (m_CATID == ConfigUtilities.CATID_DotNetOpcServerWrappers)
+      if (m_CATID == CommonDefinitions.CATID_DotNetOpcServerWrappers)
         listItem.ImageKey = "Folder";
-      else if (m_CATID == ConfigUtilities.CATID_RegisteredDotNetOpcServers)
+      else if (m_CATID == CommonDefinitions.CATID_RegisteredDotNetOpcServers)
         listItem.ImageKey = "Method";
       else
         listItem.ImageKey = "Object";
@@ -115,7 +115,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool
       {
         if (ItemsLV.SelectedItems.Count != 1)
           return;
-        if (m_CATID != ConfigUtilities.CATID_RegisteredDotNetOpcServers)
+        if (m_CATID != CommonDefinitions.CATID_RegisteredDotNetOpcServers)
           return;
         Guid clsid = (Guid)ItemsLV.SelectedItems[0].Tag;
         RegisteredDotNetOpcServer server = new RegisterServerDlg().ShowDialog(new RegisteredDotNetOpcServer(clsid));

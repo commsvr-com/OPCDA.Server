@@ -27,7 +27,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.ConfigTooll", "Serve
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.NetRcw", "Server.NetRcw\Server.NetRcw.csproj", "{75A956D6-285B-46C9-B713-1500582F8C62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComCatTest", "..\..\..\..\Examples\ComCatSource\ComCatTest.csproj", "{E8F893E4-5DAA-4645-9429-40BEB7C66EFF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ComCatTest", "..\..\..\Examples\ComCatSource\ComCatTest.csproj", "{E8F893E4-5DAA-4645-9429-40BEB7C66EFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.ConfigToollUnitTest", "Server.ConfigToollUnitTest\Server.ConfigToollUnitTest.csproj", "{7DA43629-5C8C-4933-9FEB-2E7F9C1CF90F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -145,6 +147,18 @@ Global
 		{E8F893E4-5DAA-4645-9429-40BEB7C66EFF}.Release|Mixed.Build.0 = Release|Any CPU
 		{E8F893E4-5DAA-4645-9429-40BEB7C66EFF}.Release|x64.ActiveCfg = Release|Any CPU
 		{E8F893E4-5DAA-4645-9429-40BEB7C66EFF}.Release|x64.Build.0 = Release|Any CPU
+		{7DA43629-5C8C-4933-9FEB-2E7F9C1CF90F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DA43629-5C8C-4933-9FEB-2E7F9C1CF90F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DA43629-5C8C-4933-9FEB-2E7F9C1CF90F}.Debug|Mixed.ActiveCfg = Debug|Any CPU
+		{7DA43629-5C8C-4933-9FEB-2E7F9C1CF90F}.Debug|Mixed.Build.0 = Debug|Any CPU
+		{7DA43629-5C8C-4933-9FEB-2E7F9C1CF90F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7DA43629-5C8C-4933-9FEB-2E7F9C1CF90F}.Debug|x64.Build.0 = Debug|Any CPU
+		{7DA43629-5C8C-4933-9FEB-2E7F9C1CF90F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DA43629-5C8C-4933-9FEB-2E7F9C1CF90F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DA43629-5C8C-4933-9FEB-2E7F9C1CF90F}.Release|Mixed.ActiveCfg = Release|Any CPU
+		{7DA43629-5C8C-4933-9FEB-2E7F9C1CF90F}.Release|Mixed.Build.0 = Release|Any CPU
+		{7DA43629-5C8C-4933-9FEB-2E7F9C1CF90F}.Release|x64.ActiveCfg = Release|Any CPU
+		{7DA43629-5C8C-4933-9FEB-2E7F9C1CF90F}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

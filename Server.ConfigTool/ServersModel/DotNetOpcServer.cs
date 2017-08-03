@@ -100,7 +100,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
     public static List<DotNetOpcServer> EnumServers()
     {
       // enumerate clsids.
-      List<Guid> clsids = Utils.EnumClassesInCategories(ConfigUtilities.CATID_DotNetOpcServers);
+      List<Guid> clsids = Utils.EnumClassesInCategories(CommonDefinitions.CATID_DotNetOpcServers);
       // initialize objects.
       List<DotNetOpcServer> servers = new List<DotNetOpcServer>();
       for (int ii = 0; ii < clsids.Count; ii++)
@@ -124,7 +124,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
           // interface is the same.
           for (int ii = 0; ii < interfaces.Length; ii++)
             if (interfaces[ii].GUID == typeof(IOPCWrappedServer).GUID)
-              Utils.RegisterClassInCategory(type.GUID, ConfigUtilities.CATID_DotNetOpcServers, "OPC Wrapped Server Objects");
+              Utils.RegisterClassInCategory(type.GUID, CommonDefinitions.CATID_DotNetOpcServers, "OPC Wrapped Server Objects");
         }
         catch
         {
@@ -143,7 +143,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
       {
         try
         {
-          Utils.UnregisterClassInCategory(type.GUID, ConfigUtilities.CATID_DotNetOpcServers);
+          Utils.UnregisterClassInCategory(type.GUID, CommonDefinitions.CATID_DotNetOpcServers);
         }
         catch
         {
