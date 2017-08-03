@@ -56,7 +56,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool
         for (int ii = 0; ii < DotNetServerCB.Items.Count; ii++)
         {
           DotNetOpcServer server = DotNetServerCB.Items[ii] as DotNetOpcServer;
-          if (server.Clsid == registeredServer.ServerCLSID)
+          if (server.CLSID == registeredServer.ServerCLSID)
           {
             DotNetServerCB.SelectedIndex = ii;
             found = true;
@@ -70,7 +70,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool
         for (int ii = 0; ii < WrapperCB.Items.Count; ii++)
         {
           DotNetOpcServerWrapper wrapper = WrapperCB.Items[ii] as DotNetOpcServerWrapper;
-          if (wrapper.Clsid == registeredServer.WrapperCLSID)
+          if (wrapper.CLSID == registeredServer.WrapperCLSID)
           {
             WrapperCB.SelectedIndex = ii;
             found = true;
@@ -123,21 +123,21 @@ namespace CAS.CommServer.DA.Server.ConfigTool
         // set the .NET server.
         if (DotNetServerCB.SelectedIndex == -1)
           throw new ApplicationException("No .NET OPC server selected.");
-        server.ServerCLSID = ((DotNetOpcServer)DotNetServerCB.SelectedItem).Clsid;
+        server.ServerCLSID = ((DotNetOpcServer)DotNetServerCB.SelectedItem).CLSID;
         // set the wrapper.  
         if (WrapperCB.SelectedIndex == -1)
           throw new ApplicationException("No wrapper process selected.");
-        server.WrapperCLSID = ((DotNetOpcServerWrapper)WrapperCB.SelectedItem).Clsid;
+        server.WrapperCLSID = ((DotNetOpcServerWrapper)WrapperCB.SelectedItem).CLSID;
         // set the clsid.     
         if (String.IsNullOrEmpty(ClsidTB.Text))
-          server.CLSID = Guid.NewGuid();
+          server.AssignCLSID(Guid.NewGuid());
         else
-          server.CLSID = new Guid(ClsidTB.Text);
+          server.AssignCLSID(new Guid(ClsidTB.Text));
         // set the prog id.                        
         if (String.IsNullOrEmpty(ProgIdTB.Text))
-          server.ProgId = ((DotNetOpcServer)DotNetServerCB.SelectedItem).ProgId + ".Wrapped";
+          server.AssignProgId(((DotNetOpcServer)DotNetServerCB.SelectedItem).ProgId + ".Wrapped");
         else
-          server.ProgId = ProgIdTB.Text;
+          server.AssignProgId(ProgIdTB.Text);
         // save the decryption.
         server.Description = DescriptionTB.Text;
         // save the parameters.

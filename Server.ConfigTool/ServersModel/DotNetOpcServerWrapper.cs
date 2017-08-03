@@ -22,24 +22,19 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
   /// <summary>
   /// A class that describes a wrapped object.
   /// </summary>
-  public class DotNetOpcServerWrapper
+  public class DotNetOpcServerWrapper : DotNetOpcServerBase
   {
 
     #region Constructors
     /// <summary>
     /// The default constructor.
     /// </summary>
-    public DotNetOpcServerWrapper()
-    {
-      Initialize();
-    }
+    public DotNetOpcServerWrapper() : base() { }
     /// <summary>
     /// Initializes the object with a url.
     /// </summary>
-    public DotNetOpcServerWrapper(Guid clsid)
+    public DotNetOpcServerWrapper(Guid clsid) : base(clsid)
     {
-      m_clsid = clsid;
-      m_progId = Utils.ProgIDFromCLSID(clsid);
       m_codebase = Utils.GetExecutablePath(clsid);
       m_specifications = GetSpecifications(clsid);
     }
@@ -49,20 +44,6 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
     #endregion
 
     #region Public
-    /// <summary>
-    /// The CLSID for the wrapper.
-    /// </summary>
-    public Guid Clsid
-    {
-      get { return m_clsid; }
-    }
-    /// <summary>
-    /// The ProgId for the wrapper.
-    /// </summary>
-    public string ProgId
-    {
-      get { return m_progId; }
-    }
     /// <summary>
     /// The file path for the EXE for the wrapper.
     /// </summary>
@@ -93,7 +74,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
     /// <summary>
     /// Finds the OPC specifications supported by the .NET server.
     /// </summary>
-    private Specifications GetSpecifications(Guid clsid)
+    private static Specifications GetSpecifications(Guid clsid)
     {
       if (clsid == Guid.Empty)
         return Specifications.None;
@@ -119,25 +100,22 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
     /// </summary>
     public override string ToString()
     {
-      if (!String.IsNullOrEmpty(m_progId))
-        return m_progId;
-      if (m_clsid == Guid.Empty)
+      if (!String.IsNullOrEmpty(ProgId))
+        return ProgId;
+      if (CLSID == Guid.Empty)
         return "(unknown)";
-      return m_clsid.ToString();
+      return CLSID.ToString();
     }
     #endregion
 
     #region Private Members
-    private Guid m_clsid;
-    private string m_progId;
     private string m_codebase;
     private Specifications m_specifications;
-    private void Initialize()
+    protected override void Initialize()
     {
-      m_clsid = Guid.Empty;
-      m_progId = null;
       m_codebase = null;
       m_specifications = Specifications.None;
+      base.Initialize();
     }
     #endregion
 

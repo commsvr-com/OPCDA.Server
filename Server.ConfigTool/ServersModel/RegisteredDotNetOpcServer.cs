@@ -26,24 +26,19 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
   /// <summary>
   /// A class that describes a .NET implementation of an OPC server that has been registered with the category manager.
   /// </summary>
-  public class RegisteredDotNetOpcServer
+  public class RegisteredDotNetOpcServer : DotNetOpcServerBase
   {
 
     #region Constructors
     /// <summary>
     /// The default constructor.
     /// </summary>
-    public RegisteredDotNetOpcServer()
-    {
-      Initialize();
-    }
+    public RegisteredDotNetOpcServer(): base(){}
     /// <summary>
     /// Initializes the object from the registry.
     /// </summary>
-    public RegisteredDotNetOpcServer(Guid clsid)
+    public RegisteredDotNetOpcServer(Guid clsid): base(clsid)
     {
-      CLSID = clsid;
-      ProgId = Utils.ProgIDFromCLSID(clsid);
       m_description = GetDescription(clsid);
       WrapperCLSID = GetWrapper(clsid);
       ServerCLSID = GetDotNetOpcServer(clsid);
@@ -54,20 +49,6 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
     #endregion
 
     #region Public API
-    /// <summary>
-    /// The CLSID for the .NET OPC server.
-    /// </summary>
-    public Guid CLSID
-    {
-      get; set;
-    }
-    /// <summary>
-    /// The prog id for the .NET OPC server.
-    /// </summary>
-    public string ProgId
-    {
-      get; set;
-    }
     /// <summary>
     /// The description for the .NET OPC server.
     /// </summary>
@@ -104,18 +85,18 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
     /// <param name="register">if set to <c>true</c> the server is registered, otherwise unregistered.</param>
     public static void Import(string filePath, bool register)
     {
-      Export.ListOfRegisteredServers list = new Export.ListOfRegisteredServers();
+      Export.ListOfRegisteredServers _list = new Export.ListOfRegisteredServers();
       // read from file.
-      XmlTextReader reader = new XmlTextReader(filePath);
-      XmlSerializer serializer = new XmlSerializer(typeof(Export.ListOfRegisteredServers), CommonDefinitions.ConfigToolSchemaUri);
-      Export.ListOfRegisteredServers servers = (Export.ListOfRegisteredServers)serializer.Deserialize(reader);
-      reader.Close();
-      if (CommonDefinitions.IsEmpty(servers.Server))
+      XmlTextReader _reader = new XmlTextReader(filePath);
+      XmlSerializer _serializer = new XmlSerializer(typeof(Export.ListOfRegisteredServers), CommonDefinitions.ConfigToolSchemaUri);
+      Export.ListOfRegisteredServers _servers = (Export.ListOfRegisteredServers)_serializer.Deserialize(_reader);
+      _reader.Close();
+      if (CommonDefinitions.IsEmpty(_servers.Server))
         return;
       // registers the servers.
-      for (int ii = 0; ii < servers.Server.Length; ii++)
+      for (int ii = 0; ii < _servers.Server.Length; ii++)
       {
-        RegisteredDotNetOpcServer server = Import(servers.Server[ii]);
+        RegisteredDotNetOpcServer server = Import(_servers.Server[ii]);
         if (register)
           server.Register();
         else
@@ -168,6 +149,22 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
         }
       }
       return _servers;
+    }
+    /// <summary>
+    /// Assigns the prog identifier.
+    /// </summary>
+    /// <param name="progId">The prog identifier.</param>
+    internal void AssignProgId(string progId)
+    {
+      ProgId = progId;
+    }
+    /// <summary>
+    /// Assigns the CLSID to this instance.
+    /// </summary>
+    /// <param name="clsid">The CLSID.</param>
+    internal void AssignCLSID(Guid clsid)
+    {
+      CLSID = clsid;
     }
     /// <summary>
     /// Registers this instance as a COM server with the specified CLSID.
@@ -383,7 +380,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
     /// <summary>
     /// Sets private members to default values.
     /// </summary>
-    private void Initialize()
+    protected override void Initialize()
     {
       CLSID = Guid.Empty;
       ProgId = null;
@@ -391,6 +388,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
       WrapperCLSID = Guid.Empty;
       ServerCLSID = Guid.Empty;
       m_parameters = new Dictionary<string, string>();
+      base.Initialize();
     }
     /// <summary>
     /// Imports a server from an export file.

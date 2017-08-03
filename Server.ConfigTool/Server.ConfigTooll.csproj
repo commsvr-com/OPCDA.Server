@@ -122,6 +122,8 @@
     <Compile Include="Export\ConfigTool.cs">
       <DependentUpon>ConfigTool.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ServersModel\DotNetOpcServerBase.cs" />
+    <Compile Include="ServersModel\Specifications.cs" />
     <Content Include="App.ico" />
     <EmbeddedResource Include="HelpText.txt" />
     <Compile Include="ServersModel\DotNetOpcServerWrapper.cs" />
