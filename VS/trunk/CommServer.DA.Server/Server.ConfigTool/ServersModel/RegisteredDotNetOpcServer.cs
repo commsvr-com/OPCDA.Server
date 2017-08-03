@@ -107,10 +107,10 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
       Export.ListOfRegisteredServers list = new Export.ListOfRegisteredServers();
       // read from file.
       XmlTextReader reader = new XmlTextReader(filePath);
-      XmlSerializer serializer = new XmlSerializer(typeof(Export.ListOfRegisteredServers), ConfigUtilities.ConfigToolSchemaUri);
+      XmlSerializer serializer = new XmlSerializer(typeof(Export.ListOfRegisteredServers), CommonDefinitions.ConfigToolSchemaUri);
       Export.ListOfRegisteredServers servers = (Export.ListOfRegisteredServers)serializer.Deserialize(reader);
       reader.Close();
-      if (ConfigUtilities.IsEmpty(servers.Server))
+      if (CommonDefinitions.IsEmpty(servers.Server))
         return;
       // registers the servers.
       for (int ii = 0; ii < servers.Server.Length; ii++)
@@ -138,7 +138,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
       // write to file.
       XmlTextWriter writer = new XmlTextWriter(filePath, System.Text.Encoding.UTF8);
       writer.Formatting = Formatting.Indented;
-      XmlSerializer serializer = new XmlSerializer(typeof(Export.ListOfRegisteredServers), ConfigUtilities.ConfigToolSchemaUri);
+      XmlSerializer serializer = new XmlSerializer(typeof(Export.ListOfRegisteredServers), CommonDefinitions.ConfigToolSchemaUri);
       serializer.Serialize(writer, _serverList);
       writer.Close();
     }
@@ -148,7 +148,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
     public static List<RegisteredDotNetOpcServer> EnumRegisteredServers(bool updateWrapperPath)
     {
       // enumerate server clsids.
-      List<Guid> _CLSIDs = Utils.EnumClassesInCategories(ConfigUtilities.CATID_RegisteredDotNetOpcServers);
+      List<Guid> _CLSIDs = Utils.EnumClassesInCategories(CommonDefinitions.CATID_RegisteredDotNetOpcServers);
       // initialize server objects.
       List<RegisteredDotNetOpcServer> _servers = new List<RegisteredDotNetOpcServer>();
       for (int ii = 0; ii < _CLSIDs.Count; ii++)
@@ -272,7 +272,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
         _key.Close();
       }
       // register as wrapper server.
-      Utils.RegisterClassInCategory(CLSID, ConfigUtilities.CATID_RegisteredDotNetOpcServers, "OPC Wrapped COM Server Proxy");
+      Utils.RegisterClassInCategory(CLSID, CommonDefinitions.CATID_RegisteredDotNetOpcServers, "OPC Wrapped COM Server Proxy");
       // register in OPC component categories.
       if ((specifications & Specifications.DA2) != 0)
         Utils.RegisterClassInCategory(CLSID, typeof(OpcRcw.Da.CATID_OPCDAServer20).GUID);
@@ -432,7 +432,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
       }
       // read parameters.
       server.Parameters.Clear();
-      if (!ConfigUtilities.IsEmpty(serverToImport.Parameter))
+      if (!CommonDefinitions.IsEmpty(serverToImport.Parameter))
       {
         for (int ii = 0; ii < serverToImport.Parameter.Length; ii++)
         {

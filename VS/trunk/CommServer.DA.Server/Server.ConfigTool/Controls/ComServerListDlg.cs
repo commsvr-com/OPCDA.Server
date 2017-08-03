@@ -33,7 +33,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool
     {
       InitializeComponent();
       RegisteredServersRB.Checked = true;
-      ServersCTRL.Initialize(ConfigUtilities.CATID_RegisteredDotNetOpcServers);
+      ServersCTRL.Initialize(CommonDefinitions.CATID_RegisteredDotNetOpcServers);
       m_currentDirectory = Application.StartupPath;
     }
     #endregion
@@ -41,11 +41,11 @@ namespace CAS.CommServer.DA.Server.ConfigTool
     #region API
     public void ShowDialog(Guid CATID)
     {
-      if (CATID == ConfigUtilities.CATID_DotNetOpcServers)
+      if (CATID == CommonDefinitions.CATID_DotNetOpcServers)
         DotNetServersRB.Checked = true;
-      else if (CATID == ConfigUtilities.CATID_DotNetOpcServerWrappers)
+      else if (CATID == CommonDefinitions.CATID_DotNetOpcServerWrappers)
         WrappersRB.Checked = true;
-      else if (CATID == ConfigUtilities.CATID_RegisteredDotNetOpcServers)
+      else if (CATID == CommonDefinitions.CATID_RegisteredDotNetOpcServers)
         RegisteredServersRB.Checked = true;
       ServersCTRL.Initialize(CATID);
       base.ShowDialog();
@@ -61,7 +61,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool
       try
       {
         if (DotNetServersRB.Checked)
-          ServersCTRL.Initialize(ConfigUtilities.CATID_DotNetOpcServers);
+          ServersCTRL.Initialize(CommonDefinitions.CATID_DotNetOpcServers);
       }
       catch (Exception exception)
       {
@@ -73,7 +73,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool
       try
       {
         if (WrappersRB.Checked)
-          ServersCTRL.Initialize(ConfigUtilities.CATID_DotNetOpcServerWrappers);
+          ServersCTRL.Initialize(CommonDefinitions.CATID_DotNetOpcServerWrappers);
       }
       catch (Exception exception)
       {
@@ -85,7 +85,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool
       try
       {
         if (RegisteredServersRB.Checked)
-          ServersCTRL.Initialize(ConfigUtilities.CATID_RegisteredDotNetOpcServers);
+          ServersCTRL.Initialize(CommonDefinitions.CATID_RegisteredDotNetOpcServers);
       }
       catch (Exception exception)
       {
@@ -99,7 +99,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool
       {
         if (new RegisterServerDlg().ShowDialog(null) != null)
           if (RegisteredServersRB.Checked)
-            ServersCTRL.Initialize(ConfigUtilities.CATID_RegisteredDotNetOpcServers);
+            ServersCTRL.Initialize(CommonDefinitions.CATID_RegisteredDotNetOpcServers);
       }
       catch (Exception exception)
       {
