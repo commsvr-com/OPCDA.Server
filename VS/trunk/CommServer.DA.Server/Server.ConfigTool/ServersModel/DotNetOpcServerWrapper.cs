@@ -38,9 +38,6 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
       m_codebase = Utils.GetExecutablePath(clsid);
       m_specifications = GetSpecifications(clsid);
     }
-    /// <summary>
-    /// Sets private members to default values.
-    /// </summary>
     #endregion
 
     #region Public
