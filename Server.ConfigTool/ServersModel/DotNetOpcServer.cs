@@ -30,10 +30,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
     /// <summary>
     /// The default constructor.
     /// </summary>
-    public DotNetOpcServer()
-    {
-      Initialize();
-    }
+    public DotNetOpcServer() : base() { }
     /// <summary>
     /// Initializes the object with a <see cref="Guid"/>.
     /// </summary>
@@ -52,9 +49,6 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
       m_codebase = null;
       m_systemType = null;
       m_specifications = Specifications.None;
-    }
-    private void zInitialize()
-    {
     }
     #endregion
 
