@@ -421,6 +421,16 @@ Value 0
   Type:            REG_SZ
   Data:            .NET Category
 
-# RegAsm
+# Tools
+## RegAsm
+
 C:\Windows\Microsoft.NET\Framework64\ - to regoster fo 64 bits application
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\RegAsm.exe
+
+Generowane pliki są takie same,
+
+## OleView 
+W folderze są podfodery dla roznych zrchitektur procesora (32/64/arm).
+
+C:\Program Files (x86)\Windows Kits\10\bin
 
