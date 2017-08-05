@@ -420,3 +420,7 @@ Value 0
   Name:            0
   Type:            REG_SZ
   Data:            .NET Category
+
+# RegAsm
+C:\Windows\Microsoft.NET\Framework64\ - to regoster fo 64 bits application
+
