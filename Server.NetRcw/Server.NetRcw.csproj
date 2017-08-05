@@ -60,6 +60,11 @@
     <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="OpcRcw.Comn, Version=1.10.2.0, Culture=neutral, PublicKeyToken=78aea80f6827b5ab, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\OPC Foundation\OpcRcw.Comn.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -69,6 +74,7 @@
     <Compile Include="Common.cs" />
     <Compile Include="Commands.cs" />
     <Compile Include="Batch.cs" />
+    <Compile Include="OPCEnumHelper.cs" />
     <Compile Include="ServerDescription.cs" />
     <Compile Include="ResultIds.cs" />
     <Compile Include="ServerEnumerator.cs" />
@@ -78,6 +84,7 @@
     <Compile Include="HistoricalDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security.cs" />
+    <Compile Include="Win64Registry.cs" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -93,6 +100,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="cas.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="OpcEnumLib">
+      <Guid>{13486D43-4821-11D2-A494-3CB306C10000}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>1</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

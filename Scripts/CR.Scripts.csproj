@@ -63,8 +63,11 @@
   <ItemGroup>
     <None Include="build.cmd" />
     <None Include="clean.cmd" />
+    <None Include="CommServerSetupMSIExtract.cmd" />
+    <None Include="create_branch.cmd" />
     <None Include="create_tag.cmd" />
     <None Include="dotfuscator.cmd" />
+    <None Include="RegAsm2File.cmd" />
     <None Include="signdeliverables.cmd" />
     <None Include="uinstall.cmd">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
