@@ -21,7 +21,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool.UnitTest
       TestDotNetOpcServerBase _server = new TestDotNetOpcServerBase(_clsid);
       Assert.AreEqual<Guid>(_clsid, _server.CLSID);
       Assert.AreEqual<string>("CAS.CommServer.DA.Server.NETServer.DaServer", _server.ProgId);
-      Assert.IsTrue(_server.Is64BitComponent);
+      Assert.IsFalse(_server.Is64BitComponent);
     }
     [TestMethod]
     [ExpectedException(typeof(ApplicationException))]

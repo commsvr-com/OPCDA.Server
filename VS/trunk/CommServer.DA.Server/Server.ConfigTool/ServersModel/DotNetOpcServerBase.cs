@@ -56,7 +56,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
       get; protected set;
     } = string.Empty;
     /// <summary>
-    /// Initializes this instance.
+    /// Initializes this instance - set private members to default values.
     /// </summary>
     protected virtual void Initialize() { }
 

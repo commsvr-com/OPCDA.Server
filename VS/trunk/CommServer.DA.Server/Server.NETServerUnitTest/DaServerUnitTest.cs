@@ -1,13 +1,7 @@
-﻿
-using Microsoft.QualityTools.Testing.Fakes;
-using Microsoft.QualityTools.Testing.Fakes.Shims;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Microsoft.Win32;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
-using System.Fakes;
 using OpcRcw.Comn;
 using CAS.CommServer.DA.Server.ConfigTool.ServersModel;
 
@@ -44,20 +38,6 @@ namespace CAS.CommServer.DA.Server.NETServer.UnitTest
       Assert.AreEqual<int>(1, _attributes.Length);
       Assert.AreEqual<string>("BE77A3C7-D2B7-44E7-B943-B978C1C87E5A", ((GuidAttribute)_attributes[0]).Value.ToUpper());
     }
-    //[TestMethod]
-    //public void RegisterTypeTest()
-    //{
-    //  using (IDisposable context  =  ShimsContext.Create())
-    //  {
-    //    List<string> _keyNames = new List<string>();
-    //    //Microsoft.Win32.Shim
-    //    Microsoft.Win32.Fakes.ShimRegistryKey.AllInstances.CreateSubKeyString = (x, y) => { _keyNames.Add(y); return x; };
-    //    RegistrationServices _registrationServices = new RegistrationServices();
-    //    Guid _registrationGuid = Guid.NewGuid();
-    //    _registrationServices.RegisterTypeForComClients(typeof(DaServer), ref _registrationGuid);
-    //    ShimBehaviors.Current = ShimBehaviors.DefaultValue;
-    //  } // clear all shims  
-    //}
 
   }
 }

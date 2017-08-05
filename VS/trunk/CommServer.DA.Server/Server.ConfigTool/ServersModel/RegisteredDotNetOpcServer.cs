@@ -382,8 +382,6 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
     /// </summary>
     protected override void Initialize()
     {
-      CLSID = Guid.Empty;
-      ProgId = null;
       m_description = null;
       WrapperCLSID = Guid.Empty;
       ServerCLSID = Guid.Empty;
