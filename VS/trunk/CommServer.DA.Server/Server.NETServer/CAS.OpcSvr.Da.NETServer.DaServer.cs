@@ -35,22 +35,18 @@ namespace CAS.CommServer.DA.Server.NETServer
     /// </summary>
     public DaServer()
     {
-      new EventLogMonitor("New instance of CAS.OpcSvr.Da.NETServer.Server created", EventLogEntryType.Information, (int)Error.CAS_OpcSvr_Da_NETServer_Server, 56).WriteEntry();
-      if (!File.Exists(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile))
-      {
-        new EventLogMonitor
-        (
-@"WARNING: The configuration (.config) file is missing. Usually CommServer OPC server executable (CASOpcDaWrapper.exe) is trying to open: 'C:\Program Files\CAS\CommServer\CASOpcDaWrapper.config' but this file does not exist. The file that exists in the directory is: 'C:\Program Files\CAS\CommServer\CASOpcDaWrapper.exe.config'.
-
-EXPLANATION:This situation appears sometimes in Windows Server operating system, somehow the operating system is trying to find .config file (not .exe.config).
-
-SOLUTION: The solution is to create of a copy of the 'CASOpcDaWrapper.exe.config' file and rename the copy 'CASOpcDaWrapper.config'.
-
-Note: Before reconnection to OPC server make sure that CASOpcDaWrapper.exe is not appear on the task list (in Windows Task Manager). If it is exist please kill the process before reconnection.", EventLogEntryType.Error, (int)Error.CAS_OpcSvr_Da_NETServer_Server, 109).WriteEntry();
-        throw new ApplicationException("Unable to find application configuration file. Examine the Windows application event log to get more.");
-      }
       try
       {
+        new EventLogMonitor("New instance of CAS.OpcSvr.Da.NETServer.Server created", EventLogEntryType.Information, (int)Error.CAS_OpcSvr_Da_NETServer_Server, 56).WriteEntry();
+        if (!File.Exists(AppDomain.CurrentDomain.SetupInformation.ConfigurationFile))
+        {
+          new EventLogMonitor
+          ( @"WARNING: The configuration (.config) file is missing. Usually CommServer OPC server executable (CASOpcDaWrapper.exe) is trying to open: 'C:\Program Files\CAS\CommServer\CASOpcDaWrapper.config' but this file does not exist. The file that exists in the directory is: 'C:\Program Files\CAS\CommServer\CASOpcDaWrapper.exe.config'.
+EXPLANATION:This situation appears sometimes in Windows Server operating system, somehow the operating system is trying to find .config file (not .exe.config).
+SOLUTION: The solution is to create of a copy of the 'CASOpcDaWrapper.exe.config' file and rename the copy 'CASOpcDaWrapper.config'.
+Note: Before reconnection to OPC server make sure that CASOpcDaWrapper.exe is not appear on the task list (in Windows Task Manager). If it is exist please kill the process before reconnection.", EventLogEntryType.Error, (int)Error.CAS_OpcSvr_Da_NETServer_Server, 109).WriteEntry();
+          throw new ApplicationException("Unable to find application configuration file. Examine the Windows application event log to get more.");
+        }
         IServer = m_server = new Server(true);
       }
       catch (Exception ex)
