@@ -29,8 +29,8 @@ using System.Security.Permissions;
 [assembly: AssemblyCulture("")]
 [assembly: Guid("41E9B462-5C59-455a-909D-7C38A54DAC9A")]
 [assembly: ComVisible(true)]
-[assembly: AssemblyVersion("4.1.2.*")]
-[assembly: AssemblyFileVersion("4.1.2")]
+[assembly: AssemblyVersion("4.2.0.*")]
+[assembly: AssemblyFileVersion("4.2.0")]
 [assembly: CAS.Lib.CodeProtect.AssemblyHelper
   (
     Product = "Configuration tool for CommServer.",

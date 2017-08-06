@@ -76,12 +76,56 @@
       <HintPath>..\packages\CAS.CodeProtect.6.1.3\lib\net451\CAS.CodeProtect.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CAS.CommServer.CommonBus, Version=5.1.6.38674, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.CommonBus.5.01.07\lib\net451\CAS.CommServer.CommonBus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommServer.DataProvider.MODBUSCore, Version=3.90.3.33263, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.03\lib\net451\CAS.CommServer.DataProvider.MODBUSCore.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="CAS.CommServer.DeviceSimulator, Version=5.1.6.25004, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
       <HintPath>..\packages\CAS.CommServer.DeviceSimulator.5.01.06\lib\net451\CAS.CommServer.DeviceSimulator.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.CommServer.OPCClassicSDK.Core, Version=2.1.1062.39746, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
       <HintPath>..\packages\CAS.CommServer.OPCClassic.SDK.Core.2.01.1062\lib\net451\CAS.CommServer.OPCClassicSDK.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommSvrPlugin_DemoSimulator, Version=3.90.3.33264, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.03\lib\net451\CAS.CommSvrPlugin_DemoSimulator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommSvrPlugin_EC2-3SYM2, Version=3.90.3.33264, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.03\lib\net451\CAS.CommSvrPlugin_EC2-3SYM2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommSvrPlugin_ExcelDDE, Version=3.90.3.33263, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.03\lib\net451\CAS.CommSvrPlugin_ExcelDDE.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommSvrPlugin_MBUS, Version=3.90.3.33264, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.03\lib\net451\CAS.CommSvrPlugin_MBUS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommSvrPlugin_MODBUSNet, Version=3.90.3.33264, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.03\lib\net451\CAS.CommSvrPlugin_MODBUSNet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommSvrPlugin_NULLbus, Version=3.90.3.33264, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.03\lib\net451\CAS.CommSvrPlugin_NULLbus.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommSvrPlugin_SBUSNET, Version=3.90.3.33264, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.03\lib\net451\CAS.CommSvrPlugin_SBUSNET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommSvrPlugin_SBUSRS, Version=3.90.3.33265, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.03\lib\net451\CAS.CommSvrPlugin_SBUSRS.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommSvrPlugin_TextReader, Version=3.90.3.33265, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.03\lib\net451\CAS.CommSvrPlugin_TextReader.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.RealTime, Version=5.0.6.23644, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
@@ -111,6 +155,28 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Reactive.Core, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.Core.3.1.1\lib\net46\System.Reactive.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=3.0.1000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.Interfaces.3.1.1\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Linq, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.Linq.3.1.1\lib\net46\System.Reactive.Linq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.PlatformServices.3.1.1\lib\net46\System.Reactive.PlatformServices.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Reactive.Windows.Threading, Version=3.0.1000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.Windows.Threading.3.1.1\lib\net45\System.Reactive.Windows.Threading.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -135,6 +201,7 @@
     </Compile>
     <Compile Include="DaServerUnitTest.cs" />
     <Compile Include="ServerUnitTest.cs" />
+    <Compile Include="Deployment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -153,6 +220,14 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <None Include="..\Server.Setup\Resources\DefaultConfig.xml">
+      <Link>DefaultConfig.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\Server.Setup\Resources\item_dsc.xml">
+      <Link>item_dsc.xml</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Content Include="Properties\AssemblyInfo.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
