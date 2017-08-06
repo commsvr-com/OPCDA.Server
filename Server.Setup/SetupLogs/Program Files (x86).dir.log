@@ -1,0 +1,64 @@
+ Volume in drive C has no label.
+ Volume Serial Number is 94CD-12D8
+
+ Directory of C:\Program Files (x86)\CAS\CAS.CommServer
+
+2017-08-06  17:46    <DIR>          .
+2017-08-06  17:46    <DIR>          ..
+2016-11-03  13:35           208ÿ896 CAS.CodeProtect.dll
+2016-10-19  15:11         2ÿ023ÿ424 CAS.CommonResources.dll
+2017-06-04  22:12            72ÿ704 CAS.CommServer.CommonBus.dll
+2017-08-06  15:15            73ÿ728 CAS.CommServer.DA.Server.NETServer.dll
+2017-08-06  17:30             6ÿ144 CAS.CommServer.DA.Server.ProductInstaller.dll
+2017-08-06  17:46             5ÿ679 CAS.CommServer.DA.Server.ProductInstaller.InstallState
+2017-06-05  14:58           118ÿ784 CAS.CommServer.DAServerConfiguration.dll
+2017-08-06  17:00            26ÿ624 CAS.CommServer.DataProvider.MODBUSCore.dll
+2016-11-03  15:00            36ÿ864 CAS.CommServer.DeviceSimulator.dll
+2016-10-27  14:54           200ÿ704 CAS.CommServer.OPCClassicSDK.COMWrapper.dll
+2016-10-17  22:18           204ÿ800 CAS.CommServer.OPCClassicSDK.Core.dll
+2016-10-27  14:54            88ÿ576 CAS.CommServer.OPCClassicSDK.OpcComRcw.dll
+2017-06-07  17:50            98ÿ304 CAS.CommServer.ProtocolHub.Communication.dll
+2016-11-03  14:59            61ÿ440 CAS.CommServer.ProtocolHub.ItemDescriber.dll
+2017-06-07  17:50           200ÿ704 CAS.CommServer.ProtocolHub.MonitorInterface.dll
+2017-08-06  17:00            40ÿ960 CAS.CommSvrPlugin_DemoSimulator.dll
+2017-08-06  17:00            28ÿ672 CAS.CommSvrPlugin_EC2-3SYM2.dll
+2017-08-06  17:00            36ÿ864 CAS.CommSvrPlugin_ExcelDDE.dll
+2017-08-06  17:00            61ÿ440 CAS.CommSvrPlugin_MBUS.dll
+2017-08-06  17:00            24ÿ576 CAS.CommSvrPlugin_MODBUSNet.dll
+2017-08-06  17:00            32ÿ768 CAS.CommSvrPlugin_NULLbus.dll
+2017-08-06  17:00            29ÿ184 CAS.CommSvrPlugin_SBUSNET.dll
+2017-08-06  17:00            28ÿ672 CAS.CommSvrPlugin_SBUSRS.dll
+2017-08-06  17:00            23ÿ040 CAS.CommSvrPlugin_TextReader.dll
+2016-11-03  14:08            55ÿ808 CAS.RealTime.Core.dll
+2016-11-03  14:08           245ÿ760 CAS.RealTime.dll
+2017-08-06  15:12               953 CASOpcDaWrapper.config.xml
+2017-08-06  15:12            23ÿ492 CASOpcDaWrapper.device.xml
+2017-08-06  15:12           239ÿ616 CASOpcDaWrapper.exe
+2017-08-06  17:27             8ÿ665 CASOpcDaWrapper.exe.config
+2017-08-06  15:11            15ÿ086 commserver.ico
+2017-08-06  15:11            12ÿ361 CommServerInstallBanner.jpg
+2017-08-06  15:11             7ÿ358 Dictionary.ico
+2017-08-06  17:46    <DIR>          Help
+2017-08-06  15:12           114ÿ501 License.rtf
+2016-11-03  13:35         1ÿ223ÿ408 Microsoft.Build.Tasks.Core.dll
+2016-11-03  13:35           393ÿ984 Microsoft.Build.Utilities.Core.dll
+2017-08-06  17:00           110ÿ592 NDde.dll
+2015-11-05  21:36            85ÿ184 System.Net.Http.dll
+2016-11-21  15:01           113ÿ944 System.Reactive.Core.dll
+2016-11-21  15:02            22ÿ808 System.Reactive.Interfaces.dll
+2016-11-21  15:02           709ÿ400 System.Reactive.Linq.dll
+2016-11-21  15:02            38ÿ168 System.Reactive.PlatformServices.dll
+2016-11-21  15:03            28ÿ440 System.Reactive.Windows.Threading.dll
+2015-11-05  21:36            22ÿ208 System.Windows.dll
+              44 File(s)      7ÿ205ÿ287 bytes
+
+ Directory of C:\Program Files (x86)\CAS\CAS.CommServer\Help
+
+2017-08-06  17:46    <DIR>          .
+2017-08-06  17:46    <DIR>          ..
+2017-08-06  15:12        21ÿ545ÿ704 CommServerOPCHelp.chm
+               1 File(s)     21ÿ545ÿ704 bytes
+
+     Total Files Listed:
+              45 File(s)     28ÿ750ÿ991 bytes
+               5 Dir(s)  25ÿ414ÿ098ÿ944 bytes free

@@ -434,3 +434,6 @@ W folderze są podfodery dla roznych zrchitektur procesora (32/64/arm).
 
 C:\Program Files (x86)\Windows Kits\10\bin
 
+## Fuslogvw.exe 
+
+Logowanie kolejnoci ladowania assembly
