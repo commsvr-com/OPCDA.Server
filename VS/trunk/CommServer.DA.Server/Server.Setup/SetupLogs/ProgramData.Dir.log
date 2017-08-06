@@ -1,0 +1,23 @@
+ Volume in drive C has no label.
+ Volume Serial Number is 94CD-12D8
+
+ Directory of C:\ProgramData\CAS\CAS.CommServer
+
+2017-08-06  17:48    <DIR>          .
+2017-08-06  17:48    <DIR>          ..
+2017-08-06  17:48            25ÿ506 CAS.License.lic
+2017-08-06  17:49            65ÿ183 CommServer_Main.log
+2017-08-06  15:12            37ÿ768 DefaultConfig.xml
+2017-08-06  15:12            48ÿ538 item_dsc.xml
+2017-08-06  17:46    <DIR>          log
+               4 File(s)        176ÿ995 bytes
+
+ Directory of C:\ProgramData\CAS\CAS.CommServer\log
+
+2017-08-06  17:46    <DIR>          .
+2017-08-06  17:46    <DIR>          ..
+               0 File(s)              0 bytes
+
+     Total Files Listed:
+               4 File(s)        176ÿ995 bytes
+               5 Dir(s)  25ÿ414ÿ103ÿ040 bytes free
