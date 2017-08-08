@@ -437,3 +437,10 @@ C:\Program Files (x86)\Windows Kits\10\bin
 ## Fuslogvw.exe 
 
 Logowanie kolejnoci ladowania assembly
+
+# Rejestracja komponentu COM
+
+* w pliku exe/dll poprzez msi 
+* import pliku .reg do projektu setup
+* custom action
+* ComRegisterFunctionAttribute
