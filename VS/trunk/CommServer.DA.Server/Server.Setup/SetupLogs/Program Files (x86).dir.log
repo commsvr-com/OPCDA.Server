@@ -3,26 +3,29 @@
 
  Directory of C:\Program Files (x86)\CAS\CAS.CommServer
 
-2017-08-06  23:07    <DIR>          .
-2017-08-06  23:07    <DIR>          ..
+2017-08-11  20:58    <DIR>          .
+2017-08-11  20:58    <DIR>          ..
 2016-11-03  13:35           208ÿ896 CAS.CodeProtect.dll
 2016-10-19  15:11         2ÿ023ÿ424 CAS.CommonResources.dll
 2017-06-04  22:12            72ÿ704 CAS.CommServer.CommonBus.dll
-2017-08-06  22:53             8ÿ704 CAS.CommServer.DA.Server.ConfigurationEditor.exe
-2017-08-06  22:43             3ÿ391 CAS.CommServer.DA.Server.ConfigurationEditor.exe.config
-2017-08-06  22:53            73ÿ728 CAS.CommServer.DA.Server.NETServer.dll
-2017-08-06  22:53             6ÿ144 CAS.CommServer.DA.Server.ProductInstaller.dll
-2017-08-06  23:07             5ÿ681 CAS.CommServer.DA.Server.ProductInstaller.InstallState
+2017-08-11  00:38            24ÿ576 CAS.CommServer.DA.Server.ConfigurationEditor.exe
+2017-08-10  23:15             3ÿ438 CAS.CommServer.DA.Server.ConfigurationEditor.exe.config
+2017-08-11  00:27            23ÿ040 CAS.CommServer.DA.Server.Monitor.exe
+2017-08-10  23:22            12ÿ565 CAS.CommServer.DA.Server.Monitor.exe.config
+2017-08-11  00:38            73ÿ728 CAS.CommServer.DA.Server.NETServer.dll
+2017-08-11  00:27             6ÿ144 CAS.CommServer.DA.Server.ProductInstaller.dll
+2017-08-11  20:58             5ÿ681 CAS.CommServer.DA.Server.ProductInstaller.InstallState
 2017-06-05  14:58           118ÿ784 CAS.CommServer.DAServerConfiguration.dll
 2017-08-06  17:00            26ÿ624 CAS.CommServer.DataProvider.MODBUSCore.dll
 2016-11-03  15:00            36ÿ864 CAS.CommServer.DeviceSimulator.dll
 2016-10-27  14:54           200ÿ704 CAS.CommServer.OPCClassicSDK.COMWrapper.dll
 2016-10-17  22:18           204ÿ800 CAS.CommServer.OPCClassicSDK.Core.dll
 2016-10-27  14:54            88ÿ576 CAS.CommServer.OPCClassicSDK.OpcComRcw.dll
-2017-06-07  17:50            98ÿ304 CAS.CommServer.ProtocolHub.Communication.dll
-2017-08-06  22:43           258ÿ048 CAS.CommServer.ProtocolHub.ConfigurationEditor.exe
+2017-08-10  18:30            98ÿ304 CAS.CommServer.ProtocolHub.Communication.dll
+2017-08-10  23:04           258ÿ048 CAS.CommServer.ProtocolHub.ConfigurationEditor.exe
 2016-11-03  14:59            61ÿ440 CAS.CommServer.ProtocolHub.ItemDescriber.dll
-2017-06-07  17:50           200ÿ704 CAS.CommServer.ProtocolHub.MonitorInterface.dll
+2017-08-10  23:51           237ÿ568 CAS.CommServer.ProtocolHub.Monitor.exe
+2017-08-10  17:56           200ÿ704 CAS.CommServer.ProtocolHub.MonitorInterface.dll
 2017-08-06  17:00            40ÿ960 CAS.CommSvrPlugin_DemoSimulator.dll
 2017-08-06  17:00            28ÿ672 CAS.CommSvrPlugin_EC2-3SYM2.dll
 2017-08-06  17:00            36ÿ864 CAS.CommSvrPlugin_ExcelDDE.dll
@@ -38,31 +41,33 @@
 2017-08-06  15:12               953 CASOpcDaWrapper.config.xml
 2017-08-06  15:12            23ÿ492 CASOpcDaWrapper.device.xml
 2017-08-06  15:12           239ÿ616 CASOpcDaWrapper.exe
-2017-08-06  22:35             8ÿ665 CASOpcDaWrapper.exe.config
+2017-08-10  22:15             8ÿ711 CASOpcDaWrapper.exe.config
+2017-06-04  18:42            15ÿ086 CAS_ikona_02.ico
 2017-08-06  15:11            15ÿ086 commserver.ico
 2017-08-06  15:11            12ÿ361 CommServerInstallBanner.jpg
 2017-08-06  15:11             7ÿ358 Dictionary.ico
-2017-08-06  23:07    <DIR>          Help
+2017-08-11  20:58    <DIR>          Help
+2016-01-08  10:36            47ÿ276 HelpApplication.ico
+2017-08-11  00:05            15ÿ086 Konfig_Full.ico
 2017-08-06  15:12           114ÿ501 License.rtf
 2016-11-03  13:35         1ÿ223ÿ408 Microsoft.Build.Tasks.Core.dll
 2016-11-03  13:35           393ÿ984 Microsoft.Build.Utilities.Core.dll
 2017-08-06  17:00           110ÿ592 NDde.dll
-2015-11-05  21:36            85ÿ184 System.Net.Http.dll
 2016-11-21  15:01           113ÿ944 System.Reactive.Core.dll
 2016-11-21  15:02            22ÿ808 System.Reactive.Interfaces.dll
 2016-11-21  15:02           709ÿ400 System.Reactive.Linq.dll
 2016-11-21  15:02            38ÿ168 System.Reactive.PlatformServices.dll
 2016-11-21  15:03            28ÿ440 System.Reactive.Windows.Threading.dll
 2015-11-05  21:36            22ÿ208 System.Windows.dll
-              48 File(s)      7ÿ687ÿ912 bytes
+              53 File(s)      7ÿ969ÿ314 bytes
 
  Directory of C:\Program Files (x86)\CAS\CAS.CommServer\Help
 
-2017-08-06  23:07    <DIR>          .
-2017-08-06  23:07    <DIR>          ..
+2017-08-11  20:58    <DIR>          .
+2017-08-11  20:58    <DIR>          ..
 2017-08-06  15:12        21ÿ545ÿ704 CommServerOPCHelp.chm
                1 File(s)     21ÿ545ÿ704 bytes
 
      Total Files Listed:
-              49 File(s)     29ÿ233ÿ616 bytes
-               5 Dir(s)  23ÿ514ÿ615ÿ808 bytes free
+              54 File(s)     29ÿ515ÿ018 bytes
+               5 Dir(s)  25ÿ174ÿ507ÿ520 bytes free
