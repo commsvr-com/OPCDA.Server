@@ -155,16 +155,16 @@
       <HintPath>..\packages\CAS.CommServer.OPCClassic.SDK.COMWrapper.2.01.1063\lib\net451\CAS.CommServer.OPCClassicSDK.OpcComRcw.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.ProtocolHub.Communication, Version=4.0.24.32029, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.ProtocolHub.Communication.4.00.24\lib\net451\CAS.CommServer.ProtocolHub.Communication.dll</HintPath>
+    <Reference Include="CAS.CommServer.ProtocolHub.Communication, Version=4.2.0.32708, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.ProtocolHub.Communication.4.02.00\lib\net461\CAS.CommServer.ProtocolHub.Communication.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.CommServer.ProtocolHub.ItemDescriber, Version=5.1.6.25004, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
       <HintPath>..\packages\CAS.CommServer.ProtocolHub.ItemDescriber.5.01.06\lib\net451\CAS.CommServer.ProtocolHub.ItemDescriber.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.ProtocolHub.MonitorInterface, Version=4.0.24.32025, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.ProtocolHub.Communication.4.00.24\lib\net451\CAS.CommServer.ProtocolHub.MonitorInterface.dll</HintPath>
+    <Reference Include="CAS.CommServer.ProtocolHub.MonitorInterface, Version=4.1.0.31758, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.ProtocolHub.MonitorInterface.4.01.00\lib\net461\CAS.CommServer.ProtocolHub.MonitorInterface.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.RealTime, Version=5.0.6.23644, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">

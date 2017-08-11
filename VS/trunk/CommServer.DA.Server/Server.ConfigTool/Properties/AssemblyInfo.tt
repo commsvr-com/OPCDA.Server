@@ -20,28 +20,19 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("<#=m_AssemblyTitle#>")]
-[assembly: AssemblyDescription("OPC DA Server Configuration Editor")]
+[assembly: AssemblyDescription("CAS.CommServer.DA.Server OPC Diagnostic and Registration Tool")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("<#=AssemblyCompany#>")]
 [assembly: AssemblyProduct("<#=DefaultProductName#>")]
 [assembly: AssemblyCopyright("<#=AssemblyCopyright#>")]
 [assembly: AssemblyTrademark("<#=DefaultProductTrademark#>")]
 [assembly: AssemblyCulture("")]
-[assembly: Guid("DB03BA94-B771-4462-9F83-D8F2F29A3E57")]
+[assembly: Guid("6B95CD82-F1CD-43C8-98AB-5EF9877022A2")]
 [assembly: ComVisible(false)]
 [assembly: AssemblyVersion("<#= CASCommServerDAServerNETServerVersion #>.*")]
 [assembly: AssemblyFileVersion("<#= CASCommServerDAServerNETServerVersion #>")]
-[assembly: CAS.Lib.CodeProtect.AssemblyHelper
-  (
-    Product = "Configuration tool for CommServer.",
-    Company = "CAS",
-    Url = "www.cas.eu",
-    Email = "techsupp@cas.eu",
-    Phone = "+48 608 61 98 99"
-  )
-]
 
 <#@ include file = "..\..\..\PR39-CommonResources\T4Definitions\CAS.OPC.t4" #>
 <#+
-string m_AssemblyTitle = "CAS.CommServer.DA.Server.ConfigurationEditor";
+string m_AssemblyTitle = "CAS.CommServer.DA.Server.ConfigTool";
 #>

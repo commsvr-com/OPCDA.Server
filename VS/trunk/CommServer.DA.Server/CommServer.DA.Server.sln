@@ -5,6 +5,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{0A971CAF-57CD-4AB8-A0F3-10F902DDFD61}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\svn.CommServer\CommServer.ProtocolHub\CommServer.ProtocolHub\ProtocolHub.ConfiguartionEditor\App.config = ..\..\..\svn.CommServer\CommServer.ProtocolHub\CommServer.ProtocolHub\ProtocolHub.ConfiguartionEditor\App.config
+		..\PR39-CommonResources\cas.publickey.txt = ..\PR39-CommonResources\cas.publickey.txt
 		..\..\..\svn.CommServer\CommServer.ProtocolHub\CommServer.ProtocolHub\ProtocolHub.ConfiguartionEditor\MainClass.cs = ..\..\..\svn.CommServer\CommServer.ProtocolHub\CommServer.ProtocolHub\ProtocolHub.ConfiguartionEditor\MainClass.cs
 		Problems.txt = Problems.txt
 		..\..\..\CommServer.UA.ModelDesigner\CommServer.UA.ModelDesigner\ModelDesigner.DesignStudio\Program.cs = ..\..\..\CommServer.UA.ModelDesigner\CommServer.UA.ModelDesigner\ModelDesigner.DesignStudio\Program.cs
@@ -32,6 +33,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.ConfigToollUnitTest", "Server.ConfigToollUnitTest\Server.ConfigToollUnitTest.csproj", "{7DA43629-5C8C-4933-9FEB-2E7F9C1CF90F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.ConfigurationEditor", "Server.ConfigurationEditor\Server.ConfigurationEditor.csproj", "{119377EF-F1F4-40D6-BA06-30F0235C1227}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.Monitor", "Server.Monitor\Server.Monitor.csproj", "{5079ED73-1740-463B-B7D4-EE84941FA76E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -121,6 +124,14 @@ Global
 		{119377EF-F1F4-40D6-BA06-30F0235C1227}.Release|Any CPU.Build.0 = Release|Any CPU
 		{119377EF-F1F4-40D6-BA06-30F0235C1227}.Release|x64.ActiveCfg = Release|Any CPU
 		{119377EF-F1F4-40D6-BA06-30F0235C1227}.Release|x64.Build.0 = Release|Any CPU
+		{5079ED73-1740-463B-B7D4-EE84941FA76E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5079ED73-1740-463B-B7D4-EE84941FA76E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5079ED73-1740-463B-B7D4-EE84941FA76E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{5079ED73-1740-463B-B7D4-EE84941FA76E}.Debug|x64.Build.0 = Debug|Any CPU
+		{5079ED73-1740-463B-B7D4-EE84941FA76E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5079ED73-1740-463B-B7D4-EE84941FA76E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5079ED73-1740-463B-B7D4-EE84941FA76E}.Release|x64.ActiveCfg = Release|Any CPU
+		{5079ED73-1740-463B-B7D4-EE84941FA76E}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

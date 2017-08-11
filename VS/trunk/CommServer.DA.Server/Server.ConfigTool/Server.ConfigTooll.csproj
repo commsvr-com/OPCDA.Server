@@ -143,9 +143,18 @@
     <Compile Include="Export\ConfigTool.cs">
       <DependentUpon>ConfigTool.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AssemblyInfo.tt</DependentUpon>
+    </Compile>
     <Compile Include="ServersModel\DotNetOpcServerBase.cs" />
     <Compile Include="ServersModel\Specifications.cs" />
     <Content Include="App.ico" />
+    <Content Include="Properties\AssemblyInfo.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>AssemblyInfo.cs</LastGenOutput>
+    </Content>
     <EmbeddedResource Include="HelpText.txt" />
     <Compile Include="ServersModel\DotNetOpcServerWrapper.cs" />
     <Compile Include="ServersModel\IOPCWrappedServer.cs" />
@@ -198,9 +207,6 @@
       <DependentUpon>RegisterServerDlg.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="ConfigUtils.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -255,6 +261,10 @@
       <Project>{75a956d6-285b-46c9-b713-1500582f8c62}</Project>
       <Name>Server.NetRcw</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
