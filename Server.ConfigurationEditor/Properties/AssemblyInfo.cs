@@ -2,11 +2,11 @@
 //_______________________________________________________________
 //  Title   :  Assembly info for: CAS.CommServer.DA.Server.ConfigurationEditor
 //  System  : Microsoft VisualStudio 2015 / C#
-//  $LastChangedDate:  $
-//  $Rev:  $
-//  $LastChangedBy: $
-//  $URL:  $
-//  $Id:  $
+//  $LastChangedDate$
+//  $Rev$
+//  $LastChangedBy$
+//  $URL$
+//  $Id$
 //
 //  Copyright (c) 2017 CAS LODZ POLAND
 //  +48 (42) 686 25 47
@@ -15,9 +15,7 @@
 //_______________________________________________________________
 
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using System.Security.Permissions;
 
 [assembly: AssemblyTitle("CAS.CommServer.DA.Server.ConfigurationEditor")]
 [assembly: AssemblyDescription("OPC DA Server Configuration Editor")]
@@ -29,8 +27,8 @@ using System.Security.Permissions;
 [assembly: AssemblyCulture("")]
 [assembly: Guid("DB03BA94-B771-4462-9F83-D8F2F29A3E57")]
 [assembly: ComVisible(false)]
-[assembly: AssemblyVersion("4.2.0.*")]
-[assembly: AssemblyFileVersion("4.2.0")]
+[assembly: AssemblyVersion("4.3.1.*")]
+[assembly: AssemblyFileVersion("4.3.1")]
 [assembly: CAS.Lib.CodeProtect.AssemblyHelper
   (
     Product = "Configuration tool for CommServer.",
@@ -40,5 +38,4 @@ using System.Security.Permissions;
     Phone = "+48 608 61 98 99"
   )
 ]
-[assembly: InternalsVisibleToAttribute("CAS.CommServer.DA.Server.NETServerUnitTest", AllInternalsVisible = true)]
 
