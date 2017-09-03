@@ -5,10 +5,7 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_Solution Items", "_Solution Items", "{0A971CAF-57CD-4AB8-A0F3-10F902DDFD61}"
 	ProjectSection(SolutionItems) = preProject
 		..\..\..\svn.CommServer\CommServer.ProtocolHub\CommServer.ProtocolHub\ProtocolHub.ConfiguartionEditor\App.config = ..\..\..\svn.CommServer\CommServer.ProtocolHub\CommServer.ProtocolHub\ProtocolHub.ConfiguartionEditor\App.config
-		..\PR39-CommonResources\cas.publickey.txt = ..\PR39-CommonResources\cas.publickey.txt
-		..\..\..\svn.CommServer\CommServer.ProtocolHub\CommServer.ProtocolHub\ProtocolHub.ConfiguartionEditor\MainClass.cs = ..\..\..\svn.CommServer\CommServer.ProtocolHub\CommServer.ProtocolHub\ProtocolHub.ConfiguartionEditor\MainClass.cs
 		Problems.txt = Problems.txt
-		..\..\..\CommServer.UA.ModelDesigner\CommServer.UA.ModelDesigner\ModelDesigner.DesignStudio\Program.cs = ..\..\..\CommServer.UA.ModelDesigner\CommServer.UA.ModelDesigner\ModelDesigner.DesignStudio\Program.cs
 		ReleaseNotes.txt = ReleaseNotes.txt
 	EndProjectSection
 EndProject
