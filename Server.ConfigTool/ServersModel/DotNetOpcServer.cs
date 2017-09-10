@@ -36,7 +36,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
     /// </summary>
     public DotNetOpcServer(Guid clsid) : base(clsid)
     {
-      m_codebase = Utils.GetExecutablePath(clsid);
+      m_codebase = clsid.GetExecutablePath();
       m_systemType = GetSystemType(clsid, m_codebase);
       m_specifications = GetSpecifications(m_systemType);
     }

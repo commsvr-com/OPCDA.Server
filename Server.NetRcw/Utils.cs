@@ -177,32 +177,45 @@ namespace OpcRcw
             return String.Format("0x{0:X8}", error);
         }
 
-		/// <summary>
-		/// Returns the prog id from the clsid.
-		/// </summary>
-		public static string ProgIDFromCLSID(Guid clsid)
-		{
-			RegistryKey key = Registry.ClassesRoot.OpenSubKey(String.Format(@"CLSID\{{{0}}}\ProgId", clsid));
-					
-			if (key != null)
-			{
-				try
-				{
-					return key.GetValue("") as string;
-				}
-				finally
-				{
-					key.Close();
-				}
-			}
+    /// <summary>
+    /// Returns the prog id from the clsid.
+    /// </summary>
+    public static Tuple<string, RegistryView> ProgIDFromCLSID(Guid clsid)
+    {
+      foreach (RegistryView _view in Enum.GetValues(typeof(RegistryView)))
+      {
+        if (_view == RegistryView.Default)
+          continue;
+        using (RegistryKey _view64 = RegistryKey.OpenBaseKey(RegistryHive.LocalMachine, _view))
+        {
+          string _keyName = @"Software\Classes\CLSID\";
+          using (RegistryKey _clsid64 = _view64.OpenSubKey(_keyName, false))
+          {
+            if (_clsid64 == null)
+              throw new ApplicationException($@"Cannot open registry key {_view64.Name}\{_keyName}");
+            string _path = $@"{{{clsid}}}\ProgId";
+            RegistryKey key = _clsid64.OpenSubKey(_path);
+            if (key != null)
+            {
+              try
+              {
+                return new Tuple<string, RegistryView>(key.GetValue("") as string, _view);
+              }
+              finally
+              {
+                key.Close();
+              }
+            }
+          }
+        }
+      }
+      return null;
+    }
 
-			return null;
-		}
-
-		/// <summary>
-		/// Returns the prog id from the clsid.
-		/// </summary>
-		public static Guid CLSIDFromProgID(string progID)
+    /// <summary>
+    /// Returns the prog id from the clsid.
+    /// </summary>
+    public static Guid CLSIDFromProgID(string progID)
 		{
 			if (String.IsNullOrEmpty(progID))
 			{

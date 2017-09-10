@@ -13,7 +13,6 @@
 //  http://www.cas.eu
 //_______________________________________________________________
 
-using CAS.Win64;
 using Microsoft.Win32;
 using System;
 
@@ -28,9 +27,9 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
     public DotNetOpcServerBase(Guid clsid)
     {
       CLSID = clsid;
-      Tuple<string, RegistryView> _id = Win64Registry.ProgIDFromCLSID(clsid);
+      Tuple<string, RegistryView> _id = clsid.ProgIDFromCLSID();
       if (_id == null)
-        throw new ApplicationException("Component is not registered"); 
+        throw new ApplicationException($"Component {clsid} is not registered");
       ProgId = _id.Item1;
       Is64BitComponent = _id.Item2 == RegistryView.Registry64;
     }

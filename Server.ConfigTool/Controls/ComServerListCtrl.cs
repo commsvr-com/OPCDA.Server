@@ -14,6 +14,7 @@
 //_______________________________________________________________
 
 using CAS.CommServer.DA.Server.ConfigTool.ServersModel;
+using Microsoft.Win32;
 using OpcRcw;
 using System;
 using System.Collections.Generic;
@@ -96,8 +97,23 @@ namespace CAS.CommServer.DA.Server.ConfigTool
         return;
       }
       Guid _clsid = (Guid)item;
-      listItem.SubItems[0].Text = Utils.ProgIDFromCLSID(_clsid);
-      listItem.SubItems[1].Text = Utils.GetExecutablePath(_clsid);
+      try
+      {
+        using (SoftwareClassesRegistryKey _software = new SoftwareClassesRegistryKey(_clsid))
+        {
+          listItem.SubItems[0].Text = $"{_software.ProgIDFromCLSID()}({_software.RegistryView})";
+          Tuple<string, SoftwareClassesRegistryKey.ServerType> _executablePath = _software.GetExecutablePath();
+          if (_executablePath != null)
+            listItem.SubItems[1].Text = $"{_executablePath.Item1} /({_executablePath.Item2})";
+          else
+            listItem.SubItems[1].Text = $"Wrror: Cannot read the codebase";
+        }
+      }
+      catch (Exception _ex)
+      {
+        listItem.SubItems[0].Text = $"Cannot read class {_clsid} information from registry";
+        listItem.SubItems[1].Text = $"Exception has been thrown: {_ex.Message} ";
+      }
       listItem.Tag = item;
       if (m_CATID == CommonDefinitions.CATID_DotNetOpcServerWrappers)
         listItem.ImageKey = "Folder";

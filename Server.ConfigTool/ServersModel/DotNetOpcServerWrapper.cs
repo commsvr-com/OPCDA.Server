@@ -35,7 +35,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
     /// </summary>
     public DotNetOpcServerWrapper(Guid clsid) : base(clsid)
     {
-      m_codebase = Utils.GetExecutablePath(clsid);
+      m_codebase = clsid.GetExecutablePath();
       m_specifications = GetSpecifications(clsid);
     }
     #endregion
