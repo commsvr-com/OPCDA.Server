@@ -123,6 +123,14 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CAS.CommServer.OPCClassicSDK.COMWrapper, Version=3.0.0.40900, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.OPCClassic.SDK.COMWrapper.3.0.0-Alpha\lib\net451\CAS.CommServer.OPCClassicSDK.COMWrapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CAS.CommServer.OPCClassicSDK.OpcComRcw, Version=3.0.0.40899, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.OPCClassic.SDK.COMWrapper.3.0.0-Alpha\lib\net451\CAS.CommServer.OPCClassicSDK.OpcComRcw.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="OpcRcw.Da, Version=3.0.3.0, Culture=neutral, PublicKeyToken=78aea80f6827b5ab, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\packages\OpcRcw.Da.3.0.3.0\lib\net45\OpcRcw.Da.dll</HintPath>
@@ -155,6 +163,8 @@
     </Compile>
     <Compile Include="ServersModel\DotNetOpcServerBase.cs" />
     <Compile Include="ServersModel\Specifications.cs" />
+    <Compile Include="SoftwareClassesRegistryKey.cs" />
+    <Compile Include="Win64RegistryUtilities.cs" />
     <Content Include="App.ico" />
     <Content Include="Properties\AssemblyInfo.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -261,12 +271,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>RegisterServerDlg.cs</DependentUpon>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Server.NetRcw\Server.NetRcw.csproj">
-      <Project>{75a956d6-285b-46c9-b713-1500582f8c62}</Project>
-      <Name>Server.NetRcw</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

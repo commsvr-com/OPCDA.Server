@@ -137,7 +137,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
         _servers.Add(new RegisteredDotNetOpcServer(_CLSIDs[ii]));
         if (updateWrapperPath)
         {
-          string _wrapperPath = Utils.GetExecutablePath(_servers[ii].WrapperCLSID);
+          string _wrapperPath = _servers[ii].WrapperCLSID.GetExecutablePath();
           if (String.IsNullOrEmpty(_wrapperPath))
             continue;
           RegistryKey key = Registry.ClassesRoot.OpenSubKey(String.Format(@"CLSID\{{{0}}}\LocalServer32", _CLSIDs[ii]), true);
@@ -186,7 +186,7 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
       if (WrapperCLSID == Guid.Empty || String.IsNullOrEmpty(_progId))
         throw new ApplicationException("Proxy does not have a valid wrapper clsid or prog id.");
       // verify wrapper path.
-      string _wrapperPath = Utils.GetExecutablePath(WrapperCLSID);
+      string _wrapperPath = WrapperCLSID.GetExecutablePath();
       if (_wrapperPath == null)
         throw new ApplicationException("OPC server wrapper is not registered on this machine.");
       // remove existing CLSID.
@@ -450,8 +450,8 @@ namespace CAS.CommServer.DA.Server.ConfigTool.ServersModel
       _serverToExport.ProgId = server.ProgId;
       if (server.Description != server.ProgId)
         _serverToExport.Description = server.Description;
-      _serverToExport.WrapperClsid = Utils.ProgIDFromCLSID(server.WrapperCLSID);
-      _serverToExport.ServerClsid = Utils.ProgIDFromCLSID(server.ServerCLSID);
+      _serverToExport.WrapperClsid = server.WrapperCLSID.ProgIDFromCLSID().Item1;
+      _serverToExport.ServerClsid = server.ServerCLSID.ProgIDFromCLSID().Item1;
       // export parameters.
       _serverToExport.Parameter = new Export.Parameter[server.Parameters.Count];
       int index = 0;
