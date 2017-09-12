@@ -143,16 +143,16 @@
       <HintPath>..\packages\CAS.CommServer.DeviceSimulator.5.01.06\lib\net451\CAS.CommServer.DeviceSimulator.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.OPCClassicSDK.COMWrapper, Version=3.0.0.40900, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.OPCClassic.SDK.COMWrapper.3.0.0-Alpha\lib\net451\CAS.CommServer.OPCClassicSDK.COMWrapper.dll</HintPath>
+    <Reference Include="CAS.CommServer.OPCClassicSDK.COMWrapper, Version=3.0.0.33241, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.OPCClassic.SDK.COMWrapper.3.0.0-Bravo\lib\net451\CAS.CommServer.OPCClassicSDK.COMWrapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.CommServer.OPCClassicSDK.Core, Version=2.1.1062.39746, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
       <HintPath>..\packages\CAS.CommServer.OPCClassic.SDK.Core.2.01.1062\lib\net451\CAS.CommServer.OPCClassicSDK.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.OPCClassicSDK.OpcComRcw, Version=3.0.0.40899, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.OPCClassic.SDK.COMWrapper.3.0.0-Alpha\lib\net451\CAS.CommServer.OPCClassicSDK.OpcComRcw.dll</HintPath>
+    <Reference Include="CAS.CommServer.OPCClassicSDK.OpcComRcw, Version=3.0.0.33241, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.OPCClassic.SDK.COMWrapper.3.0.0-Bravo\lib\net451\CAS.CommServer.OPCClassicSDK.OpcComRcw.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.CommServer.ProtocolHub.Communication, Version=4.2.0.32708, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
