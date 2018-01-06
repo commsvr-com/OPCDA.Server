@@ -16,13 +16,13 @@ namespace CAS.CommServer.DA.Client.Scripts
       #region Copy to script
       string _rel = _version.Replace(".", "_"); // _version must be replaced by the correct version variable depending on the project.
       string _repositoryUrl = @"svn://svnserver.hq.cas.com.pl/VS/";
-      string _solutionPath = @"/CommServer.DA.Client";
+      string _solutionPath = @"/CommServer.DA.Server";
       string _trunkPath = $@"{_repositoryUrl}trunk{_solutionPath}/";
       string _tagPath = $@"{_repositoryUrl}tags{_solutionPath}.rel_{_rel}";
       #endregion
 
-      Assert.AreEqual("svn://svnserver.hq.cas.com.pl/VS/trunk/CommServer.DA.Client/", _trunkPath);
-      Assert.AreEqual("svn://svnserver.hq.cas.com.pl/VS/tags/CommServer.DA.Client.rel_2_01_1061", _tagPath);
+      Assert.AreEqual("svn://svnserver.hq.cas.com.pl/VS/trunk/CommServer.DA.Server/", _trunkPath);
+      Assert.AreEqual("svn://svnserver.hq.cas.com.pl/VS/tags/CommServer.DA.Server.rel_2_01_1061", _tagPath);
 
     }
   }
