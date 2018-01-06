@@ -80,8 +80,8 @@
       <HintPath>..\packages\CAS.CommServer.CommonBus.5.01.07\lib\net451\CAS.CommServer.CommonBus.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommServer.DataProvider.MODBUSCore, Version=3.90.5.30594, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.05\lib\net461\CAS.CommServer.DataProvider.MODBUSCore.dll</HintPath>
+    <Reference Include="CAS.CommServer.DataProvider.MODBUSCore, Version=3.100.0.25937, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.100.00\lib\net461\CAS.CommServer.DataProvider.MODBUSCore.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.CommServer.DeviceSimulator, Version=5.1.6.25004, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
@@ -92,40 +92,40 @@
       <HintPath>..\packages\CAS.CommServer.OPCClassic.SDK.Core.2.01.1062\lib\net451\CAS.CommServer.OPCClassicSDK.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommSvrPlugin_DemoSimulator, Version=3.90.5.30595, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.05\lib\net461\CAS.CommSvrPlugin_DemoSimulator.dll</HintPath>
+    <Reference Include="CAS.CommSvrPlugin_DemoSimulator, Version=3.100.0.25938, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.100.00\lib\net461\CAS.CommSvrPlugin_DemoSimulator.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommSvrPlugin_EC2-3SYM2, Version=3.90.5.30596, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.05\lib\net461\CAS.CommSvrPlugin_EC2-3SYM2.dll</HintPath>
+    <Reference Include="CAS.CommSvrPlugin_EC2-3SYM2, Version=3.100.0.25938, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.100.00\lib\net461\CAS.CommSvrPlugin_EC2-3SYM2.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommSvrPlugin_ExcelDDE, Version=3.90.5.30594, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.05\lib\net461\CAS.CommSvrPlugin_ExcelDDE.dll</HintPath>
+    <Reference Include="CAS.CommSvrPlugin_ExcelDDE, Version=3.100.0.25937, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.100.00\lib\net461\CAS.CommSvrPlugin_ExcelDDE.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommSvrPlugin_MBUS, Version=3.90.5.30597, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.05\lib\net461\CAS.CommSvrPlugin_MBUS.dll</HintPath>
+    <Reference Include="CAS.CommSvrPlugin_MBUS, Version=3.100.0.25938, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.100.00\lib\net461\CAS.CommSvrPlugin_MBUS.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommSvrPlugin_MODBUSNet, Version=3.90.5.30597, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.05\lib\net461\CAS.CommSvrPlugin_MODBUSNet.dll</HintPath>
+    <Reference Include="CAS.CommSvrPlugin_MODBUSNet, Version=3.100.0.25938, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.100.00\lib\net461\CAS.CommSvrPlugin_MODBUSNet.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommSvrPlugin_NULLbus, Version=3.90.5.30597, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.05\lib\net461\CAS.CommSvrPlugin_NULLbus.dll</HintPath>
+    <Reference Include="CAS.CommSvrPlugin_NULLbus, Version=3.100.0.25938, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.100.00\lib\net461\CAS.CommSvrPlugin_NULLbus.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommSvrPlugin_SBUSNET, Version=3.90.5.30597, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.05\lib\net461\CAS.CommSvrPlugin_SBUSNET.dll</HintPath>
+    <Reference Include="CAS.CommSvrPlugin_SBUSNET, Version=3.100.0.25938, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.100.00\lib\net461\CAS.CommSvrPlugin_SBUSNET.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommSvrPlugin_SBUSRS, Version=3.90.5.30597, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.05\lib\net461\CAS.CommSvrPlugin_SBUSRS.dll</HintPath>
+    <Reference Include="CAS.CommSvrPlugin_SBUSRS, Version=3.100.0.25938, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.100.00\lib\net461\CAS.CommSvrPlugin_SBUSRS.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="CAS.CommSvrPlugin_TextReader, Version=3.90.5.30597, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.05\lib\net461\CAS.CommSvrPlugin_TextReader.dll</HintPath>
+    <Reference Include="CAS.CommSvrPlugin_TextReader, Version=3.100.0.25938, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.100.00\lib\net461\CAS.CommSvrPlugin_TextReader.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="CAS.RealTime, Version=5.0.6.23644, Culture=neutral, PublicKeyToken=8832ff1a67ea61a3, processorArchitecture=MSIL">
@@ -152,7 +152,7 @@
       <SpecificVersion>False</SpecificVersion>
     </Reference>
     <Reference Include="NDde, Version=2.1.563.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.90.05\lib\net461\NDde.dll</HintPath>
+      <HintPath>..\packages\CAS.CommServer.DataProvider.Package.3.100.00\lib\net461\NDde.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="OpcRcw.Comn, Version=1.10.2.0, Culture=neutral, PublicKeyToken=78aea80f6827b5ab, processorArchitecture=MSIL">
