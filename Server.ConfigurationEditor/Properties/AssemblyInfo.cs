@@ -27,8 +27,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")]
 [assembly: Guid("DB03BA94-B771-4462-9F83-D8F2F29A3E57")]
 [assembly: ComVisible(false)]
-[assembly: AssemblyVersion("4.3.2.*")]
-[assembly: AssemblyFileVersion("4.3.2")]
+[assembly: AssemblyVersion("4.3.3.*")]
+[assembly: AssemblyFileVersion("4.3.3")]
 [assembly: CAS.Lib.CodeProtect.AssemblyHelper
   (
     Product = "Configuration tool for CommServer.",
